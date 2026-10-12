@@ -1,0 +1,11 @@
+---
+import { getEmDashEntry } from "emdash";
+import LandingPage from "../../components/LandingPage.astro";
+
+const { slug } = Astro.params;
+const { entry, cacheHint } = slug ? await getEmDashEntry("services", slug) : { entry: null, cacheHint: null };
+if (!entry) return Astro.rewrite("/404");
+if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
+---
+
+<LandingPage collection="services" entry={entry} />

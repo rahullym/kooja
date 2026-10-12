@@ -1,0 +1,115 @@
+---
+/**
+ * Hub (index) template: the page entry supplies the H1, intro, body and FAQ;
+ * the cards come from the child collection. Hubs link to every child with a
+ * one-line summary and never repeat child-page detail.
+ */
+import { getEmDashEntry } from "emdash";
+import Base from "../layouts/Base.astro";
+import { breadcrumbLd, collectionLd, entrySeo, faqLd, getSorted, type Faq } from "../lib/site";
+import CardGrid, { type Card } from "./CardGrid.astro";
+import CtaBand from "./CtaBand.astro";
+import FaqSection from "./FaqSection.astro";
+import PageHero from "./PageHero.astro";
+import Prose from "./Prose.astro";
+
+interface Props {
+	collection: "services" | "industries" | "locations";
+	/** Extra cards that link to an existing page instead of having their own. */
+	extraCards?: Card[];
+	extraHeading?: string;
+}
+
+const { collection, extraCards = [], extraHeading } = Astro.props;
+const path = `/${collection}`;
+
+const [{ entry: page, cacheHint: pageHint }, { entries, cacheHint }] = await Promise.all([
+	getEmDashEntry("pages", collection),
+	getSorted(collection),
+]);
+if (Astro.cache?.enabled) {
+	Astro.cache.set(pageHint);
+	Astro.cache.set(cacheHint);
+}
+
+const cards: Card[] = entries.map((entry) => {
+	const data = entry.data as { title: string; nav_label?: string | null; summary?: string | null; region?: string | null };
+	return {
+		title: data.nav_label || data.title,
+		url: `${path}/${entry.id}`,
+		text: data.summary,
+		meta: collection === "locations" ? data.region : null,
+	};
+});
+
+const title = page?.data.title ?? collection;
+const seo = page ? entrySeo(Astro, page, path, page.data.intro) : null;
+const faqs = (page?.data.faqs ?? []) as Faq[];
+const crumbs = [{ label: title, url: path }];
+const jsonLd = [
+	collectionLd({
+		name: title,
+		description: seo?.description,
+		url: `${Astro.url.origin}${path}`,
+		items: cards.map((card) => ({ name: card.title, url: `${Astro.url.origin}${card.url}` })),
+	}),
+	faqLd(faqs),
+	breadcrumbLd(Astro.url.origin, crumbs),
+];
+---
+
+<Base
+	title={seo?.title ?? title}
+	pageTitle={title}
+	description={seo?.description}
+	image={seo?.image}
+	canonical={seo?.canonical}
+	robots={seo?.robots}
+	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
+	jsonLd={jsonLd}
+>
+	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} />
+
+	<div class="hub container">
+		<slot name="before" />
+		<CardGrid cards={cards} level={2} />
+
+		{extraCards.length > 0 && (
+			<section class="hub-extra">
+				{extraHeading && <h2>{extraHeading}</h2>}
+				<CardGrid cards={extraCards} columns={4} />
+			</section>
+		)}
+
+		{page?.data.body && (
+			<div class="hub-body" {...page.edit.body}>
+				<Prose value={page.data.body} />
+			</div>
+		)}
+
+		<slot />
+		<FaqSection faqs={faqs} />
+	</div>
+
+	<CtaBand />
+</Base>
+
+<style>
+	.hub {
+		padding-top: var(--spacing-3xl);
+		padding-bottom: var(--spacing-4xl);
+	}
+
+	.hub-extra {
+		margin-top: var(--spacing-3xl);
+	}
+
+	.hub-extra h2 {
+		font-size: var(--font-size-2xl);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.hub-body {
+		margin-top: var(--spacing-3xl);
+	}
+</style>

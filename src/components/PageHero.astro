@@ -1,0 +1,88 @@
+---
+import type { Crumb } from "../lib/site";
+
+interface Props {
+	title: string;
+	intro?: string | null;
+	crumbs?: Crumb[];
+	eyebrow?: string | null;
+	titleAttrs?: Record<string, unknown>;
+	cta?: boolean;
+}
+
+const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false } = Astro.props;
+---
+
+<header class="page-hero">
+	<div class="page-hero-inner">
+		{crumbs.length > 0 && (
+			<nav class="crumbs label" aria-label="Breadcrumb">
+				<a href="/">Home</a>
+				{crumbs.map((crumb) => (
+					<>
+						<span aria-hidden="true">/</span>
+						<a href={crumb.url}>{crumb.label}</a>
+					</>
+				))}
+			</nav>
+		)}
+		{eyebrow && <p class="label eyebrow">{eyebrow}</p>}
+		<h1 {...titleAttrs}>{title}</h1>
+		{intro && <p class="page-hero-intro">{intro}</p>}
+		{cta && (
+			<div class="page-hero-actions">
+				<a href="/get-a-quote" class="btn btn-primary">Get a Quote</a>
+				<a href="tel:+19058767060" class="btn btn-secondary">Call (905) 876-7060</a>
+			</div>
+		)}
+		<slot />
+	</div>
+</header>
+
+<style>
+	.page-hero {
+		border-bottom: 1px solid var(--color-rule);
+	}
+
+	.page-hero-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
+	}
+
+	.crumbs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+		margin-bottom: var(--spacing-2xl);
+	}
+
+	.crumbs a:hover {
+		color: var(--color-brand);
+	}
+
+	.eyebrow {
+		color: var(--color-brand);
+		margin-bottom: var(--spacing-md);
+	}
+
+	h1 {
+		max-width: 18ch;
+		text-wrap: balance;
+	}
+
+	.page-hero-intro {
+		max-width: 56ch;
+		margin-top: var(--spacing-lg);
+		font-size: var(--font-size-xl);
+		line-height: 1.45;
+		color: var(--color-muted);
+	}
+
+	.page-hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-xl);
+	}
+</style>

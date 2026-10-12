@@ -1,0 +1,248 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type StepsBlock = Extract<PageContentBlock, { _type: "site_steps" }>;
+type Props = BlockComponentProps<StepsBlock>;
+
+const { value } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, "0");
+---
+
+<section class="steps">
+	<div class="steps-inner">
+		<header class="steps-head">
+			<p class="label steps-label">Process</p>
+			{value.headline && <h2>{value.headline}</h2>}
+			{value.subheadline && <p class="steps-sub">{value.subheadline}</p>}
+			<a href="/get-a-quote" class="btn btn-primary">Start with a quote</a>
+		</header>
+
+		<ol class="steps-list">
+			{value.steps.map((step, i) => (
+				<li class="step">
+					<span class="step-n" aria-hidden="true">{pad(i + 1)}</span>
+					<div class="step-body">
+						<h3>{step.title}</h3>
+						<p>{step.description}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+	</div>
+</section>
+
+<script>
+	// Light up the step nearest the middle of the screen and fill the line down to it.
+	document.querySelectorAll<HTMLElement>(".steps-list").forEach((list) => {
+		const steps = [...list.querySelectorAll<HTMLElement>(".step")];
+		if (!("IntersectionObserver" in window) || steps.length === 0) return;
+		list.classList.add("is-live");
+
+		const activate = (index: number) => {
+			steps.forEach((step, i) => {
+				step.classList.toggle("is-active", i === index);
+				step.classList.toggle("is-done", i < index);
+			});
+			list.style.setProperty("--progress", String((index + 1) / steps.length));
+		};
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) activate(steps.indexOf(entry.target as HTMLElement));
+				});
+			},
+			{ rootMargin: "-45% 0px -45% 0px" },
+		);
+		steps.forEach((step) => observer.observe(step));
+		activate(0);
+	});
+</script>
+
+<style>
+	.steps {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.steps-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-4xl) var(--spacing-lg);
+		display: grid;
+		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+		gap: var(--spacing-3xl);
+		align-items: start;
+	}
+
+	/* The heading stays put while the steps scroll past it. */
+	.steps-head {
+		position: sticky;
+		top: 120px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--spacing-lg);
+	}
+
+	.steps-label {
+		color: var(--color-accent);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4.2vw, 3.5rem);
+		font-weight: var(--font-weight-display);
+		letter-spacing: var(--tracking-tight);
+		line-height: 1;
+		text-wrap: balance;
+	}
+
+	.steps-sub {
+		max-width: 34ch;
+		font-size: var(--font-size-lg);
+		opacity: 0.7;
+	}
+
+	.steps-head .btn-primary {
+		margin-top: var(--spacing-sm);
+		background: var(--color-accent);
+		color: var(--color-ink);
+	}
+
+	.steps-head .btn-primary:hover {
+		background: var(--color-paper);
+	}
+
+	/* A vertical line runs down the list and fills in orange as you scroll. */
+	.steps-list {
+		--progress: 1;
+		position: relative;
+		list-style: none;
+		padding-left: var(--spacing-2xl);
+	}
+
+	.steps-list::before,
+	.steps-list::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: color-mix(in srgb, var(--color-paper) 18%, transparent);
+	}
+
+	.steps-list::after {
+		background: var(--color-accent);
+		transform: scaleY(var(--progress));
+		transform-origin: top;
+		transition: transform 500ms ease;
+	}
+
+	.step {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr);
+		gap: var(--spacing-lg);
+		align-items: start;
+		padding: var(--spacing-xl) 0;
+		border-bottom: 1px solid color-mix(in srgb, var(--color-paper) 16%, transparent);
+		transition: opacity var(--transition-slow);
+	}
+
+	.step:first-child {
+		padding-top: 0;
+	}
+
+	.step:last-child {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	/* Marker on the line. */
+	.step::before {
+		content: "";
+		position: absolute;
+		left: calc(-1 * var(--spacing-2xl) - 5px);
+		top: calc(var(--spacing-xl) + 1.1rem);
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: var(--color-ink);
+		border: 2px solid color-mix(in srgb, var(--color-paper) 40%, transparent);
+		transition:
+			background var(--transition-slow),
+			border-color var(--transition-slow);
+	}
+
+	.step:first-child::before {
+		top: 1.1rem;
+	}
+
+	.step-n {
+		font-family: var(--font-heading);
+		font-size: clamp(3rem, 6vw, 5rem);
+		font-weight: 800;
+		letter-spacing: -0.05em;
+		line-height: 0.85;
+		color: transparent;
+		-webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-paper) 55%, transparent);
+		transition:
+			color var(--transition-slow),
+			-webkit-text-stroke-color var(--transition-slow);
+	}
+
+	h3 {
+		font-size: var(--font-size-2xl);
+		line-height: 1.1;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.step-body p {
+		max-width: 46ch;
+		opacity: 0.72;
+	}
+
+	/* With scripting on, steps away from the middle of the screen dim. */
+	.is-live .step {
+		opacity: 0.45;
+	}
+
+	.is-live .step:is(.is-active, .is-done) {
+		opacity: 1;
+	}
+
+	.is-live .step:is(.is-active, .is-done)::before {
+		background: var(--color-accent);
+		border-color: var(--color-accent);
+	}
+
+	.is-live .step.is-active .step-n {
+		color: var(--color-accent);
+		-webkit-text-stroke-color: var(--color-accent);
+	}
+
+	@media (max-width: 900px) {
+		.steps-inner {
+			grid-template-columns: minmax(0, 1fr);
+			gap: var(--spacing-2xl);
+			padding: var(--spacing-3xl) var(--spacing-lg);
+		}
+
+		.steps-head {
+			position: static;
+		}
+
+		.step {
+			grid-template-columns: minmax(0, 4.5rem) minmax(0, 1fr);
+			gap: var(--spacing-md);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.is-live .step {
+			opacity: 1;
+		}
+	}
+</style>

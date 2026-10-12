@@ -1,0 +1,157 @@
+---
+import { Icon } from "astro-iconset/components";
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type FeaturesBlock = Extract<PageContentBlock, { _type: "marketing_features" }>;
+type Props = BlockComponentProps<FeaturesBlock>;
+
+const { value } = Astro.props;
+const { anchor_id, headline, subheadline, features } = value;
+const pad = (n: number) => String(n).padStart(2, "0");
+
+const iconMap: Record<string, string> = {
+	zap: "ph:lightning",
+	shield: "ph:shield-check",
+	users: "ph:users-three",
+	chart: "ph:chart-bar",
+	code: "ph:code",
+	globe: "ph:globe",
+	heart: "ph:heart",
+	star: "ph:star",
+	check: "ph:check-circle",
+	lock: "ph:lock",
+	clock: "ph:clock",
+	cloud: "ph:cloud",
+};
+---
+
+<section class="features section" id={anchor_id || undefined}>
+	<div class="container">
+		<header class="section-header" data-label="Why Koojo">
+			{headline && <h2 class="section-headline">{headline}</h2>}
+			{subheadline && <p class="section-subheadline">{subheadline}</p>}
+		</header>
+		<ul class="reasons">
+			{features.map((feature, i) => (
+				<li class="reason">
+					<div class="reason-top">
+						<Icon name={iconMap[feature.icon] || "ph:sparkle"} aria-hidden="true" class="reason-icon" />
+						<span class="reason-n" aria-hidden="true">{pad(i + 1)}</span>
+					</div>
+					<h3 class="reason-title">{feature.title}</h3>
+					<p class="reason-text">{feature.description}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>
+
+<style>
+	/* A ruled grid of cells, like a spec table. The first cell carries the accent. */
+	.reasons {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		border-top: 1px solid var(--color-rule);
+		border-left: 1px solid var(--color-rule);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+
+	.reason {
+		display: flex;
+		flex-direction: column;
+		min-height: 260px;
+		padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+		border-right: 1px solid var(--color-rule);
+		border-bottom: 1px solid var(--color-rule);
+		transition:
+			background var(--transition-base),
+			color var(--transition-base);
+	}
+
+	.reason-top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: auto;
+		padding-bottom: var(--spacing-2xl);
+	}
+
+	.reason :global(.reason-icon) {
+		font-size: 2.25rem;
+		color: var(--color-brand);
+		transition: color var(--transition-base);
+	}
+
+	.reason-n {
+		font-family: var(--font-mono);
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+		transition: color var(--transition-base);
+	}
+
+	.reason-title {
+		font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+		font-weight: 800;
+		letter-spacing: var(--tracking-snug);
+		line-height: 1.05;
+		text-wrap: balance;
+	}
+
+	.reason-text {
+		margin-top: var(--spacing-sm);
+		max-width: 34ch;
+		color: var(--color-muted);
+		transition: color var(--transition-base);
+	}
+
+	.reason:first-child {
+		background: var(--color-brand);
+		color: var(--color-on-brand);
+	}
+
+	.reason:first-child :global(.reason-icon),
+	.reason:first-child :is(.reason-n, .reason-text) {
+		color: inherit;
+	}
+
+	.reason:not(:first-child):hover {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.reason:not(:first-child):hover :global(.reason-icon) {
+		color: var(--color-accent);
+	}
+
+	.reason:not(:first-child):hover :is(.reason-n, .reason-text) {
+		color: inherit;
+		opacity: 0.75;
+	}
+
+	@media (max-width: 900px) {
+		.reasons {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.reason {
+			min-height: 220px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.reasons {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.reason {
+			min-height: 0;
+		}
+
+		.reason-top {
+			padding-bottom: var(--spacing-lg);
+		}
+	}
+</style>

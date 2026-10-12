@@ -1,0 +1,69 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type StatsBlock = Extract<PageContentBlock, { _type: "site_stats" }>;
+type Props = BlockComponentProps<StatsBlock>;
+
+const { value } = Astro.props;
+---
+
+<section class="stats" aria-label="Koojo in numbers">
+	<dl class="stats-list">
+		{value.items.map((item) => (
+			<div class="stat">
+				<dt class="label">{item.label}</dt>
+				<dd>{item.value}</dd>
+			</div>
+		))}
+	</dl>
+</section>
+
+<style>
+	.stats {
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.stats-list {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: 0 var(--spacing-lg);
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.stat {
+		padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-xl) 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.stat + .stat {
+		padding-left: var(--spacing-lg);
+		border-left: 1px solid var(--color-border);
+	}
+
+	dd {
+		font-family: var(--font-heading);
+		font-size: clamp(2rem, 4vw, 3.25rem);
+		font-weight: var(--font-weight-display);
+		letter-spacing: var(--tracking-tight);
+		line-height: 1;
+	}
+
+	@media (max-width: 700px) {
+		.stats-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.stat + .stat:nth-child(odd) {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.stat:nth-child(n + 3) {
+			border-top: 1px solid var(--color-border);
+		}
+	}
+</style>

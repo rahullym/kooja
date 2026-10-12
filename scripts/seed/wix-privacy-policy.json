@@ -1,0 +1,212 @@
+[
+ {
+  "_type": "block",
+  "_key": "b23",
+  "style": "h2",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s24",
+    "text": "A LEGAL DISCLAIMER",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b25",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s26",
+    "text": "At Koojo Custom Powder Coating, your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect the information you provide when using our website. By submitting your information through our site, you agree to the terms outlined below.",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b27",
+  "style": "h2",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s28",
+    "text": "Information We Collect and How We Use Your Information",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b29",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s30",
+    "text": "When you fill out the \"Request a Quote\" form on our website, we may collect the following information:",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b31",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s32",
+    "text": "Name",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b35",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s36",
+    "text": "Email Address",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b39",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s40",
+    "text": "Phone Number",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b43",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s44",
+    "text": "Message or Project Details",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b49",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s50",
+    "text": "We use the information you provide for the following purposes:",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b51",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s52",
+    "text": "To respond to your inquiries and provide quotes for our services.",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b55",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s56",
+    "text": "To communicate with you about your projects or questions.",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b59",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s60",
+    "text": "To improve our customer service and website functionality.",
+    "marks": []
+   }
+  ],
+  "listItem": "bullet",
+  "level": 1
+ },
+ {
+  "_type": "block",
+  "_key": "b63",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s64",
+    "text": "We will not sell, rent, or share your personal information with third parties unless required by law or necessary to fulfill your request.",
+    "marks": []
+   }
+  ]
+ },
+ {
+  "_type": "block",
+  "_key": "b67",
+  "style": "normal",
+  "markDefs": [],
+  "children": [
+   {
+    "_type": "span",
+    "_key": "s68",
+    "text": "We take reasonable precautions to protect your personal information. All data submitted through our website is handled securely to prevent unauthorized access, misuse, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security.",
+    "marks": []
+   }
+  ]
+ }
+]

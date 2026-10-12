@@ -1,0 +1,36 @@
+---
+import { getEmDashEntry } from "emdash";
+import CtaBand from "../components/CtaBand.astro";
+import PageBody from "../components/PageBody.astro";
+import PageHero from "../components/PageHero.astro";
+import Base from "../layouts/Base.astro";
+import { breadcrumbLd, entrySeo, faqLd, type Faq } from "../lib/site";
+
+const { slug } = Astro.params;
+// The home page entry is rendered at "/", never at "/home".
+if (slug === "home") return Astro.redirect("/", 301);
+
+const { entry: page, cacheHint } = slug ? await getEmDashEntry("pages", slug) : { entry: null, cacheHint: null };
+if (!page) return Astro.rewrite("/404");
+if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
+
+const path = `/${page.id}`;
+const seo = entrySeo(Astro, page, path, page.data.intro);
+const crumbs = [{ label: page.data.title, url: path }];
+const jsonLd = [faqLd((page.data.faqs ?? []) as Faq[]), breadcrumbLd(Astro.url.origin, crumbs)];
+---
+
+<Base
+	title={seo.title}
+	pageTitle={page.data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection: "pages", id: page.data.id, slug: page.id }}
+	jsonLd={jsonLd}
+>
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} />
+	<PageBody page={page} />
+	<CtaBand />
+</Base>

@@ -1,0 +1,80 @@
+---
+import type { RelatedLink } from "../lib/site";
+
+interface Props {
+	links?: RelatedLink[] | null;
+}
+
+const { links } = Astro.props;
+
+const groups = [
+	{ kind: "service", heading: "Related services" },
+	{ kind: "industry", heading: "Industries" },
+	{ kind: "project", heading: "Case study" },
+	{ kind: "page", heading: "More" },
+]
+	.map((group) => ({
+		...group,
+		links: (links ?? []).filter((link) => (link.kind || "page") === group.kind),
+	}))
+	.filter((group) => group.links.length > 0);
+---
+
+{groups.length > 0 && (
+	<aside class="related" aria-label="Related pages">
+		{groups.map((group) => (
+			<div class="related-group">
+				<h2>{group.heading}</h2>
+				<ul>
+					{group.links.map((link) => (
+						<li>
+							<a class="related-link" href={link.url}>{link.label}</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		))}
+		<slot />
+	</aside>
+)}
+
+<style>
+	.related {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-xl);
+	}
+
+	h2 {
+		font-family: var(--font-mono);
+		font-size: var(--font-size-xs);
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-muted);
+		padding-bottom: var(--spacing-sm);
+		border-bottom: 1px solid var(--color-rule);
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.related-link {
+		display: flex;
+		justify-content: space-between;
+		gap: var(--spacing-sm);
+		padding: 0.7rem 0;
+		border-bottom: 1px solid var(--color-border);
+		font-weight: 500;
+	}
+
+	.related-link::after {
+		content: "\2192";
+		color: var(--color-brand);
+	}
+
+	.related-link:hover {
+		color: var(--color-brand);
+	}
+</style>

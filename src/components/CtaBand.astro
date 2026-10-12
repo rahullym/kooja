@@ -1,0 +1,90 @@
+---
+import { BUSINESS } from "../lib/site";
+
+interface Props {
+	headline?: string;
+	text?: string | null;
+	buttonLabel?: string | null;
+	buttonUrl?: string | null;
+}
+
+const {
+	headline = "Ready to get your parts coated?",
+	text = "Tell us what you have and when you need it back.",
+	buttonLabel,
+	buttonUrl,
+} = Astro.props;
+---
+
+<section class="cta-band">
+	<div class="cta-inner">
+		<h2>{headline}</h2>
+		<div class="cta-side">
+			{text && <p>{text}</p>}
+			<div class="cta-actions">
+				<a href={buttonUrl || "/get-a-quote"} class="btn cta-btn btn-lg">{buttonLabel || "Get a Quote"}</a>
+				<a href={BUSINESS.phoneHref} class="cta-phone">{BUSINESS.phone}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cta-band {
+		background: var(--color-brand);
+		color: var(--color-on-brand);
+	}
+
+	.cta-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-3xl) var(--spacing-lg);
+		display: grid;
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+		gap: var(--spacing-2xl);
+		align-items: end;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4.6vw, 3.5rem);
+		font-weight: var(--font-weight-display);
+		letter-spacing: var(--tracking-tight);
+		line-height: 1;
+		max-width: 14ch;
+		text-wrap: balance;
+	}
+
+	p {
+		font-size: var(--font-size-lg);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.cta-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--spacing-lg);
+	}
+
+	.cta-btn {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.cta-btn:hover {
+		background: var(--color-paper);
+		color: var(--color-ink);
+	}
+
+	.cta-phone {
+		font-family: var(--font-mono);
+		font-weight: 500;
+		border-bottom: 1px solid currentColor;
+	}
+
+	@media (max-width: 800px) {
+		.cta-inner {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+</style>

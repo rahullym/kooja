@@ -1,0 +1,18 @@
+---
+import { sanitizeHref } from "emdash";
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import CtaBand from "../CtaBand.astro";
+
+type CtaBlock = Extract<PageContentBlock, { _type: "site_cta" }>;
+type Props = BlockComponentProps<CtaBlock>;
+
+const { value } = Astro.props;
+---
+
+<CtaBand
+	headline={value.headline}
+	text={value.text}
+	buttonLabel={value.button_label}
+	buttonUrl={value.button_url ? sanitizeHref(value.button_url) : undefined}
+/>

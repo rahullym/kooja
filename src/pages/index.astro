@@ -1,0 +1,54 @@
+---
+import { getEmDashEntry } from "emdash";
+import MarketingBlocks from "../components/MarketingBlocks.astro";
+import Base from "../layouts/Base.astro";
+import { entrySeo, localBusinessLd } from "../lib/site";
+
+const { entry: page, cacheHint } = await getEmDashEntry("pages", "home");
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+
+const seo = page ? entrySeo(Astro, page, "/") : null;
+---
+
+<Base
+	title={seo?.title}
+	pageTitle={seo?.title}
+	description={seo?.description}
+	image={seo?.image}
+	canonical={seo?.canonical}
+	robots={seo?.robots}
+	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
+	jsonLd={localBusinessLd(Astro.url.origin)}
+>
+	{
+		page?.data.content ? (
+			<div {...page.edit.content}>
+				<MarketingBlocks value={page.data.content} />
+			</div>
+		) : (
+			<div class="empty-state">
+				<h1>Koojo Custom Powder Coating</h1>
+				<p>Add sections to the Home page in the admin to get started.</p>
+				{Astro.locals.user && (
+					<a href="/_emdash/admin" class="btn btn-primary">
+						Open Admin
+					</a>
+				)}
+			</div>
+		)
+	}
+</Base>
+
+<style>
+	.empty-state {
+		text-align: center;
+		padding: var(--spacing-5xl) var(--spacing-lg);
+		max-width: var(--max-width);
+		margin: 0 auto;
+	}
+
+	.empty-state p {
+		color: var(--color-muted);
+		margin: var(--spacing-md) 0 var(--spacing-xl);
+	}
+</style>

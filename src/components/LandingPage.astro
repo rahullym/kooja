@@ -1,0 +1,178 @@
+---
+/**
+ * Detail template for services, industries and locations. All three share the
+ * same shape (H1, summary, body, FAQ, related links) and differ only in the
+ * hub they sit under and the schema they emit.
+ */
+import { Image } from "emdash/ui";
+import type { getEmDashEntry } from "emdash";
+import Base from "../layouts/Base.astro";
+import {
+	BUSINESS,
+	breadcrumbLd,
+	entrySeo,
+	faqLd,
+	serviceLd,
+	type Faq,
+	type RelatedLink,
+} from "../lib/site";
+import ContactDetails from "./ContactDetails.astro";
+import CtaBand from "./CtaBand.astro";
+import EntryLayout from "./EntryLayout.astro";
+import FaqSection from "./FaqSection.astro";
+import PageHero from "./PageHero.astro";
+import Prose from "./Prose.astro";
+import RelatedLinks from "./RelatedLinks.astro";
+
+type ContentEntry<C extends string> = NonNullable<Awaited<ReturnType<typeof getEmDashEntry<C>>>["entry"]>;
+type Collection = "services" | "industries" | "locations";
+
+interface Props {
+	collection: Collection;
+	/** The entry, already fetched by the route (which owns the 404). */
+	entry: ContentEntry<Collection>;
+}
+
+const HUBS = {
+	services: { label: "Services", url: "/services", anchor: "powder coating services" },
+	industries: { label: "Industries", url: "/industries", anchor: "powder coating by industry" },
+	locations: { label: "Service Areas", url: "/locations", anchor: "powder coating service areas" },
+} as const;
+
+const { collection, entry } = Astro.props;
+const hub = HUBS[collection];
+
+const data = entry.data as typeof entry.data & {
+	city?: string | null;
+	drive_time?: string | null;
+	local_industries?: string | null;
+	pickup_details?: string | null;
+};
+const path = `${hub.url}/${entry.id}`;
+const seo = entrySeo(Astro, entry, path, data.summary);
+const faqs = (data.faqs ?? []) as Faq[];
+const related = (data.related ?? []) as RelatedLink[];
+const crumbs = [
+	{ label: hub.label, url: hub.url },
+	{ label: data.nav_label || data.title, url: path },
+];
+
+const jsonLd = [
+	serviceLd(Astro.url.origin, {
+		name: data.title,
+		description: seo.description,
+		url: `${Astro.url.origin}${path}`,
+		areaServed: data.city || undefined,
+	}),
+	faqLd(faqs),
+	breadcrumbLd(Astro.url.origin, crumbs),
+];
+
+const localFacts = [
+	{ label: "Drive time from our Milton shop", value: data.drive_time },
+	{ label: "Local industries we coat for", value: data.local_industries },
+	{ label: "Pickup and delivery", value: data.pickup_details },
+].filter((fact) => fact.value);
+---
+
+<Base
+	title={seo.title}
+	pageTitle={data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection, id: data.id, slug: entry.id }}
+	jsonLd={jsonLd}
+>
+	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} cta />
+
+	<EntryLayout>
+		{data.featured_image && (
+			<div class="entry-image" {...entry.edit.featured_image}>
+				<Image image={data.featured_image} />
+			</div>
+		)}
+
+		<div {...entry.edit.content}>
+			<Prose value={data.content} />
+		</div>
+
+		{collection === "locations" && (
+			<section class="local">
+				{localFacts.length > 0 && (
+					<dl class="local-facts">
+						{localFacts.map((fact) => (
+							<div>
+								<dt>{fact.label}</dt>
+								<dd>{fact.value}</dd>
+							</div>
+						))}
+					</dl>
+				)}
+				<h2>Visit or contact the shop</h2>
+				<ContactDetails />
+				<p class="local-links">
+					Koojo is a <a href="/">powder coating company GTA</a> businesses have used since {BUSINESS.foundingYear}.
+					See <a href="/contact-us">contact details and directions</a>.
+				</p>
+			</section>
+		)}
+
+		<FaqSection faqs={faqs} />
+
+		<Fragment slot="aside">
+			<RelatedLinks links={related}>
+				<p class="hub-link">
+					<a href={hub.url}>All {hub.anchor}</a>
+				</p>
+			</RelatedLinks>
+		</Fragment>
+	</EntryLayout>
+
+	<CtaBand />
+</Base>
+
+<style>
+	.entry-image {
+		margin-bottom: var(--spacing-2xl);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+
+	.local {
+		max-width: var(--max-width);
+		margin-top: var(--spacing-2xl);
+	}
+
+	.local h2 {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.local-facts {
+		display: grid;
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-2xl);
+	}
+
+	.local-facts dt {
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+	}
+
+	.local-facts dd {
+		font-weight: 600;
+	}
+
+	.local-links {
+		margin-top: var(--spacing-xl);
+		color: var(--color-muted);
+	}
+
+	.hub-link a {
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+</style>

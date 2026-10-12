@@ -1,0 +1,129 @@
+---
+import { getEmDashEntry } from "emdash";
+import { Image } from "emdash/ui";
+import CardGrid from "../../components/CardGrid.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import FaqSection from "../../components/FaqSection.astro";
+import PageHero from "../../components/PageHero.astro";
+import Prose from "../../components/Prose.astro";
+import Base from "../../layouts/Base.astro";
+import { getPosts, postCard, postCategory } from "../../lib/posts";
+import { articleLd, breadcrumbLd, entrySeo, faqLd, formatDate, postDate, type Faq } from "../../lib/site";
+
+const { slug } = Astro.params;
+const { entry: post, cacheHint } = slug ? await getEmDashEntry("posts", slug) : { entry: null, cacheHint: null };
+if (!post) return Astro.rewrite("/404");
+
+const { data } = post;
+const category = postCategory(post);
+const { entries: siblings, cacheHint: siblingsHint } = category
+	? await getPosts(category.slug)
+	: { entries: [], cacheHint: null };
+if (Astro.cache?.enabled) {
+	if (cacheHint) Astro.cache.set(cacheHint);
+	if (siblingsHint) Astro.cache.set(siblingsHint);
+}
+
+const related = siblings.filter((entry) => entry.id !== post.id).slice(0, 3);
+const path = `/post/${post.id}`;
+const seo = entrySeo(Astro, post, path, data.excerpt);
+const published = postDate(data);
+const faqs = (data.faqs ?? []) as Faq[];
+const author = data.byline?.displayName ?? null;
+const crumbs = [
+	{ label: "Blog", url: "/blog" },
+	...(category ? [{ label: category.label, url: `/blog/categories/${category.slug}` }] : []),
+];
+const jsonLd = [
+	articleLd(Astro.url.origin, {
+		headline: data.title,
+		description: seo.description,
+		url: `${Astro.url.origin}${path}`,
+		image: data.featured_image?.src ? new URL(data.featured_image.src, Astro.url.origin).href : seo.image,
+		published,
+		modified: data.updatedAt,
+		author,
+	}),
+	faqLd(faqs),
+	breadcrumbLd(Astro.url.origin, [...crumbs, { label: data.title, url: path }]),
+];
+---
+
+<Base
+	title={seo.title}
+	pageTitle={data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection: "posts", id: data.id, slug: post.id }}
+	jsonLd={jsonLd}
+>
+	<article>
+		<PageHero title={data.title} crumbs={crumbs} titleAttrs={post.edit.title}>
+			<p class="byline">
+				{author && <span>By {author}</span>}
+				{published && <time datetime={published.toISOString()}>{formatDate(published)}</time>}
+			</p>
+		</PageHero>
+
+		<div class="post">
+			{data.featured_image && (
+				<figure class="post-image" {...post.edit.featured_image}>
+					<Image image={data.featured_image} priority />
+				</figure>
+			)}
+			<div {...post.edit.content}>
+				<Prose value={data.content} />
+			</div>
+			<FaqSection faqs={faqs} />
+		</div>
+	</article>
+
+	{related.length > 0 && category && (
+		<section class="container more">
+			<h2>
+				More in <a href={`/blog/categories/${category.slug}`}>{category.label}</a>
+			</h2>
+			<CardGrid cards={related.map(postCard)} />
+		</section>
+	)}
+
+	<CtaBand />
+</Base>
+
+<style>
+	.byline {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-md);
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+	}
+
+	.post {
+		max-width: calc(var(--max-width) + 2 * var(--spacing-lg));
+		margin: 0 auto;
+		padding: var(--spacing-3xl) var(--spacing-lg);
+	}
+
+	.post-image {
+		margin-bottom: var(--spacing-2xl);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+
+	.more {
+		padding-bottom: var(--spacing-4xl);
+	}
+
+	.more h2 {
+		font-size: var(--font-size-2xl);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.more h2 a {
+		color: var(--color-brand);
+	}
+</style>

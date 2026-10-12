@@ -1,0 +1,9 @@
+export { default as Hero } from "./Hero.astro";
+export { default as Features } from "./Features.astro";
+export { default as Testimonials } from "./Testimonials.astro";
+export { default as FAQ } from "./FAQ.astro";
+export { default as Stats } from "./Stats.astro";
+export { default as Cards } from "./Cards.astro";
+export { default as Cta } from "./Cta.astro";
+export { default as Steps } from "./Steps.astro";
+export { default as Swatches } from "./Swatches.astro";

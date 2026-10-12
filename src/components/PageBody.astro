@@ -1,0 +1,69 @@
+---
+/**
+ * Body shared by standalone pages (About, Capabilities, Certification, ...):
+ * optional image, rich text, optional block sections, FAQ.
+ */
+import type { getEmDashEntry } from "emdash";
+import { Image } from "emdash/ui";
+import type { Faq } from "../lib/site";
+import FaqSection from "./FaqSection.astro";
+import MarketingBlocks from "./MarketingBlocks.astro";
+import Prose from "./Prose.astro";
+
+interface Props {
+	page: NonNullable<Awaited<ReturnType<typeof getEmDashEntry<"pages">>>["entry"]>;
+}
+
+const { page } = Astro.props;
+const { data } = page;
+const faqs = (data.faqs ?? []) as Faq[];
+---
+
+<div class="page-body">
+	<slot name="before" />
+	<div class:list={["page-columns", { "has-image": !!data.featured_image }]}>
+		<div {...page.edit.body}>
+			<Prose value={data.body} />
+		</div>
+		{data.featured_image && (
+			<figure class="page-image" {...page.edit.featured_image}>
+				<Image image={data.featured_image} />
+			</figure>
+		)}
+	</div>
+	<slot />
+	<FaqSection faqs={faqs} />
+</div>
+
+{data.content && data.content.length > 0 && (
+	<div {...page.edit.content}>
+		<MarketingBlocks value={data.content} />
+	</div>
+)}
+
+<style>
+	.page-body {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+	}
+
+	.page-columns.has-image {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 420px);
+		gap: var(--spacing-3xl);
+		align-items: start;
+	}
+
+	.page-image {
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		border: 1px solid var(--color-border);
+	}
+
+	@media (max-width: 900px) {
+		.page-columns.has-image {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+</style>

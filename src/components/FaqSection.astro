@@ -1,0 +1,80 @@
+---
+import type { Faq } from "../lib/site";
+
+interface Props {
+	faqs?: Faq[] | null;
+	headline?: string;
+}
+
+const { faqs, headline = "Frequently asked questions" } = Astro.props;
+---
+
+{faqs && faqs.length > 0 && (
+	<section class="faqs">
+		<h2>{headline}</h2>
+		<div class="faq-list">
+			{faqs.map((faq) => (
+				<details class="faq-item">
+					<summary>{faq.question}</summary>
+					<p>{faq.answer}</p>
+				</details>
+			))}
+		</div>
+	</section>
+)}
+
+<style>
+	.faqs {
+		max-width: var(--max-width);
+		margin-top: var(--spacing-3xl);
+	}
+
+	h2 {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.faq-list {
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.faq-item {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	summary {
+		list-style: none;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		gap: var(--spacing-lg);
+		padding: var(--spacing-md) 0;
+		font-weight: 600;
+		font-size: var(--font-size-lg);
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	summary::after {
+		content: "+";
+		font-family: var(--font-mono);
+		font-weight: 400;
+		color: var(--color-brand);
+	}
+
+	.faq-item[open] summary::after {
+		content: "\2212";
+	}
+
+	summary:hover {
+		color: var(--color-brand);
+	}
+
+	.faq-item p {
+		padding-bottom: var(--spacing-lg);
+		max-width: 60ch;
+		color: var(--color-muted);
+		line-height: var(--leading-relaxed);
+	}
+</style>

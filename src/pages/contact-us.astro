@@ -1,0 +1,64 @@
+---
+import { getEmDashEntry } from "emdash";
+import ContactDetails from "../components/ContactDetails.astro";
+import PageBody from "../components/PageBody.astro";
+import PageHero from "../components/PageHero.astro";
+import Base from "../layouts/Base.astro";
+import { BUSINESS, entrySeo, localBusinessLd } from "../lib/site";
+
+const { entry: page, cacheHint } = await getEmDashEntry("pages", "contact-us");
+if (!page) return Astro.rewrite("/404");
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+
+const seo = entrySeo(Astro, page, "/contact-us", page.data.intro);
+const jsonLd = [
+	{ "@context": "https://schema.org", "@type": "ContactPage", name: page.data.title, url: `${Astro.url.origin}/contact-us` },
+	localBusinessLd(Astro.url.origin),
+];
+---
+
+<Base
+	title={seo.title}
+	pageTitle={page.data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection: "pages", id: page.data.id, slug: page.id }}
+	jsonLd={jsonLd}
+>
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} cta />
+	<PageBody page={page}>
+		<section slot="before" class="contact">
+			<ContactDetails />
+			<iframe
+				title={`Map showing ${BUSINESS.name}, ${BUSINESS.street}, ${BUSINESS.city}`}
+				src={BUSINESS.mapEmbed}
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</section>
+	</PageBody>
+</Base>
+
+<style>
+	.contact {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-2xl);
+		align-items: start;
+		margin-bottom: var(--spacing-3xl);
+	}
+
+	iframe {
+		width: 100%;
+		height: 360px;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+	}
+
+	@media (max-width: 800px) {
+		.contact {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

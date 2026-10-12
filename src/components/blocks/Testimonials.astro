@@ -1,0 +1,74 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type TestimonialsBlock = Extract<PageContentBlock, { _type: "marketing_testimonials" }>;
+type Props = BlockComponentProps<TestimonialsBlock>;
+
+const { value } = Astro.props;
+const { anchor_id, headline, testimonials } = value;
+---
+
+<section class="testimonials section" id={anchor_id || undefined}>
+	<div class="container">
+		<header class="section-header" data-label="Reviews">
+			{headline && <h2 class="section-headline">{headline}</h2>}
+		</header>
+		<div class="quotes">
+			{testimonials.map((testimonial) => (
+				<figure class="quote">
+					<blockquote>{testimonial.quote}</blockquote>
+					<figcaption class="label">
+						<span class="quote-name">{testimonial.author}</span>
+						{[testimonial.role, testimonial.company].filter(Boolean).join(", ")}
+					</figcaption>
+				</figure>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.quotes {
+		display: grid;
+		grid-template-columns: 1.4fr 1fr 1fr;
+		gap: var(--spacing-2xl);
+		align-items: start;
+	}
+
+	.quote {
+		padding-top: var(--spacing-md);
+		border-top: 1px solid var(--color-rule);
+	}
+
+	blockquote {
+		font-size: var(--font-size-lg);
+		line-height: 1.5;
+	}
+
+	/* The first review is set large, like a pull quote. */
+	.quote:first-child blockquote {
+		font-family: var(--font-heading);
+		font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+		font-weight: 600;
+		letter-spacing: var(--tracking-snug);
+		line-height: 1.25;
+	}
+
+	figcaption {
+		margin-top: var(--spacing-lg);
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.quote-name {
+		color: var(--color-text);
+	}
+
+	@media (max-width: 900px) {
+		.quotes {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+</style>

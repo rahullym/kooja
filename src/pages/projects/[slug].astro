@@ -1,0 +1,142 @@
+---
+import { getEmDashEntry } from "emdash";
+import { Image } from "emdash/ui";
+import CtaBand from "../../components/CtaBand.astro";
+import EntryLayout from "../../components/EntryLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import Prose from "../../components/Prose.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Base from "../../layouts/Base.astro";
+import { articleLd, breadcrumbLd, entrySeo, type RelatedLink } from "../../lib/site";
+
+const { slug } = Astro.params;
+const { entry, cacheHint } = slug ? await getEmDashEntry("projects", slug) : { entry: null, cacheHint: null };
+if (!entry) return Astro.rewrite("/404");
+if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
+
+const { data } = entry;
+const path = `/projects/${entry.id}`;
+const seo = entrySeo(Astro, entry, path, data.summary);
+const crumbs = [
+	{ label: "Our Work", url: "/projects" },
+	{ label: data.title, url: path },
+];
+
+const specs = [
+	{ label: "Client industry", value: data.client_industry },
+	{ label: "Part", value: data.part },
+	{ label: "Metal", value: data.metal },
+	{ label: "Size / weight", value: data.size_weight },
+	{ label: "Preparation", value: data.prep },
+	{ label: "Powder and colour", value: data.powder_colour },
+	{ label: "Turnaround", value: data.turnaround },
+].filter((spec) => spec.value);
+
+const gallery = data.gallery ?? [];
+const jsonLd = [
+	articleLd(Astro.url.origin, {
+		headline: data.title,
+		description: seo.description,
+		url: `${Astro.url.origin}${path}`,
+		image: data.featured_image?.src ? new URL(data.featured_image.src, Astro.url.origin).href : seo.image,
+		published: data.publishedAt,
+		modified: data.updatedAt,
+	}),
+	breadcrumbLd(Astro.url.origin, crumbs),
+];
+---
+
+<Base
+	title={seo.title}
+	pageTitle={data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection: "projects", id: data.id, slug: entry.id }}
+	jsonLd={jsonLd}
+>
+	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} />
+
+	<EntryLayout>
+		{data.featured_image && (
+			<figure class="project-image" {...entry.edit.featured_image}>
+				<Image image={data.featured_image} />
+			</figure>
+		)}
+
+		{specs.length > 0 && (
+			<dl class="specs">
+				{specs.map((spec) => (
+					<div>
+						<dt>{spec.label}</dt>
+						<dd>{spec.value}</dd>
+					</div>
+				))}
+			</dl>
+		)}
+
+		<div {...entry.edit.content}>
+			<Prose value={data.content} />
+		</div>
+
+		{gallery.length > 0 && (
+			<div class="gallery">
+				{gallery.map((item) => (
+					<figure>
+						<Image image={item.image} />
+						{item.caption && <figcaption>{item.caption}</figcaption>}
+					</figure>
+				))}
+			</div>
+		)}
+
+		<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
+	</EntryLayout>
+
+	<CtaBand headline="Have a similar part?" text="Send us the details and we'll quote it." />
+</Base>
+
+<style>
+	.project-image {
+		max-width: var(--max-width);
+		margin-bottom: var(--spacing-2xl);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+	}
+
+	.specs {
+		max-width: var(--max-width);
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: var(--spacing-lg);
+		padding: var(--spacing-lg);
+		margin-bottom: var(--spacing-2xl);
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+	}
+
+	.specs dt {
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+	}
+
+	.specs dd {
+		font-weight: 600;
+	}
+
+	.gallery {
+		max-width: var(--max-width);
+		margin-top: var(--spacing-2xl);
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.gallery figcaption {
+		margin-top: var(--spacing-xs);
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+	}
+</style>

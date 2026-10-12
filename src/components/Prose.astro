@@ -1,0 +1,69 @@
+---
+import { PortableText } from "emdash/ui";
+
+interface Props {
+	value?: unknown[] | null;
+}
+
+const { value } = Astro.props;
+---
+
+{value && value.length > 0 && (
+	<div class="prose">
+		<PortableText value={value as never} />
+	</div>
+)}
+
+<style>
+	.prose {
+		max-width: var(--max-width);
+		font-size: var(--font-size-lg);
+		line-height: var(--leading-relaxed);
+	}
+
+	.prose :global(h2) {
+		margin-top: var(--spacing-2xl);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.prose :global(h3),
+	.prose :global(h4) {
+		margin-top: var(--spacing-xl);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.prose :global(:is(h2, h3, h4):first-child) {
+		margin-top: 0;
+	}
+
+	.prose :global(p),
+	.prose :global(ul),
+	.prose :global(ol),
+	.prose :global(blockquote) {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.prose :global(ul),
+	.prose :global(ol) {
+		padding-left: 1.4em;
+	}
+
+	.prose :global(li) {
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.prose :global(li::marker) {
+		color: var(--color-brand);
+	}
+
+	.prose :global(a) {
+		color: var(--color-brand);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.prose :global(img) {
+		border-radius: var(--radius);
+		margin: var(--spacing-lg) 0;
+	}
+</style>

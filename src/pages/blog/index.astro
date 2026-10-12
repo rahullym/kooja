@@ -1,0 +1,140 @@
+---
+import { getEmDashEntry, getTaxonomyTermsWithCacheHint } from "emdash";
+import CardGrid from "../../components/CardGrid.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import PageHero from "../../components/PageHero.astro";
+import Base from "../../layouts/Base.astro";
+import { getPosts, postCard, postCategory } from "../../lib/posts";
+import { breadcrumbLd, collectionLd, entrySeo } from "../../lib/site";
+
+const FEATURED_PER_CATEGORY = 3;
+
+const [{ entry: page, cacheHint: pageHint }, { entries: posts, cacheHint }, termsResult] = await Promise.all([
+	getEmDashEntry("pages", "blog"),
+	getPosts(),
+	getTaxonomyTermsWithCacheHint("category", { includeCounts: false }),
+]);
+if (Astro.cache?.enabled) {
+	Astro.cache.set(pageHint);
+	Astro.cache.set(cacheHint);
+	Astro.cache.set(termsResult.cacheHint);
+}
+
+const clusters = termsResult.data
+	.map((term) => {
+		const inCategory = posts.filter((post) => postCategory(post)?.slug === term.slug);
+		return { term, total: inCategory.length, posts: inCategory.slice(0, FEATURED_PER_CATEGORY) };
+	})
+	.filter((cluster) => cluster.total > 0);
+
+const title = page?.data.title ?? "Powder Coating Guides";
+const seo = page ? entrySeo(Astro, page, "/blog", page.data.intro) : null;
+const crumbs = [{ label: "Blog", url: "/blog" }];
+const jsonLd = [
+	collectionLd({
+		name: title,
+		description: seo?.description,
+		url: `${Astro.url.origin}/blog`,
+		items: clusters.map(({ term }) => ({ name: term.label, url: `${Astro.url.origin}/blog/categories/${term.slug}` })),
+	}),
+	breadcrumbLd(Astro.url.origin, crumbs),
+];
+---
+
+<Base
+	title={seo?.title ?? title}
+	pageTitle={title}
+	description={seo?.description}
+	image={seo?.image}
+	canonical={seo?.canonical}
+	robots={seo?.robots}
+	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
+	jsonLd={jsonLd}
+>
+	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title}>
+		<nav class="topics" aria-label="Guide topics">
+			{clusters.map(({ term }) => (
+				<a href={`/blog/categories/${term.slug}`}>{term.label}</a>
+			))}
+		</nav>
+	</PageHero>
+
+	<div class="container blog">
+		{clusters.map(({ term, total, posts: featured }) => (
+			<section class="cluster">
+				<header>
+					<h2>
+						<a href={`/blog/categories/${term.slug}`}>{term.label}</a>
+					</h2>
+					{total > featured.length && (
+						<a class="cluster-all" href={`/blog/categories/${term.slug}`}>
+							All {total} guides<span class="sr-only"> in {term.label}</span>
+						</a>
+					)}
+				</header>
+				<CardGrid cards={featured.map(postCard)} />
+			</section>
+		))}
+	</div>
+
+	<CtaBand />
+</Base>
+
+<style>
+	.topics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+		margin-top: var(--spacing-xl);
+	}
+
+	.topics a {
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		padding: var(--spacing-sm) var(--spacing-md);
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+		background: var(--color-bg);
+	}
+
+	.topics a:hover {
+		border-color: var(--color-brand);
+		color: var(--color-brand);
+	}
+
+	.blog {
+		padding-top: var(--spacing-3xl);
+		padding-bottom: var(--spacing-4xl);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-3xl);
+	}
+
+	.cluster header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.cluster h2 {
+		font-size: var(--font-size-2xl);
+	}
+
+	.cluster-all {
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		color: var(--color-brand);
+		white-space: nowrap;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+</style>

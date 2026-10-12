@@ -1,0 +1,17 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import FaqSection from "../FaqSection.astro";
+
+type FAQBlock = Extract<PageContentBlock, { _type: "marketing_faq" }>;
+type Props = BlockComponentProps<FAQBlock>;
+
+const { value } = Astro.props;
+const { anchor_id, headline, items } = value;
+---
+
+<section class="section" id={anchor_id || undefined}>
+	<div class="container">
+		<FaqSection faqs={items} headline={headline || undefined} />
+	</div>
+</section>

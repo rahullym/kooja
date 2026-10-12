@@ -1,0 +1,236 @@
+/*
+  theme.css -- your theme overrides. This is the file to edit to
+  retheme the site.
+
+  Every design token lives in src/styles/tokens.css (colors, gradients,
+  type scale, spacing, layout, shadows) with its default value. Override
+  any of them here: declarations in this file are unlayered, so they
+  always beat the @layer base defaults in tokens.css.
+
+  Colors are defined with light-dark(). Overriding with a plain color
+  changes light and dark mode at once; use light-dark(<light>, <dark>)
+  to set different values per mode.
+
+  Rebranding usually only needs --color-brand-* and --color-accent-* --
+  the gradient tokens follow automatically. For a flat, gradient-free
+  brand, set the --gradient-* tokens to solid colors.
+
+  Webfonts are loaded in astro.config.mjs (--font-body). Swap the loaded
+  font there; use overrides here for system fonts or a separate heading
+  face.
+
+  Example:
+
+  :root {
+    --color-brand: light-dark(#0d9488, #2dd4bf);
+    --color-accent: #f59e0b;
+  }
+*/
+
+:root {
+	/*
+	  Koojo: a shop-floor spec sheet. Warm paper, near-black ink, one safety
+	  orange. Rounded corners, pill buttons, hairline rules, no shadows.
+	*/
+	--color-paper: #f4f2ed;
+	--color-ink: #161412;
+
+	--color-bg: light-dark(#f4f2ed, #141211);
+	--color-surface: light-dark(#ebe8e1, #1e1b19);
+	--color-text: light-dark(#161412, #f1eee8);
+	--color-muted: light-dark(#5f5a54, #a39d95);
+	--color-border: light-dark(#cfcac0, #3a3531);
+	--color-rule: light-dark(#161412, #f1eee8); /* strong section rules */
+
+	--color-brand: light-dark(#c8400a, #ff6a2b);
+	--color-brand-strong: light-dark(#a23305, #ff8a55);
+	--color-brand-soft: light-dark(#e86a36, #ffa06b);
+	--color-accent: #ff6a2b;
+	--color-accent-soft: #ffc5aa;
+	--color-on-brand: light-dark(#ffffff, #1b0d05);
+
+	--color-cta-bg: var(--color-ink);
+	--color-cta-text: var(--color-paper);
+
+	--gradient-brand: var(--color-brand);
+	--gradient-brand-strong: var(--color-brand);
+	--gradient-brand-soft: transparent;
+	--gradient-headline: var(--color-text);
+
+	--font-heading: var(--font-display);
+	--font-weight-heading: 700;
+	--font-weight-display: 800;
+	--tracking-tight: -0.035em;
+	--tracking-snug: -0.025em;
+
+	--font-size-3xl: 2.25rem;
+	--font-size-4xl: 2.75rem;
+	--font-size-5xl: 3.75rem;
+
+	--radius-sm: 8px;
+	--radius: 14px;
+	--radius-lg: 22px;
+	--max-width: 720px;
+	--wide-width: 1240px;
+
+	--shadow-sm: none;
+	--shadow: none;
+	--shadow-lg: none;
+	--shadow-xl: none;
+}
+
+@supports not (color: light-dark(#000, #fff)) {
+	:root {
+		--color-bg: #f4f2ed;
+		--color-surface: #ebe8e1;
+		--color-text: #161412;
+		--color-muted: #5f5a54;
+		--color-border: #cfcac0;
+		--color-rule: #161412;
+		--color-brand: #c8400a;
+		--color-brand-strong: #a23305;
+		--color-brand-soft: #e86a36;
+		--color-on-brand: #ffffff;
+	}
+}
+
+h1 {
+	font-size: clamp(2.4rem, 5.2vw, var(--font-size-5xl));
+	font-weight: var(--font-weight-display);
+	line-height: 1.02;
+	letter-spacing: var(--tracking-tight);
+}
+
+h2 {
+	font-size: clamp(1.7rem, 3.2vw, var(--font-size-3xl));
+	line-height: 1.1;
+}
+
+h3 {
+	font-size: var(--font-size-xl);
+}
+
+::selection {
+	background: var(--color-brand);
+	color: var(--color-on-brand);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-brand);
+	outline-offset: 3px;
+}
+
+/* Small technical label: section indexes, breadcrumbs, captions, specs. */
+.label {
+	font-family: var(--font-mono);
+	font-size: var(--font-size-xs);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+}
+
+/* Buttons: flat pills with an arrow that nudges on hover. */
+.btn {
+	gap: 0.6em;
+	padding: 0.8rem 1.4rem;
+	font-weight: 600;
+	border-radius: var(--radius-full);
+	box-shadow: none;
+}
+
+.btn::after {
+	content: "\2192";
+	transition: transform var(--transition-base);
+}
+
+.btn:hover {
+	transform: none;
+	box-shadow: none;
+}
+
+.btn:hover::after {
+	transform: translateX(4px);
+}
+
+.btn-primary,
+.btn-primary:hover {
+	box-shadow: none;
+}
+
+.btn-primary:hover {
+	background: var(--color-brand-strong);
+}
+
+.btn-secondary {
+	border: 1px solid var(--color-rule);
+}
+
+.btn-secondary:hover {
+	background: var(--color-text);
+	color: var(--color-bg);
+	border-color: var(--color-text);
+}
+
+.btn-lg {
+	padding: 1rem 1.75rem;
+}
+
+/* Sections are separated by a full rule and open with a left-aligned head. */
+.section {
+	padding: var(--spacing-3xl) 0 var(--spacing-4xl);
+	border-top: 1px solid var(--color-rule);
+}
+
+.section-header {
+	text-align: left;
+	max-width: none;
+	margin: 0 0 var(--spacing-2xl);
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	gap: var(--spacing-md) var(--spacing-2xl);
+	align-items: start;
+}
+
+.section-headline {
+	grid-column: 2;
+	font-size: clamp(1.7rem, 3.2vw, var(--font-size-3xl));
+	font-weight: var(--font-weight-display);
+	max-width: 20ch;
+}
+
+.section-subheadline {
+	grid-column: 2;
+	margin-top: 0;
+	max-width: 52ch;
+	font-size: var(--font-size-lg);
+	color: var(--color-muted);
+}
+
+.section-header::before {
+	content: attr(data-label);
+	grid-row: 1 / span 2;
+	font-family: var(--font-mono);
+	font-size: var(--font-size-xs);
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	padding-top: 0.6em;
+}
+
+@media (max-width: 800px) {
+	.section-header {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.section-headline,
+	.section-subheadline {
+		grid-column: 1;
+	}
+
+	.section-header::before {
+		grid-row: auto;
+		padding-top: 0;
+	}
+}

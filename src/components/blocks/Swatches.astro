@@ -1,0 +1,89 @@
+---
+import { sanitizeHref } from "emdash";
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type SwatchesBlock = Extract<PageContentBlock, { _type: "site_swatches" }>;
+type Props = BlockComponentProps<SwatchesBlock>;
+
+const { value } = Astro.props;
+// Only plain hex colours reach the style attribute.
+const swatches = value.swatches.filter((swatch) => /^#[0-9a-f]{6}$/i.test(swatch.hex));
+const link =
+	value.link_label && value.link_url ? { label: value.link_label, url: sanitizeHref(value.link_url) } : null;
+---
+
+<section class="section">
+	<div class="container">
+		<header class="section-header" data-label="Colour">
+			{value.headline && <h2 class="section-headline">{value.headline}</h2>}
+			{value.text && <p class="section-subheadline">{value.text}</p>}
+		</header>
+		<ul class="chips">
+			{swatches.map((swatch) => (
+				<li>
+					<span class="chip" style={`background:${swatch.hex}`}></span>
+					<span class="label chip-code">{swatch.code}</span>
+					<span class="chip-name">{swatch.name}</span>
+				</li>
+			))}
+		</ul>
+		<div class="chips-foot">
+			<p class="label">Screen colours are approximate. We match to the physical RAL chart.</p>
+			{link && <a href={link.url} class="btn btn-secondary">{link.label}</a>}
+		</div>
+	</div>
+</section>
+
+<style>
+	.chips {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(8, minmax(0, 1fr));
+		gap: var(--spacing-sm);
+	}
+
+	.chips li {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.chip {
+		display: block;
+		aspect-ratio: 3 / 4;
+		margin-bottom: var(--spacing-sm);
+		border-radius: var(--radius);
+		border: 1px solid color-mix(in srgb, var(--color-text) 15%, transparent);
+	}
+
+	.chip-code {
+		color: var(--color-text);
+	}
+
+	.chip-name {
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+	}
+
+	.chips-foot {
+		margin-top: var(--spacing-xl);
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-md);
+	}
+
+	.chips-foot .label {
+		text-transform: none;
+		letter-spacing: 0.02em;
+	}
+
+	@media (max-width: 900px) {
+		.chips {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			row-gap: var(--spacing-lg);
+		}
+	}
+</style>

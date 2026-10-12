@@ -1,0 +1,64 @@
+---
+import { getEmDashEntry } from "emdash";
+import ContactDetails from "../components/ContactDetails.astro";
+import PageBody from "../components/PageBody.astro";
+import PageHero from "../components/PageHero.astro";
+import Base from "../layouts/Base.astro";
+import { BUSINESS, entrySeo } from "../lib/site";
+
+const { entry: page, cacheHint } = await getEmDashEntry("pages", "get-a-quote");
+if (!page) return Astro.rewrite("/404");
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+
+const seo = entrySeo(Astro, page, "/get-a-quote", page.data.intro);
+
+// Until the quote form backend is chosen, requests go by email with the
+// questions pre-filled so nothing is missed.
+const quoteMail = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Powder coating quote request")}&body=${encodeURIComponent(
+	["Part:", "Metal:", "Size and weight of the largest piece:", "Quantity:", "Colour / finish (RAL if known):", "Needed by:", "", "Photos attached."].join("\n"),
+)}`;
+const consultMail = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Book a consultation")}`;
+---
+
+<Base
+	title={seo.title}
+	pageTitle={page.data.title}
+	description={seo.description}
+	image={seo.image}
+	canonical={seo.canonical}
+	robots={seo.robots}
+	content={{ collection: "pages", id: page.data.id, slug: page.id }}
+>
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title}>
+		<div class="quote-actions">
+			<a href={quoteMail} class="btn btn-primary btn-lg">Email your quote request</a>
+			<a href={consultMail} class="btn btn-secondary btn-lg">Book a consultation</a>
+		</div>
+	</PageHero>
+	<PageBody page={page}>
+		<section class="quote-contact">
+			<h2>Not sure what you're looking for yet?</h2>
+			<p>Contact us and we'll be happy to help with your project.</p>
+			<ContactDetails />
+		</section>
+	</PageBody>
+</Base>
+
+<style>
+	.quote-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-xl);
+	}
+
+	.quote-contact {
+		max-width: var(--max-width);
+		margin-top: var(--spacing-3xl);
+	}
+
+	.quote-contact p {
+		color: var(--color-muted);
+		margin: var(--spacing-sm) 0 var(--spacing-xl);
+	}
+</style>

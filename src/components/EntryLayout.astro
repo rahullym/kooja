@@ -1,0 +1,58 @@
+---
+/**
+ * Two-column body shared by detail pages: main content on the left,
+ * related links on the right, then a closing call to action.
+ */
+interface Props {
+	narrow?: boolean;
+}
+
+const { narrow = false } = Astro.props;
+---
+
+<div class:list={["entry", { narrow }]}>
+	<div class="entry-main">
+		<slot />
+	</div>
+	{Astro.slots.has("aside") && (
+		<div class="entry-aside">
+			<slot name="aside" />
+		</div>
+	)}
+</div>
+
+<style>
+	.entry {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-4xl);
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 300px;
+		gap: var(--spacing-3xl);
+		align-items: start;
+	}
+
+	.entry.narrow {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.entry-main {
+		min-width: 0;
+	}
+
+	.entry-aside {
+		position: sticky;
+		top: 100px;
+	}
+
+	@media (max-width: 900px) {
+		.entry {
+			grid-template-columns: minmax(0, 1fr);
+			gap: var(--spacing-2xl);
+		}
+
+		.entry-aside {
+			position: static;
+		}
+	}
+</style>

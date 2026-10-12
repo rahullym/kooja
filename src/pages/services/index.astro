@@ -1,0 +1,13 @@
+---
+import HubPage from "../../components/HubPage.astro";
+
+// Topics covered by an existing service page rather than a page of their own.
+const extraCards = [
+	{ title: "Fence & Railing", text: "Covered by our architectural service.", url: "/services/architectural-coatings" },
+	{ title: "Machinery & Equipment", text: "Covered by industrial powder coating.", url: "/services/industrial-powder-coating" },
+	{ title: "Outdoor Furniture", text: "Choose a colour and an exterior-grade finish.", url: "/services/custom-colors-finishes" },
+	{ title: "Masking & Plugging", text: "Part of surface preparation.", url: "/services/surface-preparation" },
+];
+---
+
+<HubPage collection="services" extraCards={extraCards} extraHeading="Also asked about" />

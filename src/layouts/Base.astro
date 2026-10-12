@@ -1,0 +1,767 @@
+---
+import { getMenuWithCacheHint, getSiteSettingsWithCacheHint } from "emdash";
+import { BUSINESS, getSorted } from "../lib/site";
+import { EmDashBodyEnd, EmDashBodyStart, EmDashHead } from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+import { Font } from "astro:assets";
+import "../styles/tokens.css";
+import "../styles/theme.css";
+
+interface Props {
+	title?: string;
+	pageTitle?: string | null;
+	description?: string | null;
+	image?: string | null;
+	canonical?: string | null;
+	robots?: string | null;
+	content?: { collection: string; id: string; slug?: string | null };
+	/** Structured data for this page; null entries are skipped. */
+	jsonLd?: object | (object | null)[] | null;
+}
+
+const { title, pageTitle, description, image, canonical, robots, content, jsonLd } = Astro.props;
+const [settingsResult, menuResult, footerCompanyResult, servicesResult, locationsResult] = await Promise.all([
+	getSiteSettingsWithCacheHint(),
+	getMenuWithCacheHint("primary"),
+	getMenuWithCacheHint("footer_company"),
+	getSorted("services"),
+	getSorted("locations"),
+]);
+
+if (Astro.cache?.enabled) {
+	for (const result of [settingsResult, menuResult, footerCompanyResult, servicesResult, locationsResult]) {
+		Astro.cache.set(result.cacheHint);
+	}
+}
+
+const settings = settingsResult.data;
+const siteTitle = settings?.title || BUSINESS.name;
+// Titles from the keyword map already carry the brand ("... | Koojo").
+const brand = siteTitle.split(" ")[0];
+const brandRest = siteTitle.slice(brand.length).trim();
+const fullTitle = title ? (title.includes(brand) ? title : `${title} | ${siteTitle}`) : siteTitle;
+const siteDescription = settings?.tagline || "";
+const siteLogo = settings.logo?.url ? settings.logo : null;
+const menu = menuResult.data;
+
+type FooterLink = { label: string; url: string; target?: string };
+const collectionLinks = (base: string, entries: { id: string; data: { title: string; nav_label?: string | null } }[]) =>
+	entries.map((entry): FooterLink => ({ label: entry.data.nav_label || entry.data.title, url: `${base}/${entry.id}` }));
+
+// Service and location links come straight from the collections, so a page
+// appears in the footer the moment it is published.
+const footerColumns: { heading: string; links: FooterLink[] }[] = [
+	{ heading: "Services", links: collectionLinks("/services", servicesResult.entries) },
+	{ heading: "Service Areas", links: collectionLinks("/locations", locationsResult.entries) },
+	{ heading: "Company", links: footerCompanyResult.data?.items ?? [] },
+].filter((col) => col.links.length > 0);
+
+const structuredData = (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).filter(Boolean);
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (url: string) => (url === "/" ? currentPath === "/" : currentPath === url || currentPath.startsWith(`${url}/`));
+
+const pageCtx = createPublicPageContext({
+	Astro,
+	kind: content ? "content" : "custom",
+	pageType: "website",
+	title: fullTitle,
+	pageTitle: pageTitle ?? title ?? siteTitle,
+	description: description || siteDescription,
+	canonical: canonical ?? `${Astro.url.origin}${Astro.url.pathname}`,
+	image,
+	content,
+	seo: { ogImage: image, robots },
+	siteName: siteTitle,
+});
+
+const isLoggedIn = !!Astro.locals.user;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{fullTitle}</title>
+		<EmDashHead page={pageCtx} />
+		<Font cssVariable="--font-body" preload />
+		<Font cssVariable="--font-display" preload />
+		<Font cssVariable="--font-mono" />
+		{structuredData.map((data) => (
+			<script type="application/ld+json" is:inline set:html={JSON.stringify(data).replace(/</g, "\\u003c")} />
+		))}
+		<script is:inline>
+			// Apply an explicit theme choice immediately to prevent flash.
+			// With no cookie, color-scheme: light dark follows the OS.
+			(function () {
+				var c = document.cookie;
+				var i = c.indexOf("theme=");
+				var theme = i >= 0 ? c.slice(i + 6).split(";")[0] : null;
+				if (theme === "dark" || theme === "light") {
+					document.documentElement.classList.add(theme);
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<EmDashBodyStart page={pageCtx} />
+		<div class="topbar">
+			<div class="topbar-inner">
+				<span>{BUSINESS.street}, {BUSINESS.city}, {BUSINESS.region}</span>
+				<span class="topbar-hours">Mon to Fri, 7 AM to 5 PM</span>
+				<a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a>
+			</div>
+		</div>
+		<header class="site-header">
+			<nav class="nav" aria-label="Main">
+				<a href="/" class="site-logo" aria-label={`${siteTitle}, home`}>
+					{siteLogo
+						? <img
+							src={siteLogo.url}
+							alt={siteLogo.alt || siteTitle}
+							width={siteLogo.width}
+							height={siteLogo.height}
+							class="site-logo-img"
+						/>
+						: (
+							<>
+								<span class="logo-mark">{brand}</span>
+								{brandRest && <span class="logo-sub">{brandRest}</span>}
+							</>
+						)
+					}
+				</a>
+				<div class="nav-links">
+					{
+						menu?.items
+							.filter((item) => item.url !== "/")
+							.map((item) => (
+								<a
+									href={item.url}
+									target={item.target}
+									rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+									aria-current={isCurrent(item.url) ? "page" : undefined}
+								>
+									{item.label}
+								</a>
+							))
+					}
+				</div>
+				<div class="nav-actions">
+					{isLoggedIn && <a href="/_emdash/admin" class="nav-admin">Admin</a>}
+					<a href="/get-a-quote" class="btn btn-primary nav-cta">Get a Quote</a>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-content">
+				<div class="footer-brand">
+					<span class="footer-logo">
+						<span class="logo-mark">{brand}</span>
+						{brandRest && <span class="logo-sub">{brandRest}</span>}
+					</span>
+					<p class="footer-tagline">{siteDescription}</p>
+					<address class="footer-nap">
+						{BUSINESS.street}, {BUSINESS.city}, {BUSINESS.region} {BUSINESS.postalCode}<br />
+						<a href={BUSINESS.phoneHref}>{BUSINESS.phone}</a> · <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a><br />
+						{BUSINESS.hours}
+					</address>
+				</div>
+				<div class="footer-links">
+					{
+						footerColumns.map((col) => (
+							<div class="footer-col">
+								<h4>{col.heading}</h4>
+								{col.links.map((item) => (
+									<a
+										href={item.url}
+										target={item.target}
+										rel={item.target ? "noopener noreferrer" : undefined}>
+										{item.label}
+									</a>
+								))}
+							</div>
+						))
+					}
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>
+					&copy; {new Date().getFullYear()}
+					{siteTitle}
+				</p>
+				<div class="theme-switcher">
+					<button
+						type="button"
+						class="theme-btn"
+						data-theme="light"
+						aria-pressed="false"
+						aria-label="Light mode">Light</button
+					>
+					<button
+						type="button"
+						class="theme-btn"
+						data-theme="dark"
+						aria-pressed="false"
+						aria-label="Dark mode">Dark</button
+					>
+					<button
+						type="button"
+						class="theme-btn"
+						data-theme="system"
+						aria-pressed="false"
+						aria-label="System theme">System</button
+					>
+				</div>
+			</div>
+		</footer>
+
+		<EmDashBodyEnd page={pageCtx} />
+
+		<script>
+			// Theme switcher
+			const THEME_REGEX = /theme=([^;]+)/;
+			const themeBtns =
+				document.querySelectorAll<HTMLButtonElement>(".theme-btn");
+			const root = document.documentElement;
+
+			function setTheme(theme: string) {
+				const secure = location.protocol === "https:" ? "; Secure" : "";
+				if (theme === "system") {
+					document.cookie = `theme=; path=/; max-age=0; SameSite=Lax${secure}`;
+					root.classList.remove("light", "dark");
+				} else {
+					document.cookie = `theme=${theme}; path=/; max-age=31536000; SameSite=Lax${secure}`;
+					root.classList.remove("light", "dark");
+					root.classList.add(theme);
+				}
+				updateActiveBtn(theme);
+			}
+
+			function updateActiveBtn(theme: string) {
+				themeBtns.forEach((btn) => {
+					const active = btn.dataset.theme === theme;
+					btn.classList.toggle("active", active);
+					btn.setAttribute("aria-pressed", String(active));
+				});
+			}
+
+			function getStoredTheme(): string {
+				const match = document.cookie.match(THEME_REGEX);
+				return match ? match[1] : "system";
+			}
+
+			// Initialize - apply stored theme on load
+			const storedTheme = getStoredTheme();
+			setTheme(storedTheme);
+
+			themeBtns.forEach((btn) => {
+				btn.addEventListener("click", () => {
+					setTheme(btn.dataset.theme || "system");
+				});
+			});
+		</script>
+
+		<style is:global>
+			/*
+			 * Establish layer order: "base" has lower priority than unlayered
+			 * styles, so theme.css overrides always win regardless of source
+			 * order in the bundled CSS.
+			 */
+			@layer base;
+
+			@layer base {
+				*,
+				*::before,
+				*::after {
+					box-sizing: border-box;
+					margin: 0;
+					padding: 0;
+				}
+
+				/*
+				 * Design tokens live in src/styles/tokens.css. Colors are
+				 * defined with light-dark(); these rules pin the scheme when
+				 * the footer switcher sets an explicit choice. With no class,
+				 * color-scheme: light dark follows the OS preference. The
+				 * @supports guard keeps the toggle from forcing dark UA form
+				 * controls on browsers stuck on the plain-light fallback.
+				 */
+				@supports (color: light-dark(#000, #fff)) {
+					:root.light {
+						color-scheme: light;
+					}
+
+					:root.dark {
+						color-scheme: dark;
+					}
+				}
+
+				html {
+					scroll-behavior: smooth;
+				}
+
+				@media (prefers-reduced-motion: reduce) {
+					html {
+						scroll-behavior: auto;
+					}
+
+					*,
+					*::before,
+					*::after {
+						scroll-behavior: auto !important;
+						transition-duration: 0.01ms !important;
+					}
+				}
+
+				body {
+					font-family: var(--font-body);
+					font-size: var(--font-size-base);
+					line-height: var(--leading-normal);
+					color: var(--color-text);
+					background: var(--color-bg);
+					-webkit-font-smoothing: antialiased;
+					min-height: 100vh;
+				}
+
+				a:where(:not([class*="emdash"]):not([class*="ec-"])) {
+					color: currentColor;
+					text-decoration: none;
+				}
+
+					/* Bare links in authored content need a visible style; component
+					   links restyle themselves via classes. */
+				p a:not([class]),
+				li a:not([class]) {
+					color: var(--color-brand);
+					text-decoration: underline;
+					text-underline-offset: 2px;
+				}
+
+				img {
+					max-width: 100%;
+					height: auto;
+					display: block;
+				}
+
+				h1,
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-family: var(--font-heading);
+					font-weight: var(--font-weight-heading);
+					line-height: var(--leading-snug);
+					letter-spacing: var(--tracking-snug);
+				}
+
+				h1 {
+					font-size: var(--font-size-5xl);
+				}
+				h2 {
+					font-size: var(--font-size-3xl);
+				}
+				h3 {
+					font-size: var(--font-size-2xl);
+				}
+				h4 {
+					font-size: var(--font-size-xl);
+				}
+
+				/* Utility classes */
+				.container {
+					max-width: var(--wide-width);
+					margin: 0 auto;
+					padding: 0 var(--spacing-lg);
+				}
+
+				.section {
+					padding: var(--spacing-5xl) 0;
+				}
+
+				.section-header {
+					text-align: center;
+					max-width: var(--max-width);
+					margin: 0 auto var(--spacing-4xl);
+				}
+
+				.section-headline {
+					font-size: var(--font-size-3xl);
+					font-weight: var(--font-weight-display);
+				}
+
+				.section-subheadline {
+					margin-top: var(--spacing-md);
+					font-size: var(--font-size-lg);
+					color: var(--color-muted);
+				}
+
+				.icon-tile {
+					width: 48px;
+					height: 48px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-shrink: 0;
+					font-size: 1.5rem;
+					color: var(--color-on-brand);
+					background: var(--gradient-brand);
+					border-radius: var(--radius);
+				}
+
+				.btn {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					gap: var(--spacing-sm);
+					padding: var(--spacing-sm) var(--spacing-lg);
+					font-family: inherit;
+					font-size: var(--font-size-sm);
+					font-weight: 600;
+					border-radius: var(--radius);
+					cursor: pointer;
+					transition:
+						background var(--transition-fast),
+						transform var(--transition-fast),
+						box-shadow var(--transition-fast);
+				}
+
+				.btn:hover {
+					transform: translateY(-1px);
+				}
+
+				.btn:active {
+					transform: translateY(0);
+				}
+
+				.btn-primary {
+					color: var(--color-on-brand);
+					background: var(--gradient-brand-strong);
+					border: none;
+					transition:
+						background 0.3s ease,
+						box-shadow 0.3s ease,
+						transform var(--transition-fast);
+				}
+
+				.btn-primary:hover {
+					background: var(--gradient-brand);
+					box-shadow: var(--shadow-lg);
+				}
+
+				.btn-secondary {
+					color: var(--color-text);
+					background: transparent;
+					border: 1px solid var(--color-border);
+				}
+
+				.btn-secondary:hover {
+					background: var(--color-surface);
+					border-color: var(--color-muted);
+				}
+
+				.btn-lg {
+					padding: var(--spacing-md) var(--spacing-xl);
+					font-size: var(--font-size-base);
+				}
+			}
+		</style>
+
+		<style>
+			.topbar {
+				background: var(--color-ink);
+				color: var(--color-paper);
+				font-family: var(--font-mono);
+				font-size: var(--font-size-xs);
+				letter-spacing: 0.02em;
+			}
+
+			.topbar-inner {
+				max-width: var(--wide-width);
+				margin: 0 auto;
+				padding: 0.5rem var(--spacing-lg);
+				display: flex;
+				gap: var(--spacing-lg);
+			}
+
+			.topbar-inner a {
+				margin-left: auto;
+				font-weight: 500;
+			}
+
+			.topbar-inner a:hover {
+				color: var(--color-accent);
+			}
+
+			.site-header {
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				background: var(--color-bg);
+				border-bottom: 1px solid var(--color-ink);
+			}
+
+			.nav {
+				max-width: var(--wide-width);
+				margin: 0 auto;
+				padding: 0 var(--spacing-lg);
+				min-height: 68px;
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-xl);
+			}
+
+			.site-logo,
+			.footer-logo {
+				display: flex;
+				align-items: baseline;
+				gap: 0.6rem;
+			}
+
+			.logo-mark {
+				font-family: var(--font-heading);
+				font-size: 1.6rem;
+				font-weight: 800;
+				letter-spacing: -0.04em;
+				text-transform: uppercase;
+				line-height: 1;
+			}
+
+			.logo-mark::after {
+				content: "";
+				display: inline-block;
+				width: 0.32em;
+				height: 0.32em;
+				margin-left: 0.08em;
+				border-radius: 50%;
+				background: var(--color-brand);
+			}
+
+			.logo-sub {
+				font-family: var(--font-mono);
+				font-size: 0.68rem;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				color: var(--color-muted);
+			}
+
+			.site-logo-img {
+				height: 44px;
+				width: auto;
+				display: block;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: var(--spacing-lg);
+				margin-left: auto;
+			}
+
+			.nav-links a {
+				position: relative;
+				padding: 1.4rem 0;
+				font-size: var(--font-size-sm);
+				font-weight: 500;
+			}
+
+			.nav-links a::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: -1px;
+				height: 3px;
+				background: var(--color-brand);
+				transform: scaleX(0);
+				transform-origin: left;
+				transition: transform var(--transition-base);
+			}
+
+			.nav-links a:hover::after,
+			.nav-links a[aria-current="page"]::after {
+				transform: scaleX(1);
+			}
+
+			.nav-actions {
+				display: flex;
+				align-items: center;
+				gap: var(--spacing-lg);
+			}
+
+			.nav-admin {
+				font-family: var(--font-mono);
+				font-size: var(--font-size-xs);
+				color: var(--color-muted);
+			}
+
+			.nav-cta {
+				padding: 0.6rem 1.15rem;
+			}
+
+			main {
+				min-height: 60vh;
+			}
+
+			.site-footer {
+				background: var(--color-ink);
+				color: var(--color-paper);
+			}
+
+			.footer-content {
+				max-width: var(--wide-width);
+				margin: 0 auto;
+				padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-2xl);
+				display: grid;
+				grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+				gap: var(--spacing-3xl);
+			}
+
+			.footer-logo .logo-mark {
+				font-size: 2.4rem;
+			}
+
+			.footer-logo .logo-sub {
+				color: inherit;
+				opacity: 0.6;
+			}
+
+			.footer-tagline {
+				margin-top: var(--spacing-md);
+				max-width: 34ch;
+				opacity: 0.75;
+			}
+
+			.footer-nap {
+				margin-top: var(--spacing-lg);
+				font-style: normal;
+				font-family: var(--font-mono);
+				font-size: var(--font-size-xs);
+				line-height: 1.9;
+				opacity: 0.75;
+			}
+
+			.footer-nap a:hover {
+				color: var(--color-accent);
+			}
+
+			.footer-links {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: var(--spacing-xl);
+			}
+
+			.footer-col h4 {
+				font-family: var(--font-mono);
+				font-size: var(--font-size-xs);
+				font-weight: 500;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				opacity: 0.55;
+				margin-bottom: var(--spacing-md);
+			}
+
+			.footer-col a {
+				display: block;
+				padding: 0.3rem 0;
+				font-size: var(--font-size-sm);
+			}
+
+			.footer-col a:hover {
+				color: var(--color-accent);
+			}
+
+			.footer-bottom {
+				max-width: var(--wide-width);
+				margin: 0 auto;
+				padding: var(--spacing-lg);
+				border-top: 1px solid color-mix(in srgb, var(--color-paper) 20%, transparent);
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: var(--spacing-md);
+				font-family: var(--font-mono);
+				font-size: var(--font-size-xs);
+			}
+
+			.footer-bottom p {
+				opacity: 0.6;
+			}
+
+			.theme-switcher {
+				display: flex;
+				gap: var(--spacing-xs);
+			}
+
+			.theme-btn {
+				font: inherit;
+				padding: 0.25rem 0.6rem;
+				background: transparent;
+				color: inherit;
+				border: 1px solid transparent;
+				border-radius: var(--radius-full);
+				opacity: 0.6;
+				cursor: pointer;
+			}
+
+			.theme-btn:hover,
+			.theme-btn.active {
+				opacity: 1;
+				border-color: color-mix(in srgb, var(--color-paper) 40%, transparent);
+			}
+
+			@media (max-width: 1080px) {
+				.nav {
+					flex-wrap: wrap;
+					column-gap: var(--spacing-md);
+					row-gap: 0.6rem;
+					padding-top: 0.6rem;
+					justify-content: space-between;
+				}
+
+				.logo-sub {
+					display: none;
+				}
+
+				.nav-links {
+					order: 3;
+					width: 100%;
+					margin-left: 0;
+					overflow-x: auto;
+					white-space: nowrap;
+					scrollbar-width: none;
+					border-top: 1px solid var(--color-border);
+				}
+
+				.nav-links a {
+					padding: 0.8rem 0;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.topbar-hours {
+					display: none;
+				}
+
+				.footer-content {
+					grid-template-columns: minmax(0, 1fr);
+					gap: var(--spacing-2xl);
+				}
+
+				.footer-links {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+
+				.footer-bottom {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+			}
+		</style>
+	</body>
+</html>

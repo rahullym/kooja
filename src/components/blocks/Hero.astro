@@ -1,0 +1,332 @@
+---
+import { sanitizeHref } from "emdash";
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+
+type HeroBlock = Extract<PageContentBlock, { _type: "marketing_hero" }>;
+type Props = BlockComponentProps<HeroBlock>;
+
+const { value } = Astro.props;
+const { anchor_id, headline, subheadline, image, centered } = value;
+
+const primaryCta =
+	value.primary_cta_label && value.primary_cta_url
+		? { label: value.primary_cta_label, url: sanitizeHref(value.primary_cta_url) }
+		: undefined;
+const secondaryCta =
+	value.secondary_cta_label && value.secondary_cta_url
+		? { label: value.secondary_cta_label, url: sanitizeHref(value.secondary_cta_url) }
+		: undefined;
+
+// Banner layouts. "photo" is the default; the others can be previewed with
+// ?hero=split or ?hero=type while a direction is being chosen.
+const VARIANTS = ["photo", "split", "type"] as const;
+const requested = Astro.url.searchParams.get("hero");
+const variant = image ? (VARIANTS.find((v) => v === requested) ?? "photo") : "type";
+---
+
+<section id={anchor_id || undefined} class:list={["hero", `hero--${variant}`]}>
+	{image && (
+		<figure class="hero-image">
+			<Image image={image} class="hero-image-media" priority />
+			{image.alt && <figcaption class="label">{image.alt}</figcaption>}
+		</figure>
+	)}
+	<div class="hero-content">
+		<p class="label hero-label">Milton, Ontario · Since 2012</p>
+		<h1 class="hero-headline">{headline}</h1>
+		<div class="hero-lower">
+			{subheadline && <p class="hero-subheadline">{subheadline}</p>}
+			{(primaryCta || secondaryCta) && (
+				<div class="hero-actions">
+					{primaryCta && (
+						<a href={primaryCta.url} class="btn btn-primary btn-lg">
+							{primaryCta.label}
+						</a>
+					)}
+					{secondaryCta && (
+						<a href={secondaryCta.url} class="btn hero-btn-alt btn-lg">
+							{secondaryCta.label}
+						</a>
+					)}
+				</div>
+			)}
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		--gutter: max(var(--spacing-lg), calc((100vw - var(--wide-width)) / 2 + var(--spacing-lg)));
+		position: relative;
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
+
+	.hero-lower {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+	}
+
+	.hero-label::before {
+		content: "";
+		display: inline-block;
+		width: 2.5rem;
+		height: 3px;
+		margin-right: 0.9em;
+		vertical-align: middle;
+		background: var(--color-accent);
+	}
+
+	.hero-headline {
+		line-height: 0.96;
+		text-wrap: balance;
+	}
+
+	.hero-subheadline {
+		max-width: 44ch;
+		font-size: var(--font-size-lg);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+	}
+
+	.hero-image :global(.hero-image-media) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.hero-image figcaption {
+		text-transform: none;
+		letter-spacing: 0.02em;
+	}
+
+	/* Dark variants share the same inverted copy and buttons. */
+	.hero--photo,
+	.hero--split {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	:is(.hero--photo, .hero--split) .hero-label {
+		color: inherit;
+		opacity: 0.8;
+	}
+
+	:is(.hero--photo, .hero--split) .hero-subheadline {
+		opacity: 0.8;
+	}
+
+	:is(.hero--photo, .hero--split) .btn-primary {
+		background: var(--color-accent);
+		color: var(--color-ink);
+	}
+
+	:is(.hero--photo, .hero--split) .btn-primary:hover {
+		background: var(--color-paper);
+	}
+
+	:is(.hero--photo, .hero--split) .hero-btn-alt {
+		color: inherit;
+		border: 1px solid color-mix(in srgb, var(--color-paper) 55%, transparent);
+	}
+
+	:is(.hero--photo, .hero--split) .hero-btn-alt:hover {
+		background: var(--color-paper);
+		color: var(--color-ink);
+	}
+
+	/*
+	 * photo: the shop photo fills the banner; copy sits on a scrim along the
+	 * bottom so the booth stays visible above it.
+	 */
+	.hero--photo {
+		/* Fills the screen below the header (top strip + nav, about 104px). */
+		min-height: calc(100vh - 104px);
+		min-height: calc(100svh - 104px);
+		display: flex;
+		align-items: flex-end;
+		isolation: isolate;
+		overflow: hidden;
+	}
+
+	.hero--photo .hero-image {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+	}
+
+	.hero--photo .hero-image :global(.hero-image-media) {
+		object-position: 50% 40%;
+	}
+
+	.hero--photo .hero-image::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(to top, rgb(22 20 18 / 0.97) 0%, rgb(22 20 18 / 0.88) 30%, rgb(22 20 18 / 0.62) 55%, rgb(22 20 18 / 0.12) 82%, rgb(22 20 18 / 0.3) 100%);
+	}
+
+	.hero--photo .hero-image figcaption {
+		position: absolute;
+		z-index: 1;
+		top: var(--spacing-lg);
+		right: var(--gutter);
+		padding: 0.5rem 0.9rem;
+		border-radius: var(--radius-full);
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.hero--photo .hero-content {
+		width: 100%;
+		padding: var(--spacing-5xl) var(--gutter) var(--spacing-3xl);
+	}
+
+	.hero--photo .hero-headline {
+		font-size: clamp(2.6rem, 6.6vw, 5.75rem);
+		max-width: 15ch;
+	}
+
+	.hero--photo .hero-lower {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: var(--spacing-lg) var(--spacing-2xl);
+		padding-top: var(--spacing-lg);
+		border-top: 1px solid color-mix(in srgb, var(--color-paper) 35%, transparent);
+	}
+
+	/* split: copy on ink, photo running to the right edge. */
+	.hero--split {
+		display: grid;
+		grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+		min-height: min(680px, calc(100vh - 104px));
+	}
+
+	.hero--split .hero-content {
+		grid-column: 1;
+		grid-row: 1;
+		justify-content: center;
+		padding: var(--spacing-4xl) var(--spacing-2xl) var(--spacing-4xl) var(--gutter);
+	}
+
+	.hero--split .hero-image {
+		grid-column: 2;
+		grid-row: 1;
+		position: relative;
+		min-height: 320px;
+		border-left: 6px solid var(--color-accent);
+	}
+
+	.hero--split .hero-image :global(.hero-image-media) {
+		position: absolute;
+		inset: 0;
+	}
+
+	.hero--split .hero-image figcaption {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 0.6rem 0.9rem;
+		background: var(--color-ink);
+	}
+
+	.hero--split .hero-headline {
+		font-size: clamp(2.5rem, 5vw, 4.4rem);
+		max-width: 13ch;
+	}
+
+	/* type: oversized headline on paper, photo as a wide strip beneath. */
+	.hero--type {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.hero--type .hero-content {
+		padding: var(--spacing-3xl) var(--gutter) var(--spacing-2xl);
+	}
+
+	.hero--type .hero-headline {
+		font-size: clamp(2.75rem, 8.6vw, 7.75rem);
+		letter-spacing: -0.045em;
+		max-width: 14ch;
+	}
+
+	.hero--type .hero-lower {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: var(--spacing-lg) var(--spacing-2xl);
+	}
+
+	.hero--type .hero-subheadline {
+		color: var(--color-muted);
+	}
+
+	.hero--type .hero-btn-alt {
+		border: 1px solid var(--color-rule);
+	}
+
+	.hero--type .hero-btn-alt:hover {
+		background: var(--color-text);
+		color: var(--color-bg);
+	}
+
+	.hero--type .hero-image {
+		position: relative;
+		margin: 0 var(--gutter) var(--spacing-2xl);
+		aspect-ratio: 21 / 8;
+		border-top: 6px solid var(--color-brand);
+	}
+
+	.hero--type .hero-image figcaption {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		padding: 0.5rem 0.8rem;
+		background: var(--color-bg);
+		color: var(--color-text);
+	}
+
+	@media (max-width: 900px) {
+
+		.hero--photo .hero-image figcaption {
+			display: none;
+		}
+
+		.hero--split {
+			grid-template-columns: minmax(0, 1fr);
+			min-height: 0;
+		}
+
+		.hero--split .hero-content {
+			padding: var(--spacing-2xl) var(--gutter);
+		}
+
+		.hero--split .hero-image {
+			grid-column: 1;
+			grid-row: 2;
+			aspect-ratio: 4 / 3;
+			border-left: 0;
+			border-top: 6px solid var(--color-accent);
+		}
+
+		.hero--type .hero-image {
+			aspect-ratio: 16 / 9;
+		}
+	}
+</style>

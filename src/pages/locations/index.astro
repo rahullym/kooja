@@ -1,0 +1,53 @@
+---
+import ContactDetails from "../../components/ContactDetails.astro";
+import HubPage from "../../components/HubPage.astro";
+import { BUSINESS } from "../../lib/site";
+---
+
+<HubPage collection="locations">
+	<section class="shop">
+		<div>
+			<h2>One shop, in Milton</h2>
+			<p>All coating is done at our Milton facility. Drop parts off, or ask about pickup and delivery when you request a quote.</p>
+			<ContactDetails />
+		</div>
+		<iframe
+			title={`Map showing ${BUSINESS.name}, ${BUSINESS.street}, ${BUSINESS.city}`}
+			src={BUSINESS.mapEmbed}
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+</HubPage>
+
+<style>
+	.shop {
+		margin-top: var(--spacing-3xl);
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--spacing-2xl);
+		align-items: start;
+	}
+
+	.shop h2 {
+		font-size: var(--font-size-2xl);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.shop p {
+		color: var(--color-muted);
+		margin-bottom: var(--spacing-xl);
+	}
+
+	iframe {
+		width: 100%;
+		height: 360px;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius);
+	}
+
+	@media (max-width: 800px) {
+		.shop {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
