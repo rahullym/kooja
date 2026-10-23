@@ -7,13 +7,13 @@ import { defineConfig, fontProviders } from "astro/config";
 import emdash, { local } from "emdash/astro";
 import { postgres, sqlite } from "emdash/db";
 
-// Vercel builds use the Vercel adapter, Neon (DATABASE_URL) and Tigris media
-// storage (src/lib/tigris-storage.ts). Local dev falls back to SQLite and ./uploads.
+// Vercel builds use the Vercel adapter, Neon Postgres (DATABASE_URL) and Neon
+// Object Storage (S3_* variables, src/lib/s3-storage.ts). Local dev falls back to SQLite and ./uploads.
 const onVercel = !!process.env.VERCEL;
 // Neon's Vercel integration sets both; EmDash migrations want a direct connection.
 const databaseUrl = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
 const e = process.env;
-const hasTigris = !!(e.S3_BUCKET || e.TIGRIS_BUCKET_NAME || e.TIGRIS_STORAGE_BUCKET || e.BUCKET_NAME);
+const hasS3Storage = !!(e.S3_BUCKET || e.TIGRIS_BUCKET_NAME || e.TIGRIS_STORAGE_BUCKET || e.BUCKET_NAME);
 
 export default defineConfig({
 	output: "server",
@@ -63,9 +63,9 @@ export default defineConfig({
 						pool: { max: 3, connectionTimeoutMillis: 10_000 },
 					})
 				: sqlite({ url: "file:./data.db" }),
-			storage: hasTigris
+			storage: hasS3Storage
 				? {
-						entrypoint: fileURLToPath(new URL("./src/lib/tigris-storage.ts", import.meta.url)),
+						entrypoint: fileURLToPath(new URL("./src/lib/s3-storage.ts", import.meta.url)),
 						config: {},
 					}
 				: local({
