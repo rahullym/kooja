@@ -17,10 +17,14 @@
   "dependencies": {
     "@astrojs/node": "^11.1.5",
     "@astrojs/react": "^6.0.5",
+    "@astrojs/vercel": "^11.0.16",
+    "@aws-sdk/client-s3": "^3.1155.0",
+    "@aws-sdk/s3-request-presigner": "^3.1155.0",
     "@iconify-json/ph": "^1.2.2",
     "astro": "^7.3.2",
     "astro-iconset": "^0.0.4",
     "emdash": "^1.0.1",
+    "pg": "^8.23.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

@@ -1,14 +1,26 @@
 import node from "@astrojs/node";
 import react from "@astrojs/react";
+import vercel from "@astrojs/vercel";
 import icon from "astro-iconset";
 import { defineConfig, fontProviders } from "astro/config";
-import emdash, { local } from "emdash/astro";
-import { sqlite } from "emdash/db";
+import emdash, { local, s3 } from "emdash/astro";
+import { postgres, sqlite } from "emdash/db";
+
+// Vercel builds use the Vercel adapter, Neon (DATABASE_URL) and S3-compatible
+// media storage (S3_* variables). Local dev falls back to SQLite and ./uploads.
+const onVercel = !!process.env.VERCEL;
+// Neon's Vercel integration sets both; EmDash migrations want a direct connection.
+const databaseUrl = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
 
 export default defineConfig({
 	output: "server",
-	adapter: node({
-		mode: "standalone",
+	adapter: onVercel ? vercel() : node({ mode: "standalone" }),
+	// The Vercel adapter has no session store; keep admin sessions in Postgres.
+	...(databaseUrl && {
+		session: {
+			driver: { entrypoint: new URL("./src/lib/session-driver.ts", import.meta.url) },
+			ttl: 60 * 60 * 24 * 30,
+		},
 	}),
 	image: {
 		layout: "constrained",
@@ -41,11 +53,19 @@ export default defineConfig({
 			},
 		}),
 		emdash({
-			database: sqlite({ url: "file:./data.db" }),
-			storage: local({
-				directory: "./uploads",
-				baseUrl: "/_emdash/api/media/file",
-			}),
+			database: databaseUrl
+				? postgres({
+						connectionString: databaseUrl,
+						// Serverless functions each hold their own pool; keep it small.
+						pool: { max: 3, connectionTimeoutMillis: 10_000 },
+					})
+				: sqlite({ url: "file:./data.db" }),
+			storage: process.env.S3_BUCKET
+				? s3()
+				: local({
+						directory: "./uploads",
+						baseUrl: "/_emdash/api/media/file",
+					}),
 		}),
 	],
 	fonts: [
