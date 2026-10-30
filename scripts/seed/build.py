@@ -252,7 +252,7 @@ def stamp(blocks):
 
 
 def build():
-	template = json.load(open(os.path.join(HERE, "template-block-types.json")))
+	template = json.load(open(os.path.join(HERE, "template-block-types.json"), encoding="utf-8"))
 	services = {s["slug"]: s for s in C.SERVICES}
 	industries = {i["slug"]: i for i in C.INDUSTRIES}
 	projects = {p["slug"]: p for p in C.PROJECTS}
@@ -287,21 +287,23 @@ def build():
 		city = loc["city"]
 		slug = "powder-coating-" + city.lower().replace(" ", "-")
 		hq = " (HQ)" if city == "Milton" else ""
-		entry = {"keyword": f"powder coating {city}", "seo_title": f"Powder Coating {city} | Koojo Custom Powder Coating"}
+		entry = {"keyword": loc.get("keyword") or f"powder coating {city}", "seo_title": loc.get("seo_title") or f"Powder Coating {city} | Koojo Custom Powder Coating", "seo_description": loc.get("seo_description") or loc["summary"]}
 		out["locations"].append({"id": f"location-{slug}", "slug": slug, "status": "published" if loc["wave"] == 1 else "draft", "data": clean({
 			"title": f"Powder Coating {city}", "nav_label": f"{city}{hq}", "city": city, "region": loc["region"], "wave": str(loc["wave"]),
 			"summary": loc["summary"], "content": portable(loc["body"]), "faqs": faqs(loc["faqs"]),
-			"related": [link("service", x) for x in C.LOCATION_SERVICES], "sort_order": i + 1, **seo(entry, loc["summary"]),
+			"related": [link("service", x) for x in C.LOCATION_SERVICES], "sort_order": i + 1, **seo(entry, loc.get("seo_description") or loc["summary"]),
 		})})
 
 	for i, p in enumerate(C.PROJECTS):
-		entry = {"keyword": p["keyword"], "seo_title": f"{p['title']} | Powder Coating Case Study | Koojo"}
+		entry = {"keyword": p["keyword"], "seo_title": p.get("seo_title") or f"{p['title']} | Powder Coating Case Study | Koojo", "seo_description": p.get("seo_description") or p["summary"]}
 		out["projects"].append({"id": f"project-{p['slug']}", "slug": p["slug"], "status": "published", "taxonomies": {"project_category": [p["category"]]}, "data": clean({
 			"title": p["title"], "summary": p["summary"], "featured_image": p["image"], "client_industry": p["client_industry"], "part": p["part"],
-			"related": [link("service", p["service"]), link("industry", p["industry"])], "sort_order": i + 1, **seo(entry, p["summary"]),
+			"metal": p.get("metal"), "size_weight": p.get("size_weight"), "prep": p.get("prep"), "powder_colour": p.get("powder_colour"), "turnaround": p.get("turnaround"),
+			"content": portable(p.get("body")),
+			"related": [link("service", p["service"]), link("industry", p["industry"])], "sort_order": i + 1, **seo(entry, p.get("seo_description") or p["summary"]),
 		})})
 
-	wix = {p["slug"]: p for p in json.load(open(os.path.join(HERE, "wix-posts.json")))}
+	wix = {p["slug"]: p for p in json.load(open(os.path.join(HERE, "wix-posts.json"), encoding="utf-8"))}
 	post_slugs = set(wix) | {n[0] for n in C.NEW_POSTS}
 
 	def fix_href(href):
@@ -333,7 +335,7 @@ def build():
 	for slug, title, keyword, cat in C.NEW_POSTS:
 		out["posts"].append({"id": f"post-{slug}", "slug": slug, "status": "draft", "taxonomies": {"category": [cat]}, "bylines": [{"byline": "byline-koojo"}], "data": {"title": title, "primary_keyword": keyword}})
 
-	privacy = json.load(open(os.path.join(HERE, "wix-privacy-policy.json")))
+	privacy = json.load(open(os.path.join(HERE, "wix-privacy-policy.json"), encoding="utf-8"))
 	for p in C.PAGES:
 		body = privacy if p.get("body") == "WIX:privacy-policy" else portable(p.get("body"))
 		out["pages"].append({"id": f"page-{p['slug']}", "slug": p["slug"], "status": "published", "data": clean({
@@ -361,7 +363,7 @@ def build():
 		"content": out,
 	}
 	path = os.path.join(ROOT, "seed", "seed.json")
-	json.dump(seed, open(path, "w"), indent="\t", ensure_ascii=False)
+	json.dump(seed, open(path, "w", encoding="utf-8"), indent="\t", ensure_ascii=False)
 	counts = {k: (len(v), sum(1 for e in v if e["status"] == "published")) for k, v in out.items()}
 	print(f"wrote {os.path.relpath(path, ROOT)} ({os.path.getsize(path) // 1024} KB)")
 	for k, (total, pub) in counts.items():

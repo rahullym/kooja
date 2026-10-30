@@ -1110,3 +1110,142 @@ REDIRECTS = [
 	("/industrial-powder-coating-gta", "/services/industrial-powder-coating"),
 	("/powder-coating-milton-guelph-cambridge-hamilton", "/locations"),
 ]
+
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# Uploaded & Audited Content Merge (All 44 unique uploaded documents)
+# -----------------------------------------------------------------------------
+import os, json
+
+_HERE = os.path.dirname(os.path.abspath(__file__))
+_uploaded_json = os.path.join(_HERE, "uploaded_content.json")
+
+CANONICAL_KEYWORDS = {
+    # Pages
+    "pages:home": "powder coating company GTA",
+    "pages:about-us": "about Koojo Custom Powder Coating",
+    "pages:contact-us": "contact Koojo powder coating",
+    "pages:get-a-quote": "powder coating quote",
+    "pages:capabilities": "large part powder coating",
+    "pages:certification": "powder coating quality assurance",
+    "pages:privacy-policy": "Koojo Custom Powder Coating",
+    "pages:services": "powder coating services",
+    "pages:industries": "powder coating by industry",
+    "pages:locations": "powder coating service areas",
+    "pages:projects": "powder coating projects",
+    "pages:blog": "powder coating guides",
+    # Services
+    "services:industrial-powder-coating": "industrial powder coating",
+    "services:surface-preparation": "powder coating surface preparation",
+    "services:sandblasting": "sandblasting services",
+    "services:custom-colors-finishes": "custom powder coating colours",
+    "services:restoration-recoating": "powder coat stripping and recoating",
+    "services:automotive-powder-coating": "automotive powder coating",
+    "services:wheel-rim-powder-coating": "rim powder coating",
+    "services:architectural-coatings": "architectural powder coating",
+    "services:bulk-commercial-orders": "commercial powder coating",
+    "services:specialty-custom-projects": "specialty powder coating",
+    # Industries
+    "industries:metal-fabricators-welding-shops": "powder coating for metal fabricators",
+    "industries:manufacturing-automation": "powder coating for manufacturers",
+    "industries:machine-shops": "powder coating for machine shops",
+    "industries:contractors-construction": "powder coating for contractors",
+    "industries:food-processing-equipment": "powder coating for food processing equipment",
+    "industries:agricultural-heavy-equipment": "agricultural equipment powder coating",
+    "industries:municipal-institutional": "powder coating for municipalities",
+    # Locations
+    "locations:Milton": "powder coating Milton",
+    "locations:Oakville": "powder coating Oakville",
+    "locations:Burlington": "powder coating Burlington",
+    "locations:Mississauga": "powder coating Mississauga",
+    "locations:Halton Hills": "powder coating Halton Hills",
+    "locations:Brampton": "powder coating Brampton",
+    "locations:Guelph": "powder coating Guelph",
+    "locations:Cambridge": "powder coating Cambridge",
+    "locations:Hamilton": "powder coating Hamilton",
+    # Projects
+    "projects:conveyor-frame-automotive-plant": "conveyor frame powder coating",
+    "projects:automation-line-frame": "automation line frame case study",
+    "projects:food-processing-line-frame": "food processing line frame case study",
+    "projects:robotic-base": "robotic base case study",
+    "projects:safety-bollards": "bollard powder coating case study",
+    "projects:church-gates": "church gates case study",
+}
+
+if os.path.exists(_uploaded_json):
+    with open(_uploaded_json, "r", encoding="utf-8") as _f:
+        _UP = json.load(_f)
+
+    # Merge Services
+    for _s in SERVICES:
+        _slug = _s["slug"]
+        _s["keyword"] = CANONICAL_KEYWORDS.get(f"services:{_slug}", _s.get("keyword"))
+        if "services" in _UP and _slug in _UP["services"]:
+            _up = _UP["services"][_slug]
+            if _up.get("body"): _s["body"] = _up["body"]
+            if _up.get("faqs"): _s["faqs"] = _up["faqs"]
+            if _up.get("summary"): _s["summary"] = _up["summary"]
+            if _up.get("meta_title"): _s["seo_title"] = _up["meta_title"]
+            if _up.get("meta_desc"): _s["seo_description"] = _up["meta_desc"]
+
+    # Merge Industries
+    for _ind in INDUSTRIES:
+        _slug = _ind["slug"]
+        _ind["keyword"] = CANONICAL_KEYWORDS.get(f"industries:{_slug}", _ind.get("keyword"))
+        if "industries" in _UP and _slug in _UP["industries"]:
+            _up = _UP["industries"][_slug]
+            if _up.get("body"): _ind["body"] = _up["body"]
+            if _up.get("faqs"): _ind["faqs"] = _up["faqs"]
+            if _up.get("summary"): _ind["summary"] = _up["summary"]
+            if _up.get("meta_title"): _ind["seo_title"] = _up["meta_title"]
+            if _up.get("meta_desc"): _ind["seo_description"] = _up["meta_desc"]
+
+    # Merge Locations (all 9 locations live and published)
+    for _loc in LOCATIONS:
+        _city = _loc["city"]
+        _loc["wave"] = 1
+        _loc["keyword"] = CANONICAL_KEYWORDS.get(f"locations:{_city}", f"powder coating {_city}")
+        if "locations" in _UP and _city in _UP["locations"]:
+            _up = _UP["locations"][_city]
+            if _up.get("body"): _loc["body"] = _up["body"]
+            if _up.get("faqs"): _loc["faqs"] = _up["faqs"]
+            if _up.get("summary"): _loc["summary"] = _up["summary"]
+            if _up.get("meta_title"): _loc["seo_title"] = _up["meta_title"]
+            if _up.get("meta_desc"): _loc["seo_description"] = _up["meta_desc"]
+
+    # Merge Projects
+    for _pr in PROJECTS:
+        _slug = _pr["slug"]
+        _pr["keyword"] = CANONICAL_KEYWORDS.get(f"projects:{_slug}", _pr.get("keyword"))
+        if "projects" in _UP and _slug in _UP["projects"]:
+            _up = _UP["projects"][_slug]
+            if _up.get("body"): _pr["body"] = _up["body"]
+            if _up.get("summary"): _pr["summary"] = _up["summary"]
+            if _up.get("meta_title"): _pr["seo_title"] = _up["meta_title"]
+            if _up.get("meta_desc"): _pr["seo_description"] = _up["meta_desc"]
+
+    # Merge Pages
+    for _p in PAGES:
+        _slug = _p["slug"]
+        _p["keyword"] = CANONICAL_KEYWORDS.get(f"pages:{_slug}", _p.get("keyword"))
+        if _slug == "home":
+            if "pages" in _UP and "home" in _UP["pages"]:
+                _home_up = _UP["pages"]["home"]
+                if not any(_b.get("_type") == "marketing_faq" for _b in HOME_BLOCKS) and _home_up.get("faqs"):
+                    _faq_items = [{"question": _q, "answer": _a} for _q, _a in _home_up["faqs"]]
+                    _faq_block = {
+                        "_type": "marketing_faq",
+                        "_key": "faq",
+                        "headline": "Frequently Asked Questions",
+                        "items": _faq_items,
+                    }
+                    HOME_BLOCKS.insert(-1, _faq_block)
+        else:
+            if "pages" in _UP and _slug in _UP["pages"]:
+                _up = _UP["pages"][_slug]
+                if _up.get("body"): _p["body"] = _up["body"]
+                if _up.get("faqs"): _p["faqs"] = _up["faqs"]
+                if _up.get("summary"): _p["intro"] = _up["summary"]
+                if _up.get("meta_title"): _p["seo_title"] = _up["meta_title"]
+                if _up.get("meta_desc"): _p["seo_description"] = _up["meta_desc"]
