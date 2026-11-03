@@ -3,6 +3,7 @@ import { getEmDashEntry } from "emdash";
 import ContactDetails from "../components/ContactDetails.astro";
 import PageBody from "../components/PageBody.astro";
 import PageHero from "../components/PageHero.astro";
+import QuoteForm from "../components/QuoteForm.astro";
 import Base from "../layouts/Base.astro";
 import { BUSINESS, entrySeo, localBusinessLd } from "../lib/site";
 
@@ -37,6 +38,7 @@ const jsonLd = [
 				loading="lazy"
 				referrerpolicy="no-referrer-when-downgrade"></iframe>
 		</section>
+		<QuoteForm />
 	</PageBody>
 </Base>
 
