@@ -26,8 +26,7 @@ const services = [
 		<span class="label form-label">Direct RFQ · 1 Business Day Response</span>
 		<h2 class="form-title">Request a Quote Online</h2>
 		<p class="form-desc">
-			Fill out the specifications below or send CAD drawings directly to
-			<a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>.
+			Fill out the specifications below or send CAD drawings directly to <a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a>.
 		</p>
 	</div>
 
@@ -305,6 +304,8 @@ const services = [
 		background: var(--color-surface);
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-lg);
+		max-width: 100%;
+		box-sizing: border-box;
 	}
 
 	.form-header {
@@ -380,6 +381,7 @@ const services = [
 		border-radius: var(--radius);
 		transition: border-color var(--transition-fast), outline var(--transition-fast);
 		width: 100%;
+		max-width: 100%;
 		box-sizing: border-box;
 	}
 
@@ -506,11 +508,12 @@ const services = [
 
 	@media (max-width: 768px) {
 		.quote-form-container {
-			padding: var(--spacing-lg);
+			padding: var(--spacing-xl) var(--spacing-lg);
 		}
 
 		.form-grid {
 			grid-template-columns: 1fr;
+			gap: var(--spacing-md);
 		}
 
 		.form-actions {
@@ -520,6 +523,37 @@ const services = [
 
 		.form-actions .btn {
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.quote-form-container {
+			padding: var(--spacing-lg) var(--spacing-md);
+			margin: var(--spacing-2xl) 0;
+			border-radius: var(--radius);
+		}
+
+		.form-title {
+			font-size: var(--font-size-2xl);
+		}
+
+		.quote-status-card {
+			flex-direction: column;
+			padding: var(--spacing-lg);
+		}
+
+		.status-actions {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.status-actions .btn {
+			width: 100%;
+			text-align: center;
+		}
+
+		.privacy-note {
+			text-align: center;
 		}
 	}
 </style>
