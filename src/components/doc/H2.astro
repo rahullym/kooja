@@ -1,0 +1,9 @@
+---
+/** H2 with an anchor id, so the "On this page" list can link to it. */
+import { headingId } from "../../lib/site";
+
+const { node } = Astro.props as { node: { children?: { text?: string }[] } };
+const id = headingId((node.children ?? []).map((c) => c.text ?? "").join(""));
+---
+
+<h2 id={id}><slot /></h2>

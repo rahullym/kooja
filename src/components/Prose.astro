@@ -4,6 +4,7 @@ import Buttons from "./doc/Buttons.astro";
 import Cards from "./doc/Cards.astro";
 import Cta from "./doc/Cta.astro";
 import Faq from "./doc/Faq.astro";
+import H2 from "./doc/H2.astro";
 import Form from "./doc/Form.astro";
 import Hidden from "./doc/Hidden.astro";
 import Map from "./doc/Map.astro";
@@ -11,6 +12,7 @@ import Strip from "./doc/Strip.astro";
 
 // Custom blocks used by pages built from the client's content documents.
 const components = {
+	block: { h2: H2 },
 	type: { koojoStrip: Strip, koojoCards: Cards, koojoFaq: Faq, koojoCta: Cta, koojoByline: Hidden, koojoIntroInBody: Hidden, koojoGallery: Hidden, koojoMap: Map, koojoForm: Form, koojoButtons: Buttons },
 };
 

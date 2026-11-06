@@ -4,14 +4,16 @@ import type { Faq } from "../lib/site";
 interface Props {
 	faqs?: Faq[] | null;
 	headline?: string;
+	/** The heading is shown by the surrounding section. */
+	hideHeading?: boolean;
 }
 
-const { faqs, headline = "Frequently asked questions" } = Astro.props;
+const { faqs, headline = "Frequently asked questions", hideHeading = false } = Astro.props;
 ---
 
 {faqs && faqs.length > 0 && (
 	<section class="faqs">
-		<h2>{headline}</h2>
+		{!hideHeading && <h2>{headline}</h2>}
 		<div class="faq-list">
 			{faqs.map((faq) => (
 				<details class="faq-item">

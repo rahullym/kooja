@@ -1,0 +1,61 @@
+---
+/** "On this page": links to the page's own section headings. */
+interface Props {
+	headings: { id: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+---
+
+{headings.length > 2 && (
+	<nav class="toc" aria-label="On this page">
+		<p class="label toc-label">On this page</p>
+		<ol>
+			{headings.map((h) => (
+				<li>
+					<a href={`#${h.id}`}>{h.text}</a>
+				</li>
+			))}
+		</ol>
+		<a href="/get-a-quote" class="btn btn-primary toc-cta">Get a Quote</a>
+	</nav>
+)}
+
+<style>
+	.toc {
+		position: sticky;
+		top: calc(var(--spacing-3xl) + 2rem);
+		padding-left: var(--spacing-lg);
+		border-left: 1px solid var(--color-rule);
+	}
+
+	.toc-label {
+		margin-bottom: var(--spacing-md);
+	}
+
+	ol {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 var(--spacing-xl);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	a:not(.btn) {
+		display: block;
+		color: var(--color-muted);
+		text-decoration: none;
+		font-size: var(--font-size-sm);
+		line-height: 1.4;
+		transition: color var(--transition-base);
+	}
+
+	a:not(.btn):hover {
+		color: var(--color-brand);
+	}
+
+	.toc-cta {
+		font-size: var(--font-size-sm);
+	}
+</style>

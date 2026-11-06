@@ -1,6 +1,7 @@
 ---
 /** FAQ section from a content document, rendered where the document puts it. */
 import { PortableText } from "emdash/ui";
+import { headingId } from "../../lib/site";
 
 type Item = { question: string; answer: unknown[] };
 const { node } = Astro.props as { node: { heading?: string; intro?: unknown[]; items?: Item[] } };
@@ -8,7 +9,7 @@ const items = node.items ?? [];
 ---
 
 <section class="doc-faq">
-	{node.heading && <h2>{node.heading}</h2>}
+	{node.heading && <h2 id={headingId(node.heading)}>{node.heading}</h2>}
 	{node.intro && node.intro.length > 0 && <PortableText value={node.intro as never} />}
 	<div class="faq-list">
 		{items.map((item) => (

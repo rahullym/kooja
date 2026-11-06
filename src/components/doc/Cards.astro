@@ -7,12 +7,44 @@ const cards: Card[] = (node.items ?? []).map((item) => ({ title: item.title, tex
 ---
 
 <div class="doc-cards">
-	<CardGrid cards={cards} columns={cards.length % 3 === 0 ? 3 : 2} />
+	<CardGrid cards={cards} columns={2} />
 </div>
 
 <style>
 	.doc-cards {
 		margin: var(--spacing-xl) 0;
-		font-size: var(--font-size-md);
+		font-size: var(--font-size-base);
+	}
+
+	/* Cards sit inside article text: drop the list indent and link styling. */
+	.doc-cards.doc-cards :global(ul) {
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.doc-cards.doc-cards :global(.card-grid) {
+		gap: var(--spacing-lg) var(--spacing-xl);
+	}
+
+	.doc-cards.doc-cards :global(li) {
+		margin: 0;
+	}
+
+	.doc-cards.doc-cards :global(li::marker) {
+		content: none;
+	}
+
+	.doc-cards.doc-cards :global(a) {
+		color: var(--color-text);
+		text-decoration: none;
+	}
+
+	.doc-cards.doc-cards :global(a:hover) {
+		color: var(--color-brand);
+	}
+
+	.doc-cards.doc-cards :global(.card-title) {
+		font-size: var(--font-size-lg);
+		text-transform: none;
 	}
 </style>

@@ -5,13 +5,13 @@
  * wording; each one uses the block that matches its shape.
  */
 import Cards from "../blocks/Cards.astro";
-import FAQ from "../blocks/FAQ.astro";
 import Features from "../blocks/Features.astro";
 import Hero from "../blocks/Hero.astro";
 import Stats from "../blocks/Stats.astro";
 import Steps from "../blocks/Steps.astro";
 import Testimonials from "../blocks/Testimonials.astro";
 import CtaBand from "../CtaBand.astro";
+import FaqSection from "../FaqSection.astro";
 import { docImageIndex } from "../../lib/doc-images";
 import { blockText, docSections, type PtBlock } from "../../lib/doc-sections";
 import { getSorted, type DocButton, type DocCta } from "../../lib/site";
@@ -51,11 +51,15 @@ const LABELS: [RegExp, string][] = [
 	[/guide|blog/i, "Guides"],
 	[/project|work/i, "Our work"],
 ];
+/** Props for an original block component, built from document content. */
+// The original blocks type their props from the CMS schema; document content is shaped to match at runtime.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const block = (value: Record<string, unknown>): any => ({ value });
 const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?? "Koojo";
 ---
 
 <Hero
-	value={{
+	{...block({
 		_type: "marketing_hero",
 		_key: "doc-hero",
 		headline: title,
@@ -66,7 +70,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 		primary_cta_url: heroButtons?.[0]?.href,
 		secondary_cta_label: heroButtons?.[1]?.label,
 		secondary_cta_url: heroButtons?.[1]?.href,
-	} as never}
+	})}
 />
 
 {sections.map((section) => {
@@ -77,13 +81,24 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 			const before = m[1]!.trim();
 			return before ? { label: before, value: (m[2]! + m[3]!).trim() } : { label: m[3]!.trim(), value: m[2]!.trim(), valueFirst: true };
 		});
-		return <Stats value={{ _type: "site_stats", _key: "doc-stats", items } as never} />;
+		return <Stats {...block({ _type: "site_stats", _key: "doc-stats", items })} />;
 	}
 
 	if (section.kind === "faq") {
 		const node = section.block as { heading?: string; items?: { question: string; answer: PtBlock[] }[] };
 		const items = (node.items ?? []).map((f) => ({ question: f.question, answer: text(f.answer) }));
-		return <FAQ value={{ _type: "marketing_faq", _key: "doc-faq", headline: node.heading, items } as never} />;
+		return (
+			<section class="section">
+				<div class="container">
+					<header class="section-header faq-header" data-label="FAQ">
+						{node.heading && <h2 class="section-headline">{node.heading}</h2>}
+						<div class="faq-col">
+							<FaqSection faqs={items} hideHeading />
+						</div>
+					</header>
+				</div>
+			</section>
+		);
 	}
 
 	if (section.kind === "cta" || section.kind === "gallery") return null;
@@ -93,7 +108,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 
 	if (section.kind === "steps") {
 		const steps = section.groups.map((g) => ({ title: blockText(g.heading), description: text(g.blocks) }));
-		return <Steps value={{ _type: "site_steps", _key: "doc-steps", headline: title, subheadline: intro, steps } as never} />;
+		return <Steps {...block({ _type: "site_steps", _key: "doc-steps", headline: title, subheadline: intro, steps })} />;
 	}
 
 	if (section.kind === "grid") {
@@ -106,7 +121,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 			const name = blockText(g.heading);
 			return { title: name, text: text(g.blocks), url: urlFor(name, list, base), image: isServices ? images.forName(name) : null };
 		});
-		return <Cards value={{ _type: "site_cards", _key: `doc-${source}`, source, headline: title, subheadline: intro, items } as never} />;
+		return <Cards {...block({ _type: "site_cards", _key: `doc-${source}`, source, headline: title, subheadline: intro, items })} />;
 	}
 
 	if (section.kind === "quotes") {
@@ -118,7 +133,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 		}
 		return (
 			<Testimonials
-				value={{ _type: "marketing_testimonials", _key: "doc-reviews", headline: title, subheadline: intro, footnote: text(section.outro), testimonials } as never}
+				{...block({ _type: "marketing_testimonials", _key: "doc-reviews", headline: title, subheadline: intro, footnote: text(section.outro), testimonials })}
 			/>
 		);
 	}
@@ -132,15 +147,36 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 			const at = t.indexOf(": ");
 			return { title: t.slice(0, at), description: t.slice(at + 2), icon: ICONS[i % ICONS.length] };
 		});
-		return <Features value={{ _type: "marketing_features", _key: "doc-why", headline: title, subheadline: text(lead), features } as never} />;
+		return <Features {...block({ _type: "marketing_features", _key: "doc-why", headline: title, subheadline: text(lead), features })} />;
 	}
 
 	// Recent projects: the copy plus the project photo mosaic.
 	if (/project/i.test(title)) {
-		return <Cards value={{ _type: "site_cards", _key: "doc-projects", source: "projects", headline: title, subheadline: intro } as never} />;
+		return <Cards {...block({ _type: "site_cards", _key: "doc-projects", source: "projects", headline: title, subheadline: intro })} />;
 	}
 
 	return <OldSection label={labelFor(title)} headline={title} blocks={section.intro} />;
 })}
 
 {cta && <CtaBand doc={cta} />}
+
+<style>
+	.faq-header {
+		margin-bottom: 0;
+	}
+
+	.faq-col {
+		grid-column: 2;
+	}
+
+	.faq-col :global(.faqs) {
+		margin-top: var(--spacing-md);
+		max-width: none;
+	}
+
+	@media (max-width: 800px) {
+		.faq-col {
+			grid-column: 1;
+		}
+	}
+</style>

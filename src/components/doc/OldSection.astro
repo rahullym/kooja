@@ -1,5 +1,8 @@
 ---
-/** A document section in the original site style: mono label, headline, copy. */
+/**
+ * A document section in the original site style: mono label on the left,
+ * headline and copy together in the right-hand column.
+ */
 import Prose from "../Prose.astro";
 
 interface Props {
@@ -13,32 +16,34 @@ const { label, headline, blocks } = Astro.props;
 
 <section class="section">
 	<div class="container">
-		<header class="section-header" data-label={label}>
+		<header class="section-header old-header" data-label={label}>
 			{headline && <h2 class="section-headline">{headline}</h2>}
+			<div class="old-body">
+				<Prose value={blocks} />
+			</div>
 		</header>
-		<div class="old-body">
-			<Prose value={blocks} />
-		</div>
 	</div>
 </section>
 
 <style>
-	.old-body {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-		gap: var(--spacing-2xl);
+	.old-header {
+		margin-bottom: 0;
 	}
 
-	.old-body > :global(*) {
+	.old-body {
 		grid-column: 2;
+	}
+
+	.old-body :global(.prose) {
+		max-width: 62ch;
+	}
+
+	.old-body :global(.prose > :last-child) {
+		margin-bottom: 0;
 	}
 
 	@media (max-width: 800px) {
 		.old-body {
-			grid-template-columns: minmax(0, 1fr);
-		}
-
-		.old-body > :global(*) {
 			grid-column: 1;
 		}
 	}
