@@ -132,3 +132,20 @@ function shape(heading: PtBlock | null, blocks: PtBlock[]): Section {
 
 	return { kind: "text", heading, intro: blocks, groups: [], quotes: [], outro: [] };
 }
+
+/**
+ * A trust / spec strip as stats-row items, keeping the document's word order:
+ * "Since 2012" -> label "Since", figure "2012"; "10,000+ items coated" ->
+ * figure "10,000+" then label "items coated"; items without a figure stay text.
+ */
+export function stripStats(text: string) {
+	return text
+		.split(/\s+[|·•]\s+/)
+		.filter(Boolean)
+		.map((item) => {
+			const m = item.match(/^(.*?)(\d[\d,.]*\+?(?:[\s-]?(?:lb|hr|hours?|ft|min)\b)?)(.*)$/i);
+			if (!m) return { label: "", value: item };
+			const before = m[1]!.trim();
+			return before ? { label: before, value: (m[2]! + m[3]!).trim() } : { label: m[3]!.trim(), value: m[2]!.trim(), valueFirst: true };
+		});
+}

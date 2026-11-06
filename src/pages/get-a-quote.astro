@@ -3,6 +3,7 @@ import { getEmDashEntry } from "emdash";
 import ContactDetails from "../components/ContactDetails.astro";
 import PageBody from "../components/PageBody.astro";
 import PageHero from "../components/PageHero.astro";
+import { docHeroImage } from "../lib/doc-images";
 import QuoteForm from "../components/QuoteForm.astro";
 import Base from "../layouts/Base.astro";
 import { BUSINESS, docParts, entrySeo } from "../lib/site";
@@ -14,6 +15,7 @@ if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
 const seo = entrySeo(Astro, page, "/get-a-quote", page.data.intro);
 const doc = docParts(page.data.body);
+const heroImage = doc.fromDoc ? await docHeroImage(page.data.body, page.data.featured_image) : null;
 
 // Structured email request flow (Phase 4)
 const quoteBody = [
@@ -54,7 +56,7 @@ const consultMail = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Book
 	robots={seo.robots}
 	content={{ collection: "pages", id: page.data.id, slug: page.id }}
 >
-	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline}>
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage}>
 		{doc.fromDoc ? (
 			<div class="quote-actions">
 				<a href="#quote-form-section" class="btn btn-primary btn-lg">Request a Quote</a>
@@ -69,7 +71,7 @@ const consultMail = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Book
 			</div>
 		)}
 	</PageHero>
-	<PageBody page={page}>
+	<PageBody page={page} heroImage={heroImage}>
 		{!doc.hasForm && <QuoteForm />}
 		{!doc.fromDoc && <section class="quote-contact">
 			<h2>Speak Directly with a Powder Coating Specialist</h2>

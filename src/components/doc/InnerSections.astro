@@ -1,0 +1,290 @@
+---
+/**
+ * Inner pages built from a content document, drawn with the home page's
+ * section style: each H2 is a ruled section with its label and heading on the
+ * left (with a real shop photo when the section mentions a service or
+ * project) and its copy on the right. Strips become the stats row, FAQs use
+ * the home FAQ layout. Order and wording stay exactly as in the document.
+ */
+import { Image } from "emdash/ui";
+import Stats from "../blocks/Stats.astro";
+import CtaBand from "../CtaBand.astro";
+import FaqSection from "../FaqSection.astro";
+import Prose from "../Prose.astro";
+import { docImageIndex, type DocImage } from "../../lib/doc-images";
+import { blockLinks, blockText, docSections, stripStats, type PtBlock } from "../../lib/doc-sections";
+import { headingId } from "../../lib/site";
+
+interface Props {
+	value?: unknown[] | null;
+	/** Photo already shown in the hero, so sections do not repeat it. */
+	heroImage?: unknown;
+}
+
+const { value, heroImage } = Astro.props;
+const sections = docSections(value);
+const images = await docImageIndex();
+const srcOf = (img: unknown) => (img as { src?: string; id?: string } | null)?.src ?? (img as { id?: string } | null)?.id ?? img;
+const used = new Set<unknown>(heroImage ? [srcOf(heroImage)] : []);
+const pick = (img: DocImage | null) => {
+	if (!img || used.has(srcOf(img))) return null;
+	used.add(srcOf(img));
+	return img;
+};
+// Sections that name no service or project still get a real shop photo, every other section.
+const pool = images.all();
+const nextFromPool = () => {
+	for (const img of pool) if (!used.has(srcOf(img))) return pick(img);
+	return null;
+};
+const pad = (n: number) => String(n).padStart(2, "0");
+const text = (blocks: PtBlock[]) => blocks.map(blockText).filter(Boolean).join(" ");
+// The original blocks type their props from the CMS schema; document content is shaped to match.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const block = (v: Record<string, unknown>): any => ({ value: v });
+let n = 0;
+---
+
+{sections.map((section) => {
+	if (section.kind === "gallery") return <slot name="gallery" />;
+
+	if (section.kind === "strip") {
+		return <Stats {...block({ _type: "site_stats", _key: "doc-stats", items: stripStats(String(section.block.text ?? "")) })} />;
+	}
+
+	if (section.kind === "cta") {
+		const node = section.block as { heading?: string; text?: string[]; buttons?: { label: string; href: string }[] };
+		return <CtaBand doc={node} />;
+	}
+
+	if (section.kind === "faq") {
+		const node = section.block as { heading?: string; intro?: PtBlock[]; items?: { question: string; answer: PtBlock[] }[] };
+		const items = (node.items ?? []).map((f) => ({ question: f.question, answer: text(f.answer) }));
+		return (
+			<section class="section isec">
+				<div class="container isec-grid">
+					<div class="isec-side">
+						<span class="label">FAQ</span>
+						{node.heading && <h2 id={headingId(node.heading)} class="section-headline">{node.heading}</h2>}
+					</div>
+					<div class="isec-main">
+						{node.intro && node.intro.length > 0 && <Prose value={node.intro} />}
+						<FaqSection faqs={items} hideHeading />
+					</div>
+				</div>
+			</section>
+		);
+	}
+
+	// Copy with no heading of its own (e.g. the rest of the hero text) continues the page above.
+	if (!section.heading) {
+		return (
+			<section class="isec isec--lead">
+				<div class="container isec-grid">
+					<div class="isec-side" />
+					<div class="isec-main">
+						<Prose value={section.intro} />
+					</div>
+				</div>
+			</section>
+		);
+	}
+
+	const label = pad(++n);
+	const title = blockText(section.heading);
+	const all = [...section.intro, ...section.groups.flatMap((g) => [g.heading, ...g.blocks]), ...section.quotes, ...section.outro];
+	const wide = all.some((b) => ["table", "koojoForm", "koojoMap"].includes(b._type ?? ""));
+	const image = pick(images.forLinks(blockLinks(all)) ?? images.forText(text(all))) ?? (!wide && n % 2 === 0 ? nextFromPool() : null);
+	const quotes: { text: string; cite: string | null }[] = [];
+	for (const q of section.quotes) {
+		const t = blockText(q);
+		const isCite = q.koojoCite || (t.length < 70 && !/[.!?]["”]?$/.test(t));
+		if (isCite && quotes.length && !quotes.at(-1)!.cite) quotes.at(-1)!.cite = t;
+		else quotes.push({ text: t, cite: null });
+	}
+
+	return (
+		<section class="section isec">
+			<div class="container isec-grid">
+				<div class="isec-side">
+					<span class="label">{label}</span>
+					<h2 id={headingId(title)} class="section-headline">{title}</h2>
+					{image && (
+						<figure class="isec-photo">
+							<Image image={image as never} />
+							{image.alt && <figcaption class="label">{image.alt}</figcaption>}
+						</figure>
+					)}
+				</div>
+				<div class="isec-main">
+					{section.intro.length > 0 && <Prose value={section.intro} />}
+					{section.groups.length > 0 && (
+						<ol class:list={["isec-rows", { "isec-rows--steps": section.kind === "steps" }]}>
+							{section.groups.map((g, i) => (
+								<li>
+									<span class="isec-n" aria-hidden="true">{pad(i + 1)}</span>
+									<div>
+										<h3>{blockText(g.heading)}</h3>
+										<Prose value={g.blocks} />
+									</div>
+								</li>
+							))}
+						</ol>
+					)}
+					{quotes.length > 0 && (
+						<div class="isec-quotes">
+							{quotes.map((q) => (
+								<figure class="isec-quote">
+									<blockquote>{q.text}</blockquote>
+									{q.cite && <figcaption class="label">{q.cite}</figcaption>}
+								</figure>
+							))}
+						</div>
+					)}
+					{section.outro.length > 0 && <Prose value={section.outro} />}
+				</div>
+			</div>
+		</section>
+	);
+})}
+
+<style>
+	.isec {
+		border-top: 1px solid var(--color-rule);
+		padding: var(--spacing-3xl) 0 var(--spacing-4xl);
+	}
+
+	.isec--lead {
+		border-top: 0;
+		padding: var(--spacing-2xl) 0;
+	}
+
+	.isec-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+		gap: var(--spacing-xl) var(--spacing-3xl);
+		align-items: start;
+	}
+
+	.isec-side {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+		position: sticky;
+		top: calc(var(--spacing-3xl) + 1.5rem);
+	}
+
+	.isec-side .section-headline {
+		margin: 0;
+		max-width: 18ch;
+	}
+
+	.isec-photo {
+		margin: var(--spacing-md) 0 0;
+	}
+
+	.isec-photo :global(img) {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+	}
+
+	.isec-photo figcaption {
+		margin-top: var(--spacing-sm);
+	}
+
+	.isec-main {
+		min-width: 0;
+		padding-top: 0.35em;
+	}
+
+	.isec-main :global(.prose) {
+		max-width: none;
+	}
+
+	.isec-main :global(.prose > :last-child) {
+		margin-bottom: 0;
+	}
+
+	.isec-main > :global(* + *) {
+		margin-top: var(--spacing-xl);
+	}
+
+	/* H3 groups: a ruled, numbered index (as on the home page). */
+	.isec-rows {
+		list-style: none;
+		padding: 0;
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.isec-rows li {
+		display: grid;
+		grid-template-columns: 3rem minmax(0, 1fr);
+		gap: var(--spacing-md);
+		padding: var(--spacing-lg) 0;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.isec-n {
+		font-family: var(--font-mono);
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+		padding-top: 0.3em;
+	}
+
+	.isec-rows h3 {
+		font-size: var(--font-size-xl);
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.isec-rows :global(.prose) {
+		font-size: var(--font-size-base);
+		color: var(--color-muted);
+	}
+
+	/* Process steps: the number carries the brand colour. */
+	.isec-rows--steps .isec-n {
+		font-family: var(--font-display);
+		font-weight: var(--font-weight-display);
+		font-size: var(--font-size-2xl);
+		line-height: 1;
+		color: var(--color-brand);
+		padding-top: 0;
+	}
+
+	/* Reviews */
+	.isec-quotes {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+		gap: var(--spacing-xl);
+	}
+
+	.isec-quote {
+		margin: 0;
+		padding-top: var(--spacing-md);
+		border-top: 1px solid var(--color-rule);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-md);
+	}
+
+	.isec-quote blockquote {
+		font-size: var(--font-size-lg);
+		line-height: 1.5;
+	}
+
+	@media (max-width: 900px) {
+		.isec-grid {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.isec-side {
+			position: static;
+		}
+
+		.isec--lead .isec-side {
+			display: none;
+		}
+	}
+</style>

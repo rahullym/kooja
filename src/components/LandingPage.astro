@@ -18,6 +18,9 @@ import {
 	type RelatedLink,
 } from "../lib/site";
 import ContactDetails from "./ContactDetails.astro";
+import InnerSections from "./doc/InnerSections.astro";
+import RelatedBand from "./doc/RelatedBand.astro";
+import { docHeroImage } from "../lib/doc-images";
 import CtaBand from "./CtaBand.astro";
 import EntryLayout from "./EntryLayout.astro";
 import FaqSection from "./FaqSection.astro";
@@ -70,6 +73,7 @@ const jsonLd = [
 ];
 
 const doc = docParts(data.content);
+const heroImage = doc.fromDoc ? await docHeroImage(data.content, data.featured_image) : null;
 
 const localFacts = [
 	{ label: "Drive time from our Milton shop", value: data.drive_time },
@@ -88,50 +92,73 @@ const localFacts = [
 	content={{ collection, id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={data.title} intro={doc.introInBody ? null : data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} byline={doc.byline} cta />
-
-	<EntryLayout>
-		{data.featured_image && (
-			<div class="entry-image" {...entry.edit.featured_image}>
-				<Image image={data.featured_image} />
-			</div>
-		)}
-
-		<div {...entry.edit.content}>
-			<Prose value={data.content} />
-		</div>
-
-		{collection === "locations" && !doc.fromDoc && (
-			<section class="local">
-				{localFacts.length > 0 && (
-					<dl class="local-facts">
-						{localFacts.map((fact) => (
-							<div>
-								<dt>{fact.label}</dt>
-								<dd>{fact.value}</dd>
-							</div>
-						))}
-					</dl>
-				)}
-				<h2>Visit or contact the shop</h2>
-				<ContactDetails />
-				<p class="local-links">
-					Koojo is a <a href="/">powder coating company GTA</a> businesses have used since {BUSINESS.foundingYear}.
-					See <a href="/contact-us">contact details and directions</a>.
-				</p>
-			</section>
-		)}
-
-		{!doc.hasFaq && <FaqSection faqs={faqs} />}
-
-		<Fragment slot="aside">
-			<RelatedLinks links={related}>
+	{doc.fromDoc ? (
+		<>
+			<PageHero
+				title={data.title}
+				intro={doc.introInBody ? null : data.summary}
+				crumbs={crumbs}
+				titleAttrs={entry.edit.title}
+				byline={doc.byline}
+				image={heroImage}
+				cta
+			/>
+			<InnerSections value={data.content} heroImage={heroImage} />
+			<RelatedBand links={related}>
 				<p class="hub-link">
 					<a href={hub.url}>All {hub.anchor}</a>
 				</p>
-			</RelatedLinks>
-		</Fragment>
-	</EntryLayout>
+			</RelatedBand>
+		</>
+	) : (
+		<>
+		<PageHero title={data.title} intro={doc.introInBody ? null : data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} byline={doc.byline} cta />
+
+		<EntryLayout>
+			{data.featured_image && (
+				<div class="entry-image" {...entry.edit.featured_image}>
+					<Image image={data.featured_image} />
+				</div>
+			)}
+
+			<div {...entry.edit.content}>
+				<Prose value={data.content} />
+			</div>
+
+			{collection === "locations" && !doc.fromDoc && (
+				<section class="local">
+					{localFacts.length > 0 && (
+						<dl class="local-facts">
+							{localFacts.map((fact) => (
+								<div>
+									<dt>{fact.label}</dt>
+									<dd>{fact.value}</dd>
+								</div>
+							))}
+						</dl>
+					)}
+					<h2>Visit or contact the shop</h2>
+					<ContactDetails />
+					<p class="local-links">
+						Koojo is a <a href="/">powder coating company GTA</a> businesses have used since {BUSINESS.foundingYear}.
+						See <a href="/contact-us">contact details and directions</a>.
+					</p>
+				</section>
+			)}
+
+			{!doc.hasFaq && <FaqSection faqs={faqs} />}
+
+			<Fragment slot="aside">
+				<RelatedLinks links={related}>
+					<p class="hub-link">
+						<a href={hub.url}>All {hub.anchor}</a>
+					</p>
+				</RelatedLinks>
+			</Fragment>
+		</EntryLayout>
+
+		</>
+	)}
 
 	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>

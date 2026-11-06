@@ -11,6 +11,8 @@ import CardGrid, { type Card } from "./CardGrid.astro";
 import CtaBand from "./CtaBand.astro";
 import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
+import InnerSections from "./doc/InnerSections.astro";
+import { docHeroImage } from "../lib/doc-images";
 import Prose from "./Prose.astro";
 
 interface Props {
@@ -48,6 +50,7 @@ const faqs = (page?.data.faqs ?? []) as Faq[];
 const crumbs = [{ label: title, url: path }];
 // Pages built from a content document list their child pages in the document itself.
 const doc = docParts(page?.data.body);
+const heroImage = doc.fromDoc ? await docHeroImage(page?.data.body) : null;
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -70,28 +73,38 @@ const jsonLd = [
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={jsonLd}
 >
-	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} byline={doc.byline} />
+	{page && doc.fromDoc ? (
+		<>
+			<PageHero title={title} intro={page.data.intro} crumbs={crumbs} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} />
+			<InnerSections value={page.data.body} heroImage={heroImage} />
+		</>
+	) : (
+		<>
+		<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} byline={doc.byline} />
 
-	<div class="hub container">
-		<slot name="before" />
-		{!doc.fromDoc && <CardGrid cards={cards} level={2} />}
+		<div class="hub container">
+			<slot name="before" />
+			{!doc.fromDoc && <CardGrid cards={cards} level={2} />}
 
-		{!doc.fromDoc && extraCards.length > 0 && (
-			<section class="hub-extra">
-				{extraHeading && <h2>{extraHeading}</h2>}
-				<CardGrid cards={extraCards} columns={4} />
-			</section>
-		)}
+			{!doc.fromDoc && extraCards.length > 0 && (
+				<section class="hub-extra">
+					{extraHeading && <h2>{extraHeading}</h2>}
+					<CardGrid cards={extraCards} columns={4} />
+				</section>
+			)}
 
-		{page?.data.body && (
-			<div class="hub-body" {...page.edit.body}>
-				<Prose value={page.data.body} />
-			</div>
-		)}
+			{page?.data.body && (
+				<div class="hub-body" {...page.edit.body}>
+					<Prose value={page.data.body} />
+				</div>
+			)}
 
-		{!doc.fromDoc && <slot />}
-		{!doc.hasFaq && <FaqSection faqs={faqs} />}
-	</div>
+			{!doc.fromDoc && <slot />}
+			{!doc.hasFaq && <FaqSection faqs={faqs} />}
+		</div>
+
+		</>
+	)}
 
 	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>

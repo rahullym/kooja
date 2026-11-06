@@ -4,6 +4,8 @@ import { Image } from "emdash/ui";
 import CtaBand from "../../components/CtaBand.astro";
 import EntryLayout from "../../components/EntryLayout.astro";
 import PageHero from "../../components/PageHero.astro";
+import InnerSections from "../../components/doc/InnerSections.astro";
+import RelatedBand from "../../components/doc/RelatedBand.astro";
 import Prose from "../../components/Prose.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Base from "../../layouts/Base.astro";
@@ -57,43 +59,64 @@ const jsonLd = [
 	content={{ collection: "projects", id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} />
+	{doc.fromDoc ? (
+		<>
+			<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} image={data.featured_image} />
+			<InnerSections value={data.content} heroImage={data.featured_image} />
+			{gallery.length > 0 && (
+				<div class="container gallery doc-gallery">
+					{gallery.map((item) => (
+						<figure>
+							<Image image={item.image} />
+							{item.caption && <figcaption>{item.caption}</figcaption>}
+						</figure>
+					))}
+				</div>
+			)}
+			<RelatedBand links={(data.related ?? []) as RelatedLink[]} />
+		</>
+	) : (
+		<>
+		<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} />
 
-	<EntryLayout>
-		{data.featured_image && (
-			<figure class="project-image" {...entry.edit.featured_image}>
-				<Image image={data.featured_image} />
-			</figure>
-		)}
+		<EntryLayout>
+			{data.featured_image && (
+				<figure class="project-image" {...entry.edit.featured_image}>
+					<Image image={data.featured_image} />
+				</figure>
+			)}
 
-		{specs.length > 0 && !doc.fromDoc && (
-			<dl class="specs">
-				{specs.map((spec) => (
-					<div>
-						<dt>{spec.label}</dt>
-						<dd>{spec.value}</dd>
-					</div>
-				))}
-			</dl>
-		)}
+			{specs.length > 0 && !doc.fromDoc && (
+				<dl class="specs">
+					{specs.map((spec) => (
+						<div>
+							<dt>{spec.label}</dt>
+							<dd>{spec.value}</dd>
+						</div>
+					))}
+				</dl>
+			)}
 
-		<div {...entry.edit.content}>
-			<Prose value={data.content} />
-		</div>
-
-		{gallery.length > 0 && (
-			<div class="gallery">
-				{gallery.map((item) => (
-					<figure>
-						<Image image={item.image} />
-						{item.caption && <figcaption>{item.caption}</figcaption>}
-					</figure>
-				))}
+			<div {...entry.edit.content}>
+				<Prose value={data.content} />
 			</div>
-		)}
 
-		<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
-	</EntryLayout>
+			{gallery.length > 0 && (
+				<div class="gallery">
+					{gallery.map((item) => (
+						<figure>
+							<Image image={item.image} />
+							{item.caption && <figcaption>{item.caption}</figcaption>}
+						</figure>
+					))}
+				</div>
+			)}
+
+			<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
+		</EntryLayout>
+
+		</>
+	)}
 
 	{doc.fromDoc ? doc.cta && <CtaBand doc={doc.cta} /> : <CtaBand headline="Have a similar part?" text="Send us the details and we'll quote it." />}
 </Base>

@@ -1,4 +1,5 @@
 ---
+import { Image } from "emdash/ui";
 import type { Crumb } from "../lib/site";
 
 interface Props {
@@ -10,13 +11,17 @@ interface Props {
 	cta?: boolean;
 	/** Byline from the content document, shown under the H1. */
 	byline?: string | null;
+	/** Shop photo shown beside the hero text. */
+	image?: unknown;
 }
 
-const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline } = Astro.props;
+const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline, image } = Astro.props;
+const photo = image as { alt?: string } | null | undefined;
 ---
 
-<header class="page-hero">
+<header class:list={["page-hero", { "page-hero--photo": !!image }]}>
 	<div class="page-hero-inner">
+		<div class="page-hero-text">
 		{crumbs.length > 0 && (
 			<nav class="crumbs label" aria-label="Breadcrumb">
 				<a href="/">Home</a>
@@ -39,10 +44,46 @@ const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline
 			</div>
 		)}
 		<slot />
+		</div>
+		{image && (
+			<figure class="page-hero-photo">
+				<Image image={image as never} priority />
+				{photo?.alt && <figcaption class="label">{photo.alt}</figcaption>}
+			</figure>
+		)}
 	</div>
 </header>
 
 <style>
+	.page-hero--photo .page-hero-inner {
+		display: grid;
+		grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+		gap: var(--spacing-3xl);
+		align-items: end;
+	}
+
+	.page-hero-photo {
+		margin: 0;
+	}
+
+	.page-hero-photo :global(img) {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+	}
+
+	.page-hero-photo figcaption {
+		margin-top: var(--spacing-sm);
+	}
+
+	@media (max-width: 900px) {
+		.page-hero--photo .page-hero-inner {
+			grid-template-columns: minmax(0, 1fr);
+			gap: var(--spacing-xl);
+		}
+	}
+
 	.page-hero-byline {
 		margin-top: var(--spacing-md);
 		color: var(--color-muted);

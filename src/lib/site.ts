@@ -221,18 +221,3 @@ export function headingId(text: string) {
 		.slice(0, 60);
 }
 
-/** H2 headings of a document page body (including its FAQ heading), in order. */
-export function docHeadings(value: unknown) {
-	const blocks = (Array.isArray(value) ? value : []) as Block[];
-	const out: { id: string; text: string }[] = [];
-	for (const b of blocks) {
-		let text = "";
-		if (b._type === "block" && b.style === "h2") {
-			text = ((b.children as { text?: string }[] | undefined) ?? []).map((c) => c.text ?? "").join("");
-		} else if (b._type === "koojoFaq" && typeof b.heading === "string") {
-			text = b.heading;
-		}
-		if (text) out.push({ id: headingId(text), text });
-	}
-	return out;
-}

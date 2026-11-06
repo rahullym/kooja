@@ -5,36 +5,38 @@
  */
 import type { getEmDashEntry } from "emdash";
 import { Image } from "emdash/ui";
-import { docHeadings, docParts, type Faq } from "../lib/site";
-import Toc from "./doc/Toc.astro";
+import { docParts, type Faq } from "../lib/site";
+import InnerSections from "./doc/InnerSections.astro";
 import FaqSection from "./FaqSection.astro";
 import MarketingBlocks from "./MarketingBlocks.astro";
 import Prose from "./Prose.astro";
 
 interface Props {
 	page: NonNullable<Awaited<ReturnType<typeof getEmDashEntry<"pages">>>["entry"]>;
+	/** Photo shown in the hero, so document sections do not repeat it. */
+	heroImage?: unknown;
 }
 
-const { page } = Astro.props;
+const { page, heroImage } = Astro.props;
 const { data } = page;
 const faqs = (data.faqs ?? []) as Faq[];
 const doc = docParts(data.body);
-// Document pages without a photo use the right-hand column for "On this page".
-const headings = doc.fromDoc && !data.featured_image ? docHeadings(data.body) : [];
-const hasToc = headings.length > 2;
+// Extra markup a page passes in (e.g. a form) — only shown when there is some.
+const after = doc.fromDoc && Astro.slots.has("default") ? (await Astro.slots.render("default")).trim() : "";
 ---
 
+{doc.fromDoc ? (
+	<>
+		<InnerSections value={data.body} heroImage={heroImage} />
+		{after && <div class="page-body page-body--after" set:html={after} />}
+	</>
+) : (
 <div class="page-body">
 	<slot name="before" />
-	<div class:list={["page-columns", { "has-image": !!data.featured_image, "has-toc": hasToc }]}>
+	<div class:list={["page-columns", { "has-image": !!data.featured_image }]}>
 		<div {...page.edit.body}>
 			<Prose value={data.body} />
 		</div>
-		{hasToc && (
-			<aside class="page-toc">
-				<Toc headings={headings} />
-			</aside>
-		)}
 		{data.featured_image && (
 			<figure class="page-image" {...page.edit.featured_image}>
 				<Image image={data.featured_image} />
@@ -44,6 +46,7 @@ const hasToc = headings.length > 2;
 	<slot />
 	{!doc.hasFaq && <FaqSection faqs={faqs} />}
 </div>
+)}
 
 {!doc.fromDoc && data.content && data.content.length > 0 && (
 	<div {...page.edit.content}>
@@ -52,30 +55,11 @@ const hasToc = headings.length > 2;
 )}
 
 <style>
-	.page-columns.has-toc {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
-		gap: var(--spacing-4xl);
-		align-items: start;
+	.page-body--after {
+		padding-top: 0;
 	}
 
-	.page-columns.has-toc > :first-child {
-		max-width: var(--max-width);
-	}
 
-	.page-toc {
-		height: 100%;
-	}
-
-	@media (max-width: 1000px) {
-		.page-columns.has-toc {
-			grid-template-columns: minmax(0, 1fr);
-		}
-
-		.page-toc {
-			display: none;
-		}
-	}
 
 	.page-body {
 		max-width: var(--wide-width);

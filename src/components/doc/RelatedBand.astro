@@ -1,0 +1,50 @@
+---
+/** Related pages for a document page, in the home page's section style. */
+import RelatedLinks from "../RelatedLinks.astro";
+import type { RelatedLink } from "../../lib/site";
+
+interface Props {
+	links?: RelatedLink[] | null;
+}
+
+const { links } = Astro.props;
+---
+
+{links && links.length > 0 && (
+	<section class="section related-band">
+		<div class="container related-grid">
+			<span class="label">Related</span>
+			<div class="related-main">
+				<RelatedLinks links={links}>
+					<slot />
+				</RelatedLinks>
+			</div>
+		</div>
+	</section>
+)}
+
+<style>
+	.related-band {
+		border-top: 1px solid var(--color-rule);
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+		gap: var(--spacing-xl) var(--spacing-3xl);
+	}
+
+	.related-main :global(.related) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+		gap: var(--spacing-xl);
+		position: static;
+	}
+
+	@media (max-width: 900px) {
+		.related-grid {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+</style>

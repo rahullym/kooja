@@ -27,7 +27,13 @@ export async function docImageIndex() {
 		add(`/projects/${e.id}`, [d.title], d.featured_image);
 	}
 
+	const all = [...new Set(byUrl.values())];
+
 	return {
+		/** Every shop photo on the site (services first, then projects), without repeats. */
+		all() {
+			return all;
+		},
 		/** First photo for any of these links (absolute koojo URLs are accepted). */
 		forLinks(hrefs: string[]) {
 			for (const href of hrefs) {
@@ -53,3 +59,15 @@ export async function docImageIndex() {
 	};
 }
 
+
+/**
+ * Hero photo for a document page: its own featured image, else the photo of
+ * the first service or project its copy links to, else one named in its copy.
+ */
+export async function docHeroImage(body: unknown, own?: unknown) {
+	if (own) return own as DocImage;
+	const { blockLinks, blockText } = await import("./doc-sections");
+	const blocks = (Array.isArray(body) ? body : []) as Parameters<typeof blockLinks>[0];
+	const index = await docImageIndex();
+	return index.forLinks(blockLinks(blocks)) ?? index.forText(blocks.map(blockText).join(" "));
+}
