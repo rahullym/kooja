@@ -1,8 +1,6 @@
 ---
 import { getEmDashEntry } from "emdash";
-import DocHero from "../components/doc/DocHero.astro";
-import DocSections from "../components/doc/DocSections.astro";
-import CtaBand from "../components/CtaBand.astro";
+import HomeDoc from "../components/doc/HomeDoc.astro";
 import MarketingBlocks from "../components/MarketingBlocks.astro";
 import Base from "../layouts/Base.astro";
 import { docParts, entrySeo, faqLd, localBusinessLd, type Faq } from "../lib/site";
@@ -33,9 +31,14 @@ const jsonLd = doc.fromDoc ? [localBusinessLd(Astro.url.origin), faqLd((page?.da
 	{
 		page && doc.fromDoc ? (
 			<>
-				<DocHero feature title={page.data.title} intro={page.data.intro} byline={doc.byline} buttons={doc.heroButtons} image={heroImage} titleAttrs={page.edit.title} />
-				<DocSections value={page.data.body} heroImage={heroImage} />
-				{doc.cta && <CtaBand doc={doc.cta} />}
+				<HomeDoc
+					title={page.data.title}
+					intro={page.data.intro}
+					body={(page.data.body ?? []) as unknown[]}
+					heroImage={heroImage}
+					heroButtons={doc.heroButtons}
+					cta={doc.cta}
+				/>
 			</>
 		) : page?.data.content ? (
 			<div {...page.edit.content}>

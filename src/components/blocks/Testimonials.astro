@@ -7,12 +7,14 @@ type Props = BlockComponentProps<TestimonialsBlock>;
 
 const { value } = Astro.props;
 const { anchor_id, headline, testimonials } = value;
+const { subheadline, footnote } = value as { subheadline?: string | null; footnote?: string | null };
 ---
 
 <section class="testimonials section" id={anchor_id || undefined}>
 	<div class="container">
 		<header class="section-header" data-label="Reviews">
 			{headline && <h2 class="section-headline">{headline}</h2>}
+			{subheadline && <p class="section-subheadline">{subheadline}</p>}
 		</header>
 		<div class="quotes">
 			{testimonials.map((testimonial) => (
@@ -25,10 +27,16 @@ const { anchor_id, headline, testimonials } = value;
 				</figure>
 			))}
 		</div>
+		{footnote && <p class="quotes-foot">{footnote}</p>}
 	</div>
 </section>
 
 <style>
+	.quotes-foot {
+		margin-top: var(--spacing-xl);
+		color: var(--color-muted);
+	}
+
 	.quotes {
 		display: grid;
 		grid-template-columns: 1.4fr 1fr 1fr;

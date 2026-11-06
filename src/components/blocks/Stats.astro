@@ -9,17 +9,23 @@ const { value } = Astro.props;
 ---
 
 <section class="stats" aria-label="Koojo in numbers">
-	<dl class="stats-list">
-		{value.items.map((item) => (
-			<div class="stat">
-				<dt class="label">{item.label}</dt>
-				<dd>{item.value}</dd>
-			</div>
-		))}
-	</dl>
+	<ul class="stats-list" style={`--stat-cols: ${Math.min(Math.max(value.items.length, 1), 5)}`}>
+		{value.items.map((item) => {
+			// Document strips keep their own word order ("10,000+ items coated").
+			const valueFirst = (item as { valueFirst?: boolean }).valueFirst;
+			const label = item.label ? <span class="label stat-label">{item.label}</span> : null;
+			const figure = <span class="stat-value">{item.value}</span>;
+			return (
+				<li class:list={["stat", { "stat--text": !/\d/.test(item.value) }]}>
+					{valueFirst ? <>{figure}{label}</> : <>{label}{figure}</>}
+				</li>
+			);
+		})}
+	</ul>
 </section>
 
 <style>
+
 	.stats {
 		border-top: 1px solid var(--color-rule);
 	}
@@ -29,7 +35,7 @@ const { value } = Astro.props;
 		margin: 0 auto;
 		padding: 0 var(--spacing-lg);
 		display: grid;
-		grid-template-columns: repeat(4, minmax(0, 1fr));
+		grid-template-columns: repeat(var(--stat-cols, 4), minmax(0, 1fr));
 	}
 
 	.stat {
@@ -44,12 +50,29 @@ const { value } = Astro.props;
 		border-left: 1px solid var(--color-border);
 	}
 
-	dd {
+	.stats-list {
+		list-style: none;
+	}
+
+	.stat-value {
 		font-family: var(--font-heading);
 		font-size: clamp(2rem, 4vw, 3.25rem);
 		font-weight: var(--font-weight-display);
 		letter-spacing: var(--tracking-tight);
 		line-height: 1;
+	}
+
+	/* A strip item without a figure ("Certified by ...") */
+	.stat--text .stat-value {
+		font-size: var(--font-size-xl);
+		letter-spacing: normal;
+		line-height: 1.25;
+	}
+
+	@media (max-width: 1000px) {
+		.stats-list {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
 	}
 
 	@media (max-width: 700px) {

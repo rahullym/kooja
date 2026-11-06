@@ -3,9 +3,7 @@ import { getEmDashEntry, getTaxonomyTermsWithCacheHint } from "emdash";
 import CardGrid, { type Card } from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
 import PageHero from "../../components/PageHero.astro";
-import DocHero from "../../components/doc/DocHero.astro";
-import DocSections from "../../components/doc/DocSections.astro";
-import { docHeroImage } from "../../lib/doc-images";
+import Prose from "../../components/Prose.astro";
 import Base from "../../layouts/Base.astro";
 import { breadcrumbLd, collectionLd, docParts, entrySeo, faqLd, getSorted, type Faq } from "../../lib/site";
 
@@ -40,10 +38,13 @@ const title = page?.data.title ?? "Powder Coating Projects";
 const seo = page ? entrySeo(Astro, page, "/projects", page.data.intro) : null;
 const crumbs = [{ label: "Our Work", url: "/projects" }];
 
-// Built from the client's content document: the gallery sits where the
-// document's gallery marker is.
+// Built from the client's content document: the copy wraps the gallery, which
+// sits where the document's gallery marker is.
 const doc = docParts(page?.data.body);
-const heroImage = doc.fromDoc ? await docHeroImage(page?.data.body) : null;
+const body = (page?.data.body ?? []) as { _type?: string }[];
+const split = body.findIndex((b) => b._type === "koojoGallery");
+const before = split === -1 ? body : body.slice(0, split);
+const after = split === -1 ? [] : body.slice(split + 1);
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -66,41 +67,23 @@ const jsonLd = [
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={jsonLd}
 >
-	{page && doc.fromDoc ? (
-		<>
-			<DocHero title={title} intro={page.data.intro} byline={doc.byline} crumbs={crumbs} image={heroImage} titleAttrs={page.edit.title} />
-			<DocSections value={page.data.body} heroImage={heroImage}>
-				<div slot="gallery" class="doc-gallery-band">
-			<div class="container projects">
-				{filters.length > 1 && (
-					<div class="filters" role="group" aria-label="Filter projects by type">
-						<button type="button" class="filter" data-filter="" aria-pressed="true">All</button>
-						{filters.map((term) => (
-							<button type="button" class="filter" data-filter={term.slug} aria-pressed="false">{term.label}</button>
-						))}
-					</div>
-				)}
-				<CardGrid cards={cards} level={2} />
-			</div>
-				</div>
-			</DocSections>
-		</>
-	) : (
-		<>
 	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} byline={doc.byline} />
-		<div class="container projects">
-			{filters.length > 1 && (
-				<div class="filters" role="group" aria-label="Filter projects by type">
-					<button type="button" class="filter" data-filter="" aria-pressed="true">All</button>
-					{filters.map((term) => (
-						<button type="button" class="filter" data-filter={term.slug} aria-pressed="false">{term.label}</button>
-					))}
-				</div>
-			)}
-			<CardGrid cards={cards} level={2} />
-		</div>
-		</>
-	)}
+
+	{doc.fromDoc && <div class="container doc-body"><Prose value={before} /></div>}
+
+	<div class="container projects">
+		{filters.length > 1 && (
+			<div class="filters" role="group" aria-label="Filter projects by type">
+				<button type="button" class="filter" data-filter="" aria-pressed="true">All</button>
+				{filters.map((term) => (
+					<button type="button" class="filter" data-filter={term.slug} aria-pressed="false">{term.label}</button>
+				))}
+			</div>
+		)}
+		<CardGrid cards={cards} level={2} />
+	</div>
+
+	{doc.fromDoc && after.length > 0 && <div class="container doc-body"><Prose value={after} /></div>}
 
 	{doc.fromDoc ? doc.cta && <CtaBand doc={doc.cta} /> : <CtaBand headline="Inspired by what you see?" text="Let us help bring your project to life." />}
 </Base>
@@ -122,9 +105,9 @@ const jsonLd = [
 </script>
 
 <style>
-	.doc-gallery-band {
-		padding: var(--spacing-2xl) 0 var(--spacing-3xl);
-		border-top: 1px solid var(--color-border);
+	.doc-body {
+		padding-top: var(--spacing-3xl);
+		padding-bottom: var(--spacing-xl);
 	}
 
 	.projects {

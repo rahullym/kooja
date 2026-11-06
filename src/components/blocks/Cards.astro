@@ -6,16 +6,18 @@ import { BUSINESS, getSorted } from "../../lib/site";
 
 type CardsBlock = Extract<PageContentBlock, { _type: "site_cards" }>;
 type Props = BlockComponentProps<CardsBlock>;
+/** Cards written in a content document (home page): their own title, text, link and photo. */
+type DocItem = { title: string; url?: string | null; text?: string | null; meta?: string | null; image?: { id: string; src?: string; alt?: string } | null };
 
 const LABELS = { services: "Services", industries: "Industries", locations: "Service areas", projects: "Our work" } as const;
 
-const { value } = Astro.props;
+const { value } = Astro.props as { value: CardsBlock & { items?: DocItem[] | null } };
 const { source, headline, subheadline } = value;
 
 const { entries, cacheHint } = await getSorted(source);
 if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
-const items = entries.map((entry) => {
+const items = value.items ?? entries.map((entry) => {
 	const data = entry.data as {
 		title: string;
 		nav_label?: string | null;
@@ -50,7 +52,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 				<ul class="work">
 					{items.map((item) => (
 						<li>
-							<a class="work-link" href={item.url}>
+							<a class="work-link" href={item.url ?? undefined}>
 								{item.image && <Image image={item.image} />}
 								<span class="work-caption">
 									<span class="work-title">{item.title}</span>
@@ -65,9 +67,10 @@ const pad = (n: number) => String(n).padStart(2, "0");
 					<ol class="areas-list">
 						{items.map((item, i) => (
 							<li>
-								<a class="area-link" href={item.url}>
+								<a class="area-link" href={item.url ?? undefined}>
 									<span class="label area-n">{pad(i + 1)}</span>
 									<span class="area-name">{item.title}</span>
+									{value.items && item.text && <span class="area-text">{item.text}</span>}
 									{item.meta && <span class="label area-region">{item.meta}</span>}
 									<span class="area-arrow" aria-hidden="true">&rarr;</span>
 								</a>
@@ -100,7 +103,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 					<ol class="rail-track" tabindex="0" aria-label={headline || "Services"}>
 						{items.map((item, i) => (
 							<li>
-								<a class="rail-card" href={item.url} draggable="false">
+								<a class="rail-card" href={item.url ?? undefined} draggable="false">
 									{item.image && <Image image={item.image} draggable="false" />}
 									<span class="rail-n">{pad(i + 1)}</span>
 									<span class="rail-body">
@@ -121,7 +124,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 				<ol class="index">
 					{items.map((item, i) => (
 						<li>
-							<a class="index-link" href={item.url}>
+							<a class="index-link" href={item.url ?? undefined}>
 								<span class="label index-n">{pad(i + 1)}</span>
 								<span class="index-title">{item.title}</span>
 								{item.text && <span class="index-text">{item.text}</span>}
@@ -142,6 +145,15 @@ const pad = (n: number) => String(n).padStart(2, "0");
 )}
 
 <style>
+	.area-text {
+		grid-column: 2 / -1;
+		font-size: var(--font-size-sm);
+		color: var(--color-muted);
+		font-family: var(--font-body);
+		text-transform: none;
+		letter-spacing: normal;
+	}
+
 	ul,
 	ol {
 		list-style: none;

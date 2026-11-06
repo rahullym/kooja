@@ -8,6 +8,7 @@ type Props = BlockComponentProps<HeroBlock>;
 
 const { value } = Astro.props;
 const { anchor_id, headline, subheadline, image, centered } = value;
+const heroLabel = (value as { label?: string | null }).label === undefined ? "Milton, Ontario · Since 2012" : (value as { label?: string | null }).label;
 
 const primaryCta =
 	value.primary_cta_label && value.primary_cta_url
@@ -33,7 +34,7 @@ const variant = image ? (VARIANTS.find((v) => v === requested) ?? "photo") : "ty
 		</figure>
 	)}
 	<div class="hero-content">
-		<p class="label hero-label">Milton, Ontario · Since 2012</p>
+		{heroLabel && <p class="label hero-label">{heroLabel}</p>}
 		<h1 class="hero-headline">{headline}</h1>
 		<div class="hero-lower">
 			{subheadline && <p class="hero-subheadline">{subheadline}</p>}

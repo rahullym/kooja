@@ -1,0 +1,146 @@
+---
+/**
+ * Home page from the client's content document, drawn with the original
+ * home page blocks. Sections appear in the document's order with its exact
+ * wording; each one uses the block that matches its shape.
+ */
+import Cards from "../blocks/Cards.astro";
+import FAQ from "../blocks/FAQ.astro";
+import Features from "../blocks/Features.astro";
+import Hero from "../blocks/Hero.astro";
+import Stats from "../blocks/Stats.astro";
+import Steps from "../blocks/Steps.astro";
+import Testimonials from "../blocks/Testimonials.astro";
+import CtaBand from "../CtaBand.astro";
+import { docImageIndex } from "../../lib/doc-images";
+import { blockText, docSections, type PtBlock } from "../../lib/doc-sections";
+import { getSorted, type DocButton, type DocCta } from "../../lib/site";
+import OldSection from "./OldSection.astro";
+
+interface Props {
+	title: string;
+	intro?: string | null;
+	body: unknown[];
+	heroImage?: unknown;
+	heroButtons?: DocButton[] | null;
+	cta?: DocCta;
+}
+
+const { title, intro, body, heroImage, heroButtons, cta } = Astro.props;
+const sections = docSections(body);
+const images = await docImageIndex();
+const [services, industries, locations] = await Promise.all([getSorted("services"), getSorted("industries"), getSorted("locations")]);
+
+const norm = (s: string) => s.toLowerCase().replace(/&/g, "and").replace(/colors/g, "colours").replace(/[^a-z0-9]/g, "");
+type Entry = { id: string; data: { title?: string; nav_label?: string | null; city?: string | null } };
+/** Link a card to the page it is about, by name (the home document has no links). */
+function urlFor(name: string, list: { entries: unknown[] }, base: string) {
+	const n = norm(name.replace(/\(.*?\)/g, ""));
+	const words = name.toLowerCase().split(/\W+/).filter((w) => w.length > 3 && !["powder", "coating", "shops", "companies"].includes(w));
+	const hit = (list.entries as Entry[]).find((e) => {
+		const names = [e.data.title, e.data.nav_label, e.data.city].filter(Boolean).map((x) => norm(x!));
+		return names.some((x) => x === n || x.includes(n) || n.includes(x)) || words.some((w) => names.some((x) => x.includes(w)));
+	});
+	return hit ? `${base}/${hit.id}` : null;
+}
+const text = (blocks: PtBlock[]) => blocks.map(blockText).filter(Boolean).join(" ");
+const ICONS = ["clock", "users", "chart", "shield", "zap", "check", "globe", "star"];
+const LABELS: [RegExp, string][] = [
+	[/what is/i, "Basics"],
+	[/capabilit|capacity/i, "Capacity"],
+	[/guide|blog/i, "Guides"],
+	[/project|work/i, "Our work"],
+];
+const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?? "Koojo";
+---
+
+<Hero
+	value={{
+		_type: "marketing_hero",
+		_key: "doc-hero",
+		headline: title,
+		subheadline: intro ?? undefined,
+		image: heroImage as never,
+		label: null,
+		primary_cta_label: heroButtons?.[0]?.label,
+		primary_cta_url: heroButtons?.[0]?.href,
+		secondary_cta_label: heroButtons?.[1]?.label,
+		secondary_cta_url: heroButtons?.[1]?.href,
+	} as never}
+/>
+
+{sections.map((section) => {
+	if (section.kind === "strip") {
+		const items = String(section.block.text ?? "").split(/\s+[|·•]\s+/).filter(Boolean).map((item) => {
+			const m = item.match(/^(.*?)(\d[\d,.]*\+?(?:[\s-]?(?:lb|hr|hours?|ft)\b)?)(.*)$/i);
+			if (!m) return { label: "", value: item };
+			const before = m[1]!.trim();
+			return before ? { label: before, value: (m[2]! + m[3]!).trim() } : { label: m[3]!.trim(), value: m[2]!.trim(), valueFirst: true };
+		});
+		return <Stats value={{ _type: "site_stats", _key: "doc-stats", items } as never} />;
+	}
+
+	if (section.kind === "faq") {
+		const node = section.block as { heading?: string; items?: { question: string; answer: PtBlock[] }[] };
+		const items = (node.items ?? []).map((f) => ({ question: f.question, answer: text(f.answer) }));
+		return <FAQ value={{ _type: "marketing_faq", _key: "doc-faq", headline: node.heading, items } as never} />;
+	}
+
+	if (section.kind === "cta" || section.kind === "gallery") return null;
+
+	const title = section.heading ? blockText(section.heading) : "";
+	const intro = text(section.intro);
+
+	if (section.kind === "steps") {
+		const steps = section.groups.map((g) => ({ title: blockText(g.heading), description: text(g.blocks) }));
+		return <Steps value={{ _type: "site_steps", _key: "doc-steps", headline: title, subheadline: intro, steps } as never} />;
+	}
+
+	if (section.kind === "grid") {
+		const isAreas = /area|across|where we work|location/i.test(title);
+		const isServices = !isAreas && /service/i.test(title);
+		const source = isAreas ? "locations" : isServices ? "services" : "industries";
+		const list = isAreas ? locations : isServices ? services : industries;
+		const base = `/${source}`;
+		const items = section.groups.map((g) => {
+			const name = blockText(g.heading);
+			return { title: name, text: text(g.blocks), url: urlFor(name, list, base), image: isServices ? images.forName(name) : null };
+		});
+		return <Cards value={{ _type: "site_cards", _key: `doc-${source}`, source, headline: title, subheadline: intro, items } as never} />;
+	}
+
+	if (section.kind === "quotes") {
+		const testimonials: { quote: string; author: string }[] = [];
+		for (const q of section.quotes) {
+			const t = blockText(q);
+			if (q.koojoCite && testimonials.length) testimonials.at(-1)!.author = t;
+			else testimonials.push({ quote: t, author: "" });
+		}
+		return (
+			<Testimonials
+				value={{ _type: "marketing_testimonials", _key: "doc-reviews", headline: title, subheadline: intro, footnote: text(section.outro), testimonials } as never}
+			/>
+		);
+	}
+
+	// Text sections. A run of "Label: text" lines is the "Why choose us" grid.
+	const pairs = section.intro.filter((b) => /^[A-Z][^:.]{1,40}: \S/.test(blockText(b)));
+	if (pairs.length >= 3) {
+		const lead = section.intro.filter((b) => !pairs.includes(b));
+		const features = pairs.map((b, i) => {
+			const t = blockText(b);
+			const at = t.indexOf(": ");
+			return { title: t.slice(0, at), description: t.slice(at + 2), icon: ICONS[i % ICONS.length] };
+		});
+		return <Features value={{ _type: "marketing_features", _key: "doc-why", headline: title, subheadline: text(lead), features } as never} />;
+	}
+
+	// Recent projects: the copy plus the project photo mosaic.
+	if (/project/i.test(title)) {
+		return <Cards value={{ _type: "site_cards", _key: "doc-projects", source: "projects", headline: title, subheadline: intro } as never} />;
+	}
+
+	return <OldSection label={labelFor(title)} headline={title} blocks={section.intro} />;
+})}
+
+{cta && <CtaBand doc={cta} />}

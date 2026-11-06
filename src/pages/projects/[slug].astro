@@ -4,8 +4,6 @@ import { Image } from "emdash/ui";
 import CtaBand from "../../components/CtaBand.astro";
 import EntryLayout from "../../components/EntryLayout.astro";
 import PageHero from "../../components/PageHero.astro";
-import DocHero from "../../components/doc/DocHero.astro";
-import DocSections from "../../components/doc/DocSections.astro";
 import Prose from "../../components/Prose.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Base from "../../layouts/Base.astro";
@@ -59,97 +57,48 @@ const jsonLd = [
 	content={{ collection: "projects", id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	{doc.fromDoc ? (
-		<>
-			<DocHero title={data.title} intro={data.summary} byline={doc.byline} crumbs={crumbs} eyebrow="Case study" image={data.featured_image} titleAttrs={entry.edit.title} cta />
-			<DocSections value={data.content} heroImage={data.featured_image} />
-			{gallery.length > 0 && (
-				<div class="gallery doc-gallery">
-					{gallery.map((item) => (
-						<figure>
-							<Image image={item.image} />
-							{item.caption && <figcaption>{item.caption}</figcaption>}
-						</figure>
-					))}
-				</div>
-			)}
-			<section class="doc-related">
-				<div class="doc-related-inner">
-					<RelatedLinks links={(data.related ?? []) as RelatedLink[]} />
-				</div>
-			</section>
-		</>
-	) : (
-		<>
-		<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} />
+	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} />
 
-		<EntryLayout>
-			{data.featured_image && (
-				<figure class="project-image" {...entry.edit.featured_image}>
-					<Image image={data.featured_image} />
-				</figure>
-			)}
+	<EntryLayout>
+		{data.featured_image && (
+			<figure class="project-image" {...entry.edit.featured_image}>
+				<Image image={data.featured_image} />
+			</figure>
+		)}
 
-			{specs.length > 0 && !doc.fromDoc && (
-				<dl class="specs">
-					{specs.map((spec) => (
-						<div>
-							<dt>{spec.label}</dt>
-							<dd>{spec.value}</dd>
-						</div>
-					))}
-				</dl>
-			)}
+		{specs.length > 0 && !doc.fromDoc && (
+			<dl class="specs">
+				{specs.map((spec) => (
+					<div>
+						<dt>{spec.label}</dt>
+						<dd>{spec.value}</dd>
+					</div>
+				))}
+			</dl>
+		)}
 
-			<div {...entry.edit.content}>
-				<Prose value={data.content} />
+		<div {...entry.edit.content}>
+			<Prose value={data.content} />
+		</div>
+
+		{gallery.length > 0 && (
+			<div class="gallery">
+				{gallery.map((item) => (
+					<figure>
+						<Image image={item.image} />
+						{item.caption && <figcaption>{item.caption}</figcaption>}
+					</figure>
+				))}
 			</div>
+		)}
 
-			{gallery.length > 0 && (
-				<div class="gallery">
-					{gallery.map((item) => (
-						<figure>
-							<Image image={item.image} />
-							{item.caption && <figcaption>{item.caption}</figcaption>}
-						</figure>
-					))}
-				</div>
-			)}
-
-			<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
-		</EntryLayout>
-
-		</>
-	)}
+		<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
+	</EntryLayout>
 
 	{doc.fromDoc ? doc.cta && <CtaBand doc={doc.cta} /> : <CtaBand headline="Have a similar part?" text="Send us the details and we'll quote it." />}
 </Base>
 
 <style>
-	.doc-gallery {
-		max-width: var(--wide-width);
-		margin: 0 auto;
-		padding: var(--spacing-2xl) var(--spacing-lg);
-	}
-
-	.doc-related {
-		border-top: 1px solid var(--color-border);
-		padding: var(--spacing-2xl) 0;
-	}
-
-	.doc-related-inner {
-		max-width: var(--wide-width);
-		margin: 0 auto;
-		padding: 0 var(--spacing-lg);
-	}
-
-	.doc-related-inner :global(.related) {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-		gap: var(--spacing-xl);
-		position: static;
-	}
-
 	.project-image {
 		max-width: var(--max-width);
 		margin-bottom: var(--spacing-2xl);
