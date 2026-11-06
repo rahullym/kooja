@@ -32,6 +32,8 @@ const { label, headline, blocks } = Astro.props;
 
 	.old-body {
 		grid-column: 2;
+		grid-row: 2;
+		padding-top: 0.35em;
 	}
 
 	.old-body :global(.prose) {
@@ -45,6 +47,7 @@ const { label, headline, blocks } = Astro.props;
 	@media (max-width: 800px) {
 		.old-body {
 			grid-column: 1;
+			grid-row: auto;
 		}
 	}
 </style>

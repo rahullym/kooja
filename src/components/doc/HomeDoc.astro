@@ -167,6 +167,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 
 	.faq-col {
 		grid-column: 2;
+		grid-row: 2;
 	}
 
 	.faq-col :global(.faqs) {
@@ -177,6 +178,7 @@ const labelFor = (title: string) => LABELS.find(([re]) => re.test(title))?.[1] ?
 	@media (max-width: 800px) {
 		.faq-col {
 			grid-column: 1;
+			grid-row: auto;
 		}
 	}
 </style>
