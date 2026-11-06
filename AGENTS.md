@@ -73,6 +73,14 @@ Hub pages take their H1, intro, body and FAQ from the `pages` entry with the sam
 
 `seed/seed.json` is generated. Edit `scripts/seed/content.py` and run `python3 scripts/seed/build.py`; do not edit the JSON by hand. The 33 migrated posts are in `scripts/seed/wix-posts.json` (produced by `wix_posts_to_portable_text.py` from the live site). Collections and menus are applied on first request; content is applied by the setup wizard or `npx emdash seed seed/seed.json`. A seed never overwrites existing data.
 
+## Content documents (client copy)
+
+Page copy comes from the client's PDF content packages (one per page, listed in the "KOOJO PAGES" Google Sheet). Each PDF is converted to `scripts/seed/docs/<collection>__<slug>.json`: an ordered list of blocks copied word for word from the PDF, without the writer notes (section labels, SEO scores, photo slots, link lines). `build.py` (`apply_docs`) turns these into Portable Text and they override the older copy in `content.py` / `uploaded_content.json`.
+
+- Never copy text out of a PDF with a raw byte or stream reader: that is how compressed PDF stream data (random characters such as `[*]A_,Y;...`) ended up on the live site. Use `pdftotext -layout` / `-raw` and check the result against the PDF.
+- Block order is the document's order. Custom blocks keep templates in step: `koojoByline` (shown under the H1), `koojoStrip`, `koojoCards`, `koojoFaq` (rendered in place), `koojoCta` (the last one fills the CTA band), `koojoButtons`, `koojoMap`, `koojoForm`, `koojoGallery` (where the projects gallery / blog listing sits), `koojoIntroInBody`. Components are in `src/components/doc/`; `docParts()` in `src/lib/site.ts` reads them.
+- When a page has document blocks, templates hide their own generic sections (auto card grids, default FAQ heading, default CTA text, hardcoded contact/map blocks) so only the document's sections show.
+
 ## SEO rules (from the blueprint)
 
 - One primary keyword per URL, in the title tag, H1 and first 100 words of that page only.

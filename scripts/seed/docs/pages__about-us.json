@@ -1,0 +1,91 @@
+{
+  "collection": "pages",
+  "slug": "about-us",
+  "meta_title": "About Koojo Custom Powder Coating | Since 2012",
+  "meta_desc": "About Koojo Custom Powder Coating: a certified Milton shop since 2012, 10,000+ items coated, a 23 ft oven and real Google reviews. Visit us.",
+  "h1": "About Koojo Custom Powder Coating",
+  "byline": "Written by [Owner name], owner of Koojo | Updated 23 October 2026",
+  "blocks": [
+    {"sec": "HERO", "t": "p", "text": "About Koojo Custom Powder Coating: we are a certified powder coating shop at 10874 Steeles Ave E in Milton, Ontario, founded in 2012. In more than 12 years of experience we have coated over 10,000 items for manufacturers, fabricators, contractors, public bodies and people bringing in a single part of their own."},
+    {"sec": "HERO", "t": "p", "text": "This page tells you who we are, how we work, what our facility can handle and what customers say about us, so you know exactly who will be looking after your parts. Standard jobs leave in 48 hours, and the shop is open Monday to Friday, 7 AM to 5 PM. We are a small, hands-on team, so the people who quote your job are the same people who prepare, coat and inspect it. That keeps instructions clear and mistakes rare, and it means you always know who to call, from the first quote to final pickup."},
+    {"sec": "TRUST STRIP", "t": "strip", "text": "Since 2012 | 10,000+ Items Coated | 23 ft Oven | Certified by Absolute Bureau of Certification LLC | 48 Hr Turnaround | Google Rating [add live rating]"},
+
+    {"sec": "COMPANY FACTS", "t": "h2", "text": "Koojo at a Glance"},
+    {"sec": "COMPANY FACTS", "t": "p", "text": "Here are the company facts in one place: when we started, where we are, how much we have coated and what our shop can take on. Each figure is current and comes from our own records, not marketing estimates."},
+    {"sec": "COMPANY FACTS", "t": "table", "header": true, "rows": [
+      ["Fact", "Detail"],
+      ["Founded", "2012"],
+      ["Location", "10874 Steeles Ave E, Milton, ON L9T 2X8"],
+      ["Items coated", "10,000+"],
+      ["Oven", "23 ft long; parts up to 6,000 lb"],
+      ["Certification", "Absolute Bureau of Certification LLC"],
+      ["Standard turnaround", "48 hours"],
+      ["Hours", "Monday to Friday, 7 AM to 5 PM"],
+      ["Phone", "(905) 876-7060"]
+    ]},
+    {"sec": "COMPANY FACTS", "t": "p", "text": "If you need these details for a supplier form, Koojo Custom Powder Coating can send them in writing with your estimate."},
+
+    {"sec": "OUR STORY", "t": "h2", "text": "Our Story"},
+    {"sec": "OUR STORY", "t": "p", "text": "Our company history starts in 2012 with one simple aim: give local businesses a powder coating shop that finishes parts properly, answers the phone and hits the date it promised. More than a decade later, that aim still shapes every order at Koojo Custom Powder Coating."},
+    {"sec": "OUR STORY", "t": "p", "text": "[Owner name] founded the business in Milton [confirm founding story in the owner's words]. Work grew steadily through word of mouth, the way most customers first heard about us, first from fabricators and machine shops nearby, then from larger manufacturers and public clients across the region. The shop has grown with that demand, adding a 23 ft oven for big parts and certifying its quality system with an outside body. What has not changed is the way jobs are handled. Every order is still checked by people who know the work, and customers can still reach someone who knows their parts. That, more than anything, is what people mean when they talk about Koojo."},
+
+    {"sec": "OUR TEAM", "t": "h2", "text": "The People Behind Your Parts"},
+    {"sec": "OUR TEAM", "t": "p", "text": "Our team of experienced coaters handles every stage in-house, from blasting and pretreatment to spraying, curing and inspection. Because nothing is passed to another vendor, the person who plans your job can tell you exactly where it stands."},
+    {"sec": "OUR TEAM", "t": "table", "header": true, "rows": [
+      ["Name", "Role", "Experience"],
+      ["[Owner name]", "Owner", "[confirm years]"],
+      ["[Name]", "Production lead", "[confirm years]"],
+      ["[Name]", "Quality and inspection", "[confirm years]"]
+    ]},
+
+    {"sec": "VALUES", "t": "h2", "text": "How We Work: Our Company Values"},
+    {"sec": "VALUES", "t": "p", "text": "Three company values guide every job: a quality-first approach, close customer focus and a sustainable process. At Koojo Custom Powder Coating they are practical rules, not slogans, and they decide how we prepare, coat and check each part."},
+    {"sec": "VALUES", "t": "h3", "text": "Quality first"},
+    {"sec": "VALUES", "t": "p", "text": "We use quality powders, prepare every surface properly and test the finish before release. Our checks are set out on the [powder coating quality assurance](/certification) page."},
+    {"sec": "VALUES", "t": "h3", "text": "Customer focus"},
+    {"sec": "VALUES", "t": "p", "text": "We listen first, then confirm colour, prep and timing before work starts, so nothing on your order is left to guesswork. Ask any repeat customer about us and this is usually the first thing they mention."},
+    {"sec": "VALUES", "t": "h3", "text": "A sustainable process"},
+    {"sec": "VALUES", "t": "p", "text": "Powder coating produces far less waste than many liquid finishes, and overspray can often be collected. We plan loads to make good use of each oven cycle."},
+
+    {"sec": "WHAT WE DO", "t": "h2", "text": "What We Do and Who We Serve"},
+    {"sec": "WHAT WE DO", "t": "p", "text": "Koojo Custom Powder Coating blasts, prepares, coats and cures metal parts for industrial and individual customers alike. That ranges from production runs of frames and guards to a single bike frame, a set of rims or a restored railing brought in by a homeowner."},
+    {"sec": "WHAT WE DO", "t": "p", "text": "Our [powder coating services](/services) page lists every service, including industrial work, [custom powder coating colours](/services/custom-colors-finishes) and restoration. For finished examples, browse our [powder coating projects](/projects), and for the cities we cover, see our [powder coating service areas](/locations). Whatever the size of the order, Koojo Custom Powder Coating runs it through the same in-house facility and checks."},
+
+    {"sec": "FACILITY", "t": "h2", "text": "Our Facility in Milton"},
+    {"sec": "FACILITY", "t": "p", "text": "Our in-house facility includes blasting, pretreatment, spray booths and a 23 ft curing oven that takes parts up to 6,000 lb. Mobile sandblasting is also available for items too large or awkward to bring to the shop."},
+    {"sec": "FACILITY", "t": "p", "text": "Most visitors who ask about Koojo want to see the oven first."},
+    {"sec": "FACILITY", "t": "p", "text": "Keeping blasting, coating, curing and inspection under one roof is what lets us offer a 48 hour turnaround on standard work. For full size and weight limits, see [large part powder coating](/capabilities), which explains what fits and how big jobs are planned at Koojo Custom Powder Coating."},
+
+    {"sec": "REVIEWS", "t": "h2", "text": "What Customers Say"},
+    {"sec": "REVIEWS", "t": "p", "text": "Customer reviews tell you more than we can about Koojo Custom Powder Coating. These Google reviews are quoted word for word from our Google Business Profile, and they reflect the range of people we work for, from repeat trade customers to riders and car owners."},
+    {"sec": "REVIEWS", "t": "p", "text": "We have not edited them, spelling included, because honest feedback is only useful when it is left unedited."},
+    {"sec": "REVIEWS", "t": "quote", "text": "I have been using Koojo custom powder coating for a few years now and i wouldn't even think to go somewhere else.", "cite": "Richard Hartlin, Google review"},
+    {"sec": "REVIEWS", "t": "quote", "text": "Had a 70's cruiser bike frame painted. Job turned out great and looks better than new! Would not hestitate to return!", "cite": "Philip. S, Google review"},
+    {"sec": "REVIEWS", "t": "quote", "text": "My rims look amazing and I would definitely recommend his service .", "cite": "Brendan Black, Google review"},
+    {"sec": "REVIEWS", "t": "p", "text": "Repeat customers like these are why we see ourselves as a trusted partner rather than a one-time vendor. You can read every review, good or bad, on Google, and judge for yourself what people say about us."},
+
+    {"sec": "VISIT", "t": "h2", "text": "Visit Our Shop"},
+    {"sec": "VISIT", "t": "p", "text": "You are welcome to visit our shop at 10874 Steeles Ave E, Milton, Monday to Friday between 7 AM and 5 PM. Bringing a real sample part is the quickest and easiest way to agree on colour, finish and timing in person."},
+    {"sec": "VISIT", "t": "p", "text": "Seeing the shop is the best way to learn about Koojo. Call (905) 876-7060 before you come so the right person is free to meet you. Our [Contact Us](/contact-us) page has the map, directions and drop-off details. As a local business, Koojo Custom Powder Coating would always rather show you the work than describe it."},
+
+    {"sec": "FAQs", "t": "faq_h", "text": "Questions About Koojo"},
+    {"sec": "FAQs", "t": "faq_intro", "text": "Short answer: we are an established, certified local business, and we are easy to reach. These answers cover our background, who we work with and how to check our record, and they appear only on this page."},
+    {"sec": "FAQs", "t": "faq", "q": "How long has Koojo been in business?", "a": "Since 2012, which gives us more than 12 years of experience and over 10,000 coated items."},
+    {"sec": "FAQs", "t": "faq", "q": "Do you work with individuals or only businesses?", "a": "Both. Most work at Koojo Custom Powder Coating is industrial, but we also coat single parts such as bike frames, rims and railings for individual customers."},
+    {"sec": "FAQs", "t": "faq", "q": "How can I check your work before ordering?", "a": "Read our Google reviews, browse the projects page, ask for our certificate or visit the shop with a sample part during opening hours."},
+
+    {"sec": "CTA BAND", "t": "cta_h", "text": "Start Your Project With Us"},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "Now that you know more about Koojo Custom Powder Coating, tell us about your parts. Send photos, sizes and quantities and we will confirm prep, colour and timing, or call (905) 876-7060 to talk it through with our team."},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "Request a [powder coating quote](/get-a-quote) online, Monday to Friday, 7 AM to 5 PM."}
+  ],
+  "notes": [
+    "UNCERTAIN - excluded as a writer instruction: the paragraph after the team table, 'Add real names and photos here before publishing. Showing the people who coat your parts is one of the strongest trust signals a page about us can carry.' It is set in body text in the PDF (and counted in the section word count), but it addresses the client, not visitors. Add it back if the client wants it on the page.",
+    "Placeholders kept: byline [Owner name]; Our Story '[Owner name]' and '[confirm founding story in the owner's words]'; team table '[Owner name]', '[Name]' x2, '[confirm years]' x3; trust strip 'Google Rating [add live rating]'.",
+    "Reviews: stored without the surrounding curly quotation marks; the '— Name, Google review' attribution is in cite. Text is verbatim including the review's own spelling ('hestitate', lower-case 'i', and the space in 'his service .'), as the PDF says reviews must stay exactly as written on Google.",
+    "Open item: add the owner's name, a short founding story in their words, and real team names, roles and photos.",
+    "Open item: add the live Google rating and review count.",
+    "Open item: confirm that powder overspray can be collected and reused in this shop (Values: 'overspray can often be collected').",
+    "Open item: change the live H1 from 'Toronto's Trusted Choice...' to 'About Koojo Custom Powder Coating'.",
+    "Excluded: meta table, Key paragraph, SECTION 1 HEADER, Photo slot line, SECTION 14 FOOTER, INTERNAL LINKS lines, score tables and appendices."
+  ]
+}

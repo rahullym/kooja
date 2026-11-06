@@ -7,7 +7,7 @@ import PageHero from "../../components/PageHero.astro";
 import Prose from "../../components/Prose.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Base from "../../layouts/Base.astro";
-import { articleLd, breadcrumbLd, entrySeo, type RelatedLink } from "../../lib/site";
+import { articleLd, breadcrumbLd, docParts, entrySeo, type RelatedLink } from "../../lib/site";
 
 const { slug } = Astro.params;
 const { entry, cacheHint } = slug ? await getEmDashEntry("projects", slug) : { entry: null, cacheHint: null };
@@ -22,6 +22,7 @@ const crumbs = [
 	{ label: data.title, url: path },
 ];
 
+const doc = docParts(data.content);
 const specs = [
 	{ label: "Client industry", value: data.client_industry },
 	{ label: "Part", value: data.part },
@@ -56,7 +57,7 @@ const jsonLd = [
 	content={{ collection: "projects", id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} />
+	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} eyebrow="Case study" titleAttrs={entry.edit.title} byline={doc.byline} />
 
 	<EntryLayout>
 		{data.featured_image && (
@@ -65,7 +66,7 @@ const jsonLd = [
 			</figure>
 		)}
 
-		{specs.length > 0 && (
+		{specs.length > 0 && !doc.fromDoc && (
 			<dl class="specs">
 				{specs.map((spec) => (
 					<div>
@@ -94,7 +95,7 @@ const jsonLd = [
 		<RelatedLinks slot="aside" links={(data.related ?? []) as RelatedLink[]} />
 	</EntryLayout>
 
-	<CtaBand headline="Have a similar part?" text="Send us the details and we'll quote it." />
+	{doc.fromDoc ? doc.cta && <CtaBand doc={doc.cta} /> : <CtaBand headline="Have a similar part?" text="Send us the details and we'll quote it." />}
 </Base>
 
 <style>

@@ -1,0 +1,24 @@
+---
+/** A row of buttons written in a content document (first one is the primary action). */
+type Item = { label: string; href: string };
+const { items } = Astro.props as { items: Item[] };
+---
+
+<div class="doc-buttons">
+	{items.map((item, i) => (
+		<a href={item.href} class:list={["btn", i === 0 ? "btn-primary" : "btn-secondary"]}>{item.label}</a>
+	))}
+</div>
+
+<style>
+	.doc-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+		margin: var(--spacing-lg) 0;
+	}
+
+	.doc-buttons a {
+		text-decoration: none;
+	}
+</style>

@@ -1,13 +1,22 @@
 ---
 import { getEmDashEntry } from "emdash";
+import ButtonRow from "../components/doc/ButtonRow.astro";
+import CtaBand from "../components/CtaBand.astro";
 import MarketingBlocks from "../components/MarketingBlocks.astro";
+import PageBody from "../components/PageBody.astro";
+import PageHero from "../components/PageHero.astro";
 import Base from "../layouts/Base.astro";
-import { entrySeo, localBusinessLd } from "../lib/site";
+import { docParts, entrySeo, faqLd, localBusinessLd, type Faq } from "../lib/site";
 
 const { entry: page, cacheHint } = await getEmDashEntry("pages", "home");
 if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
-const seo = page ? entrySeo(Astro, page, "/") : null;
+const seo = page ? entrySeo(Astro, page, "/", page.data.intro) : null;
+
+// When the home page has copy from the client's content document, show that
+// copy in the document's order; otherwise fall back to the block layout.
+const doc = docParts(page?.data.body);
+const jsonLd = doc.fromDoc ? [localBusinessLd(Astro.url.origin), faqLd((page?.data.faqs ?? []) as Faq[])] : localBusinessLd(Astro.url.origin);
 ---
 
 <Base
@@ -18,10 +27,18 @@ const seo = page ? entrySeo(Astro, page, "/") : null;
 	canonical={seo?.canonical}
 	robots={seo?.robots}
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
-	jsonLd={localBusinessLd(Astro.url.origin)}
+	jsonLd={jsonLd}
 >
 	{
-		page?.data.content ? (
+		page && doc.fromDoc ? (
+			<>
+				<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline}>
+					{doc.heroButtons && <ButtonRow items={doc.heroButtons} />}
+				</PageHero>
+				<PageBody page={page} />
+				{doc.cta && <CtaBand doc={doc.cta} />}
+			</>
+		) : page?.data.content ? (
 			<div {...page.edit.content}>
 				<MarketingBlocks value={page.data.content} />
 			</div>

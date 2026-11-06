@@ -10,6 +10,7 @@ import Base from "../layouts/Base.astro";
 import {
 	BUSINESS,
 	breadcrumbLd,
+	docParts,
 	entrySeo,
 	faqLd,
 	serviceLd,
@@ -68,6 +69,8 @@ const jsonLd = [
 	breadcrumbLd(Astro.url.origin, crumbs),
 ];
 
+const doc = docParts(data.content);
+
 const localFacts = [
 	{ label: "Drive time from our Milton shop", value: data.drive_time },
 	{ label: "Local industries we coat for", value: data.local_industries },
@@ -85,7 +88,7 @@ const localFacts = [
 	content={{ collection, id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={data.title} intro={data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} cta />
+	<PageHero title={data.title} intro={doc.introInBody ? null : data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} byline={doc.byline} cta />
 
 	<EntryLayout>
 		{data.featured_image && (
@@ -98,7 +101,7 @@ const localFacts = [
 			<Prose value={data.content} />
 		</div>
 
-		{collection === "locations" && (
+		{collection === "locations" && !doc.fromDoc && (
 			<section class="local">
 				{localFacts.length > 0 && (
 					<dl class="local-facts">
@@ -119,7 +122,7 @@ const localFacts = [
 			</section>
 		)}
 
-		<FaqSection faqs={faqs} />
+		{!doc.hasFaq && <FaqSection faqs={faqs} />}
 
 		<Fragment slot="aside">
 			<RelatedLinks links={related}>
@@ -130,7 +133,7 @@ const localFacts = [
 		</Fragment>
 	</EntryLayout>
 
-	<CtaBand />
+	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>
 
 <style>

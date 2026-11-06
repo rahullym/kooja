@@ -1,0 +1,153 @@
+{
+  "collection": "pages",
+  "slug": "services",
+  "meta_title": "Powder Coating Services | Industrial to Custom | Koojo",
+  "meta_desc": "Powder coating services from one certified shop: blasting, pretreatment, custom colours, restoration and bulk work. 48 hr turnaround. Get a quote.",
+  "h1": "Powder Coating Services for Industry, Trade and Home",
+  "byline": "Written by [Shop lead] · Reviewed by [Owner] · Updated 27 October 2026",
+  "blocks": [
+    {"sec": "HERO", "t": "p", "text": "Powder coating services at Koojo Custom Powder Coating cover every step from bare metal to finished part: blasting, pretreatment, masking, spraying, curing and inspection, all under one roof. Since 2012 our full-service powder coating shop has finished more than 10,000 items."},
+    {"sec": "HERO", "t": "p", "text": "Industrial clients, trade customers and homeowners all use the same in-house prep and coating, whether the job is one bracket or a production run. Pick a service below or read on for how the work is done, what it costs to plan and how long it takes. Most standard orders leave within 48 hours, and the shop is open weekdays from 7 AM to 5 PM. Every job starts with a conversation about the part, its use and the finish you want, so the plan fits before any price is given."},
+    {"sec": "HERO", "t": "other", "what": "jump-link table of contents (PDF line is prefixed 'Jump-link table of contents:')", "text": "What We Offer · Size & Weight · Process · Choose a Service · Quality · Industries · Comparison · Projects · Cost & Time · Get a Quote · FAQs"},
+    {"sec": "SPEC & TRUST STRIP", "t": "strip", "text": "23 ft Oven [confirm width x height] · Up to 6,000 lb · 48 Hr Turnaround · In-House & Mobile Sandblasting · Since 2012 · 10,000+ Items · Google Rating [add live rating]"},
+
+    {"sec": "WHAT ARE OUR SERVICES?", "t": "h2", "text": "What Are Our Powder Coating Services?"},
+    {"sec": "WHAT ARE OUR SERVICES?", "t": "p", "text": "They are ten connected metal finishing services that take a part from rust, scale or old paint to a cured, tested finish. Some jobs need one step, others need several, and we combine them into a single order."},
+    {"sec": "WHAT ARE OUR SERVICES?", "t": "p", "text": "Powder coating itself is a dry powder sprayed by electrostatic spray and hardened by oven curing, which gives protective coatings that resist chips, fading and corrosion better than many liquid paints. Around that core sit the supporting coating services: surface preparation, blasting, colour work, stripping and recoating, plus specialist work for vehicles, wheels, buildings, volume orders and one-off pieces. That one-stop finishing approach keeps quality consistent and saves you managing several suppliers, each with its own schedule, standards and paperwork."},
+
+    {"sec": "SIZE, WEIGHT & VOLUME", "t": "h2", "text": "What We Can Coat: Size, Weight and Volume"},
+    {"sec": "SIZE, WEIGHT & VOLUME", "t": "p", "text": "Parts as long as 23 ft and as heavy as 6,000 lb fit our line, in quantities from a single piece to recurring batches. Metals include carbon steel and aluminum, structural steel, cast iron and galvanized steel."},
+    {"sec": "SIZE, WEIGHT & VOLUME", "t": "table", "header": true, "rows": [
+      ["Capability", "Detail"],
+      ["Oven length", "23 ft"],
+      ["Oven width x height", "[confirm one figure]"],
+      ["Maximum part weight", "6,000 lb"],
+      ["Order size", "One-off and production work"],
+      ["Blasting", "In-house, plus mobile sandblasting on site"],
+      ["Cure", "180–200 °C, per powder data sheet"]
+    ]},
+    {"sec": "SIZE, WEIGHT & VOLUME", "t": "p", "text": "Our service range is planned around size from the first call, so long frames and heavy bases get their own cure cycle. We handle one-off and production work on the same line, and batches of small parts can share an oven load with a larger piece in the same colour. For full limits and a fit check, see [large part powder coating](/capabilities), which explains how big work is loaded and racked under our powder coating services."},
+
+    {"sec": "OUR PROCESS", "t": "h2", "text": "How Our Powder Coating Services Work"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Every order follows the same eight steps, from checking your drawing to packing the finished parts. The steps are fixed so results stay consistent, whether we handle one service for you or all of them."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Inspection & Spec Review"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "We check each part against your drawing, confirm the finish and mark every surface that must stay bare. We also agree which of our powder coating services the part needs, so nothing is added later without your approval."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Abrasive & Mobile Sandblasting"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Blasting removes rust, mill scale and old coatings, in the shop or on site, leaving a clean profile the powder can grip."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Cleaning & Phosphate Pretreatment"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Degreasing and pretreatment prepare the metal so the powder bonds firmly, then parts are rinsed and fully dried. Pretreatment also slows corrosion under the coating if the finish is ever damaged."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Masking & Plugging"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Masking and plugging protect threads, mounting faces and contact points. Plugs and high-temperature tape come off after curing, leaving clean edges."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Electrostatic Powder Application"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Charged powder wraps around edges and into corners for even coverage, the core of our service range. Film build is kept even so colour and gloss match across every part in a batch."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Oven Curing"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Parts cure at 180–200 °C until the metal itself reaches temperature, so thick sections cure fully. Curing time follows the powder maker's data sheet, not guesswork."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Quality Inspection & DFT Check"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Quality inspection covers film thickness, adhesion, colour and coverage before release. Results are recorded, so test reports can go out with any of our coating services on request."},
+    {"sec": "OUR PROCESS", "t": "h3", "text": "Packaging & Shipping"},
+    {"sec": "OUR PROCESS", "t": "p", "text": "Packaging and shipping protect finished faces, and the job ends with pickup or delivery. Finished faces are wrapped so they arrive exactly as they left inspection, the final step of every service."},
+
+    {"sec": "WHICH SERVICE?", "t": "h2", "text": "Which Service Do You Need?"},
+    {"sec": "WHICH SERVICE?", "t": "p", "text": "Match your part to a service card below. Each card links to a page with that service's full process, options and FAQs; if your job needs several, we combine them into one quote."},
+    {"sec": "WHICH SERVICE?", "t": "p", "text": "Our powder coating services are grouped by what the part needs rather than by department, because most jobs use two or three of them together. Every service page explains when it applies and what it adds."},
+    {"sec": "WHICH SERVICE?", "t": "cards", "items": [
+      {"title": "industrial powder coating", "text": "Machinery, frames and heavy equipment", "url": "/services/industrial-powder-coating"},
+      {"title": "powder coating surface preparation", "text": "Degreasing, pretreatment, masking", "url": "/services/surface-preparation"},
+      {"title": "sandblasting services", "text": "Rust, scale and old coatings; on-site work", "url": "/services/sandblasting"},
+      {"title": "custom powder coating colours", "text": "RAL shades, textures, metallics", "url": "/services/custom-colors-finishes"},
+      {"title": "powder coat stripping and recoating", "text": "Worn or failed finishes", "url": "/services/restoration-recoating"},
+      {"title": "automotive powder coating", "text": "Frames, chassis and car parts", "url": "/services/automotive-powder-coating"},
+      {"title": "rim powder coating", "text": "Wheels and rims", "url": "/services/wheel-rim-powder-coating"},
+      {"title": "architectural powder coating", "text": "Railings, window frames, fences", "url": "/services/architectural-coatings"},
+      {"title": "commercial powder coating", "text": "Recurring and high-volume orders", "url": "/services/bulk-commercial-orders"},
+      {"title": "specialty powder coating", "text": "Prototypes, art pieces, one-offs", "url": "/services/specialty-custom-projects"}
+    ]},
+    {"sec": "WHICH SERVICE?", "t": "p", "text": "Five more service cards sit on this page only, because each one is handled within a service above. Use them to find the right page fast."},
+    {"sec": "WHICH SERVICE?", "t": "cards", "items": [
+      {"title": "Fence & Railing", "text": "Architectural service", "url": null},
+      {"title": "Machinery & Equipment", "text": "Industrial service", "url": null},
+      {"title": "Outdoor Furniture", "text": "Custom colours, plus the outdoor furniture article", "url": null},
+      {"title": "Masking & Plugging", "text": "Surface preparation", "url": null},
+      {"title": "Packaging & Shipping", "text": "Included with every order", "url": null}
+    ]},
+    {"sec": "WHICH SERVICE?", "t": "p", "text": "Fence and railing work, machinery and equipment, and outdoor furniture refinishing are common requests, so these service categories help visitors who search by part rather than by process."},
+
+    {"sec": "TESTING & QUALITY", "t": "h2", "text": "Performance Testing and Quality Control"},
+    {"sec": "TESTING & QUALITY", "t": "p", "text": "Every finished order is checked before release, and the results are recorded against the job. The table shows each test, the method used and how often it runs, so you know what stands behind every service."},
+    {"sec": "TESTING & QUALITY", "t": "table", "header": true, "rows": [
+      ["Test", "Method", "Frequency"],
+      ["Film thickness (DFT)", "ASTM D7091", "Every order"],
+      ["Adhesion", "ASTM D3359", "[confirm every batch or on request]"],
+      ["Salt-fog exposure", "ASTM B117", "On request [confirm in-house or outside lab]"],
+      ["Visual, colour, gloss", "Approved colour code", "Every part"]
+    ]},
+    {"sec": "TESTING & QUALITY", "t": "p", "text": "An outside body, the Absolute Bureau of Certification, certifies our quality system, and we can send test reports with any order. See [powder coating quality assurance](/certification) for the full checks behind our powder coating services. Readings are taken where coatings fail first, on edges, welds and inside corners, not only on flat faces, and any part that misses a check is corrected before it leaves."},
+    {"sec": "TESTING & QUALITY", "t": "p", "text": "If you need readings for a supplier audit or a warranty file, ask when you order. We match the paperwork to your quality system, from a single summary to readings for each part, and keep the records so repeat orders for the same powder coating services can be checked against the first."},
+
+    {"sec": "INDUSTRIES", "t": "h2", "text": "Industries and Parts We Coat"},
+    {"sec": "INDUSTRIES", "t": "p", "text": "Seven industries account for most of our work, and each has its own page showing the parts, finishes and schedules that sector needs. Pick yours to see how the work fits your sector."},
+    {"sec": "INDUSTRIES", "t": "p", "text": "Fabricators and contractors send the most parts, followed by manufacturers with recurring batches and public buyers with tender work."},
+    {"sec": "INDUSTRIES", "t": "cards", "items": [
+      {"title": "powder coating for metal fabricators", "text": "Weldments and fabrications", "url": "/industries/metal-fabricators-welding-shops"},
+      {"title": "powder coating for manufacturers", "text": "Frames, guards, enclosures", "url": "/industries/manufacturing-automation"},
+      {"title": "powder coating for machine shops", "text": "Machined parts with tight tolerances", "url": "/industries/machine-shops"},
+      {"title": "powder coating for contractors", "text": "Railings, steel, site equipment", "url": "/industries/contractors-construction"},
+      {"title": "powder coating for food processing equipment", "text": "Line frames for washdown areas", "url": "/industries/food-processing-equipment"},
+      {"title": "agricultural equipment powder coating", "text": "Field and heavy equipment", "url": "/industries/agricultural-heavy-equipment"},
+      {"title": "powder coating for municipalities", "text": "Bollards, gates, public metalwork", "url": "/industries/municipal-institutional"}
+    ]},
+    {"sec": "INDUSTRIES", "t": "p", "text": "Each industry page lists the services that sector uses most, a matching project and the questions buyers in that field usually ask, so you can plan with the right detail before you call. If your sector is not listed, call us; coating services are not limited to these seven. Our service range adapts to new part types every month, from prototypes to replacement parts for older equipment."},
+
+    {"sec": "vs WET PAINT vs GALVANIZING", "t": "h2", "text": "Powder Coating Services vs Wet Paint vs Galvanizing"},
+    {"sec": "vs WET PAINT vs GALVANIZING", "t": "p", "text": "Powder gives durable finishes in almost any colour, wet paint suits quick touch-ups and heat-sensitive parts, and galvanizing gives zinc protection with limited looks. The table compares all three at a glance."},
+    {"sec": "vs WET PAINT vs GALVANIZING", "t": "table", "header": true, "rows": [
+      ["", "Powder coating", "Wet paint", "Galvanizing"],
+      ["Durability", "Hard, chip-resistant film", "Softer, more prone to chips", "Very high corrosion resistance"],
+      ["Finish options", "Wide colour and texture range", "Wide colour range", "Metallic grey only"],
+      ["Waste", "Little; overspray can be reclaimed", "Solvents and overspray", "Zinc bath process"]
+    ]},
+    {"sec": "vs WET PAINT vs GALVANIZING", "t": "p", "text": "For a deeper look, read [powder coating vs wet paint](/post/powder-coating-vs-wet-paint-toronto) and [powder coating vs galvanizing](/post/powder-coating-vs-galvanizing-corrosion-protection). Galvanized steel can also be powder coated when you want both zinc protection and colour."},
+    {"sec": "vs WET PAINT vs GALVANIZING", "t": "p", "text": "Many customers combine methods, with zinc underneath for protection and powder on top for colour. Our coating services team can advise which route suits your part, its exposure and its budget before you commit."},
+
+    {"sec": "RECENT PROJECTS", "t": "h2", "text": "Recent Projects Across Our Service Range"},
+    {"sec": "RECENT PROJECTS", "t": "p", "text": "Three recent case studies show different services at work on very different parts, from industrial prep to outdoor and restoration finishes. Each one includes specs, photos and test readings you can check."},
+    {"sec": "RECENT PROJECTS", "t": "cards", "items": [
+      {"title": "Conveyor Frame for an Automotive Plant", "text": "Industrial, sandblasting, surface preparation", "url": "/projects/conveyor-frame-automotive-plant"},
+      {"title": "Safety Bollards", "text": "Architectural, sandblasting, custom colours", "url": "/projects/safety-bollards"},
+      {"title": "Church Gates", "text": "Stripping and recoating, architectural, colours", "url": "/projects/church-gates"}
+    ]},
+    {"sec": "RECENT PROJECTS", "t": "p", "text": "Browse every finished job on our [powder coating projects](/projects) page, where you can filter by industrial, automotive, architectural and specialty work."},
+
+    {"sec": "COST AND LEAD TIME", "t": "h2", "text": "What Affects Cost and Lead Time"},
+    {"sec": "COST AND LEAD TIME", "t": "p", "text": "Price and timing for powder coating services depend on part size, the prep needed, quantity, colour and masking. Standard orders leave two working days after drop-off, while oversized or complex jobs get their own written schedule with the quote."},
+    {"sec": "COST AND LEAD TIME", "t": "p", "text": "Heavy rust or old coatings add blasting or stripping time, while batches of matching parts spread setup costs. Special colours and detailed masking add labour. We do not list prices here, because two similar parts can need different work. For typical ranges, read our guide to [powder coating cost](/post/how-much-does-powder-coating-cost-ontario), then ask for a written price on your own parts. Every service is priced job by job. If your deadline is fixed, say so with the request, and we will confirm in writing whether the date can be met before you book."},
+
+    {"sec": "HOW TO GET A QUOTE", "t": "h2", "text": "How to Get a Quote for Our Work"},
+    {"sec": "HOW TO GET A QUOTE", "t": "p", "text": "Send photos, sizes, quantity, metal and the finish you want for anything in our service range, and we come back with a written price, prep plan and timeline. You can also bring parts to our Milton shop, just off Hwy 401, Monday to Friday, 7 AM to 5 PM."},
+    {"sec": "HOW TO GET A QUOTE", "t": "p", "text": "Use the online [powder coating quote](/get-a-quote) form, or phone (905) 876-7060."},
+
+    {"sec": "FAQs", "t": "faq_h", "text": "Powder Coating Services FAQs"},
+    {"sec": "FAQs", "t": "faq_intro", "text": "Short answer: one shop, one quote and one standard 48 hour turnaround for most orders. These five answers cover the pricing basis, timing, areas we serve, combined orders and order size; every service page answers its own questions."},
+    {"sec": "FAQs", "t": "faq", "q": "How is pricing worked out?", "a": "By part size, prep, quantity, colour and masking. We price each order from photos and sizes, so you pay for the work your parts actually need, with no hidden extras added after the job is done."},
+    {"sec": "FAQs", "t": "faq", "q": "What is your usual turnaround time?", "a": "Standard orders are ready in 48 hours from drop-off. Large or complex jobs get a written timeline before work starts."},
+    {"sec": "FAQs", "t": "faq", "q": "Which areas do you serve?", "a": "Customers across the region send parts to our shop; see [powder coating service areas](/locations) for each city, with drive times, routes and drop-off details."},
+    {"sec": "FAQs", "t": "faq", "q": "Can I combine several services in one order?", "a": "Yes. Combined orders, such as stripping, blasting and colour matching, are quoted together and run as one job."},
+    {"sec": "FAQs", "t": "faq", "q": "Do you take one-off jobs as well as volume work?", "a": "Yes. All of our coating services are available for single parts and recurring batches alike, and both go through the same prep, curing and inspection as every other order."},
+
+    {"sec": "CTA BAND", "t": "cta_h", "text": "Ready to Start Your Project?"},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "Tell us about your parts and we will recommend the right mix from our service range, with prep, finish options and timing in one written quote. Phone (905) 876-7060, or upload photos and measurements on the quote page."},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "We answer weekdays between 7 AM and 5 PM."}
+  ],
+  "notes": [
+    "Placeholders kept: byline [Shop lead], [Owner]; strip '23 ft Oven [confirm width x height]' and 'Google Rating [add live rating]'; capacity table '[confirm one figure]'; testing table '[confirm every batch or on request]' and 'On request [confirm in-house or outside lab]'.",
+    "Jump-link table of contents kept as t:'other' with the writer label 'Jump-link table of contents:' removed (the link labels are what a visitor sees).",
+    "Section 7 service cards and Section 9/11 cards are tables in the PDF; converted to cards blocks per the hub-page instruction. Card title = first column (lower-case kept exactly as written, e.g. 'industrial powder coating'), text = second column. The 'Page' column of the service-card table (Pillar / Service) is a writer label and was dropped. The table header rows ('Service card | Best for | Page', 'Hub-only card | Handled by', 'Industry card | Typical parts', 'Project card | Services used') are not stored.",
+    "The 5 hub-only cards have no link in the PDF (url null); their text is the 'Handled by' column.",
+    "Comparison table header row starts with an empty cell, as in the PDF.",
+    "Open item: pick one oven width x height figure (strip, Section 5, /capabilities, homepage).",
+    "Open item: confirm the metals list, blast grades, which tests run on every batch, and whether salt-fog testing is in-house or at an outside lab.",
+    "Open item: confirm the quote reply time; add named bylines and the live Google rating.",
+    "Open item: publish the 10 service pages and 7 industry pages before this hub links to them, or hide those cards until live.",
+    "Excluded: meta table, Key paragraph, SECTION 1 HEADER, SECTION 16 FOOTER, all INTERNAL LINKS lines, score tables and appendices."
+  ]
+}

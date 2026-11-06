@@ -1,0 +1,14 @@
+---
+/**
+ * CTA text from a content document. The page's last CTA (marked `inBand` by
+ * the seed build) is shown in the CTA band instead, so it renders nothing here.
+ */
+const { node } = Astro.props as { node: { heading?: string; text?: string[]; inBand?: boolean } };
+---
+
+{!node.inBand && (
+	<section class="doc-cta">
+		{node.heading && <h2>{node.heading}</h2>}
+		{(node.text ?? []).map((text) => <p>{text}</p>)}
+	</section>
+)}

@@ -1,0 +1,314 @@
+{
+  "collection": "services",
+  "slug": "bulk-commercial-orders",
+  "meta_title": "Commercial Powder Coating | Koojo Custom Powder Coating",
+  "meta_desc": "Commercial powder coating for bulk and recurring orders. Durable finishes, consistent batches and 48-hour turnaround. Request your quote today.",
+  "h1": "Commercial Powder Coating for Bulk and Recurring Orders",
+  "byline": "By the Koojo Custom Powder Coating production team | Updated 14 October 2026",
+  "blocks": [
+    {
+      "sec": "HERO",
+      "t": "p",
+      "text": "Commercial powder coating gives fabricated metal parts a tough, even finish that holds up across large runs and repeat deliveries. At Koojo Custom Powder Coating, our Milton team handles bulk powder coating for businesses that need hundreds of matching parts, not just one. Since 2012, we have finished more than 10,000 items for customers across the GTA, with a 48-hour turnaround on typical orders. Whether you place a single purchase order or arrange a standing schedule, we plan each stage so every load looks the same. Call (905) 876-7060, Monday to Friday, 7 AM to 5 PM, or request a commercial powder coating quote below."
+    },
+    {
+      "sec": "TRUST STRIP",
+      "t": "strip",
+      "text": "Since 2012 | 10,000+ Items | 48 Hr Turnaround | Google Rating"
+    },
+    {
+      "sec": "WHAT IS",
+      "t": "h2",
+      "text": "What Is Commercial Powder Coating?"
+    },
+    {
+      "sec": "WHAT IS",
+      "t": "p",
+      "text": "Commercial powder coating is a dry finishing process in which electrostatically charged powder is sprayed onto metal parts, then heated in an oven until it cures into a hard, even layer. It suits business orders where many parts must match, resist wear and ship on schedule."
+    },
+    {
+      "sec": "WHAT IS",
+      "t": "p",
+      "text": "The finish is made from thermoset powder, which cures with heat instead of drying like liquid paint. At a cure temperature of 180 to 200 °C, the powder flows, bonds to the metal and hardens into one continuous coating without runs or drips. As a form of commercial metal finishing, it replaces liquid paint where durability and repeatability matter. That makes it a dependable corrosion-resistant and chip-resistant choice for parts that face handling, weather and wear."
+    },
+    {
+      "sec": "WHAT IS",
+      "t": "p",
+      "text": "Typical customers send fabricated metal parts and commercial equipment components that must look alike from the first piece to the last. A commercial-grade finish should look the same on part one and part five hundred. Strong production powder coating depends on repeatable steps, so our commercial powder coating is planned around the whole order, starting from the bare metal. Our wider [powder coating services](/services) cover the full range of work we do."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h2",
+      "text": "Our Commercial Powder Coating Process"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Our commercial powder coating process has six stages: intake and inspection, cleaning and pretreatment, masking, powder application, oven curing and final inspection. Each stage is documented so reorders match the first batch. The same controls support our [industrial powder coating](/services/industrial-powder-coating) work."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 1 – Intake and Inspection"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "We check each part for heavy rust, old coatings, weld quality and damage, then confirm the finish, quantity and delivery date for your order. We also plan racking so every surface can be reached and each load holds as many parts as it safely can."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 2 – Cleaning and Pretreatment"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Parts are washed and chemically treated so the powder bonds to clean metal. Skipping this stage is a common reason finishes fail early. For more on this stage, see our [powder coating surface preparation](/services/surface-preparation) page."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 3 – Masking and Plugging"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Threads, bearing surfaces and mounting holes are protected before coating. Masking and plugging keep bolts turning and parts fitting, which matters when hundreds of identical parts must assemble without rework."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 4 – Electrostatic Powder Application"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Charged powder is applied by electrostatic spray onto the grounded part, so it wraps around tubes, corners and recesses. This gives an even film across every piece in the run."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 5 – Oven Curing"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Parts move into the curing oven, where commercial powder coating reaches temperature and hardens. Cure time depends on the powder and the mass of the part, so a heavy frame is planned differently from a small bracket."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "h3",
+      "text": "Step 6 – Final Inspection and Handoff"
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "We inspect the cured finish for coverage, adhesion and appearance. Typical orders are ready within 48 hours, and larger production runs are scheduled when we quote. We receive parts Monday to Friday, 7 AM to 5 PM. We also record the colour and powder used, so a later order can repeat the finish exactly."
+    },
+    {
+      "sec": "PROCESS",
+      "t": "p",
+      "text": "Our batch powder coating schedule keeps parts from waiting between steps, and for a tight lead time, tell us your date at quote."
+    },
+    {
+      "sec": "PARTS & METALS",
+      "t": "h2",
+      "text": "Parts and Metals We Coat"
+    },
+    {
+      "sec": "PARTS & METALS",
+      "t": "p",
+      "text": "We apply commercial powder coating to steel and aluminum parts, including brackets, enclosures, frames, guards, panels and welded assemblies. Our [capabilities](/capabilities) page lists 6,000 lb capacity, so heavy assemblies, long frames and large batches are all worth a quote, and we confirm fit at intake."
+    },
+    {
+      "sec": "PARTS & METALS",
+      "t": "ul",
+      "items": [
+        "Structural parts: frames, supports, brackets and base plates.",
+        "Enclosures and guards: machine guards, panels, covers and housings.",
+        "Site metalwork: posts, shelving, display racks and gates.",
+        "Equipment parts: chutes, trays, carts and storage racks.",
+        "Repeat items: identical parts shipped in large orders on a regular schedule."
+      ]
+    },
+    {
+      "sec": "PARTS & METALS",
+      "t": "p",
+      "text": "Metals we handle include steel for frames and brackets, aluminum for lighter components, and cast parts such as covers and housings. Good commercial powder coating on mixed metals also depends on how parts are hung, so we confirm that at intake. Our bulk powder coating starts with a material check at intake, because the right prep and cure plan depends on the metal and the thickness of the part. Send photos and dimensions with your request, and we will tell you how your parts will be hung and coated."
+    },
+    {
+      "sec": "OPTIONS",
+      "t": "h2",
+      "text": "Finish and Option Choices"
+    },
+    {
+      "sec": "OPTIONS",
+      "t": "p",
+      "text": "Choose from gloss, satin, matte and textured finishes in a wide range of colours. We confirm the powder type, colour code and film thickness at quote, so the finish suits the part, the metal and how it will be used. For wider palettes, see our [custom powder coating colours](/services/custom-colors-finishes) page."
+    },
+    {
+      "sec": "OPTIONS",
+      "t": "table",
+      "header": true,
+      "rows": [
+        [
+          "Option",
+          "What it gives you",
+          "Best for"
+        ],
+        [
+          "Gloss",
+          "A smooth, high-shine look",
+          "Visible parts, display items"
+        ],
+        [
+          "Matte or satin",
+          "Lower glare and hides light scuffs",
+          "Equipment, enclosures"
+        ],
+        [
+          "Textured",
+          "Hides small surface marks and adds grip",
+          "Handled parts, guards"
+        ],
+        [
+          "Film thickness",
+          "Typical film is 2 to 4 mils, confirmed on fit-critical parts",
+          "Threaded or tight-tolerance parts"
+        ],
+        [
+          "Repeat colour",
+          "A RAL colour or sample matched on every reorder",
+          "Reorders and recurring work"
+        ]
+      ]
+    },
+    {
+      "sec": "OPTIONS",
+      "t": "p",
+      "text": "Whatever you pick, a consistent finish matters when parts from different loads ship together, so we record your colour code and powder for every job. For commercial powder coating that must match over time, give us your code once and we log it. This also helps when a reorder arrives months after the first batch. Film thickness affects fit, so flag tight tolerances before we coat."
+    },
+    {
+      "sec": "QUALITY",
+      "t": "h2",
+      "text": "Quality Standards for Commercial Powder Coating"
+    },
+    {
+      "sec": "QUALITY",
+      "t": "p",
+      "text": "Our commercial powder coating follows recognized standards: ASTM D3359 for adhesion, ASTM D7091 for dry film thickness and ASTM B117 for salt spray resistance on every order. Koojo is certified through the Absolute Bureau of Certification, and test reports are available on request."
+    },
+    {
+      "sec": "QUALITY",
+      "t": "p",
+      "text": "Quality starts at intake and ends at handoff. After curing, a good finish looks even in colour and gloss, with no thin spots, runs or bare edges. Edges, welds and recesses get particular attention because thin spots usually appear there. We flag any concern with you before parts leave the shop."
+    },
+    {
+      "sec": "QUALITY",
+      "t": "p",
+      "text": "An adhesion test checks that the coating bonds to the metal. Dry film thickness readings confirm the coating is neither too thin to protect nor too thick to fit. The salt spray test measures corrosion resistance in a controlled chamber. It is a comparison tool rather than a promise of real-world life, so we explain what results mean for your commercial powder coating order."
+    },
+    {
+      "sec": "QUALITY",
+      "t": "p",
+      "text": "Batch inspection means each load is checked before parts leave the shop, which keeps later deliveries consistent with the first. Careful production powder coating also depends on clean prep and correct curing, so every order follows the same documented steps. See our [certification](/certification) page for details."
+    },
+    {
+      "sec": "PROJECT",
+      "t": "h2",
+      "text": "Recent Project: Automation Line Frame"
+    },
+    {
+      "sec": "PROJECT",
+      "t": "p",
+      "text": "Our automation line frame shows how we handle large framed assemblies that must keep their finish in a busy production setting. Frames like this face grease, impact and constant handling, the same demands that bulk parts meet in daily use, so it is a useful reference for your own order."
+    },
+    {
+      "sec": "PROJECT",
+      "t": "p",
+      "text": "The case study records the part, metal, size, powder, colour and turnaround, with before and after photos. Read the [automation line frame case study](/projects/automation-line-frame) to see the standard behind our work, and expect the same documented approach on your commercial powder coating order."
+    },
+    {
+      "sec": "INDUSTRIES",
+      "t": "h2",
+      "text": "Businesses That Use Commercial Powder Coating"
+    },
+    {
+      "sec": "INDUSTRIES",
+      "t": "p",
+      "text": "Manufacturers, contractors, fabricators, equipment builders and facility managers use our commercial powder coating most. These customers want dependable commercial metal finishing, fast turnaround and repeatable quality across batches, whether they send one part or a full run of matching items, and they want clear scheduling."
+    },
+    {
+      "sec": "INDUSTRIES",
+      "t": "p",
+      "text": "See how we support [powder coating for manufacturers](/industries/manufacturing-automation), who often send matching frames and guards on a regular schedule, and [powder coating for contractors](/industries/contractors-construction), who need tough finishes on steel parts ready for site delivery."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq_h",
+      "text": "Commercial Powder Coating FAQs"
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq_intro",
+      "text": "Short answer: we run commercial powder coating on metal parts in batches, with fast turnaround on typical orders. These answers cover order size, timing, repeat work, colour and logistics so you know what to expect before you book. Ask us anything else before you send parts."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "How many parts can you coat in one order?",
+      "a": "We coat orders from a few parts to large orders of matching pieces. Our capabilities page lists 6,000 lb capacity, so send quantity, dimensions and weight with your request and we will confirm how the order is batched."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "How long does a bulk order take?",
+      "a": "Typical commercial powder coating orders follow our 48-hour turnaround. Large or high-volume powder coating jobs are scheduled at quote based on quantity and part size. We receive parts Monday to Friday, 7 AM to 5 PM."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "Can you match the same colour on every reorder?",
+      "a": "Yes. We record your colour and powder for each job so later batches match the first. Send a RAL code or a sample with your first order."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "Can you set up recurring orders?",
+      "a": "Yes. Tell us the part, quantity and timing at quote, and we plan racking and booking so each load is handled the same way."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "Can one order include different part sizes?",
+      "a": "Yes. We rack mixed parts so they cure well together, and heavier items are planned apart from small ones. List each part type with its quantity when you request a volume quote."
+    },
+    {
+      "sec": "FAQs",
+      "t": "faq",
+      "q": "How do I get a quote for a large batch?",
+      "a": "Send photos, dimensions, quantity and finish through our quote form. Pickup and delivery details are confirmed at quote based on your location, or you can drop parts off at 10874 Steeles Ave E, Milton, during opening hours."
+    },
+    {
+      "sec": "CTA BAND",
+      "t": "cta_h",
+      "text": "Get a Commercial Powder Coating Quote"
+    },
+    {
+      "sec": "CTA BAND",
+      "t": "cta_p",
+      "text": "Ready to coat your next batch? Send photos, quantity, dimensions and your finish choice through our [quote form](/get-a-quote), or call (905) 876-7060, Monday to Friday, 7 AM to 5 PM. Visit 10874 Steeles Ave E, Milton, or [contact us](/contact-us) with questions."
+    }
+  ],
+  "notes": [
+    "Trust strip ends with 'Google Rating' and no rating value or placeholder in the PDF; kept exactly as written.",
+    "Package title in the PDF header is 'Commercial & Bulk Orders'; the page-content H1 'Commercial Powder Coating for Bulk and Recurring Orders' is used.",
+    "FAQ section has no INTERNAL LINKS line, so 'capabilities page' and 'quote form' inside FAQ answers are not linked.",
+    "Open item: confirm the Automation Line Frame case study details (and publish it); a real bulk or repeat-order job should replace it when photographed.",
+    "Open item: the 2 to 4 mil film range (Finish and Option Choices text/table) is a typical industry range; confirm with the shop.",
+    "Open item: confirm that Koojo records colour and powder for reorders, can book recurring orders, and confirms pickup and delivery at quote (stated in Process, Options and FAQs).",
+    "Open item: only the 6,000 lb capacity from /capabilities is quoted; oven size deliberately not stated. Cure time described as depending on powder and part mass (no cure time on file).",
+    "Open item: add a named owner or team member to the byline."
+  ]
+}

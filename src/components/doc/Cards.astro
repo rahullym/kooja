@@ -1,0 +1,18 @@
+---
+/** Card list written in a content document (title, text and optional link). */
+import CardGrid, { type Card } from "../CardGrid.astro";
+
+const { node } = Astro.props as { node: { items?: { title: string; text?: string | null; url?: string | null }[] } };
+const cards: Card[] = (node.items ?? []).map((item) => ({ title: item.title, text: item.text, url: item.url || "" }));
+---
+
+<div class="doc-cards">
+	<CardGrid cards={cards} columns={cards.length % 3 === 0 ? 3 : 2} />
+</div>
+
+<style>
+	.doc-cards {
+		margin: var(--spacing-xl) 0;
+		font-size: var(--font-size-md);
+	}
+</style>

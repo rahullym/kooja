@@ -5,7 +5,7 @@
  */
 import type { getEmDashEntry } from "emdash";
 import { Image } from "emdash/ui";
-import type { Faq } from "../lib/site";
+import { docParts, type Faq } from "../lib/site";
 import FaqSection from "./FaqSection.astro";
 import MarketingBlocks from "./MarketingBlocks.astro";
 import Prose from "./Prose.astro";
@@ -17,6 +17,7 @@ interface Props {
 const { page } = Astro.props;
 const { data } = page;
 const faqs = (data.faqs ?? []) as Faq[];
+const doc = docParts(data.body);
 ---
 
 <div class="page-body">
@@ -32,10 +33,10 @@ const faqs = (data.faqs ?? []) as Faq[];
 		)}
 	</div>
 	<slot />
-	<FaqSection faqs={faqs} />
+	{!doc.hasFaq && <FaqSection faqs={faqs} />}
 </div>
 
-{data.content && data.content.length > 0 && (
+{!doc.fromDoc && data.content && data.content.length > 0 && (
 	<div {...page.edit.content}>
 		<MarketingBlocks value={data.content} />
 	</div>

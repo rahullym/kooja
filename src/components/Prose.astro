@@ -1,5 +1,18 @@
 ---
 import { PortableText } from "emdash/ui";
+import Buttons from "./doc/Buttons.astro";
+import Cards from "./doc/Cards.astro";
+import Cta from "./doc/Cta.astro";
+import Faq from "./doc/Faq.astro";
+import Form from "./doc/Form.astro";
+import Hidden from "./doc/Hidden.astro";
+import Map from "./doc/Map.astro";
+import Strip from "./doc/Strip.astro";
+
+// Custom blocks used by pages built from the client's content documents.
+const components = {
+	type: { koojoStrip: Strip, koojoCards: Cards, koojoFaq: Faq, koojoCta: Cta, koojoByline: Hidden, koojoIntroInBody: Hidden, koojoGallery: Hidden, koojoMap: Map, koojoForm: Form, koojoButtons: Buttons },
+};
 
 interface Props {
 	value?: unknown[] | null;
@@ -10,7 +23,7 @@ const { value } = Astro.props;
 
 {value && value.length > 0 && (
 	<div class="prose">
-		<PortableText value={value as never} />
+		<PortableText value={value as never} components={components} />
 	</div>
 )}
 

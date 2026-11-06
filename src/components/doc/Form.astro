@@ -1,0 +1,16 @@
+---
+/** Form slot from a content document: the quote request form, placed where the document puts it. */
+import QuoteForm from "../QuoteForm.astro";
+---
+
+<div class="doc-form">
+	<QuoteForm />
+</div>
+
+<style>
+	.doc-form {
+		margin: var(--spacing-2xl) 0;
+		font-size: var(--font-size-md);
+		line-height: var(--leading-normal, 1.5);
+	}
+</style>

@@ -1,0 +1,83 @@
+{
+  "collection": "pages",
+  "slug": "certification",
+  "meta_title": "Powder Coating Quality Assurance | Koojo Certification",
+  "meta_desc": "Powder coating quality assurance at Koojo: certified by Absolute Bureau of Certification, ASTM-based checks and test reports on request. Get a quote.",
+  "h1": "Powder Coating Quality Assurance",
+  "byline": "By the Koojo Custom Powder Coating quality team | Reviewed by [Owner name] | Updated 22 October 2026",
+  "blocks": [
+    {"sec": "HERO", "t": "p", "text": "Powder coating quality assurance at Koojo Custom Powder Coating is independently certified by the Absolute Bureau of Certification LLC, covering both powder coating and mobile sandblasting. Since 2012 every one of our 10,000-plus coated items has passed through the same checks at our shop at 10874 Steeles Ave E in Milton."},
+    {"sec": "HERO", "t": "p", "text": "This page explains what the certification covers, which checks we run at each stage, how long they take and which documents you can request for supplier approval or an audit. Standard orders, inspection included, carry a 48 hour turnaround. Whether you buy one bracket or a full production run, the same written quality assurance applies, and the records behind it are available to you. That openness means buyers can check our claims for themselves, line by line, before they place a first order. Read on for the certificate details, the checks at every stage, the tests, the documents you can request and the timing of each step."},
+    {"sec": "TRUST STRIP", "t": "strip", "text": "Certified by Absolute Bureau of Certification LLC | Third-Party Test Reports on Request | ASTM Test Methods | Since 2012 | 10,000+ Items | 48 Hr Turnaround"},
+
+    {"sec": "OUR CERTIFICATION", "t": "h2", "text": "Our Certification"},
+    {"sec": "OUR CERTIFICATION", "t": "p", "text": "Koojo is a certified powder coater: the Absolute Bureau of Certification LLC has certified our quality system for powder coating and mobile sandblasting. That means our methods are documented, followed and checked by an outside body rather than set by us alone."},
+    {"sec": "OUR CERTIFICATION", "t": "table", "header": true, "rows": [
+      ["Detail", "Information"],
+      ["Certifying body", "Absolute Bureau of Certification LLC"],
+      ["Scope", "Powder coating and mobile sandblasting"],
+      ["Standard / certificate type", "[confirm]"],
+      ["Certificate number", "[confirm]"],
+      ["Issue and renewal dates", "[confirm]"],
+      ["Copy available", "Yes, on request"]
+    ]},
+    {"sec": "OUR CERTIFICATION", "t": "p", "text": "Buyers use these details for vendor qualification and powder coating QA reviews, so we keep them current and easy to check. If your procurement team needs the certificate on file before a first order, ask when you request a quote and we will send it with your order paperwork. An independent audit gives your team confidence that our quality assurance is more than a promise."},
+
+    {"sec": "QA CHECKPOINTS", "t": "h2", "text": "What Our Checks Cover, Stage by Stage"},
+    {"sec": "QA CHECKPOINTS", "t": "p", "text": "Our powder coating quality assurance runs from the moment parts arrive to the moment they leave. Each stage has its own inspection checkpoints, and the results go into traceable job records tied to your order number."},
+    {"sec": "QA CHECKPOINTS", "t": "table", "header": true, "rows": [
+      ["Stage", "What we check", "When"],
+      ["Receiving", "Part count, condition, drawing and finish spec", "On arrival, Mon–Fri 7 AM–5 PM"],
+      ["After blasting", "Clean metal, profile, no remaining rust or scale", "Before pretreatment"],
+      ["After pretreatment", "Clean, dry surface; masking in place", "Before powder is applied"],
+      ["After curing", "Cure checks at 180–200 °C metal temperature", "Before cooling and unmasking"],
+      ["Final inspection", "Visual inspection, DFT readings, adhesion, colour and gloss", "Before release"],
+      ["Release", "Results recorded; inspection report on request", "Within the 48 hr turnaround"]
+    ]},
+    {"sec": "QA CHECKPOINTS", "t": "p", "text": "Writing the checks down is what turns good intentions into quality assurance for powder coating that a customer can verify. It also means a repeat order months later is made to the same acceptance criteria as the first. Final checks combine visual inspection under good light, colour verification against the approved code and a gloss check, so every part matches the sample. Cure checks confirm the metal itself reached temperature, not just the oven air."},
+
+    {"sec": "TESTS", "t": "h2", "text": "Tests We Run and What They Show"},
+    {"sec": "TESTS", "t": "p", "text": "Three checks are part of every final inspection: film thickness, adhesion and appearance. Each follows a recognised method, so the numbers mean the same thing to your engineers as they do to our team."},
+    {"sec": "TESTS", "t": "table", "header": true, "rows": [
+      ["Test", "Method", "What it shows", "Frequency"],
+      ["Film thickness", "ASTM D7091", "DFT readings on faces, edges, welds", "Every order"],
+      ["Adhesion", "ASTM D3359", "Tape adhesion rating", "Every order [confirm]"],
+      ["Visual, colour and gloss", "Daylight check vs. approved code", "Coverage, colour verification, gloss check", "Every part"],
+      ["Salt-fog exposure", "ASTM B117 (outside lab)", "Corrosion performance", "On request [confirm]"]
+    ]},
+    {"sec": "TESTS", "t": "p", "text": "Readings are taken where coatings fail first, such as edges, welds and inside corners, not only on flat faces. For background on the methods themselves, see our guide to [ASTM standards for powder coating](/post/astm-standards-for-powder-coating), which explains each standard in plain terms for anyone checking powder coating QA."},
+    {"sec": "TESTS", "t": "p", "text": "A tape adhesion rating shows how firmly the coat is bonded to the metal, and quality assurance for powder coating relies on it more than any other single test. A low rating points straight back to prep, which is why we check the surface before any powder goes on."},
+
+    {"sec": "DOCUMENTS", "t": "h2", "text": "Documents You Can Request"},
+    {"sec": "DOCUMENTS", "t": "p", "text": "You can request a copy of our certificate, third-party test reports and an inspection report for your order. Together they give your quality team the quality documentation it needs without chasing us for details after delivery."},
+    {"sec": "DOCUMENTS", "t": "p", "text": "Many customers ask for these papers during procurement audits or before adding a new coater to an approved supplier list. Tell us what your system requires, whether that is readings per part, per batch or a summary, and we will match it. Records are kept against each job, so documents for an earlier order can be pulled later for your own quality assurance file. This is the practical side of powder coating quality assurance."},
+
+    {"sec": "WHY IT MATTERS", "t": "h2", "text": "Why Certified Quality Matters to Buyers"},
+    {"sec": "WHY IT MATTERS", "t": "p", "text": "Certified powder coating quality assurance lowers your risk. It shows that prep, coating and inspection follow written steps, so finishes stay consistent between orders and any problem can be traced back to a stage and a date."},
+    {"sec": "WHY IT MATTERS", "t": "p", "text": "For manufacturers and contractors, that consistency protects warranties and keeps parts out of rework. For public buyers, it supports tender requirements. The same standard applies whether we coat a single bracket or a large frame, as our [large part powder coating](/capabilities) page shows, and it covers the prep done by our [sandblasting services](/services/sandblasting). Our quality guarantee rests on that quality assurance system, not on promises."},
+
+    {"sec": "TIMING", "t": "h2", "text": "How Long Checks Take"},
+    {"sec": "TIMING", "t": "p", "text": "Inspection is built into our standard 48 hour turnaround, so certified checks do not slow an order down. Extra testing, such as outside-lab corrosion exposure, adds time, and we confirm that schedule before work begins."},
+    {"sec": "TIMING", "t": "p", "text": "Copies of the certificate and standard reports are usually sent with the order or soon after. Planning ahead for quality assurance paperwork keeps your own approvals moving."},
+
+    {"sec": "FAQs", "t": "faq_h", "text": "Powder Coating Quality Assurance FAQs"},
+    {"sec": "FAQs", "t": "faq_intro", "text": "Short answer: yes, you can see the proof behind our quality claims. These answers cover the certifying body, reports and failed checks, and they appear only on this page, written for buyers and auditors."},
+    {"sec": "FAQs", "t": "faq", "q": "Who certifies Koojo's quality system?", "a": "The Absolute Bureau of Certification LLC. Its certification covers the quality assurance behind our powder coating and mobile sandblasting work, and a copy of the certificate is available on request."},
+    {"sec": "FAQs", "t": "faq", "q": "Can I get test results for my parts?", "a": "Yes. Ask when you order and we will supply an inspection report with DFT readings and adhesion results. Third-party reports are also available on request."},
+    {"sec": "FAQs", "t": "faq", "q": "What happens if a part fails a check?", "a": "It does not leave the shop. The cause is found, the part is corrected and the check is repeated before release."},
+
+    {"sec": "CTA BAND", "t": "cta_h", "text": "Ask for Our Quality Documents"},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "Need the certificate or sample reports before you order? Tell us what your quality system requires, and we will send the right documents with your [powder coating quote](/get-a-quote). Reach us on (905) 876-7060."},
+    {"sec": "CTA BAND", "t": "cta_p", "text": "Office hours are Monday to Friday, 7 AM to 5 PM, and you can browse finished work on our [powder coating projects](/projects) page, all held to the same powder coating QA standard."}
+  ],
+  "notes": [
+    "Placeholders kept: byline [Owner name]; certificate table '[confirm]' x3 (standard/certificate type, certificate number, issue and renewal dates); tests table 'Every order [confirm]' (adhesion) and 'On request [confirm]' (salt-fog).",
+    "Open item: add the certificate standard, number and issue/renewal dates, plus a certificate image (Image slot excluded from blocks).",
+    "Open item: confirm adhesion testing runs on every order and whether salt-fog testing is offered through an outside lab.",
+    "Open item: confirm the FAQ answer on failed checks and the timing for sending reports.",
+    "Open item: remove the noindex tag before publishing and before other pages link here (technical, not copy).",
+    "Open item 5 says body text reading 'Koojo Custom Coating' should be 'Koojo Custom Powder Coating'; that wrong name does not appear in this PDF's page copy (applies to the live site).",
+    "Paragraphs split by page breaks were re-joined (hero '...the timing of / each step.', QA checkpoints '...acceptance criteria / as the first.', Why it matters '...a single / bracket').",
+    "Excluded: meta table, Key paragraph, SECTION 1 HEADER, Image slot line, SECTION 12 FOOTER, INTERNAL LINKS lines, score tables and appendices."
+  ]
+}

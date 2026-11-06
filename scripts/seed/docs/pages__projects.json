@@ -1,0 +1,268 @@
+{
+ "collection": "pages",
+ "slug": "projects",
+ "meta_title": "Powder Coating Projects & Portfolio | Koojo Powder Coating",
+ "meta_desc": "Browse powder coating projects from Koojo: conveyor frames, robotic bases, bollards and church gates, with case studies, specs and before-and-after photos.",
+ "h1": "Powder Coating Projects From Our Shop Floor",
+ "byline": "Reviewed by [Owner name], Koojo Custom Powder Coating · Updated October 2026",
+ "blocks": [
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Powder coating projects from Koojo Custom Powder Coating show what our team does every day: blasting, pretreating and coating real metal parts for manufacturers, fabricators and institutions. Since 2012 we have coated more than 10,000 items at our shop in Milton. This page is our powder coating portfolio, built so you can judge finished work before you send a part."
+  },
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Every photo comes from a real job. Filter the powder coating projects below by category or open a case study for full specs."
+  },
+  {
+   "sec": "TRUST STRIP",
+   "t": "strip",
+   "text": "Since 2012 · 10,000+ Items Coated · 48 Hr Turnaround · Oven 23' x 9' x 9' [confirm] · Google Rating [confirm]"
+  },
+  {
+   "sec": "WHAT PROJECTS SHOW",
+   "t": "h2",
+   "text": "What Do Our Powder Coating Projects Show?"
+  },
+  {
+   "sec": "WHAT PROJECTS SHOW",
+   "t": "p",
+   "text": "Our powder coating projects show finished parts, the metal they started as and the process used. Each example points to the prep method, powder type and finish, so you can judge quality on evidence, not claims."
+  },
+  {
+   "sec": "WHAT PROJECTS SHOW",
+   "t": "p",
+   "text": "The work ranges from powder coated conveyor frames for automation lines to bollards and gates for public spaces. Most jobs combine blasting or chemical pretreatment, electrostatic application and oven curing. Comparing powder coating examples with your own part is the quickest way to judge fit."
+  },
+  {
+   "sec": "BROWSE BY CATEGORY",
+   "t": "h2",
+   "text": "Browse Projects by Category"
+  },
+  {
+   "sec": "BROWSE BY CATEGORY",
+   "t": "p",
+   "text": "Four filters narrow the gallery: Industrial, Automotive, Architectural and Specialty. Each filter groups powder coating projects by part type and links to the service page that explains that process in full."
+  },
+  {
+   "sec": "BROWSE BY CATEGORY",
+   "t": "ul",
+   "items": [
+    "Industrial: frames, guards, chutes and machine bases, covered by our [industrial powder coating](/services/industrial-powder-coating) service.",
+    "Automotive: plant equipment and vehicle parts, explained on the [automotive powder coating](/services/automotive-powder-coating) page.",
+    "Architectural: bollards, gates, fence posts and railings, detailed under [architectural powder coating](/services/architectural-coatings).",
+    "Specialty: one-off parts and prototypes, handled through our [specialty powder coating](/services/specialty-custom-projects) service."
+   ]
+  },
+  {
+   "sec": "BROWSE BY CATEGORY",
+   "t": "gallery"
+  },
+  {
+   "sec": "FEATURED CASE STUDIES",
+   "t": "h2",
+   "text": "Featured Case Studies"
+  },
+  {
+   "sec": "FEATURED CASE STUDIES",
+   "t": "p",
+   "text": "Six powder coating case studies document our most detailed powder coating projects. Each records the client industry, part, metal, preparation, powder, colour code and turnaround, so you can compare a past job directly with your own."
+  },
+  {
+   "sec": "FEATURED CASE STUDIES",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Project",
+     "Category",
+     "Coated work"
+    ],
+    [
+     "[Conveyor Frame for an Automotive Plant](/projects/conveyor-frame-automotive-plant)",
+     "Industrial",
+     "Steel frame powder coating for a plant conveyor"
+    ],
+    [
+     "[Automation Line Frame](/projects/automation-line-frame)",
+     "Industrial",
+     "Powder coated automation frames"
+    ],
+    [
+     "[Food Processing Line Frame](/projects/food-processing-line-frame)",
+     "Industrial",
+     "Line frame for a washdown area"
+    ],
+    [
+     "[Robotic Base](/projects/robotic-base)",
+     "Industrial",
+     "Powder coated robotic bases"
+    ],
+    [
+     "[Safety Bollards](/projects/safety-bollards)",
+     "Architectural",
+     "Powder coated safety bollards"
+    ],
+    [
+     "[Church Gates](/projects/church-gates)",
+     "Architectural",
+     "Ornamental gates with fine detail"
+    ]
+   ]
+  },
+  {
+   "sec": "MORE PARTS",
+   "t": "h2",
+   "text": "More Parts From Our Shop Floor"
+  },
+  {
+   "sec": "MORE PARTS",
+   "t": "p",
+   "text": "Beyond the case studies, the gallery shows everyday production work: metal guards, fence posts, chutes, frame bases and general fabrications. These powder coating projects appear as captioned photos rather than full write-ups."
+  },
+  {
+   "sec": "MORE PARTS",
+   "t": "p",
+   "text": "Powder coated machine guards, powder coated fence posts and powder coated chutes are typical repeat powder coating projects for fabricators and maintenance teams. Spot a part like yours? Mention the photo when you request a quote."
+  },
+  {
+   "sec": "PROJECT TIMING",
+   "t": "h2",
+   "text": "How Long Does a Project Take?"
+  },
+  {
+   "sec": "PROJECT TIMING",
+   "t": "p",
+   "text": "Standard jobs are turned around in about 48 hours once parts reach our shop. Larger fabrications, custom colours and complex masking take longer, so timelines vary across powder coating projects and we confirm yours when we quote."
+  },
+  {
+   "sec": "PROJECT TIMING",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Stage",
+     "What happens",
+     "Time"
+    ],
+    [
+     "1. Quote request",
+     "You send photos, sizes, quantity and finish",
+     "Reply within [confirm] business day"
+    ],
+    [
+     "2. Drop-off or pickup",
+     "Parts arrive at our Milton shop",
+     "Mon–Fri, 7 AM–5 PM"
+    ],
+    [
+     "3. Preparation",
+     "Blasting or cleaning, pretreatment, masking",
+     "Included in turnaround"
+    ],
+    [
+     "4. Coating and curing",
+     "Electrostatic application, oven cure",
+     "Cured at 180–200 °C"
+    ],
+    [
+     "5. Inspection and release",
+     "Thickness and adhesion checks, packing",
+     "48 hr standard [confirm scope]"
+    ]
+   ]
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "h2",
+   "text": "Industries Behind the Work"
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "p",
+   "text": "Most of our powder coating projects come from five buyer groups: metal fabricators, manufacturers, food processors, contractors and municipal or institutional clients. Each group has its own industry page covering the finishes and lead times that matter to it."
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "p",
+   "text": "For OEM equipment finishing, see [powder coating for manufacturers](/industries/manufacturing-automation); for weldments, see [powder coating for metal fabricators](/industries/metal-fabricators-welding-shops). Food plants can read [powder coating for food processing equipment](/industries/food-processing-equipment); site teams, [powder coating for contractors](/industries/contractors-construction) or [powder coating for municipalities](/industries/municipal-institutional)."
+  },
+  {
+   "sec": "PROJECT RECORDS",
+   "t": "h2",
+   "text": "What Each Project Record Includes"
+  },
+  {
+   "sec": "PROJECT RECORDS",
+   "t": "p",
+   "text": "Every case study is written from shop records, not marketing copy. It lists the part, metal, size or weight, preparation, powder type, colour code and turnaround, plus powder coating before and after photos, so our powder coating projects are judged on facts."
+  },
+  {
+   "sec": "PROJECT RECORDS",
+   "t": "p",
+   "text": "Checks include film thickness to ASTM D7091 and adhesion to ASTM D3359 [confirm which run on every batch]. Our quality system is certified by the Absolute Bureau of Certification; see [powder coating quality assurance](/certification). For parts up to 6,000 lb, see [large part powder coating](/capabilities)."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_h",
+   "text": "Powder Coating Projects: FAQs"
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_intro",
+   "text": "These answers cover the questions buyers ask most about our powder coating projects. Pricing, turnaround and service area are answered on our [powder coating services](/services) page, so each answer below is specific to this gallery."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Are these photos from real Koojo jobs?",
+   "a": "Yes. Every image shows powder coated metal parts finished in our own facility. We do not use stock photos, and each caption describes the actual part."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can I order the same finish as a project shown here?",
+   "a": "Yes. Case studies for these powder coating projects list the powder type and colour code, so quote that code on your request and we will confirm availability."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Why do some projects have no case study?",
+   "a": "Not every job has the specs and photos a write-up needs. We publish case studies only when records are complete, so smaller powder coating projects stay in the gallery as photos."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "What if my part is not shown in the portfolio?",
+   "a": "Send it anyway. Many jobs are one-offs that never reach the gallery, and our custom powder coating work covers prototypes, art pieces and unusual parts that need custom metal finishing."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_h",
+   "text": "Have a Part Like These?"
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "Send photos, sizes and quantity through our [quote form](/get-a-quote) for durable metal finishes. Call (905) 876-7060 or visit 10874 Steeles Ave E, Milton, Monday to Friday, 7 AM to 5 PM, and add your part to our powder coating projects."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "other",
+   "what": "CTA buttons (whole line links to /contact-us in the PDF)",
+   "text": "Get a Quote · Call (905) 876-7060 · Contact Us"
+  }
+ ],
+ "notes": [
+  "No SECTION labels in this PDF; sec names are my own, taken from the H2s. All H2s confirmed by font size.",
+  "No 'INTERNAL LINKS' lines; links come from the PDF's own link annotations (absolute koojopowdercoating.com URLs converted to relative paths).",
+  "Featured Case Studies is a 3-column table in the PDF (Project | Category | Coated work), kept as a table with the project names linked to their case-study pages rather than converted to cards, so the Category column is not lost. Could be rendered as 6 project cards.",
+  "Byline taken from the line under the hero: 'Reviewed by [Owner name], Koojo Custom Powder Coating · Updated October 2026'. Placeholder kept: [Owner name].",
+  "Placeholders kept: Oven 23' x 9' x 9' [confirm], Google Rating [confirm] (trust strip); Reply within [confirm] business day; 48 hr standard [confirm scope]; [confirm which run on every batch].",
+  "Final button line 'Get a Quote · Call (905) 876-7060 · Contact Us' kept as t:'other' (CTA buttons); the PDF links the whole line to /contact-us.",
+  "Excluded: running header, SEO META block (permalink), breadcrumb 'Home › Our Work', page footers.",
+  "Site: filterable project gallery placed after Browse Projects by Category (the hero says \"Filter the powder coating projects below by category\")."
+ ]
+}

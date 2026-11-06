@@ -1,11 +1,13 @@
 ---
-import { BUSINESS } from "../lib/site";
+import { BUSINESS, type DocCta } from "../lib/site";
 
 interface Props {
 	headline?: string;
 	text?: string | null;
 	buttonLabel?: string | null;
 	buttonUrl?: string | null;
+	/** CTA from a content document: its heading, paragraphs and buttons replace the defaults. */
+	doc?: DocCta | null;
 }
 
 const {
@@ -13,17 +15,33 @@ const {
 	text = "Tell us what you have and when you need it back.",
 	buttonLabel,
 	buttonUrl,
+	doc,
 } = Astro.props;
+const paragraphs = doc ? (doc.text ?? []) : text ? [text] : [];
+const title = doc?.heading || (doc ? null : headline);
+const docButtons = doc?.buttons ?? null;
 ---
 
 <section class="cta-band">
 	<div class="cta-inner">
-		<h2>{headline}</h2>
+		{title && <h2>{title}</h2>}
 		<div class="cta-side">
-			{text && <p>{text}</p>}
+			{paragraphs.map((p) => <p>{p}</p>)}
 			<div class="cta-actions">
-				<a href={buttonUrl || "/get-a-quote"} class="btn cta-btn btn-lg">{buttonLabel || "Get a Quote"}</a>
-				<a href={BUSINESS.phoneHref} class="cta-phone">{BUSINESS.phone}</a>
+				{docButtons ? (
+					docButtons.map((b, i) =>
+						i === 0 ? (
+							<a href={b.href} class="btn cta-btn btn-lg">{b.label}</a>
+						) : (
+							<a href={b.href} class="cta-phone">{b.label}</a>
+						),
+					)
+				) : (
+					<>
+						<a href={buttonUrl || "/get-a-quote"} class="btn cta-btn btn-lg">{buttonLabel || "Get a Quote"}</a>
+						<a href={BUSINESS.phoneHref} class="cta-phone">{BUSINESS.phone}</a>
+					</>
+				)}
 			</div>
 		</div>
 	</div>

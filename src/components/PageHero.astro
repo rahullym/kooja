@@ -8,9 +8,11 @@ interface Props {
 	eyebrow?: string | null;
 	titleAttrs?: Record<string, unknown>;
 	cta?: boolean;
+	/** Byline from the content document, shown under the H1. */
+	byline?: string | null;
 }
 
-const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false } = Astro.props;
+const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline } = Astro.props;
 ---
 
 <header class="page-hero">
@@ -28,6 +30,7 @@ const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false } = Ast
 		)}
 		{eyebrow && <p class="label eyebrow">{eyebrow}</p>}
 		<h1 {...titleAttrs}>{title}</h1>
+		{byline && <p class="label page-hero-byline">{byline}</p>}
 		{intro && <p class="page-hero-intro">{intro}</p>}
 		{cta && (
 			<div class="page-hero-actions">
@@ -40,6 +43,11 @@ const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false } = Ast
 </header>
 
 <style>
+	.page-hero-byline {
+		margin-top: var(--spacing-md);
+		color: var(--color-muted);
+	}
+
 	.page-hero {
 		border-bottom: 1px solid var(--color-rule);
 	}

@@ -66,6 +66,119 @@ def portable(body):
 	return out
 
 
+def from_doc(doc):
+	"""Turn a converted content document (scripts/seed/docs/*.json) into
+	(summary, Portable Text, faqs). The first hero paragraph becomes the
+	summary; every other piece of copy stays in the document's order."""
+	blocks = list(doc["blocks"])
+	summary, intro_in_body = None, False
+	for i, b in enumerate(blocks):
+		if b["t"] == "p":
+			summary = b["text"]
+			if i == 0:
+				del blocks[i]
+			else:
+				intro_in_body = True  # a strip sits between the H1 and the intro: keep that order in the body
+			break
+		if b["t"] not in ("strip",):
+			break
+	out, pairs = [], []
+	if doc.get("byline"):
+		out.append({"_type": "koojoByline", "_key": key("y"), "text": doc["byline"]})
+	if intro_in_body:
+		out.append({"_type": "koojoIntroInBody", "_key": key("i")})
+	i = 0
+	while i < len(blocks):
+		b = blocks[i]
+		t = b["t"]
+		if t == "other" and "button" in (b.get("what") or "").lower() and "jump" not in (b.get("what") or "").lower():
+			node = {"_type": "koojoButtons", "_key": key("n"), "items": buttons(b["text"])}
+			if out and out[-1]["_type"] == "koojoCta":
+				out[-1].setdefault("buttons", []).extend(node["items"])  # buttons of the CTA band
+			else:
+				node["inHero"] = all(x["_type"] == "koojoByline" for x in out)
+				out.append(node)
+		elif t in ("p", "other"):
+			out.append(block(b["text"]))
+		elif t in ("h2", "h3"):
+			out.append(block(b["text"], t))
+		elif t in ("ul", "ol"):
+			out += [block(x, list_item="bullet" if t == "ul" else "number") for x in b["items"]]
+		elif t == "quote":
+			out.append(block(b["text"], "blockquote"))
+			if b.get("cite"):
+				out.append(block(b["cite"], "blockquote"))
+		elif t == "table":
+			out.append(table(b["rows"], b.get("header", True)))
+		elif t == "strip":
+			out.append({"_type": "koojoStrip", "_key": key("t"), "text": b["text"]})
+		elif t == "map":
+			out.append({"_type": "koojoMap", "_key": key("m")})
+		elif t == "gallery":
+			out.append({"_type": "koojoGallery", "_key": key("g")})
+		elif t == "form":
+			out.append({"_type": "koojoForm", "_key": key("q")})
+		elif t == "cards":
+			out.append({"_type": "koojoCards", "_key": key("c"), "items": [
+				{"title": c["title"], "text": c.get("text"), "url": c.get("url")} for c in b["items"]]})
+		elif t in ("faq_h", "faq_intro", "faq"):
+			node = {"_type": "koojoFaq", "_key": key("f"), "heading": None, "intro": [], "items": []}
+			while i < len(blocks) and blocks[i]["t"] in ("faq_h", "faq_intro", "faq"):
+				f = blocks[i]
+				if f["t"] == "faq_h":
+					node["heading"] = f["text"]
+				elif f["t"] == "faq_intro":
+					node["intro"].append(block(f["text"]))
+				else:
+					node["items"].append({"question": f["q"], "answer": [block(a) for a in f["a"].split("\n\n")]})
+					pairs.append((f["q"], LINK.sub(r"\1", f["a"]).replace("\n\n", " ")))
+				i += 1
+			out.append(node)
+			continue
+		elif t in ("cta_h", "cta_p"):
+			node = {"_type": "koojoCta", "_key": key("a"), "heading": None, "text": []}
+			while i < len(blocks) and blocks[i]["t"] in ("cta_h", "cta_p"):
+				if blocks[i]["t"] == "cta_h":
+					node["heading"] = blocks[i]["text"]
+				else:
+					node["text"].append(LINK.sub(r"\1", blocks[i]["text"]))
+				i += 1
+			out.append(node)
+			continue
+		else:
+			raise ValueError(f"unknown block type {t!r}")
+		i += 1
+	if out and out[-1]["_type"] == "koojoCta":
+		out[-1]["inBand"] = True
+	return summary, out, pairs
+
+
+def buttons(text):
+	"""Button row from a document, e.g. "Get a Free Quote | Call (905) 876-7060"."""
+	items = []
+	for label in re.split(r"\s+[|·]\s+", text.strip()):
+		low = label.lower()
+		if low.startswith("call"):
+			href = "tel:+19058767060"
+		elif "contact" in low:
+			href = "/contact-us"
+		elif "consult" in low:
+			href = "/get-a-quote"
+		else:
+			href = "/get-a-quote"
+		items.append({"label": label, "href": href})
+	return items
+
+
+def table(rows, header=True):
+	def cell(text, is_header):
+		children, defs = spans(text)
+		return {"_type": "tableCell", "_key": key("td"), "content": children, "markDefs": defs, "isHeader": is_header}
+	return {"_type": "table", "_key": key("tb"), "hasHeaderRow": bool(header), "rows": [
+		{"_type": "tableRow", "_key": key("tr"), "cells": [cell(c, header and r == 0) for c in row]}
+		for r, row in enumerate(rows)]}
+
+
 def faqs(pairs):
 	return [{"question": q, "answer": a} for q, a in pairs or []]
 
@@ -251,6 +364,40 @@ def stamp(blocks):
 	return [{"_version": 1, **b} for b in blocks or []]
 
 
+DOCS_DIR = os.path.join(HERE, "docs")
+
+
+def apply_docs(out):
+	"""Replace page copy with the client's content documents, word for word and
+	in the same section order. One JSON file per page in scripts/seed/docs/."""
+	if not os.path.isdir(DOCS_DIR):
+		return
+	applied = []
+	for name in sorted(os.listdir(DOCS_DIR)):
+		if not name.endswith(".json"):
+			continue
+		doc = json.load(open(os.path.join(DOCS_DIR, name), encoding="utf-8"))
+		col, slug = doc["collection"], doc["slug"]
+		match = [e for e in out[col] if (e["data"].get("city") if col == "locations" else e["slug"]) == slug]
+		if not match:
+			raise ValueError(f"{name}: no {col} entry for {slug!r}")
+		data = match[0]["data"]
+		summary, body, pairs = from_doc(doc)
+		if doc.get("h1"):
+			data["title"] = doc["h1"]
+		if summary:
+			data["intro" if col == "pages" else "summary"] = summary
+		data["body" if col == "pages" else "content"] = body
+		data["faqs"] = faqs(pairs) or None
+		if doc.get("meta_title"):
+			data["seo_title"] = doc["meta_title"]
+		if doc.get("meta_desc"):
+			data["seo_description"] = doc["meta_desc"]
+		match[0]["data"] = clean(data)
+		applied.append(f"{col}/{slug}")
+	print(f"applied {len(applied)} content documents")
+
+
 def build():
 	template = json.load(open(os.path.join(HERE, "template-block-types.json"), encoding="utf-8"))
 	services = {s["slug"]: s for s in C.SERVICES}
@@ -342,6 +489,8 @@ def build():
 			"title": p["title"], "intro": p.get("intro"), "featured_image": p.get("image"), "body": body,
 			"content": stamp(p.get("blocks")), "faqs": faqs(p.get("faqs")), **seo(p, p.get("intro")),
 		})})
+
+	apply_docs(out)
 
 	keep = {"marketing_hero", "marketing_features", "marketing_testimonials", "marketing_faq"}
 	seed = {

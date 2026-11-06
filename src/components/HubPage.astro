@@ -6,7 +6,7 @@
  */
 import { getEmDashEntry } from "emdash";
 import Base from "../layouts/Base.astro";
-import { breadcrumbLd, collectionLd, entrySeo, faqLd, getSorted, type Faq } from "../lib/site";
+import { breadcrumbLd, collectionLd, docParts, entrySeo, faqLd, getSorted, type Faq } from "../lib/site";
 import CardGrid, { type Card } from "./CardGrid.astro";
 import CtaBand from "./CtaBand.astro";
 import FaqSection from "./FaqSection.astro";
@@ -46,6 +46,8 @@ const title = page?.data.title ?? collection;
 const seo = page ? entrySeo(Astro, page, path, page.data.intro) : null;
 const faqs = (page?.data.faqs ?? []) as Faq[];
 const crumbs = [{ label: title, url: path }];
+// Pages built from a content document list their child pages in the document itself.
+const doc = docParts(page?.data.body);
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -68,13 +70,13 @@ const jsonLd = [
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={jsonLd}
 >
-	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} />
+	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} byline={doc.byline} />
 
 	<div class="hub container">
 		<slot name="before" />
-		<CardGrid cards={cards} level={2} />
+		{!doc.fromDoc && <CardGrid cards={cards} level={2} />}
 
-		{extraCards.length > 0 && (
+		{!doc.fromDoc && extraCards.length > 0 && (
 			<section class="hub-extra">
 				{extraHeading && <h2>{extraHeading}</h2>}
 				<CardGrid cards={extraCards} columns={4} />
@@ -87,11 +89,11 @@ const jsonLd = [
 			</div>
 		)}
 
-		<slot />
-		<FaqSection faqs={faqs} />
+		{!doc.fromDoc && <slot />}
+		{!doc.hasFaq && <FaqSection faqs={faqs} />}
 	</div>
 
-	<CtaBand />
+	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>
 
 <style>

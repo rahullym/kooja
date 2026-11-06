@@ -171,3 +171,42 @@ export function breadcrumbLd(origin: string, crumbs: Crumb[]) {
 		itemListElement: crumbs.map((crumb, i) => ({ "@type": "ListItem", position: i + 1, name: crumb.label, item: `${origin}${crumb.url}` })),
 	};
 }
+
+/**
+ * Page copy from the client's content documents is stored as Portable Text
+ * with a few custom blocks, so every section stays in the document's order:
+ *   koojoByline  - line under the H1 (shown in the hero)
+ *   koojoStrip   - trust / spec strip
+ *   koojoCards   - card list written in the document
+ *   koojoFaq     - FAQ heading, intro and questions, rendered in place
+ *   koojoCta     - CTA band text; when it is the last block it fills the page's CTA band
+ *   koojoMap     - Google Map slot
+ *   koojoForm    - quote request form slot
+ *   koojoIntroInBody - marker: show the intro in the body, not the hero
+ *   koojoGallery - marker: where a page shows its photo gallery (the page splits its body there)
+ *   koojoButtons - button row; `inHero` rows are shown in the page hero
+ */
+type Block = { _type?: string; [key: string]: unknown };
+
+export type DocButton = { label: string; href: string };
+export type DocCta = { heading?: string; text?: string[]; buttons?: DocButton[] };
+
+export function docParts(value: unknown) {
+	const blocks = (Array.isArray(value) ? value : []) as Block[];
+	const byline = blocks.find((b) => b._type === "koojoByline") as { text?: string } | undefined;
+	const last = blocks.at(-1);
+	const cta = last?._type === "koojoCta" ? (last as DocCta) : undefined;
+	return {
+		/** True when the page was built from a content document. */
+		fromDoc: blocks.some((b) => typeof b._type === "string" && b._type.startsWith("koojo")),
+		byline: byline?.text ?? null,
+		/** The intro paragraph is part of the body (the document puts a strip above it). */
+		introInBody: blocks.some((b) => b._type === "koojoIntroInBody"),
+		hasFaq: blocks.some((b) => b._type === "koojoFaq"),
+		hasCards: blocks.some((b) => b._type === "koojoCards"),
+		heroButtons: (blocks.find((b) => b._type === "koojoButtons" && b.inHero)?.items as DocButton[] | undefined) ?? null,
+		hasForm: blocks.some((b) => b._type === "koojoForm"),
+		hasMap: blocks.some((b) => b._type === "koojoMap"),
+		cta,
+	};
+}

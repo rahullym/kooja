@@ -1,0 +1,31 @@
+---
+/** Map slot from a content document: Google Map of the shop plus a directions link. */
+import { BUSINESS } from "../../lib/site";
+---
+
+<figure class="doc-map">
+	<iframe
+		title={`Map showing ${BUSINESS.name}, ${BUSINESS.street}, ${BUSINESS.city}`}
+		src={BUSINESS.mapEmbed}
+		loading="lazy"
+		referrerpolicy="no-referrer-when-downgrade"></iframe>
+	<figcaption><a href={BUSINESS.mapUrl} target="_blank" rel="noopener noreferrer">Get directions</a></figcaption>
+</figure>
+
+<style>
+	.doc-map {
+		margin: var(--spacing-xl) 0;
+	}
+
+	iframe {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border: 0;
+		border-radius: var(--radius-lg);
+	}
+
+	figcaption {
+		margin-top: var(--spacing-sm);
+		font-size: var(--font-size-md);
+	}
+</style>

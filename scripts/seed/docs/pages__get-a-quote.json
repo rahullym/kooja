@@ -1,0 +1,264 @@
+{
+ "collection": "pages",
+ "slug": "get-a-quote",
+ "meta_title": "Powder Coating Quote | Koojo Custom Powder Coating",
+ "meta_desc": "Powder coating quote in one short form: send photos, sizes and quantity and we reply with price and timing. Open Mon–Fri, 7 AM–5 PM.",
+ "h1": "Request a Powder Coating Quote",
+ "byline": "By the Koojo Custom Powder Coating team | Updated 23 October 2026",
+ "blocks": [
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Powder coating quote requests take about two minutes here: tell us what the part is, how big it is, how many you need and the finish you want, then add a photo. We reply with a written estimate covering prep, powder, price and timing."
+  },
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Koojo Custom Powder Coating has coated more than 10,000 items since 2012 from our shop at 10874 Steeles Ave E in Milton. Standard orders carry a 48 hour turnaround once parts arrive, and the office is open Monday to Friday, 7 AM to 5 PM, if you would rather talk first. There is no obligation, and you can ask as many questions as you need before you commit to anything."
+  },
+  {
+   "sec": "TRUST STRIP",
+   "t": "strip",
+   "text": "Since 2012 | 10,000+ Items | 48 Hr Turnaround | 23 ft Oven, up to 6,000 lb | Certified by Absolute Bureau of Certification LLC | Google Rating [add live rating]"
+  },
+  {
+   "sec": "THE FORM",
+   "t": "h2",
+   "text": "Request Your Quote"
+  },
+  {
+   "sec": "THE FORM",
+   "t": "p",
+   "text": "The quote request form asks only for what we need to price the job properly. Fill in the required fields, attach drawings and photos if you have them, and press send. Every request is read by a person, not an automated system."
+  },
+  {
+   "sec": "THE FORM",
+   "t": "p",
+   "text": "Use the photo upload for clear pictures of each side of the part, and add anything unusual in the project details box, such as a tight deadline, a matching colour from an earlier job or parts that arrive in pieces."
+  },
+  {
+   "sec": "THE FORM",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Form field",
+     "Why we ask",
+     "Required?"
+    ],
+    [
+     "Name and email",
+     "So we can send your quote",
+     "Yes"
+    ],
+    [
+     "Phone",
+     "For quick questions about the part",
+     "Optional"
+    ],
+    [
+     "Part type",
+     "Frame, railing, wheel, bracket and so on",
+     "Yes"
+    ],
+    [
+     "Size and weight",
+     "To check fit in our 23 ft oven (up to 6,000 lb)",
+     "Yes"
+    ],
+    [
+     "Quantity",
+     "Pricing changes with volume",
+     "Yes"
+    ],
+    [
+     "Finish and colour",
+     "RAL code, gloss level or texture",
+     "Yes"
+    ],
+    [
+     "Photo upload",
+     "Shows condition, welds and masking points",
+     "Recommended"
+    ],
+    [
+     "Desired finish date",
+     "So we can plan around your deadline",
+     "Optional"
+    ],
+    [
+     "Project details",
+     "Anything else we should know",
+     "Optional"
+    ]
+   ]
+  },
+  {
+   "sec": "THE FORM",
+   "t": "p",
+   "text": "A clear photo saves more time than any other field. It lets us see rust, old paint and welds before we price the work, so your quote for powder coating matches the part that actually arrives."
+  },
+  {
+   "sec": "THE FORM",
+   "t": "form"
+  },
+  {
+   "sec": "WHAT TO SEND",
+   "t": "h2",
+   "text": "What to Send for an Accurate Price"
+  },
+  {
+   "sec": "WHAT TO SEND",
+   "t": "p",
+   "text": "Send part measurements, part quantity, the metal, the finish you want and one or two photos. With those five details we can usually price a job straight away, without a follow-up call."
+  },
+  {
+   "sec": "WHAT TO SEND",
+   "t": "p",
+   "text": "Measure the longest length, the widest point and the height, including anything that sticks out. For the colour, give the colour code if you have one, such as a RAL number, or describe the look you want and we will suggest options. Note any masking requirements, such as threads, mounting faces or contact points that must stay bare. If the part has old paint or rust, mention it, because removal changes the powder coating estimate. For unusual or very heavy items, a sample part or a drawing helps us give a firm figure rather than a range. The more complete your request, the faster and more accurate your quote will be. A complete powder coating quote request rarely needs a second round of questions, and that keeps your job moving."
+  },
+  {
+   "sec": "HOW IT WORKS",
+   "t": "h2",
+   "text": "How Quoting Works, Step by Step"
+  },
+  {
+   "sec": "HOW IT WORKS",
+   "t": "p",
+   "text": "Quoting follows five steps: you send the request, we review it, we send a written estimate, you approve the job, then parts come in for coating. The table shows what happens at each step and how long it usually takes."
+  },
+  {
+   "sec": "HOW IT WORKS",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Step",
+     "What happens",
+     "Typical timing"
+    ],
+    [
+     "1. Send request",
+     "Form, email or phone call",
+     "Any time; read Mon–Fri"
+    ],
+    [
+     "2. Review",
+     "We check size, prep, powder and masking",
+     "Same working day [confirm]"
+    ],
+    [
+     "3. Written estimate",
+     "Price, prep method and timing",
+     "[confirm, e.g. 1 business day]"
+    ],
+    [
+     "4. Job approval",
+     "You confirm and book drop-off or pickup",
+     "When you are ready"
+    ],
+    [
+     "5. Coating",
+     "Prep, coat, cure and inspect",
+     "48 hours for standard orders"
+    ]
+   ]
+  },
+  {
+   "sec": "HOW IT WORKS",
+   "t": "p",
+   "text": "Our quote turnaround depends on how much detail arrives with the request. Complete requests with photos are usually the quickest to price, and we will tell you if anything is missing."
+  },
+  {
+   "sec": "HOW IT WORKS",
+   "t": "p",
+   "text": "Nothing is booked until you give job approval. Once you accept the powder coating quote, we confirm drop-off or pickup, reserve oven time and send the timeline in writing. If anything about the part changes after approval, tell us and we will update your quote before work begins, so the final invoice always matches what you agreed."
+  },
+  {
+   "sec": "PRICE FACTORS",
+   "t": "h2",
+   "text": "What Affects the Price"
+  },
+  {
+   "sec": "PRICE FACTORS",
+   "t": "p",
+   "text": "Five price factors shape every powder coating quote: the size of the part, the prep it needs, the quantity, the colour and finish, and the amount of masking. Two parts that look alike can cost different amounts for these reasons."
+  },
+  {
+   "sec": "PRICE FACTORS",
+   "t": "p",
+   "text": "That is why your quote is always written for your exact part. Heavy rust or old coatings add blasting or stripping time. Large items use more oven space, while a batch of matching parts spreads setup across many pieces. Special colours or textures can cost more than stock shades, and detailed masking takes extra labour. For typical price ranges and what drives them, read our guide to [powder coating cost](/post/how-much-does-powder-coating-cost-ontario). Customers with steady volume can ask about repeat order pricing through [commercial powder coating](/services/bulk-commercial-orders)."
+  },
+  {
+   "sec": "CONSULTATION",
+   "t": "h2",
+   "text": "Book a Consultation"
+  },
+  {
+   "sec": "CONSULTATION",
+   "t": "p",
+   "text": "If your project is complex or you are unsure what finish you need, book a consultation instead of filling in the form. A short call or shop visit before your powder coating quote lets us look at the part with you and recommend prep, powder and colour."
+  },
+  {
+   "sec": "CONSULTATION",
+   "t": "p",
+   "text": "Consultations run Monday to Friday, 7 AM to 5 PM, by phone or at our Milton shop. Bring the part or a sample if you can. For size limits on very large items, see [large part powder coating](/capabilities) before you visit, and for colour ideas, browse [custom powder coating colours](/services/custom-colors-finishes). You will leave with a clear next step and, in most cases, a powder coating estimate. Facilities managers and engineers often use this option before a tender or a plant shutdown."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_h",
+   "text": "Powder Coating Quote FAQs"
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_intro",
+   "text": "Short answer: send what you have and we will fill the gaps with you. These answers cover photos, dates and missing details, and they are written for this page only, not repeated from other pages."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can I get a price from photos alone?",
+   "a": "Often, yes. Clear photos plus measurements and a quantity are enough for a powder coating quote on most standard parts. For complex or very heavy items, we may ask for a drawing or a sample part first."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Are my requested dates guaranteed?",
+   "a": "Requested start and finish dates are not guaranteed until we confirm them. Once you approve the job, we give you a timeline in writing with your quote for powder coating and plan around your desired finish date."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "What if I don't know the metal or colour?",
+   "a": "That is fine. Describe the part and how it will be used, and we will help you choose. Leave the colour blank and we can suggest options when we send the price."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_h",
+   "text": "Send Your Request Today"
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "Fill in the form above, email sales@koojopowdercoating.com or call (905) 876-7060, and we will come back with a clear powder coating quote and timeline. Our response time is fastest on complete requests."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "Office hours are Monday to Friday, 7 AM to 5 PM, at 10874 Steeles Ave E, Milton."
+  }
+ ],
+ "notes": [
+  "Meta/title area says 'Get a Quote'; the page-content H1 is 'Request a Powder Coating Quote' (used).",
+  "Hero button row (not captured as copy): Request a Quote (scrolls to form) | Book a Consultation | Call (905) 876-7060.",
+  "Form: the page has a quote request form below the 'Request Your Quote' H2. Fields per the PDF table: Name and email (required), Phone (optional), Part type (required), Size and weight (required), Quantity (required), Finish and colour (required), Photo upload (recommended), Desired finish date (optional), Project details (optional). The field table is captured as page copy because the PDF presents it in the section body.",
+  "Placeholder kept: [add live rating]",
+  "Placeholder kept: Same working day [confirm]",
+  "Placeholder kept: [confirm, e.g. 1 business day]",
+  "CTA BAND internal link 'Contact Us > /contact-us' is listed, but the anchor 'Contact Us' does not appear in the CTA copy, so no link was added.",
+  "Open item: confirm a quote reply time (e.g. within 1 business day) and use it in the hero and step table.",
+  "Open item: add photo upload, size, quantity and finish fields to the live Wix form; add the Book a Consultation button (calendar link or phone); keep the note that requested dates are not guaranteed.",
+  "Open item: add the live Google rating.",
+  "Site: quote form placed at the end of the Request Your Quote section."
+ ]
+}

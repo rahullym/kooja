@@ -1,0 +1,541 @@
+{
+ "collection": "pages",
+ "slug": "blog",
+ "meta_title": "Powder Coating Guides | Expert Answers | Koojo",
+ "meta_desc": "Powder coating guides from Koojo's shop team: 30+ free articles in 7 topics on prep, finishes, standards, comparisons and planning. Start reading.",
+ "h1": "Powder Coating Guides for Buyers, Engineers and Makers",
+ "byline": "Written by [Shop lead] · Reviewed by [Owner] · Updated 23 October 2026",
+ "blocks": [
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Powder coating guides from Koojo Custom Powder Coating answer the questions customers ask us every day, in plain-language explanations built on shop-floor experience. Since 2012 we have coated more than 10,000 items in Milton, and these articles share what that work has taught us."
+  },
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "More than 30 free articles sit in seven topic categories, from how the finish works to planning a first order. Use the jump links below or start with the topic closest to your question. Most reads take under ten minutes, and each one is written and checked by our own production team."
+  },
+  {
+   "sec": "HERO",
+   "t": "other",
+   "what": "jump-link table of contents (PDF line is prefixed 'Jump-link table of contents:')",
+   "text": "What Are They? · Topics · How They're Made · Where to Start · Accuracy · By Industry · Comparison · Projects · Cost & Time · Get a Quote · FAQs"
+  },
+  {
+   "sec": "SPEC & TRUST STRIP",
+   "t": "strip",
+   "text": "30+ Articles · 7 Topics · Written by Our Production Team · Owner-Reviewed · Since 2012 · 10,000+ Items · Google Rating [add live rating]"
+  },
+  {
+   "sec": "WHAT ARE THEY?",
+   "t": "h2",
+   "text": "What Are Powder Coating Guides?"
+  },
+  {
+   "sec": "WHAT ARE THEY?",
+   "t": "p",
+   "text": "They are short, practical articles that explain one question at a time, written by the people who prepare, coat and inspect parts every day. Each one gives a direct answer first, then the detail and reasons behind it."
+  },
+  {
+   "sec": "WHAT ARE THEY?",
+   "t": "p",
+   "text": "Our powder coating blog works as a free knowledge base. Beginner guides explain the basics without jargon, technical articles cover standards explained step by step, and buyer's guides help you compare suppliers. Homeowners and hobbyists read the same pages as engineers and buyers, because a clear answer works for both. Every powder coating guide links to the next logical question."
+  },
+  {
+   "sec": "TOPICS & DEPTH",
+   "t": "h2",
+   "text": "What Our Guides Cover: Topics and Depth"
+  },
+  {
+   "sec": "TOPICS & DEPTH",
+   "t": "p",
+   "text": "Seven topic categories cover the full picture: basics, metals, finishes, testing, comparisons, real-world uses and planning. The table shows what each category covers and the typical reading time, so you can plan your time."
+  },
+  {
+   "sec": "TOPICS & DEPTH",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Category",
+     "What it covers",
+     "Typical read*"
+    ],
+    [
+     "[powder coating basics](/blog/categories/basics-process)",
+     "How the finish works, how long it lasts, myths",
+     "5–8 min"
+    ],
+    [
+     "[powder coating materials guide](/blog/categories/materials-substrates)",
+     "Which metals and powders work together",
+     "6–9 min"
+    ],
+    [
+     "[powder coating finishes guide](/blog/categories/finishes-colours)",
+     "Colour systems, metallics, gloss, texture",
+     "4–6 min"
+    ],
+    [
+     "[powder coating standards and testing](/blog/categories/standards-quality)",
+     "Thickness, test methods, certifications",
+     "7–10 min"
+    ],
+    [
+     "[powder coating comparisons](/blog/categories/comparisons)",
+     "How it compares with other metal finishes",
+     "6–8 min"
+    ],
+    [
+     "[powder coating applications](/blog/categories/applications)",
+     "Parts and industries, machinery to gates",
+     "5–7 min"
+    ],
+    [
+     "[powder coating cost and planning](/blog/categories/cost-planning)",
+     "Budgets, prep before drop-off, questions",
+     "5–8 min"
+    ]
+   ]
+  },
+  {
+   "sec": "TOPICS & DEPTH",
+   "t": "p",
+   "text": "*Typical range per category [confirm per post]. Metal substrates, finish selection, colour choices and corrosion protection each have their own posts, with more powder coating guides added as new questions reach us from customers and suppliers. Short how-to articles sit beside longer reference posts, and the planning category helps with project planning before you request a price for any job."
+  },
+  {
+   "sec": "TOPICS & DEPTH",
+   "t": "gallery"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h2",
+   "text": "How Our Powder Coating Guides Are Made"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Every article follows the same eight steps, from choosing the question to updating the page later. That process keeps the advice accurate, consistent and grounded in real jobs rather than rewritten web content."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Question Selection"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Topics come from real questions asked at our counter, by phone or in quote requests."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Shop Research"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "We check how the question plays out on actual parts, using job records and photos."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Drafting"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "A production team member drafts each of these guides in plain language, answer first."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Technical Check"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Claims are checked against ASTM methods and powder makers' data sheets."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Owner Review"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "The owner reviews every draft and removes anything that cannot be confirmed."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Publishing"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Each post shows an author, a reviewer and an updated date."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Internal Linking"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Each powder coating guide links to related articles and to the service page it supports."
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "h3",
+   "text": "Updating"
+  },
+  {
+   "sec": "HOW THEY'RE MADE",
+   "t": "p",
+   "text": "Content is updated regularly when methods or standards change, and the date changes too."
+  },
+  {
+   "sec": "WHICH GUIDE FIRST?",
+   "t": "h2",
+   "text": "Which Article Should You Read First?"
+  },
+  {
+   "sec": "WHICH GUIDE FIRST?",
+   "t": "p",
+   "text": "It depends on where you are in the project. Match your situation to a starting article in the table, then follow its links; most readers need two or three posts, about 20 to 30 minutes in all [confirm]."
+  },
+  {
+   "sec": "WHICH GUIDE FIRST?",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Your situation",
+     "Start with",
+     "Then read"
+    ],
+    [
+     "New to the finish",
+     "What Is Powder Coating?",
+     "How Long Does It Last?"
+    ],
+    [
+     "Choosing a metal",
+     "What Metals Can Be Coated?",
+     "Epoxy vs Polyester vs Hybrid"
+    ],
+    [
+     "Picking a colour",
+     "RAL Colour Matching",
+     "Metallic Finishes Explained"
+    ],
+    [
+     "Writing a specification",
+     "ASTM Standards",
+     "Thickness (Mil Rating) Guide"
+    ],
+    [
+     "Comparing finishes",
+     "Powder Coating vs Wet Paint",
+     "Powder Coating vs Galvanizing"
+    ],
+    [
+     "Budgeting a job",
+     "Cost in Ontario",
+     "How to Prepare Parts"
+    ]
+   ]
+  },
+  {
+   "sec": "WHICH GUIDE FIRST?",
+   "t": "p",
+   "text": "This learning path works for most readers. Our most-read articles sit in the middle column, and comparison articles come next once our guides have covered the basics."
+  },
+  {
+   "sec": "ACCURACY & QUALITY",
+   "t": "h2",
+   "text": "How We Check Every Article for Accuracy"
+  },
+  {
+   "sec": "ACCURACY & QUALITY",
+   "t": "p",
+   "text": "Every claim is checked before publishing and again at each update. The table lists the four checks, what each one confirms and when it runs, so you know how much weight to give the advice."
+  },
+  {
+   "sec": "ACCURACY & QUALITY",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Check",
+     "What it confirms",
+     "When"
+    ],
+    [
+     "Source check",
+     "Facts match ASTM methods or data sheets",
+     "Before publishing"
+    ],
+    [
+     "Shop check",
+     "Advice matches real jobs",
+     "Before publishing"
+    ],
+    [
+     "Owner review",
+     "Nothing unconfirmed goes live",
+     "Every post"
+    ],
+    [
+     "Date review",
+     "Content is still current",
+     "[confirm, e.g. every 12 months]"
+    ]
+   ]
+  },
+  {
+   "sec": "ACCURACY & QUALITY",
+   "t": "p",
+   "text": "These editorial standards make every post fact-checked content. Spot something out of date in these guides? Tell us and we will correct it."
+  },
+  {
+   "sec": "BY INDUSTRY & PART",
+   "t": "h2",
+   "text": "Articles by Industry and Part"
+  },
+  {
+   "sec": "BY INDUSTRY & PART",
+   "t": "p",
+   "text": "Industry applications have their own group of posts, and each industry page links to the reading that matters most for that sector. Choose your sector below to see both the advice and the matching service."
+  },
+  {
+   "sec": "BY INDUSTRY & PART",
+   "t": "cards",
+   "items": [
+    {
+     "title": "powder coating for metal fabricators",
+     "text": "Surface prep tips and weld cleanup before drop-off",
+     "url": "/industries/metal-fabricators-welding-shops"
+    },
+    {
+     "title": "powder coating for manufacturers",
+     "text": "Thickness and batch quality checks",
+     "url": "/industries/manufacturing-automation"
+    },
+    {
+     "title": "powder coating for machine shops",
+     "text": "Masking threads and tight tolerances",
+     "url": "/industries/machine-shops"
+    },
+    {
+     "title": "powder coating for contractors",
+     "text": "Durability advice for railings, gates and steel",
+     "url": "/industries/contractors-construction"
+    },
+    {
+     "title": "powder coating for food processing equipment",
+     "text": "Finishes for washdown areas",
+     "url": "/industries/food-processing-equipment"
+    },
+    {
+     "title": "agricultural equipment powder coating",
+     "text": "Keeping rust off field equipment",
+     "url": "/industries/agricultural-heavy-equipment"
+    },
+    {
+     "title": "powder coating for municipalities",
+     "text": "Bollards, playgrounds and public metalwork",
+     "url": "/industries/municipal-institutional"
+    }
+   ]
+  },
+  {
+   "sec": "BY INDUSTRY & PART",
+   "t": "p",
+   "text": "Fabricators and contractors use these cards the most, for surface prep tips and durability advice, because our guides for their work sit next to the service details."
+  },
+  {
+   "sec": "3-WAY COMPARISON",
+   "t": "h2",
+   "text": "Our Guides vs Data Sheets vs Sales Pages"
+  },
+  {
+   "sec": "3-WAY COMPARISON",
+   "t": "p",
+   "text": "Data sheets give one product's numbers and sales pages promote one company, while articles like ours explain the choices behind both. The table below shows which source suits which kind of question."
+  },
+  {
+   "sec": "3-WAY COMPARISON",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "",
+     "Our articles",
+     "Data sheets",
+     "Sales pages"
+    ],
+    [
+     "Written for",
+     "People comparing options",
+     "Specifiers checking one powder",
+     "Buyers being sold to"
+    ],
+    [
+     "Covers",
+     "Choices, trade-offs, steps",
+     "One product's test values",
+     "One company's offer"
+    ],
+    [
+     "Best used for",
+     "Learning and planning",
+     "Final specification",
+     "Contact details"
+    ]
+   ]
+  },
+  {
+   "sec": "3-WAY COMPARISON",
+   "t": "p",
+   "text": "Use the data sheet to confirm the final powder, and our articles to understand why it was chosen."
+  },
+  {
+   "sec": "RECENT PROJECTS",
+   "t": "h2",
+   "text": "See the Advice in Practice: Recent Projects"
+  },
+  {
+   "sec": "RECENT PROJECTS",
+   "t": "p",
+   "text": "Three recent case studies show the advice from these guides on real parts, each with specs, photos and test readings. Open one to see prep, powder and cure decisions explained on an actual job."
+  },
+  {
+   "sec": "RECENT PROJECTS",
+   "t": "cards",
+   "items": [
+    {
+     "title": "Conveyor Frame for an Automotive Plant",
+     "text": "Prep and coverage on a welded production frame",
+     "url": "/projects/conveyor-frame-automotive-plant"
+    },
+    {
+     "title": "Automation Line Frame",
+     "text": "Masking mounting plates and ground points",
+     "url": "/projects/automation-line-frame"
+    },
+    {
+     "title": "Robotic Base",
+     "text": "Curing thick steel to part temperature",
+     "url": "/projects/robotic-base"
+    }
+   ]
+  },
+  {
+   "sec": "RECENT PROJECTS",
+   "t": "p",
+   "text": "Every finished job is on our [powder coating projects](/projects) page."
+  },
+  {
+   "sec": "COST AND LEAD TIME",
+   "t": "h2",
+   "text": "What the Articles Cost and How Long They Take"
+  },
+  {
+   "sec": "COST AND LEAD TIME",
+   "t": "p",
+   "text": "Every article is free, with no sign-up, and most take five to ten minutes to read. New posts are added as fresh questions reach us, and older ones are reviewed so the advice stays current."
+  },
+  {
+   "sec": "COST AND LEAD TIME",
+   "t": "p",
+   "text": "For the price of a real job, read our Ontario guide to [powder coating cost](/post/how-much-does-powder-coating-cost-ontario). Lead times for actual orders, including the 48 hour standard turnaround, are confirmed with each quote, not in our guides. Where a powder coating guide mentions typical timing, treat it as general guidance and check your own dates with us before you plan around them."
+  },
+  {
+   "sec": "HOW TO GET A QUOTE",
+   "t": "h2",
+   "text": "How to Go From Reading to a Quote"
+  },
+  {
+   "sec": "HOW TO GET A QUOTE",
+   "t": "p",
+   "text": "Once our powder coating guides have answered your questions, send photos, sizes, quantity and the finish you want. We reply with prep, powder, price and timing, Monday to Friday, 7 AM to 5 PM."
+  },
+  {
+   "sec": "HOW TO GET A QUOTE",
+   "t": "p",
+   "text": "Request a [powder coating quote](/get-a-quote) online or call (905) 876-7060."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_h",
+   "text": "Powder Coating Guides FAQs"
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_intro",
+   "text": "Short answer: the articles are free, written by our shop team and kept current. These frequently asked questions cover access, authors, updates, topic requests and help with your own part."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Are the articles free to read?",
+   "a": "Yes. There is no sign-up, and any page can be shared with your team or supplier."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Who writes them?",
+   "a": "Members of our production team write each post, and the owner reviews it before publishing."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "How often are these guides updated?",
+   "a": "Posts are reviewed when methods or standards change, and each shows its last updated date."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can I suggest a topic?",
+   "a": "Yes. Call (905) 876-7060 or email sales@koojopowdercoating.com, and we may turn it into a new post."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can I ask about my own part?",
+   "a": "Of course. Send photos and sizes for an answer specific to your part."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_h",
+   "text": "Still Have a Question?"
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "If our guides have not answered it, ask us directly. Call (905) 876-7060 or send photos and sizes through the quote form, and a member of our production team will reply with expert answers."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "Our office is open Monday to Friday, 7 AM to 5 PM."
+  }
+ ],
+ "notes": [
+  "Placeholders kept: byline [Shop lead], [Owner]; strip 'Google Rating [add live rating]'; '[confirm per post]' (table footnote); 'about 20 to 30 minutes in all [confirm]'; accuracy table '[confirm, e.g. every 12 months]'.",
+  "Jump-link table of contents kept as t:'other' with the writer label 'Jump-link table of contents:' removed.",
+  "Section 5 category table kept as a table (the PDF calls it a coverage table), with each category name linked to its category hub; the '*Typical range per category [confirm per post].' footnote is kept at the start of the following paragraph, as in the PDF.",
+  "Section 9 (7 industry cards) and Section 11 (3 project cards) are tables in the PDF; converted to cards blocks (title = first column, text = second column, url from the INTERNAL LINKS line). Card table header rows ('Industry page | Most useful reading', 'Project card | What it shows') are not stored.",
+  "Section 7 'Which Article Should You Read First?' table has no links in the PDF; article titles left as plain text.",
+  "Comparison table header row starts with an empty cell, as in the PDF.",
+  "Open item: confirm reading-time ranges per post; add named authors and a reviewer to every post; set a review schedule for Section 8 (e.g. every 12 months).",
+  "Open item: publish the 8 new posts and 7 category hubs before linking to them, or hide those links until live.",
+  "Excluded: meta table, Key paragraph, SECTION 1 HEADER, SECTION 16 FOOTER, INTERNAL LINKS lines, score tables and appendices.",
+  "Site: the PDF does not place the article listing; the latest guides per category are shown after the Topics and Depth table."
+ ]
+}

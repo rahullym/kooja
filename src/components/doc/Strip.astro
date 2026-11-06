@@ -1,0 +1,33 @@
+---
+/** Trust / spec strip from a content document: "23 ft Oven | Up to 6,000 lb | ...". */
+const { node } = Astro.props as { node: { text?: string } };
+const items = (node.text ?? "").split(/\s+[|·]\s+/).filter(Boolean);
+---
+
+{items.length > 0 && (
+	<ul class="doc-strip label">
+		{items.map((item) => <li>{item}</li>)}
+	</ul>
+)}
+
+<style>
+	.doc-strip {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-xs) var(--spacing-lg);
+		list-style: none;
+		padding: var(--spacing-md) 0 !important;
+		margin: var(--spacing-xl) 0 !important;
+		border-top: 1px solid var(--color-rule);
+		border-bottom: 1px solid var(--color-rule);
+		font-size: var(--font-size-sm);
+	}
+
+	.doc-strip li {
+		margin: 0 !important;
+	}
+
+	.doc-strip li::marker {
+		content: none;
+	}
+</style>

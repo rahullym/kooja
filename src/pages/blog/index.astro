@@ -3,9 +3,10 @@ import { getEmDashEntry, getTaxonomyTermsWithCacheHint } from "emdash";
 import CardGrid from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
 import PageHero from "../../components/PageHero.astro";
+import Prose from "../../components/Prose.astro";
 import Base from "../../layouts/Base.astro";
 import { getPosts, postCard, postCategory } from "../../lib/posts";
-import { breadcrumbLd, collectionLd, entrySeo } from "../../lib/site";
+import { breadcrumbLd, collectionLd, docParts, entrySeo, faqLd, type Faq } from "../../lib/site";
 
 const FEATURED_PER_CATEGORY = 3;
 
@@ -30,6 +31,14 @@ const clusters = termsResult.data
 const title = page?.data.title ?? "Powder Coating Guides";
 const seo = page ? entrySeo(Astro, page, "/blog", page.data.intro) : null;
 const crumbs = [{ label: "Blog", url: "/blog" }];
+
+// Built from the client's content document: the guide listing sits where the
+// document's gallery marker is.
+const doc = docParts(page?.data.body);
+const body = (page?.data.body ?? []) as { _type?: string }[];
+const split = body.findIndex((b) => b._type === "koojoGallery");
+const before = split === -1 ? body : body.slice(0, split);
+const after = split === -1 ? [] : body.slice(split + 1);
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -38,6 +47,7 @@ const jsonLd = [
 		items: clusters.map(({ term }) => ({ name: term.label, url: `${Astro.url.origin}/blog/categories/${term.slug}` })),
 	}),
 	breadcrumbLd(Astro.url.origin, crumbs),
+	faqLd((page?.data.faqs ?? []) as Faq[]),
 ];
 ---
 
@@ -51,13 +61,15 @@ const jsonLd = [
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={jsonLd}
 >
-	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title}>
-		<nav class="topics" aria-label="Guide topics">
+	<PageHero title={title} intro={page?.data.intro} crumbs={crumbs} titleAttrs={page?.edit.title} byline={doc.byline}>
+		{!doc.fromDoc && <nav class="topics" aria-label="Guide topics">
 			{clusters.map(({ term }) => (
 				<a href={`/blog/categories/${term.slug}`}>{term.label}</a>
 			))}
-		</nav>
+		</nav>}
 	</PageHero>
+
+	{doc.fromDoc && <div class="container doc-body"><Prose value={before} /></div>}
 
 	<div class="container blog">
 		{clusters.map(({ term, total, posts: featured }) => (
@@ -77,10 +89,17 @@ const jsonLd = [
 		))}
 	</div>
 
-	<CtaBand />
+	{doc.fromDoc && after.length > 0 && <div class="container doc-body"><Prose value={after} /></div>}
+
+	{doc.fromDoc ? doc.cta && <CtaBand doc={doc.cta} /> : <CtaBand />}
 </Base>
 
 <style>
+	.doc-body {
+		padding-top: var(--spacing-3xl);
+		padding-bottom: var(--spacing-xl);
+	}
+
 	.topics {
 		display: flex;
 		flex-wrap: wrap;

@@ -1,0 +1,67 @@
+---
+/** FAQ section from a content document, rendered where the document puts it. */
+import { PortableText } from "emdash/ui";
+
+type Item = { question: string; answer: unknown[] };
+const { node } = Astro.props as { node: { heading?: string; intro?: unknown[]; items?: Item[] } };
+const items = node.items ?? [];
+---
+
+<section class="doc-faq">
+	{node.heading && <h2>{node.heading}</h2>}
+	{node.intro && node.intro.length > 0 && <PortableText value={node.intro as never} />}
+	<div class="faq-list">
+		{items.map((item) => (
+			<details class="faq-item">
+				<summary>{item.question}</summary>
+				<div class="faq-answer">
+					<PortableText value={item.answer as never} />
+				</div>
+			</details>
+		))}
+	</div>
+</section>
+
+<style>
+	.doc-faq {
+		margin-top: var(--spacing-2xl);
+	}
+
+	.faq-list {
+		margin-top: var(--spacing-lg);
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.faq-item {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	summary {
+		list-style: none;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		gap: var(--spacing-lg);
+		padding: var(--spacing-md) 0;
+		font-weight: 600;
+	}
+
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	summary::after {
+		content: "+";
+		color: var(--color-brand);
+		font-weight: 400;
+	}
+
+	.faq-item[open] summary::after {
+		content: "\2212";
+	}
+
+	.faq-answer {
+		padding-bottom: var(--spacing-md);
+		color: var(--color-muted);
+	}
+</style>

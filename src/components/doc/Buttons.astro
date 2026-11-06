@@ -1,0 +1,13 @@
+---
+/**
+ * Button row from a content document. A row directly under the hero text
+ * (`inHero`) is shown inside the page hero instead, so it renders nothing here.
+ */
+import ButtonRow from "./ButtonRow.astro";
+
+type Item = { label: string; href: string };
+const { node } = Astro.props as { node: { items?: Item[]; inHero?: boolean } };
+const items = node.items ?? [];
+---
+
+{!node.inHero && items.length > 0 && <ButtonRow items={items} />}

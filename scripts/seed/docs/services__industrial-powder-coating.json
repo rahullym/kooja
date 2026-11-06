@@ -1,0 +1,501 @@
+{
+ "collection": "services",
+ "slug": "industrial-powder-coating",
+ "meta_title": "Industrial Powder Coating | Heavy-Duty Metal Parts | Koojo",
+ "meta_desc": "Industrial powder coating for steel and aluminum parts up to 6,000 lb. In-house blasting, phosphate pretreatment and tested finishes. Get a quote.",
+ "h1": "Industrial Powder Coating for Heavy-Duty Metal Parts",
+ "byline": "Written by [Shop lead] · Reviewed by [Owner] · Updated [date]",
+ "blocks": [
+  {
+   "sec": "HERO",
+   "t": "p",
+   "text": "Koojo Custom Powder Coating delivers industrial powder coating for structural steel, machinery, frames, guards and fabricated assemblies that must survive abrasion, chemicals, road salt and years outdoors. Every part is inspected, blasted, pretreated, coated, oven-cured and tested for film thickness and adhesion in one shop before each powder-coated part ships. We handle single pieces up to 6,000 lb and recurring production runs for OEMs and fabricators, with in-house and mobile sandblasting for structures that cannot travel to our shop. When your drawing names a powder, colour or film build, we meet that specification exactly and document the results for your records."
+  },
+  {
+   "sec": "HERO",
+   "t": "other",
+   "what": "jump-to navigation line under the hero buttons",
+   "text": "Jump to: What It Is · Capacity · Process · Powder Types · Testing · Industries · Comparison · Projects · Cost & Lead Time · Quote · FAQs"
+  },
+  {
+   "sec": "SPEC & TRUST STRIP",
+   "t": "strip",
+   "text": "Oven Size [confirm] • Up to 6,000 lb • 48 Hr Turnaround • In-House & Mobile Sandblasting • Since 2012 • 10,000+ Items • Google Rating [X.X]"
+  },
+  {
+   "sec": "WHAT IT IS",
+   "t": "h2",
+   "text": "What Is Industrial Powder Coating?"
+  },
+  {
+   "sec": "WHAT IT IS",
+   "t": "p",
+   "text": "Industrial powder coating is a dry, electrostatically applied thermoset finish, cured at roughly 180 to 200 °C and engineered for parts in heavy service rather than for appearance alone. Compared with decorative work, it demands tighter control of surface profile, film thickness and cure, backed by documented testing."
+  },
+  {
+   "sec": "WHAT IT IS",
+   "t": "p",
+   "text": "An industrial coating system is chosen for the exposure the part will face: indoor plant floors, washdown areas, outdoor yards or salted roads. That choice sets the blast grade, pretreatment, powder chemistry and whether a primer is needed. Typical parts include machine bases, conveyor frames, structural beams, storage racks, electrical enclosures, safety guards, hoppers, chutes and trailer components. New to the finish itself? Start with our guide on what is powder coating, then come back here for the industrial detail that matters on spec work."
+  },
+  {
+   "sec": "CAPACITY",
+   "t": "h2",
+   "text": "What We Can Coat: Size, Weight & Volume"
+  },
+  {
+   "sec": "CAPACITY",
+   "t": "p",
+   "text": "We coat parts from small brackets to structural assemblies weighing up to 6,000 lb, as single pieces or recurring production batches. Our cure oven fits [confirm oven size], so most frames, bases and long beams are coated whole rather than cut into sections."
+  },
+  {
+   "sec": "CAPACITY",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Capacity",
+     "Detail"
+    ],
+    [
+     "Maximum part weight",
+     "6,000 lb per piece"
+    ],
+    [
+     "Oven size",
+     "[Confirm one figure]"
+    ],
+    [
+     "Metals",
+     "Carbon steel, structural steel, aluminum, galvanized steel, cast iron"
+    ],
+    [
+     "Order size",
+     "One-off parts to recurring production runs"
+    ],
+    [
+     "Batch volume",
+     "[Confirm typical parts per day or week]"
+    ],
+    [
+     "On-site preparation",
+     "Mobile sandblasting for fixed structures"
+    ]
+   ]
+  },
+  {
+   "sec": "CAPACITY",
+   "t": "p",
+   "text": "Coating large weldments whole avoids extra joints and touch-up lines in the finished industrial powder coating. Every heavy-duty powder coating job is scheduled so cure time is never rushed. Full equipment limits are listed on our large part powder coating page."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h2",
+   "text": "Our Industrial Powder Coating Process"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Every order moves through the same eight controlled steps, from spec review to packed shipment, so results repeat from the first part to the last. Each step is recorded against your drawing, which is how we meet an industrial coating spec rather than simply a colour."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Inspection & Spec Review"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "We check the drawing or spec sheet, metal type, weld quality, part weight and exposure environment, then confirm the powder, colour, film build and any test requirements in writing before work starts."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Abrasive & Mobile Sandblasting"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Rust, mill scale and old coatings are removed by abrasive blasting, leaving a clean, angular profile that meets your specified SSPC or ISO blast grade. Fixed or oversized structures can be blasted on site with our sandblasting services."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Cleaning & Phosphate Pretreatment"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Parts are degreased, rinsed and treated with iron or zinc phosphate to improve adhesion and slow under-film corrosion. Our powder coating surface preparation page explains each chemical stage in more detail."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Masking & Plugging"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Threads, bores, bearing seats, grounding points and mating faces are plugged or taped with high-temperature masking, so they stay bare and fit correctly at assembly."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Electrostatic Powder Application"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Charged powder is sprayed onto the grounded part, wrapping edges and recesses evenly. Primer and topcoat are applied in sequence when a two-coat industrial powder coating system is specified for harsher exposure."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Oven Curing"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Parts are cured to the powder maker's schedule, typically 180 to 200 °C for 10 to 20 minutes at metal temperature, so the film fully cross-links. Thick, heavy sections are given longer soak time to reach temperature."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Quality Inspection & DFT Check"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "We measure dry film thickness, run adhesion checks and inspect colour, gloss and coverage on each batch. Readings are recorded for every batch and can be supplied with your order."
+  },
+  {
+   "sec": "PROCESS",
+   "t": "h3",
+   "text": "Packaging & Shipping"
+  },
+  {
+   "sec": "PROCESS",
+   "t": "p",
+   "text": "Finished parts are wrapped, blocked and strapped to protect the powder-coated surface in transit, then shipped or held for pickup at our shop."
+  },
+  {
+   "sec": "POWDER TYPES",
+   "t": "h2",
+   "text": "Which Powder Is Best for Industrial Parts?"
+  },
+  {
+   "sec": "POWDER TYPES",
+   "t": "p",
+   "text": "The right powder depends on exposure. Epoxy suits indoor and chemical exposure, polyester suits outdoor UV, and a zinc-rich primer under a topcoat suits road salt and high corrosion. Matching chemistry to exposure is the core of heavy-duty powder coating."
+  },
+  {
+   "sec": "POWDER TYPES",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Powder",
+     "Best for",
+     "Limitation"
+    ],
+    [
+     "Epoxy",
+     "Indoor machinery, chemical and abrasion resistance",
+     "Chalks and fades in sunlight"
+    ],
+    [
+     "Polyester",
+     "Outdoor equipment and structures needing UV stability",
+     "Lower chemical resistance than epoxy"
+    ],
+    [
+     "Hybrid (epoxy-polyester)",
+     "Indoor enclosures, racks and guards",
+     "Not suited to long outdoor exposure"
+    ],
+    [
+     "Super-durable polyester",
+     "Outdoor parts needing long colour and gloss retention",
+     "Higher material cost"
+    ],
+    [
+     "Zinc-rich primer + topcoat",
+     "Road salt, outdoor steel and high-corrosion sites",
+     "Two coats add time and cost"
+    ]
+   ]
+  },
+  {
+   "sec": "POWDER TYPES",
+   "t": "p",
+   "text": "On industrial powder coating jobs with a written spec, we follow the specified powder and its supplier data sheet exactly. Unsure? Tell us where the part will live and we will recommend one. For deeper chemistry, read epoxy vs polyester powder coating."
+  },
+  {
+   "sec": "TESTING",
+   "t": "h2",
+   "text": "Performance Testing & Quality Control"
+  },
+  {
+   "sec": "TESTING",
+   "t": "p",
+   "text": "We verify each order against measurable, repeatable tests, not appearance alone. Film thickness and adhesion are checked in our shop on every batch, while salt spray and corrosivity ratings are matched to the powder supplier's certified data for your environment."
+  },
+  {
+   "sec": "TESTING",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Test",
+     "Standard",
+     "What it shows"
+    ],
+    [
+     "Dry film thickness (DFT)",
+     "ASTM D7091",
+     "Coating is within the specified mil range"
+    ],
+    [
+     "Adhesion (cross-hatch)",
+     "ASTM D3359",
+     "Coating is properly bonded to the metal"
+    ],
+    [
+     "Salt spray",
+     "ASTM B117",
+     "Comparative corrosion resistance in hours"
+    ],
+    [
+     "Corrosivity category",
+     "ISO 12944",
+     "Which system suits the exposure, from C1 to CX"
+    ]
+   ]
+  },
+  {
+   "sec": "TESTING",
+   "t": "p",
+   "text": "Results can be supplied with each shipment, so your inspector, auditor or end customer has written proof that the finish meets the agreed spec. This documentation is what separates industrial powder coating from cosmetic work, and it is available on every powder-coated order. Our ASTM standards for powder coating guide explains each method, and our powder coating quality assurance page covers certification."
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "h2",
+   "text": "Industries & Parts We Coat"
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "p",
+   "text": "Our industrial coating customers range from fabricators and OEMs to contractors and municipalities. Most send steel parts that work hard: frames, bases, guards, chutes, bollards and implements, each given industrial powder coating suited to its sector."
+  },
+  {
+   "sec": "INDUSTRIES",
+   "t": "ul",
+   "items": [
+    "Metal Fabricators & Welding Shops: weldments and frames coated to spec. See powder coating for metal fabricators.",
+    "Manufacturing & Automation: conveyor frames, robotic bases and machine guards. See powder coating for manufacturers.",
+    "Machine Shops: precision-masked parts with clean threads. See powder coating for machine shops.",
+    "Contractors & Construction: structural steel, stairs and railings. See powder coating for contractors.",
+    "Food Processing Equipment: washdown-resistant line frames. See powder coating for food processing equipment.",
+    "Agricultural & Heavy Equipment: implements and trailers. See agricultural equipment powder coating.",
+    "Municipal & Institutional: bollards and public metalwork. See powder coating for municipalities."
+   ]
+  },
+  {
+   "sec": "COMPARISON",
+   "t": "h2",
+   "text": "Industrial Powder Coating vs Wet Paint vs Galvanizing"
+  },
+  {
+   "sec": "COMPARISON",
+   "t": "p",
+   "text": "Powder coating gives the toughest chip-resistant colour finish, galvanizing gives sacrificial zinc protection, and wet paint is easiest to apply on site. For outdoor steel, galvanizing under a powder-coated topcoat often performs best."
+  },
+  {
+   "sec": "COMPARISON",
+   "t": "table",
+   "header": true,
+   "rows": [
+    [
+     "Factor",
+     "Powder coating",
+     "Wet paint",
+     "Hot-dip galvanizing"
+    ],
+    [
+     "Application",
+     "Electrostatic spray and oven cure",
+     "Brush, roll or spray",
+     "Dip in molten zinc"
+    ],
+    [
+     "Chip resistance",
+     "High",
+     "Low to medium",
+     "High"
+    ],
+    [
+     "VOCs",
+     "Near zero",
+     "Released by solvent-borne paints",
+     "None"
+    ],
+    [
+     "Colour options",
+     "Full RAL range",
+     "Full range",
+     "Grey only"
+    ],
+    [
+     "Best for",
+     "Durable colour on shop parts",
+     "On-site touch-up",
+     "Sacrificial corrosion protection"
+    ]
+   ]
+  },
+  {
+   "sec": "COMPARISON",
+   "t": "p",
+   "text": "For full comparisons, see powder coating vs wet paint and powder coating vs galvanizing."
+  },
+  {
+   "sec": "PROJECTS",
+   "t": "h2",
+   "text": "Recent Industrial Projects"
+  },
+  {
+   "sec": "PROJECTS",
+   "t": "p",
+   "text": "These jobs show how we handle large, spec-driven parts from first blast to final shipment. Each case study lists the metal, size, prep, powder, colour code and turnaround for the powder-coated part, with before-and-after photos."
+  },
+  {
+   "sec": "PROJECTS",
+   "t": "cards",
+   "items": [
+    {
+     "title": "Conveyor Frame for an Automotive Plant",
+     "text": "a long steel frame coated in one piece to the plant's colour standard.",
+     "url": null
+    },
+    {
+     "title": "Automation Line Frame",
+     "text": "a multi-section frame finished in one batch for matched colour along the line.",
+     "url": null
+    },
+    {
+     "title": "Robotic Base",
+     "text": "a heavy base masked at its machined mounting faces before coating.",
+     "url": null
+    }
+   ]
+  },
+  {
+   "sec": "PROJECTS",
+   "t": "p",
+   "text": "Browse more powder coating projects."
+  },
+  {
+   "sec": "COST & LEAD TIME",
+   "t": "h2",
+   "text": "What Affects Cost and Lead Time"
+  },
+  {
+   "sec": "COST & LEAD TIME",
+   "t": "p",
+   "text": "Price and lead time depend on part size and weight, surface condition, masking, powder type, number of coats and order volume. Clean, bare steel in a standard colour moves fastest."
+  },
+  {
+   "sec": "COST & LEAD TIME",
+   "t": "ul",
+   "items": [
+    "Size and weight: larger parts use more oven space and handling.",
+    "Surface condition: rust, mill scale or old paint add blasting.",
+    "Masking: every plugged hole adds labour.",
+    "Coats: primers and two-coat systems add cure cycles.",
+    "Volume: repeat runs in one colour cost less per part."
+   ]
+  },
+  {
+   "sec": "COST & LEAD TIME",
+   "t": "p",
+   "text": "We quote every industrial powder coating job to its drawings; our powder coating cost Ontario guide explains typical ranges."
+  },
+  {
+   "sec": "QUOTE",
+   "t": "h2",
+   "text": "How to Get an Industrial Powder Coating Quote"
+  },
+  {
+   "sec": "QUOTE",
+   "t": "p",
+   "text": "Send drawings or photos, dimensions, weight, quantity, metal type, colour or RAL code and any coating spec through our powder coating quote form, or call (905) 876-7060. We reply with a written price, lead time and process plan within [confirm reply time]."
+  },
+  {
+   "sec": "QUOTE",
+   "t": "p",
+   "text": "Tell us the exposure, such as indoor, outdoor or washdown, to help us recommend the right powder. Drop parts at our Milton shop, a short drive from Highway 401, or book a pickup."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_h",
+   "text": "Industrial Powder Coating FAQs"
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq_intro",
+   "text": "These answers cover what engineers, buyers and fabricators ask us most often before sending parts, from welded assemblies and film thickness to galvanized steel, test reports and outdoor service life."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can you powder coat parts that are already welded or assembled?",
+   "a": "Yes, if the assembly can handle cure temperatures of about 200 °C. Rubber, plastic, bearings and electronics must come out first or the oven will damage them."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "How thick should an industrial powder coat be?",
+   "a": "Most single-coat parts are specified at 2 to 4 mils, and two-coat systems with a primer often run 4 to 6 mils. Our powder coating thickness guide explains the ranges."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Can galvanized steel be powder coated?",
+   "a": "Yes, with the right preparation. Galvanized steel is sweep-blasted and often preheated to release trapped gas, which prevents pinholes. Our powder coating galvanized steel guide explains outgassing."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "Do you supply film thickness readings or test reports?",
+   "a": "Yes. DFT and adhesion results can be recorded and supplied with your shipment, and supplier data sheets cover salt spray and chemical resistance. Ask for reports when you request a quote."
+  },
+  {
+   "sec": "FAQs",
+   "t": "faq",
+   "q": "How long does industrial powder coating last outdoors?",
+   "a": "A well-prepared polyester or super-durable system commonly lasts 10 to 20 years outdoors, depending on UV, salt and abrasion. A zinc-rich primer extends service life on steel in corrosive sites."
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_h",
+   "text": "Ready to Quote Your Industrial Job?"
+  },
+  {
+   "sec": "CTA BAND",
+   "t": "cta_p",
+   "text": "Send your drawings, quantities and finish requirements, and we will reply with a written price, lead time and process plan for your industrial powder coating. Need other finishes? See all our powder coating services."
+  }
+ ],
+ "notes": [
+  "Layout differs from the other service PDFs: SEO SETUP table instead of meta table, unnumbered SECTION 4–14 labels with H2/H3/CTA markers; sec names are my own short names.",
+  "No 'INTERNAL LINKS' lines and no link annotations or underlines in this PDF, so no links were added. Text references that are probably meant to be links (e.g. 'what is powder coating', 'large part powder coating page', 'sandblasting services', 'powder coating surface preparation page', 'epoxy vs polyester powder coating', 'ASTM standards for powder coating guide', 'powder coating quality assurance page', industry 'See powder coating for ...' lines, project titles, 'powder coating projects', 'powder coating cost Ontario guide', 'powder coating quote form', FAQ guide references, 'powder coating services') were left as plain text. Confirm with client.",
+  "Placeholders kept in byline: [Shop lead], [Owner], [date].",
+  "Placeholder kept: Oven Size [confirm] and Google Rating [X.X] in the spec strip.",
+  "Placeholder kept: [confirm oven size] in the capacity paragraph; table cells [Confirm one figure] (oven size) and [Confirm typical parts per day or week] (batch volume).",
+  "Placeholder kept: [confirm reply time] in the quote section.",
+  "Jump-to navigation line ('Jump to: What It Is · Capacity · ...') kept as an 'other' block after the hero; it sits under the hero buttons in the PDF.",
+  "Buttons not included as blocks: hero 'Get a Quote' / 'Call (905) 876-7060' and the same two buttons in the CTA band.",
+  "Industry list (Section 9) and cost factors (Section 12) are bold-label paragraphs in the PDF; stored as ul items 'Label: text'. Project items (Section 11) stored as cards with url null.",
+  "The Section 7 powder table continues across a page break with a repeated header row; merged into one table with one header.",
+  "Byline format differs from other pages ('Written by ... · Reviewed by ... · Updated ...')."
+ ]
+}
