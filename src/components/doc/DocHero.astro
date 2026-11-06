@@ -1,0 +1,213 @@
+---
+/**
+ * Hero for pages built from a content document: the document's H1, byline,
+ * intro and buttons, with a real shop photo when the page has one.
+ */
+import { Image } from "emdash/ui";
+import type { Crumb, DocButton } from "../../lib/site";
+import ButtonRow from "./ButtonRow.astro";
+
+interface Props {
+	title: string;
+	intro?: string | null;
+	byline?: string | null;
+	crumbs?: Crumb[];
+	eyebrow?: string | null;
+	image?: unknown;
+	buttons?: DocButton[] | null;
+	/** Show the default quote / call buttons when the document has none. */
+	cta?: boolean;
+	/** Full-width photo hero (home page). */
+	feature?: boolean;
+	titleAttrs?: Record<string, unknown>;
+}
+
+const { title, intro, byline, crumbs = [], eyebrow, image, buttons, cta = false, feature = false, titleAttrs = {} } = Astro.props;
+const actions: DocButton[] | null =
+	buttons ??
+	(cta
+		? [
+				{ label: "Get a Quote", href: "/get-a-quote" },
+				{ label: "Call (905) 876-7060", href: "tel:+19058767060" },
+			]
+		: null);
+const img = image as { alt?: string } | null | undefined;
+---
+
+<header class:list={["dh", { "dh--image": !!image && !feature, "dh--feature": feature && !!image }]}>
+	{feature && image && (
+		<figure class="dh-media dh-media--bg">
+			<Image image={image as never} priority />
+			{img?.alt && <figcaption class="label">{img.alt}</figcaption>}
+		</figure>
+	)}
+	<div class="dh-inner">
+		<div class="dh-text">
+			{crumbs.length > 0 && (
+				<nav class="crumbs label" aria-label="Breadcrumb">
+					<a href="/">Home</a>
+					{crumbs.map((crumb) => (
+						<>
+							<span aria-hidden="true">/</span>
+							<a href={crumb.url}>{crumb.label}</a>
+						</>
+					))}
+				</nav>
+			)}
+			{eyebrow && <p class="label dh-eyebrow">{eyebrow}</p>}
+			<h1 {...titleAttrs}>{title}</h1>
+			{byline && <p class="label dh-byline">{byline}</p>}
+			{intro && <p class="dh-intro">{intro}</p>}
+			{actions && actions.length > 0 && <ButtonRow items={actions} />}
+			<slot />
+		</div>
+		{image && !feature && (
+			<figure class="dh-media">
+				<Image image={image as never} priority />
+				{img?.alt && <figcaption class="label">{img.alt}</figcaption>}
+			</figure>
+		)}
+	</div>
+</header>
+
+<style>
+	.dh {
+		border-bottom: 1px solid var(--color-rule);
+	}
+
+	.dh-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-3xl);
+	}
+
+	.dh--image .dh-inner {
+		display: grid;
+		grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+		gap: var(--spacing-3xl);
+		align-items: center;
+	}
+
+	.crumbs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+		margin-bottom: var(--spacing-xl);
+	}
+
+	.crumbs a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.crumbs a:hover {
+		color: var(--color-brand);
+	}
+
+	.dh-eyebrow {
+		margin-bottom: var(--spacing-md);
+		color: var(--color-brand);
+	}
+
+	h1 {
+		max-width: 18ch;
+		text-wrap: balance;
+	}
+
+	.dh-byline {
+		margin-top: var(--spacing-md);
+	}
+
+	.dh-intro {
+		margin-top: var(--spacing-lg);
+		max-width: 60ch;
+		font-size: var(--font-size-lg);
+		line-height: var(--leading-relaxed, 1.6);
+		color: var(--color-muted);
+	}
+
+	.dh-media {
+		margin: 0;
+	}
+
+	.dh-media :global(img) {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+	}
+
+	.dh-media figcaption {
+		margin-top: var(--spacing-sm);
+	}
+
+	/* Home: photo fills the band behind the text. */
+	.dh--feature {
+		position: relative;
+		background: var(--color-ink);
+		color: var(--color-paper);
+		border-bottom: 0;
+		overflow: hidden;
+	}
+
+	.dh--feature .dh-inner {
+		position: relative;
+		z-index: 1;
+		min-height: min(78vh, 760px);
+		display: flex;
+		align-items: flex-end;
+		padding-top: var(--spacing-5xl);
+		padding-bottom: var(--spacing-3xl);
+	}
+
+	.dh--feature .dh-media {
+		position: absolute;
+		inset: 0;
+	}
+
+	.dh--feature .dh-media :global(img) {
+		height: 100%;
+		aspect-ratio: auto;
+		border-radius: 0;
+		opacity: 0.55;
+	}
+
+	.dh--feature .dh-media figcaption {
+		position: absolute;
+		right: var(--spacing-lg);
+		top: var(--spacing-lg);
+		margin: 0;
+		color: color-mix(in srgb, var(--color-paper) 80%, transparent);
+	}
+
+	.dh--feature .dh-text {
+		max-width: 48rem;
+	}
+
+	.dh--feature h1 {
+		font-size: clamp(2.6rem, 6vw, 4.5rem);
+	}
+
+	.dh--feature .dh-intro,
+	.dh--feature .dh-byline,
+	.dh--feature .crumbs {
+		color: color-mix(in srgb, var(--color-paper) 85%, transparent);
+	}
+
+	.dh--feature :global(.btn-secondary) {
+		color: var(--color-paper);
+		border-color: var(--color-paper);
+	}
+
+	@media (max-width: 900px) {
+		.dh--image .dh-inner {
+			grid-template-columns: minmax(0, 1fr);
+			gap: var(--spacing-xl);
+		}
+
+		.dh--feature .dh-inner {
+			min-height: 0;
+			padding-top: var(--spacing-4xl);
+		}
+	}
+</style>

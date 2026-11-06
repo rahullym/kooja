@@ -18,6 +18,9 @@ import {
 	type RelatedLink,
 } from "../lib/site";
 import ContactDetails from "./ContactDetails.astro";
+import DocHero from "./doc/DocHero.astro";
+import DocSections from "./doc/DocSections.astro";
+import { docHeroImage } from "../lib/doc-images";
 import CtaBand from "./CtaBand.astro";
 import EntryLayout from "./EntryLayout.astro";
 import FaqSection from "./FaqSection.astro";
@@ -70,6 +73,7 @@ const jsonLd = [
 ];
 
 const doc = docParts(data.content);
+const heroImage = doc.fromDoc ? await docHeroImage(data.content, data.featured_image) : null;
 
 const localFacts = [
 	{ label: "Drive time from our Milton shop", value: data.drive_time },
@@ -88,55 +92,100 @@ const localFacts = [
 	content={{ collection, id: data.id, slug: entry.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={data.title} intro={doc.introInBody ? null : data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} byline={doc.byline} cta />
-
-	<EntryLayout>
-		{data.featured_image && (
-			<div class="entry-image" {...entry.edit.featured_image}>
-				<Image image={data.featured_image} />
-			</div>
-		)}
-
-		<div {...entry.edit.content}>
-			<Prose value={data.content} />
-		</div>
-
-		{collection === "locations" && !doc.fromDoc && (
-			<section class="local">
-				{localFacts.length > 0 && (
-					<dl class="local-facts">
-						{localFacts.map((fact) => (
-							<div>
-								<dt>{fact.label}</dt>
-								<dd>{fact.value}</dd>
-							</div>
-						))}
-					</dl>
-				)}
-				<h2>Visit or contact the shop</h2>
-				<ContactDetails />
-				<p class="local-links">
-					Koojo is a <a href="/">powder coating company GTA</a> businesses have used since {BUSINESS.foundingYear}.
-					See <a href="/contact-us">contact details and directions</a>.
-				</p>
+	{doc.fromDoc ? (
+		<>
+			<DocHero
+				title={data.title}
+				intro={doc.introInBody ? null : data.summary}
+				byline={doc.byline}
+				crumbs={crumbs}
+				image={heroImage}
+				titleAttrs={entry.edit.title}
+				cta
+			/>
+			<DocSections value={data.content} heroImage={heroImage} />
+			<section class="doc-related">
+				<div class="doc-related-inner">
+					<RelatedLinks links={related}>
+						<p class="hub-link">
+							<a href={hub.url}>All {hub.anchor}</a>
+						</p>
+					</RelatedLinks>
+				</div>
 			</section>
-		)}
+		</>
+	) : (
+		<>
+		<PageHero title={data.title} intro={doc.introInBody ? null : data.summary} crumbs={crumbs} titleAttrs={entry.edit.title} byline={doc.byline} cta />
 
-		{!doc.hasFaq && <FaqSection faqs={faqs} />}
+		<EntryLayout>
+			{data.featured_image && (
+				<div class="entry-image" {...entry.edit.featured_image}>
+					<Image image={data.featured_image} />
+				</div>
+			)}
 
-		<Fragment slot="aside">
-			<RelatedLinks links={related}>
-				<p class="hub-link">
-					<a href={hub.url}>All {hub.anchor}</a>
-				</p>
-			</RelatedLinks>
-		</Fragment>
-	</EntryLayout>
+			<div {...entry.edit.content}>
+				<Prose value={data.content} />
+			</div>
+
+			{collection === "locations" && !doc.fromDoc && (
+				<section class="local">
+					{localFacts.length > 0 && (
+						<dl class="local-facts">
+							{localFacts.map((fact) => (
+								<div>
+									<dt>{fact.label}</dt>
+									<dd>{fact.value}</dd>
+								</div>
+							))}
+						</dl>
+					)}
+					<h2>Visit or contact the shop</h2>
+					<ContactDetails />
+					<p class="local-links">
+						Koojo is a <a href="/">powder coating company GTA</a> businesses have used since {BUSINESS.foundingYear}.
+						See <a href="/contact-us">contact details and directions</a>.
+					</p>
+				</section>
+			)}
+
+			{!doc.hasFaq && <FaqSection faqs={faqs} />}
+
+			<Fragment slot="aside">
+				<RelatedLinks links={related}>
+					<p class="hub-link">
+						<a href={hub.url}>All {hub.anchor}</a>
+					</p>
+				</RelatedLinks>
+			</Fragment>
+		</EntryLayout>
+
+		</>
+	)}
 
 	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>
 
 <style>
+	.doc-related {
+		border-top: 1px solid var(--color-border);
+		padding: var(--spacing-2xl) 0;
+	}
+
+	.doc-related-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: 0 var(--spacing-lg);
+	}
+
+	.doc-related-inner :global(.related) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+		gap: var(--spacing-xl);
+		position: static;
+	}
+
 	.entry-image {
 		margin-bottom: var(--spacing-2xl);
 		border-radius: var(--radius-lg);

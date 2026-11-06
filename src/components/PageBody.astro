@@ -8,18 +8,22 @@ import { Image } from "emdash/ui";
 import { docParts, type Faq } from "../lib/site";
 import FaqSection from "./FaqSection.astro";
 import MarketingBlocks from "./MarketingBlocks.astro";
+import DocSections from "./doc/DocSections.astro";
 import Prose from "./Prose.astro";
 
 interface Props {
 	page: NonNullable<Awaited<ReturnType<typeof getEmDashEntry<"pages">>>["entry"]>;
+	/** Photo shown in the hero, so document sections do not repeat it. */
+	heroImage?: unknown;
 }
 
-const { page } = Astro.props;
+const { page, heroImage } = Astro.props;
 const { data } = page;
 const faqs = (data.faqs ?? []) as Faq[];
 const doc = docParts(data.body);
 ---
 
+{doc.fromDoc ? <DocSections value={data.body} heroImage={heroImage} /> : (
 <div class="page-body">
 	<slot name="before" />
 	<div class:list={["page-columns", { "has-image": !!data.featured_image }]}>
@@ -35,6 +39,7 @@ const doc = docParts(data.body);
 	<slot />
 	{!doc.hasFaq && <FaqSection faqs={faqs} />}
 </div>
+)}
 
 {!doc.fromDoc && data.content && data.content.length > 0 && (
 	<div {...page.edit.content}>

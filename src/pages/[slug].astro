@@ -3,6 +3,8 @@ import { getEmDashEntry } from "emdash";
 import CtaBand from "../components/CtaBand.astro";
 import PageBody from "../components/PageBody.astro";
 import PageHero from "../components/PageHero.astro";
+import DocHero from "../components/doc/DocHero.astro";
+import { docHeroImage } from "../lib/doc-images";
 import Base from "../layouts/Base.astro";
 import { breadcrumbLd, docParts, entrySeo, faqLd, type Faq } from "../lib/site";
 
@@ -17,6 +19,7 @@ if (Astro.cache?.enabled && cacheHint) Astro.cache.set(cacheHint);
 const path = `/${page.id}`;
 const seo = entrySeo(Astro, page, path, page.data.intro);
 const doc = docParts(page.data.body);
+const heroImage = doc.fromDoc ? await docHeroImage(page.data.body, page.data.featured_image) : null;
 const crumbs = [{ label: page.data.title, url: path }];
 const jsonLd = [faqLd((page.data.faqs ?? []) as Faq[]), breadcrumbLd(Astro.url.origin, crumbs)];
 ---
@@ -31,7 +34,11 @@ const jsonLd = [faqLd((page.data.faqs ?? []) as Faq[]), breadcrumbLd(Astro.url.o
 	content={{ collection: "pages", id: page.data.id, slug: page.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} />
-	<PageBody page={page} />
+	{doc.fromDoc ? (
+		<DocHero title={page.data.title} intro={page.data.intro} byline={doc.byline} crumbs={crumbs} image={heroImage} titleAttrs={page.edit.title} cta />
+	) : (
+		<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} />
+	)}
+	<PageBody page={page} heroImage={heroImage} />
 	{(!doc.fromDoc || doc.cta) && <CtaBand doc={doc.cta} />}
 </Base>

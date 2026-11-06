@@ -4030,7 +4030,8 @@
 									"text": "Richard Hartlin, Google review",
 									"marks": []
 								}
-							]
+							],
+							"koojoCite": true
 						},
 						{
 							"_type": "block",
@@ -4058,7 +4059,8 @@
 									"text": "Philip. S, Google review",
 									"marks": []
 								}
-							]
+							],
+							"koojoCite": true
 						},
 						{
 							"_type": "block",
@@ -4086,7 +4088,8 @@
 									"text": "Brendan Black, Google review",
 									"marks": []
 								}
-							]
+							],
+							"koojoCite": true
 						},
 						{
 							"_type": "block",

@@ -1,0 +1,568 @@
+---
+/**
+ * Renders a page built from a client content document as full-width
+ * sections, in the document's exact order. Only the presentation changes:
+ * strips become a proof band, H3 groups become cards or numbered steps,
+ * testimonials become quote cards, and sections get real shop photos when
+ * they link to (or are named after) a service or project.
+ */
+import { Image } from "emdash/ui";
+import { docImageIndex } from "../../lib/doc-images";
+import { blockLinks, blockText, docSections, type PtBlock } from "../../lib/doc-sections";
+import Prose from "../Prose.astro";
+import Cta from "./Cta.astro";
+import Faq from "./Faq.astro";
+
+interface Props {
+	value?: unknown[] | null;
+	/** Photo already used in the hero, so sections do not repeat it. */
+	heroImage?: unknown;
+}
+
+const { value, heroImage } = Astro.props;
+const sections = docSections(value);
+const images = await docImageIndex();
+const used = new Set<unknown>(heroImage ? [(heroImage as { src?: string }).src ?? heroImage] : []);
+const pick = (image: ReturnType<typeof images.forName>) => {
+	if (!image) return null;
+	const id = image.src ?? image;
+	if (used.has(id)) return null;
+	used.add(id);
+	return image;
+};
+const pad = (n: number) => String(n).padStart(2, "0");
+let n = 0;
+const hasGallerySlot = Astro.slots.has("gallery");
+---
+
+<div class="ds">
+	{sections.map((section) => {
+		if (section.kind === "gallery") return hasGallerySlot ? <slot name="gallery" /> : null;
+
+		if (section.kind === "strip") {
+			const items = String(section.block.text ?? "").split(/\s+[|·•]\s+/).filter(Boolean);
+			return (
+				<section class="ds-strip" aria-label="At a glance">
+					<ul class="ds-inner ds-strip-list">
+						{items.map((item) => <li>{item}</li>)}
+					</ul>
+				</section>
+			);
+		}
+
+		if (section.kind === "faq") {
+			const label = pad(++n);
+			return (
+				<section class="ds-section ds-faq">
+					<div class="ds-inner">
+						<span class="label ds-label">{label}</span>
+						<Faq node={section.block as never} />
+					</div>
+				</section>
+			);
+		}
+
+		if (section.kind === "cta") {
+			return (
+				<section class="ds-cta">
+					<div class="ds-inner">
+						<Cta node={section.block as never} />
+					</div>
+				</section>
+			);
+		}
+
+		// Copy with no heading of its own (e.g. a second hero paragraph) continues
+		// the page above it: no number, no new band.
+		if (section.kind === "text" && !section.heading) {
+			return (
+				<section class="ds-lead">
+					<div class="ds-inner ds-split">
+						<div class="ds-side" />
+						<div class="ds-main">
+							<Prose value={section.intro} />
+						</div>
+					</div>
+				</section>
+			);
+		}
+
+		const label = pad(++n);
+		const title = section.heading ? blockText(section.heading) : null;
+		const all = [...section.intro, ...section.groups.flatMap((g) => g.blocks), ...section.outro];
+		const tone = n % 2 === 0 ? "ds-alt" : "";
+
+		if (section.kind === "grid" || section.kind === "steps") {
+			const cards = section.groups.map((g) => ({
+				title: blockText(g.heading),
+				blocks: g.blocks,
+				image: section.kind === "grid" ? pick(images.forLinks(blockLinks(g.blocks)) ?? images.forName(blockText(g.heading))) : null,
+			}));
+			const withImages = cards.filter((c) => c.image).length >= Math.ceil(cards.length / 2);
+			return (
+				<section class:list={["ds-section", tone, `ds-kind-${section.kind}`]}>
+					<div class="ds-inner">
+						<header class="ds-head">
+							<span class="label ds-label">{label}</span>
+							<div class="ds-head-main">
+								{title && <h2>{title}</h2>}
+								<Prose value={section.intro} />
+							</div>
+						</header>
+						{section.kind === "steps" ? (
+							<ol class="ds-steps">
+								{cards.map((c, i) => (
+									<li>
+										<span class="ds-step-n" aria-hidden="true">{pad(i + 1)}</span>
+										<h3>{c.title}</h3>
+										<Prose value={c.blocks} />
+									</li>
+								))}
+							</ol>
+						) : (
+							<ul class:list={["ds-cards", { "ds-cards--media": withImages }]}>
+								{cards.map((c, i) => (
+									<li class="ds-card">
+										{withImages && (
+											<div class="ds-card-media">
+												{c.image ? <Image image={c.image as never} /> : <span class="label">{pad(i + 1)}</span>}
+											</div>
+										)}
+										<div class="ds-card-body">
+											{!withImages && <span class="label ds-card-n">{pad(i + 1)}</span>}
+											<h3>{c.title}</h3>
+											<Prose value={c.blocks} />
+										</div>
+									</li>
+								))}
+							</ul>
+						)}
+					</div>
+				</section>
+			);
+		}
+
+		if (section.kind === "quotes") {
+			const quotes: { text: string; cite: string | null }[] = [];
+			for (const q of section.quotes as PtBlock[]) {
+				const text = blockText(q);
+				// The reviewer's name follows the review: marked by the seed build, or a short line with no full stop.
+				const isCite = q.koojoCite || (text.length < 70 && !/[.!?]["”]?$/.test(text));
+				if (isCite && quotes.length && !quotes.at(-1)!.cite) quotes.at(-1)!.cite = text;
+				else quotes.push({ text, cite: null });
+			}
+			return (
+				<section class:list={["ds-section", tone, "ds-kind-quotes"]}>
+					<div class="ds-inner">
+						<header class="ds-head">
+							<span class="label ds-label">{label}</span>
+							<div class="ds-head-main">
+								{title && <h2>{title}</h2>}
+								<Prose value={section.intro} />
+							</div>
+						</header>
+						<ul class="ds-quote-list">
+							{quotes.map((q) => (
+								<li>
+									<blockquote>
+										<p>{q.text}</p>
+										{q.cite && <footer class="label">{q.cite}</footer>}
+									</blockquote>
+								</li>
+							))}
+						</ul>
+						{section.outro.length > 0 && (
+							<div class="ds-outro">
+								<Prose value={section.outro} />
+							</div>
+						)}
+					</div>
+				</section>
+			);
+		}
+
+		// Text section: label and photo on the left, heading and copy on the right.
+		const wide = all.some((b) => ["table", "koojoForm", "koojoMap", "koojoCards"].includes(b._type ?? ""));
+		const image = wide ? null : pick(images.forLinks(blockLinks(all)) ?? images.forText(all.map(blockText).join(" ")));
+		// Runs of "Label: text" paragraphs (three or more) read as a feature list.
+		const isPair = (b: PtBlock) => b._type === "block" && b.style === "normal" && !b.listItem && !b.markDefs?.length && /^[A-Z][^:.]{1,40}: \S/.test(blockText(b));
+		const parts: { pairs: boolean; blocks: PtBlock[] }[] = [];
+		for (const b of section.intro) {
+			const pair = isPair(b);
+			const last = parts.at(-1);
+			if (last && last.pairs === pair) last.blocks.push(b);
+			else parts.push({ pairs: pair, blocks: [b] });
+		}
+		for (const part of parts) if (part.pairs && part.blocks.length < 3) part.pairs = false;
+		return (
+			<section class:list={["ds-section", tone, "ds-text", { "ds-text--wide": wide }]}>
+				<div class="ds-inner ds-split">
+					<div class="ds-side">
+						<span class="label ds-label">{label}</span>
+						{image && (
+							<figure class="ds-photo">
+								<Image image={image as never} />
+								{image.alt && <figcaption class="label">{image.alt}</figcaption>}
+							</figure>
+						)}
+					</div>
+					<div class="ds-main">
+						{title && <h2>{title}</h2>}
+						{parts.map((part) =>
+							part.pairs ? (
+								<dl class="ds-pairs">
+									{part.blocks.map((b) => {
+										const text = blockText(b);
+										const i = text.indexOf(": ");
+										return (
+											<div>
+												<dt>{text.slice(0, i + 1)}</dt>
+												<dd>{text.slice(i + 2)}</dd>
+											</div>
+										);
+									})}
+								</dl>
+							) : (
+								<Prose value={part.blocks} />
+							),
+						)}
+					</div>
+				</div>
+			</section>
+		);
+	})}
+</div>
+
+<style>
+	.ds-inner {
+		max-width: var(--wide-width);
+		margin: 0 auto;
+		padding: 0 var(--spacing-lg);
+	}
+
+	.ds-section {
+		padding: var(--spacing-3xl) 0;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.ds-alt {
+		background: var(--color-surface);
+	}
+
+	.ds-label {
+		display: block;
+		padding-top: 0.6em;
+	}
+
+	.ds-head,
+	.ds-split {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+		gap: var(--spacing-md) var(--spacing-2xl);
+		align-items: start;
+	}
+
+	.ds-head {
+		margin-bottom: var(--spacing-2xl);
+	}
+
+	.ds-head h2,
+	.ds-main h2 {
+		margin-bottom: var(--spacing-lg);
+		max-width: 22ch;
+		font-weight: var(--font-weight-display);
+	}
+
+	.ds-side {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-lg);
+		position: sticky;
+		top: var(--spacing-xl);
+	}
+
+	.ds-photo {
+		margin: 0;
+	}
+
+	.ds-photo :global(img) {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		border-radius: var(--radius-lg);
+	}
+
+	.ds-photo figcaption {
+		margin-top: var(--spacing-sm);
+	}
+
+	/* Wide text sections (tables, forms, maps) use the full width under the heading. */
+	.ds-text--wide .ds-split {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+	}
+
+	.ds-text--wide .ds-main :global(.prose) {
+		max-width: none;
+	}
+
+	.ds-lead {
+		padding: var(--spacing-xl) 0;
+	}
+
+	/* "Label: text" feature list */
+	.ds-pairs {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+		gap: var(--spacing-md);
+		margin: var(--spacing-lg) 0;
+	}
+
+	.ds-pairs div {
+		padding: var(--spacing-md) var(--spacing-lg);
+		border-left: 3px solid var(--color-brand);
+		background: var(--color-bg);
+		border-radius: 0 var(--radius) var(--radius) 0;
+	}
+
+	.ds-alt .ds-pairs div {
+		background: var(--color-bg);
+	}
+
+	.ds-pairs dt {
+		font-family: var(--font-display);
+		font-weight: 700;
+	}
+
+	.ds-pairs dd {
+		margin: var(--spacing-xs) 0 0;
+		color: var(--color-muted);
+	}
+
+	/* Numbered lists inside sections */
+	.ds-main :global(.prose ol) {
+		list-style: none;
+		padding-left: 0;
+		counter-reset: ds-step;
+	}
+
+	.ds-main :global(.prose ol > li) {
+		counter-increment: ds-step;
+		position: relative;
+		padding: var(--spacing-md) 0 var(--spacing-md) 3.5rem;
+		border-top: 1px solid var(--color-border);
+		margin: 0;
+	}
+
+	.ds-main :global(.prose ol > li::before) {
+		content: counter(ds-step, decimal-leading-zero);
+		position: absolute;
+		left: 0;
+		top: var(--spacing-md);
+		font-family: var(--font-display);
+		font-weight: var(--font-weight-display);
+		font-size: var(--font-size-xl);
+		color: var(--color-brand);
+	}
+
+	/* Proof band */
+	.ds-strip {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.ds-strip-list {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding-top: var(--spacing-xl);
+		padding-bottom: var(--spacing-xl);
+		gap: 0;
+	}
+
+	.ds-strip-list li {
+		flex: 1 1 11rem;
+		padding: var(--spacing-sm) var(--spacing-lg);
+		border-left: 1px solid color-mix(in srgb, var(--color-paper) 22%, transparent);
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: var(--font-size-lg);
+		line-height: 1.25;
+	}
+
+	.ds-strip-list li:first-child {
+		border-left: 3px solid var(--color-accent);
+	}
+
+	/* Cards */
+	.ds-cards {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.ds-card {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		overflow: hidden;
+	}
+
+	.ds-alt .ds-card {
+		background: var(--color-bg);
+	}
+
+	.ds-card-media {
+		aspect-ratio: 4 / 3;
+		background: var(--color-surface);
+		display: grid;
+		place-items: center;
+	}
+
+	.ds-card-media :global(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.ds-card-body {
+		padding: var(--spacing-lg);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	.ds-card-n {
+		color: var(--color-brand);
+	}
+
+	.ds-card h3,
+	.ds-steps h3 {
+		font-size: var(--font-size-xl);
+	}
+
+	.ds-card :global(.prose),
+	.ds-steps :global(.prose),
+	.ds-kind-quotes :global(.prose) {
+		font-size: var(--font-size-base);
+	}
+
+	.ds-card :global(.prose p:last-child),
+	.ds-steps :global(.prose p:last-child) {
+		margin-bottom: 0;
+	}
+
+	/* Numbered steps */
+	.ds-steps {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+		gap: var(--spacing-lg);
+		counter-reset: none;
+	}
+
+	.ds-steps li {
+		border-top: 3px solid var(--color-rule);
+		padding-top: var(--spacing-md);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	.ds-step-n {
+		font-family: var(--font-display);
+		font-weight: var(--font-weight-display);
+		font-size: var(--font-size-4xl);
+		line-height: 1;
+		color: var(--color-brand);
+	}
+
+	/* Testimonials */
+	.ds-quote-list {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.ds-quote-list blockquote {
+		margin: 0;
+		height: 100%;
+		padding: var(--spacing-xl);
+		border-radius: var(--radius-lg);
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: var(--spacing-lg);
+	}
+
+	.ds-quote-list blockquote p {
+		font-size: var(--font-size-lg);
+		line-height: 1.5;
+	}
+
+	.ds-quote-list blockquote p::before {
+		content: "\201C";
+		display: block;
+		font-family: var(--font-display);
+		font-size: 3rem;
+		line-height: 0.8;
+		color: var(--color-brand);
+	}
+
+	.ds-outro {
+		margin-top: var(--spacing-xl);
+	}
+
+	/* FAQ */
+	.ds-faq .ds-inner {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+		gap: var(--spacing-md) var(--spacing-2xl);
+	}
+
+	.ds-faq .ds-inner :global(.doc-faq) {
+		margin-top: 0;
+	}
+
+	/* Inline CTA (when a document puts one mid-page) */
+	.ds-cta {
+		background: var(--color-ink);
+		color: var(--color-paper);
+		padding: var(--spacing-3xl) 0;
+	}
+
+	@media (max-width: 800px) {
+		.ds-section {
+			padding: var(--spacing-2xl) 0;
+		}
+
+		.ds-head,
+		.ds-split,
+		.ds-faq .ds-inner,
+		.ds-text--wide .ds-split {
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.ds-side {
+			position: static;
+		}
+
+		.ds-label {
+			padding-top: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.ds-side {
+			position: static;
+		}
+	}
+</style>

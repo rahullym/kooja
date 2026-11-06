@@ -107,7 +107,7 @@ def from_doc(doc):
 		elif t == "quote":
 			out.append(block(b["text"], "blockquote"))
 			if b.get("cite"):
-				out.append(block(b["cite"], "blockquote"))
+				out.append({**block(b["cite"], "blockquote"), "koojoCite": True})
 		elif t == "table":
 			out.append(table(b["rows"], b.get("header", True)))
 		elif t == "strip":
