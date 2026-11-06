@@ -12,7 +12,7 @@ import CtaBand from "./CtaBand.astro";
 import FaqSection from "./FaqSection.astro";
 import PageHero from "./PageHero.astro";
 import InnerSections from "./doc/InnerSections.astro";
-import { docHeroImage } from "../lib/doc-images";
+import { bannerFor, docHeroImage } from "../lib/doc-images";
 import Prose from "./Prose.astro";
 
 interface Props {
@@ -50,7 +50,9 @@ const faqs = (page?.data.faqs ?? []) as Faq[];
 const crumbs = [{ label: title, url: path }];
 // Pages built from a content document list their child pages in the document itself.
 const doc = docParts(page?.data.body);
-const heroImage = doc.fromDoc ? await docHeroImage(page?.data.body) : null;
+// A page without a photo of its own shows its banner illustration.
+const banner = doc.fromDoc ? bannerFor(collection, title) : null;
+const heroImage = doc.fromDoc && !banner ? await docHeroImage(page?.data.body) : null;
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -75,7 +77,7 @@ const jsonLd = [
 >
 	{page && doc.fromDoc ? (
 		<>
-			<PageHero title={title} intro={page.data.intro} crumbs={crumbs} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} />
+			<PageHero title={title} intro={page.data.intro} crumbs={crumbs} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} banner={banner} />
 			<InnerSections value={page.data.body} heroImage={heroImage} />
 		</>
 	) : (

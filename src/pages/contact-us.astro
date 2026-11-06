@@ -4,7 +4,7 @@ import ContactDetails from "../components/ContactDetails.astro";
 import CtaBand from "../components/CtaBand.astro";
 import PageBody from "../components/PageBody.astro";
 import PageHero from "../components/PageHero.astro";
-import { docHeroImage } from "../lib/doc-images";
+import { bannerFor, docHeroImage } from "../lib/doc-images";
 import QuoteForm from "../components/QuoteForm.astro";
 import Base from "../layouts/Base.astro";
 import { BUSINESS, docParts, entrySeo, localBusinessLd } from "../lib/site";
@@ -15,7 +15,9 @@ if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
 const seo = entrySeo(Astro, page, "/contact-us", page.data.intro);
 const doc = docParts(page.data.body);
-const heroImage = doc.fromDoc ? await docHeroImage(page.data.body, page.data.featured_image) : null;
+// A page without a photo of its own shows its banner illustration.
+const banner = doc.fromDoc && !page.data.featured_image ? bannerFor(page.id, page.data.title) : null;
+const heroImage = doc.fromDoc && !banner ? await docHeroImage(page.data.body, page.data.featured_image) : null;
 const jsonLd = [
 	{ "@context": "https://schema.org", "@type": "ContactPage", name: page.data.title, url: `${Astro.url.origin}/contact-us` },
 	localBusinessLd(Astro.url.origin),
@@ -32,7 +34,7 @@ const jsonLd = [
 	content={{ collection: "pages", id: page.data.id, slug: page.id }}
 	jsonLd={jsonLd}
 >
-	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} cta />
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} banner={banner} cta />
 	<PageBody page={page} heroImage={heroImage}>
 		{!doc.fromDoc && <section slot="before" class="contact">
 			<ContactDetails />

@@ -13,13 +13,16 @@ interface Props {
 	byline?: string | null;
 	/** Shop photo shown beside the hero text. */
 	image?: unknown;
+	/** Banner illustration, used when there is no photo. */
+	banner?: { src: string; alt: string } | null;
 }
 
-const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline, image } = Astro.props;
+const { title, intro, crumbs = [], eyebrow, titleAttrs = {}, cta = false, byline, image, banner } = Astro.props;
+const art = image ? null : banner;
 const photo = image as { alt?: string } | null | undefined;
 ---
 
-<header class:list={["page-hero", { "page-hero--photo": !!image }]}>
+<header class:list={["page-hero", { "page-hero--photo": !!image || !!art }]}>
 	<div class="page-hero-inner">
 		<div class="page-hero-text">
 		{crumbs.length > 0 && (
@@ -51,6 +54,11 @@ const photo = image as { alt?: string } | null | undefined;
 				{photo?.alt && <figcaption class="label">{photo.alt}</figcaption>}
 			</figure>
 		)}
+		{art && (
+			<figure class="page-hero-photo page-hero-banner">
+				<img src={art.src} alt={art.alt} width="1200" height="900" loading="eager" decoding="async" />
+			</figure>
+		)}
 	</div>
 </header>
 
@@ -71,6 +79,10 @@ const photo = image as { alt?: string } | null | undefined;
 		aspect-ratio: 4 / 3;
 		object-fit: cover;
 		border-radius: var(--radius-lg);
+	}
+
+	.page-hero-banner img {
+		border: 1px solid var(--color-border);
 	}
 
 	.page-hero-photo figcaption {

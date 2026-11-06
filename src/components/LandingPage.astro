@@ -20,7 +20,7 @@ import {
 import ContactDetails from "./ContactDetails.astro";
 import InnerSections from "./doc/InnerSections.astro";
 import RelatedBand from "./doc/RelatedBand.astro";
-import { docHeroImage } from "../lib/doc-images";
+import { bannerFor, docHeroImage } from "../lib/doc-images";
 import CtaBand from "./CtaBand.astro";
 import EntryLayout from "./EntryLayout.astro";
 import FaqSection from "./FaqSection.astro";
@@ -73,7 +73,9 @@ const jsonLd = [
 ];
 
 const doc = docParts(data.content);
-const heroImage = doc.fromDoc ? await docHeroImage(data.content, data.featured_image) : null;
+// A page without a photo of its own shows its banner illustration.
+const banner = doc.fromDoc && !data.featured_image ? bannerFor(collection === "industries" ? `industry-${entry.id}` : collection === "locations" ? `location-${entry.id.replace("powder-coating-", "")}` : "", data.title) : null;
+const heroImage = doc.fromDoc && !banner ? await docHeroImage(data.content, data.featured_image) : null;
 
 const localFacts = [
 	{ label: "Drive time from our Milton shop", value: data.drive_time },
@@ -100,7 +102,7 @@ const localFacts = [
 				crumbs={crumbs}
 				titleAttrs={entry.edit.title}
 				byline={doc.byline}
-				image={heroImage}
+				image={heroImage} banner={banner}
 				cta
 			/>
 			<InnerSections value={data.content} heroImage={heroImage} />

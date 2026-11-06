@@ -3,7 +3,7 @@ import { getEmDashEntry } from "emdash";
 import ContactDetails from "../components/ContactDetails.astro";
 import PageBody from "../components/PageBody.astro";
 import PageHero from "../components/PageHero.astro";
-import { docHeroImage } from "../lib/doc-images";
+import { bannerFor, docHeroImage } from "../lib/doc-images";
 import QuoteForm from "../components/QuoteForm.astro";
 import Base from "../layouts/Base.astro";
 import { BUSINESS, docParts, entrySeo } from "../lib/site";
@@ -15,7 +15,9 @@ if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
 const seo = entrySeo(Astro, page, "/get-a-quote", page.data.intro);
 const doc = docParts(page.data.body);
-const heroImage = doc.fromDoc ? await docHeroImage(page.data.body, page.data.featured_image) : null;
+// A page without a photo of its own shows its banner illustration.
+const banner = doc.fromDoc && !page.data.featured_image ? bannerFor(page.id, page.data.title) : null;
+const heroImage = doc.fromDoc && !banner ? await docHeroImage(page.data.body, page.data.featured_image) : null;
 
 // Structured email request flow (Phase 4)
 const quoteBody = [
@@ -56,7 +58,7 @@ const consultMail = `mailto:${BUSINESS.email}?subject=${encodeURIComponent("Book
 	robots={seo.robots}
 	content={{ collection: "pages", id: page.data.id, slug: page.id }}
 >
-	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage}>
+	<PageHero title={page.data.title} intro={page.data.intro} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} banner={banner}>
 		{doc.fromDoc ? (
 			<div class="quote-actions">
 				<a href="#quote-form-section" class="btn btn-primary btn-lg">Request a Quote</a>

@@ -71,3 +71,16 @@ export async function docHeroImage(body: unknown, own?: unknown) {
 	const index = await docImageIndex();
 	return index.forLinks(blockLinks(blocks)) ?? index.forText(blocks.map(blockText).join(" "));
 }
+
+/** Page banners drawn by scripts/banners/build_banners.py (public/banners). */
+const BANNERS = new Set(["about-us", "blog", "capabilities", "certification", "contact-us", "get-a-quote", "industries", "industry-agricultural-heavy-equipment", "industry-contractors-construction", "industry-food-processing-equipment", "industry-machine-shops", "industry-manufacturing-automation", "industry-metal-fabricators-welding-shops", "industry-municipal-institutional", "location-brampton", "location-burlington", "location-cambridge", "location-guelph", "location-halton-hills", "location-hamilton", "location-milton", "location-mississauga", "location-oakville", "locations", "privacy-policy", "projects", "services"]);
+
+export type Banner = { src: string; alt: string };
+
+/**
+ * Banner illustration for a page without a photo of its own. Keys: page slug
+ * ("capabilities", "services"), "industry-<slug>" or "location-<city-slug>".
+ */
+export function bannerFor(key: string, alt: string): Banner | null {
+	return BANNERS.has(key) ? { src: `/banners/${key}.svg`, alt } : null;
+}

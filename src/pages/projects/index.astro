@@ -4,7 +4,7 @@ import CardGrid, { type Card } from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
 import PageHero from "../../components/PageHero.astro";
 import InnerSections from "../../components/doc/InnerSections.astro";
-import { docHeroImage } from "../../lib/doc-images";
+import { bannerFor, docHeroImage } from "../../lib/doc-images";
 import Base from "../../layouts/Base.astro";
 import { breadcrumbLd, collectionLd, docParts, entrySeo, faqLd, getSorted, type Faq } from "../../lib/site";
 
@@ -42,7 +42,9 @@ const crumbs = [{ label: "Our Work", url: "/projects" }];
 // Built from the client's content document: the copy wraps the gallery, which
 // sits where the document's gallery marker is.
 const doc = docParts(page?.data.body);
-const heroImage = doc.fromDoc ? await docHeroImage(page?.data.body) : null;
+// A page without a photo of its own shows its banner illustration.
+const banner = doc.fromDoc ? bannerFor("projects", title) : null;
+const heroImage = doc.fromDoc && !banner ? await docHeroImage(page?.data.body) : null;
 const jsonLd = [
 	collectionLd({
 		name: title,
@@ -67,7 +69,7 @@ const jsonLd = [
 >
 	{page && doc.fromDoc ? (
 		<>
-			<PageHero title={title} intro={page.data.intro} crumbs={crumbs} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} />
+			<PageHero title={title} intro={page.data.intro} crumbs={crumbs} titleAttrs={page.edit.title} byline={doc.byline} image={heroImage} banner={banner} />
 			<InnerSections value={page.data.body} heroImage={heroImage}>
 				<section slot="gallery" class="gallery-band">
 				<div class="container projects">
