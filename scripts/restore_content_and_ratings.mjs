@@ -76,6 +76,9 @@ if (data.services?.['industrial-powder-coating']?.body) {
 for (const [slug, serv] of Object.entries(data.services || {})) {
   if (serv.body && Array.isArray(serv.body)) {
     serv.body = serv.body.map(updateRating);
+    if (!serv.body.some(item => typeof item === 'string' && item.includes('5.0 ★ Google Rating'))) {
+      serv.body.unshift('Since 2012 | 10,000+ Items | 48 Hr Turnaround | 5.0 ★ Google Rating');
+    }
   }
 }
 
