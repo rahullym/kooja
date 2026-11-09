@@ -42,3 +42,4 @@ __pycache__/
 *.pyc
 .vercel
 .env*
+*.bak
