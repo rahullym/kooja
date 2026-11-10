@@ -29,13 +29,14 @@ def main():
                 data = item.get("data", {})
                 status = item.get("status", "published")
 
-                existing = cur.execute(f"SELECT id FROM {table} WHERE slug = ?", (slug,)).fetchone()
+                existing = cur.execute(f"SELECT id, live_revision_id FROM {table} WHERE slug = ?", (slug,)).fetchone()
                 now = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
                 if not existing:
                     print(f"Skipping insert for non-existent row: {slug}")
                     continue
 
+                live_rev_id = existing[1]
                 update_fields = ["status = ?", "updated_at = ?"]
                 values = [status, now]
 
@@ -55,11 +56,15 @@ def main():
                 values.append(slug)
                 query = f"UPDATE {table} SET {', '.join(update_fields)} WHERE slug = ?"
                 cur.execute(query, values)
+
+                if live_rev_id:
+                    cur.execute("UPDATE revisions SET data = ? WHERE id = ?", (json.dumps(data, ensure_ascii=False), live_rev_id))
+
                 total_updated += 1
-                print(f"Updated {slug}")
+                print(f"Updated {slug} (ec + revision)")
 
         con.commit()
-        print(f"\nSuccessfully synchronized {total_updated} items into data.db!")
+        print(f"\nSuccessfully synchronized {total_updated} items into data.db and revisions!")
 
     except Exception as e:
         con.rollback()
