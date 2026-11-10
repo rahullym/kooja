@@ -1,212 +1,462 @@
 [
- {
-  "_type": "block",
-  "_key": "b23",
-  "style": "h2",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s24",
-    "text": "A LEGAL DISCLAIMER",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b25",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s26",
-    "text": "At Koojo Custom Powder Coating, your privacy is important to us. This Privacy Policy outlines how we collect, use, and protect the information you provide when using our website. By submitting your information through our site, you agree to the terms outlined below.",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b27",
-  "style": "h2",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s28",
-    "text": "Information We Collect and How We Use Your Information",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b29",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s30",
-    "text": "When you fill out the \"Request a Quote\" form on our website, we may collect the following information:",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b31",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s32",
-    "text": "Name",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b35",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s36",
-    "text": "Email Address",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b39",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s40",
-    "text": "Phone Number",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b43",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s44",
-    "text": "Message or Project Details",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b49",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s50",
-    "text": "We use the information you provide for the following purposes:",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b51",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s52",
-    "text": "To respond to your inquiries and provide quotes for our services.",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b55",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s56",
-    "text": "To communicate with you about your projects or questions.",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b59",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s60",
-    "text": "To improve our customer service and website functionality.",
-    "marks": []
-   }
-  ],
-  "listItem": "bullet",
-  "level": 1
- },
- {
-  "_type": "block",
-  "_key": "b63",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s64",
-    "text": "We will not sell, rent, or share your personal information with third parties unless required by law or necessary to fulfill your request.",
-    "marks": []
-   }
-  ]
- },
- {
-  "_type": "block",
-  "_key": "b67",
-  "style": "normal",
-  "markDefs": [],
-  "children": [
-   {
-    "_type": "span",
-    "_key": "s68",
-    "text": "We take reasonable precautions to protect your personal information. All data submitted through our website is handled securely to prevent unauthorized access, misuse, or disclosure. However, no method of transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security.",
-    "marks": []
-   }
-  ]
- }
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Koojo Custom Powder Coating respects your privacy. This policy explains what personal information we collect when you use koojopowdercoating.com, request a quote or contact our shop, how we use it, and the choices you have. It covers our website and enquiries made by phone or email.",
+        "marks": [],
+        "_key": "priv_s_1_1"
+      }
+    ],
+    "_key": "priv_b_1"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Who We Are",
+        "marks": [],
+        "_key": "priv_s_2_1"
+      }
+    ],
+    "_key": "priv_b_2"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Koojo Custom Powder Coating is a powder coating shop at 10874 Steeles Ave E, Milton, ON L9T 2X8, serving customers across the Greater Toronto Area since 2012. We are responsible for the personal information we collect, and we handle it in line with Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA).",
+        "marks": [],
+        "_key": "priv_s_3_1"
+      }
+    ],
+    "_key": "priv_b_3"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Information We Collect",
+        "marks": [],
+        "_key": "priv_s_4_1"
+      }
+    ],
+    "_key": "priv_b_4"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We collect only what we need to answer you and quote your project. When you use our Get a Quote form, call us or send an email, that can include:",
+        "marks": [],
+        "_key": "priv_s_5_1"
+      }
+    ],
+    "_key": "priv_b_5"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Contact details: your name, email address and phone number.",
+        "marks": [],
+        "_key": "priv_s_6_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_6"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Project details: the message you send, including part descriptions, sizes, quantities and any photos or drawings you choose to share.",
+        "marks": [],
+        "_key": "priv_s_7_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_7"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Technical data: basic information such as browser type, device and pages visited, collected through our website platform as described under Cookies.",
+        "marks": [],
+        "_key": "priv_s_8_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_8"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Please do not send us sensitive personal information, such as financial account or government ID numbers. We do not need it to quote or coat your parts.",
+        "marks": [],
+        "_key": "priv_s_9_1"
+      }
+    ],
+    "_key": "priv_b_9"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "How We Use Your Information",
+        "marks": [],
+        "_key": "priv_s_10_1"
+      }
+    ],
+    "_key": "priv_b_10"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We use your information to respond to enquiries and provide quotes, and for the purposes below:",
+        "marks": [],
+        "_key": "priv_s_11_1"
+      }
+    ],
+    "_key": "priv_b_11"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Communicate with you about your project, timing, pickup and delivery.",
+        "marks": [],
+        "_key": "priv_s_12_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_12"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Keep business and job records and meet our legal and tax obligations.",
+        "marks": [],
+        "_key": "priv_s_13_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_13"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Improve our customer service and the way our website works.",
+        "marks": [],
+        "_key": "priv_s_14_1"
+      }
+    ],
+    "listItem": "bullet",
+    "level": 1,
+    "_key": "priv_b_14"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We do not send marketing emails without your consent, and we will never use your information for a purpose you would not reasonably expect.",
+        "marks": [],
+        "_key": "priv_s_15_1"
+      }
+    ],
+    "_key": "priv_b_15"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Who We Share It With",
+        "marks": [],
+        "_key": "priv_s_16_1"
+      }
+    ],
+    "_key": "priv_b_16"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We do not sell or rent your personal information, and we do not share it with third parties except where this is needed to fulfil your request or is required by law.",
+        "marks": [],
+        "_key": "priv_s_17_1"
+      }
+    ],
+    "_key": "priv_b_17"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Service providers that help us run the business, such as our website platform and email provider, may handle information on our behalf. They may store or process it outside Canada, including in the United States, where it can be accessed by courts and authorities under local law. We require these providers to protect it appropriately.",
+        "marks": [],
+        "_key": "priv_s_18_1"
+      }
+    ],
+    "_key": "priv_b_18"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Cookies and Website Analytics",
+        "marks": [],
+        "_key": "priv_s_19_1"
+      }
+    ],
+    "_key": "priv_b_19"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Our website uses cookies and similar technologies to load pages securely and keep the site working properly. We may also use basic analytics to see how many people visit and which pages they read. You can block or delete cookies in your browser settings, although some parts of the site may not function as expected if you do.",
+        "marks": [],
+        "_key": "priv_s_20_1"
+      }
+    ],
+    "_key": "priv_b_20"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "How Long We Keep It and How We Protect It",
+        "marks": [],
+        "_key": "priv_s_21_1"
+      }
+    ],
+    "_key": "priv_b_21"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We keep quote requests and job records only as long as needed to respond, complete your order and meet our business, tax and legal obligations, and then delete or anonymise them.",
+        "marks": [],
+        "_key": "priv_s_22_1"
+      }
+    ],
+    "_key": "priv_b_22"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We use reasonable physical, technical and organisational safeguards, and we limit access to staff who need it. No method of transmission or storage over the internet is completely secure, so we cannot guarantee absolute security.",
+        "marks": [],
+        "_key": "priv_s_23_1"
+      }
+    ],
+    "_key": "priv_b_23"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Your Choices and Rights",
+        "marks": [],
+        "_key": "priv_s_24_1"
+      }
+    ],
+    "_key": "priv_b_24"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "You can ask to see the personal information we hold about you, ask us to correct it, or withdraw your consent to our using it, subject to legal and contractual limits. Email sales@koojopowdercoating.com or call (905) 876-7060, and we will reply promptly.",
+        "marks": [],
+        "_key": "priv_s_25_1"
+      }
+    ],
+    "_key": "priv_b_25"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "If you are not satisfied with our response, you can contact the Office of the Privacy Commissioner of Canada at priv.gc.ca.",
+        "marks": [],
+        "_key": "priv_s_26_1"
+      }
+    ],
+    "_key": "priv_b_26"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Other Websites, Children and Changes to This Policy",
+        "marks": [],
+        "_key": "priv_s_27_1"
+      }
+    ],
+    "_key": "priv_b_27"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Our site may link to other websites, such as Google Maps or our Google Business Profile. We do not control their privacy practices, so please read their policies.",
+        "marks": [],
+        "_key": "priv_s_28_1"
+      }
+    ],
+    "_key": "priv_b_28"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Our website and services are intended for businesses and adults, and we do not knowingly collect personal information from children.",
+        "marks": [],
+        "_key": "priv_s_29_1"
+      }
+    ],
+    "_key": "priv_b_29"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "We may update this policy from time to time. The date at the top of this page shows when it was last revised, and continued use of the site after an update means you accept the revised policy.",
+        "marks": [],
+        "_key": "priv_s_30_1"
+      }
+    ],
+    "_key": "priv_b_30"
+  },
+  {
+    "_type": "block",
+    "style": "h2",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Contact Us About Privacy",
+        "marks": [],
+        "_key": "priv_s_31_1"
+      }
+    ],
+    "_key": "priv_b_31"
+  },
+  {
+    "_type": "block",
+    "style": "normal",
+    "markDefs": [],
+    "children": [
+      {
+        "_type": "span",
+        "text": "Questions about this policy or your information? Contact Koojo Custom Powder Coating at 10874 Steeles Ave E, Milton, ON L9T 2X8. Phone (905) 876-7060, Monday to Friday, 7 AM to 5 PM. Email sales@koojopowdercoating.com. You can also use our Contact Us page or request a quote.",
+        "marks": [],
+        "_key": "priv_s_32_1"
+      }
+    ],
+    "_key": "priv_b_32"
+  }
 ]

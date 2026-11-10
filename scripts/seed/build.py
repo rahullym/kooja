@@ -57,6 +57,8 @@ def portable(body):
 	for item in body or []:
 		if isinstance(item, list):
 			out += [block(t, list_item="bullet") for t in item]
+		elif isinstance(item, dict):
+			out.append(item)
 		elif item.startswith("### "):
 			out.append(block(item[4:], "h3"))
 		elif item.startswith("## "):
