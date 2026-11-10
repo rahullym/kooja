@@ -2,79 +2,548 @@
   "pages": {
     "about-us": {
       "meta_title": "About Koojo Custom Powder Coating | Since 2012",
-      "meta_desc": "About Koojo Custom Powder Coating : a certified Milton shop since 2012, 10,000+ items coated, a 23 ft oven and real Google reviews . Visit us.",
-      "primary_kw": ".",
+      "meta_desc": "About Koojo Custom Powder Coating: a certified Milton shop since 2012, 10,000+ items coated, a 23 ft oven and real Google reviews. Visit us.",
+      "primary_kw": "about Koojo Custom Powder Coating",
       "h1": "",
       "summary": "About Koojo Custom Powder Coating",
       "body": [
-        "About Koojo Custom Powder Coating : we are a certified powder coating shop at 10874 Steeles Ave E in Milton, Ontario, founded in 2012 . In more than 12 years of experience we have coated over 10,000 items for manufacturers, fabricators, contractors, public bodies and people bringing in a single part of their own.",
-        "This page tells you who we are, how we work, what our facility can handle and what customers say about us , so you know exactly who will be looking after your parts. Standard jobs leave in 48 hours, and the shop is open Monday to Friday, 7 AM to 5 PM. We are a small, hands-on team, so the people who quote your job are the same people who prepare, coat and inspect it. That keeps instructions clear and mistakes rare, and it means you always know who to call, from the first quote to final pickup.",
+        "About Koojo Custom Powder Coating: we are a certified powder coating shop at 10874 Steeles Ave E in Milton, Ontario, founded in 2012. In more than 12 years of experience we have coated over 10,000 items for manufacturers, fabricators, contractors, public bodies and people bringing in a single part of their own.",
+        "This page tells you who we are, how we work, what our facility can handle and what customers say about us, so you know exactly who will be looking after your parts. Standard jobs leave in 48 hours, and the shop is open Monday to Friday, 7 AM to 5 PM. We are a small, hands-on team, so the people who quote your job are the same people who prepare, coat and inspect it. That keeps instructions clear and mistakes rare, and it means you always know who to call, from the first quote to final pickup.",
+        "## SPEC STRIP",
         "Since 2012 | 10,000+ Items Coated | 23 ft Oven | Certified by Absolute Bureau of Certification LLC | 48 Hr Turnaround | 5.0 ★ Google Rating",
         "## Koojo at a Glance",
         "Here are the company facts in one place: when we started, where we are, how much we have coated and what our shop can take on. Each figure is current and comes from our own records, not marketing estimates.",
-        "Detail",
-        "Founded",
-        "Location",
-        "10874 Steeles Ave E, Milton, ON L9T 2X8",
-        "Items coated",
-        "10,000+",
-        "23 ft long; parts up to 6,000 lb",
-        "Certification",
-        "Absolute Bureau of Certification LLC",
-        "Standard turnaround",
-        "48 hours",
-        "Monday to Friday, 7 AM to 5 PM",
-        "(905) 876-7060",
+        {
+          "_type": "table",
+          "_key": "tbl146",
+          "hasHeaderRow": true,
+          "rows": [
+            {
+              "_type": "tableRow",
+              "_key": "tr105",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "th101",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s102",
+                      "text": "Fact",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th103",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s104",
+                      "text": "Detail",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr110",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td106",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s107",
+                      "text": "Founded",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td108",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s109",
+                      "text": "2012",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr115",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td111",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s112",
+                      "text": "Location",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td113",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s114",
+                      "text": "10874 Steeles Ave E, Milton, ON L9T 2X8",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr120",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td116",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s117",
+                      "text": "Items coated",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td118",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s119",
+                      "text": "10,000+",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr125",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td121",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s122",
+                      "text": "Oven",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td123",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s124",
+                      "text": "23 ft long; parts up to 6,000 lb",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr130",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td126",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s127",
+                      "text": "Certification",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td128",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s129",
+                      "text": "Absolute Bureau of Certification LLC",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr135",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td131",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s132",
+                      "text": "Standard turnaround",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td133",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s134",
+                      "text": "48 hours",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr140",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td136",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s137",
+                      "text": "Hours",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td138",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s139",
+                      "text": "Monday to Friday, 7 AM to 5 PM",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr145",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td141",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s142",
+                      "text": "Phone",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td143",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s144",
+                      "text": "(905) 876-7060",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         "If you need these details for a supplier form, Koojo Custom Powder Coating can send them in writing with your estimate.",
         "## Our Story",
-        "Our company history starts in 2012 with one simple aim: give local businesses a powder coating shop that finishes parts properly, answers the phone and hits the date it promised. More than a decade later, that aim still shapes every order at Koojo Custom Powder Coating .",
-        "Koojo Custom Powder Coating was founded in Milton with a commitment to shop-floor precision and durable industrial finishing. Work grew steadily through word of mouth, first from fabricators and machine shops nearby, then from larger manufacturers and public clients across the region. The shop has grown with that demand, adding a 23 ft oven for big parts and certifying its quality system with an outside body. What has not changed is the way jobs are handled: every order is checked by experienced coaters who know the work, and customers can always reach someone directly involved with their parts.",
+        "Our company history starts in 2012 with one simple aim: give local businesses a powder coating shop that finishes parts properly, answers the phone and hits the date it promised. More than a decade later, that aim still shapes every order at Koojo Custom Powder Coating.",
+        "Kostas G. founded the business in Milton to provide durable, high-precision industrial powder coating for local fabricators and manufacturers. Work grew steadily through word of mouth, the way most customers first heard about us, first from fabricators and machine shops nearby, then from larger manufacturers and public clients across the region. The shop has grown with that demand, adding a 23 ft oven for big parts and certifying its quality system with an outside body. What has not changed is the way jobs are handled. Every order is still checked by people who know the work, and customers can still reach someone who knows their parts. That, more than anything, is what people mean when they talk about Koojo.",
         "## The People Behind Your Parts",
         "Our team of experienced coaters handles every stage in-house, from blasting and pretreatment to spraying, curing and inspection. Because nothing is passed to another vendor, the person who plans your job can tell you exactly where it stands.",
-        "Experience",
-        "Koojo Custom Powder Coating was founded in Milton with a commitment to shop-floor precision and durable industrial finishing. Work grew steadily through word of mouth, first from fabricators and machine shops nearby, then from larger manufacturers and public clients across the region. The shop has grown with that demand, adding a 23 ft oven for big parts and certifying its quality system with an outside body. What has not changed is the way jobs are handled: every order is checked by experienced coaters who know the work, and customers can always reach someone directly involved with their parts.",
-        "12+ Years Experience",
-        "Koojo Coating Specialist",
-        "Production lead",
-        "12+ Years Experience",
-        "Koojo Coating Specialist",
-        "Quality and inspection",
-        "12+ Years Experience",
-        "Our team brings over a decade of hands-on powder coating, sandblasting, and quality inspection experience to every order.",
+        {
+          "_type": "table",
+          "_key": "tbl175",
+          "hasHeaderRow": true,
+          "rows": [
+            {
+              "_type": "tableRow",
+              "_key": "tr153",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "th147",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s148",
+                      "text": "Name",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th149",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s150",
+                      "text": "Role",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th151",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s152",
+                      "text": "Experience",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr160",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td154",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s155",
+                      "text": "Kostas G.",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td156",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s157",
+                      "text": "Founder & Owner",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td158",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s159",
+                      "text": "12+ years (since 2012)",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr167",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td161",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s162",
+                      "text": "Senior Coating Specialist",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td163",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s164",
+                      "text": "Production lead",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td165",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s166",
+                      "text": "10+ years",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr174",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td168",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s169",
+                      "text": "Quality Inspector",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td170",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s171",
+                      "text": "Quality and inspection",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td172",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "s173",
+                      "text": "8+ years",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Showing the people who coat your parts is one of the strongest trust signals a page about us can carry.",
         "## How We Work: Our Company Values",
-        "Three company values guide every job: a quality-first approach , close customer focus and a sustainable process . At Koojo Custom Powder Coating they are practical rules, not slogans, and they decide how we prepare, coat and check each part.",
-        "Quality first",
+        "Three company values guide every job: a quality-first approach, close customer focus and a sustainable process. At Koojo Custom Powder Coating they are practical rules, not slogans, and they decide how we prepare, coat and check each part.",
+        "### Quality first",
         "We use quality powders, prepare every surface properly and test the finish before release. Our checks are set out on the powder coating quality assurance page.",
-        "Customer focus",
+        "### Customer focus",
         "We listen first, then confirm colour, prep and timing before work starts, so nothing on your order is left to guesswork. Ask any repeat customer about us and this is usually the first thing they mention.",
-        "A sustainable process",
+        "### A sustainable process",
         "Powder coating produces far less waste than many liquid finishes, and overspray can often be collected. We plan loads to make good use of each oven cycle.",
         "## What We Do and Who We Serve",
-        "Our powder coating services page lists every service, including industrial work, custom powder coating colours and restoration. For finished examples, browse our powder coating projects , and for the cities we cover, see our powder coating service areas . Whatever the size of the order, Koojo Custom Powder Coating runs it through the same in-house facility and checks.",
+        "Koojo Custom Powder Coating blasts, prepares, coats and cures metal parts for industrial and individual customers alike. That ranges from production runs of frames and guards to a single bike frame, a set of rims or a restored railing brought in by a homeowner.",
+        "Our powder coating services page lists every service, including industrial work, custom powder coating colours and restoration. For finished examples, browse our powder coating projects, and for the cities we cover, see our powder coating service areas. Whatever the size of the order, Koojo Custom Powder Coating runs it through the same in-house facility and checks.",
         "## Our Facility in Milton",
-        "Our in-house facility includes blasting, pretreatment, spray booths and a 23 ft curing oven that takes parts up to 6,000 lb. Mobile sandblasting is also available for items too large or awkward to bring to the shop.",
-        "Most visitors who ask about Koojo want to see the oven first.",
-        "Keeping blasting, coating, curing and inspection under one roof is what lets us offer a 48 hour turnaround on standard work. For full size and weight limits, see large part powder coating , which explains what fits and how big jobs are planned at Koojo Custom Powder Coating .",
+        "Our in-house facility includes blasting, pretreatment, spray booths and a 23 ft curing oven that takes parts up to 6,000 lb. Mobile sandblasting is also available for items too large or awkward to bring to the shop. Most visitors who ask about Koojo want to see the oven first.",
+        "Keeping blasting, coating, curing and inspection under one roof is what lets us offer a 48 hour turnaround on standard work. For full size and weight limits, see large part powder coating, which explains what fits and how big jobs are planned at Koojo Custom Powder Coating.",
         "## What Customers Say",
-        "Customer reviews tell you more than we can about Koojo Custom Powder Coating . These Google reviews are quoted word for word from our Google Business Profile, and they reflect the range of people we work for, from repeat trade customers to riders and car owners.",
+        "Customer reviews tell you more than we can about Koojo Custom Powder Coating. These Google reviews are quoted word for word from our Google Business Profile, and they reflect the range of people we work for, from repeat trade customers to riders and car owners.",
         "We have not edited them, spelling included, because honest feedback is only useful when it is left unedited.",
         "“I have been using Koojo custom powder coating for a few years now and i wouldn't even think to go somewhere else.” — Richard Hartlin, Google review",
         "“Had a 70's cruiser bike frame painted. Job turned out great and looks better than new! Would not hestitate to return!” — Philip. S, Google review",
         "“My rims look amazing and I would definitely recommend his service .” — Brendan Black, Google review",
-        "Repeat customers like these are why we see ourselves as a trusted partner rather than a one-time vendor. You can read every review, good or bad, on Google, and judge for yourself what people say about us .",
+        "Repeat customers like these are why we see ourselves as a trusted partner rather than a one-time vendor. You can read every review, good or bad, on Google, and judge for yourself what people say about us.",
         "## Visit Our Shop",
         "You are welcome to visit our shop at 10874 Steeles Ave E, Milton, Monday to Friday between 7 AM and 5 PM. Bringing a real sample part is the quickest and easiest way to agree on colour, finish and timing in person.",
-        "Seeing the shop is the best way to learn about Koojo . Call (905) 876-7060 before you come so the right person is free to meet you. Our Contact Us page has the map, directions and drop-off details. As a local business , Koojo Custom Powder Coating would always rather show you the work than describe it.",
-        "## Questions About Koojo",
-        "Short answer: we are an established, certified local business , and we are easy to reach. These answers cover our background, who we work with and how to check our record, and they appear only on this page.",
-        "How long has Koojo been in business?",
-        "Since 2012, which gives us more than 12 years of experience and over 10,000 coated items.",
-        "Do you work with individuals or only businesses?",
-        "Both. Most work at Koojo Custom Powder Coating is industrial, but we also coat single parts such as bike frames, rims and railings for individual customers.",
-        "How can I check your work before ordering?",
-        "Read our Google reviews , browse the projects page, ask for our certificate or visit the shop with a sample part during opening hours."
+        "Seeing the shop is the best way to learn about Koojo. Call (905) 876-7060 before you come so the right person is free to meet you. Our Contact Us page has the map, directions and drop-off details. As a local business, Koojo Custom Powder Coating would always rather show you the work than describe it.",
+        "## Start Your Project With Us",
+        "Now that you know more about Koojo Custom Powder Coating, tell us about your parts. Send photos, sizes and quantities and we will confirm prep, colour and timing, or call (905) 876-7060 to talk it through with our team.",
+        "Request a powder coating quote online, Monday to Friday, 7 AM to 5 PM."
       ],
-      "faqs": []
+      "faqs": [
+        [
+          "How long has Koojo been in business?",
+          "Since 2012, which gives us more than 12 years of experience and over 10,000 coated items."
+        ],
+        [
+          "Do you work with individuals or only businesses?",
+          "Both. Most work at Koojo Custom Powder Coating is industrial, but we also coat single parts such as bike frames, rims and railings for individual customers."
+        ],
+        [
+          "How can I check your work before ordering?",
+          "Read our Google reviews, browse the projects page, ask for our certificate or visit the shop with a sample part during opening hours."
+        ]
+      ]
     },
     "blog": {
       "meta_title": "Powder Coating Guides | Expert Answers | Koojo",
@@ -3943,11 +4412,12 @@
     },
     "capabilities": {
       "meta_title": "Large Part Powder Coating | Koojo Capabilities",
-      "meta_desc": "Large part powder coating in a 23 ft oven with up to 6,000 lb capacity. In-house blasting , 48 hr turnaround. Check if your part fits and get a quote.",
-      "primary_kw": ".",
+      "meta_desc": "Large part powder coating in a 23 ft oven with up to 6,000 lb capacity. In-house blasting, 48 hr turnaround. Check if your part fits and get a quote.",
+      "primary_kw": "large part powder coating",
       "h1": "",
       "summary": "Large part powder coating is what our Milton shop is built for: a 23 ft oven , a weight capacity of up to 6,000 lb and in-house blasting under one roof. Since 2012, Koojo Custom Powder Coating has finished more than 10,000 items, from single brackets to heavy fabrications and complete equipment frames .",
       "body": [
+        "Large part powder coating is what our Milton shop is built for: a 23 ft oven, a weight capacity of up to 6,000 lb and in-house blasting under one roof. Since 2012, Koojo Custom Powder Coating has finished more than 10,000 items, from single brackets to heavy fabrications and complete equipment frames.",
         "This page sets out exactly what fits, how big work moves through the shop and how long it takes, so you can check your part before you send a drawing. Standard orders carry a 48 hour turnaround, and the shop is open Monday to Friday, 7 AM to 5 PM. Each limit is stated plainly, with no guesswork.",
         "## SPEC STRIP",
         "23 ft Oven | Up to 6,000 lb | 48 Hr Turnaround | In-House & Mobile Sandblasting | Since 2012 | 10,000+ Items | 5.0 ★ Google Rating",
@@ -3955,21 +4425,21 @@
         "Our capacity at a glance: parts up to 23 ft long and up to 6,000 lb can be blasted, coated and cured in one cycle. The table below gives the limits, and anything near them is best confirmed with a drawing before you book.",
         {
           "_type": "table",
-          "_key": "tbl36",
+          "_key": "tbl211",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr5",
+              "_key": "tr180",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th1",
+                  "_key": "th176",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s2",
+                      "_key": "s177",
                       "text": "Capability",
                       "marks": []
                     }
@@ -3977,12 +4447,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th3",
+                  "_key": "th178",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s4",
+                      "_key": "s179",
                       "text": "Limit or detail",
                       "marks": []
                     }
@@ -3992,16 +4462,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr10",
+              "_key": "tr185",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td6",
+                  "_key": "td181",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s7",
+                      "_key": "s182",
                       "text": "Oven length",
                       "marks": []
                     }
@@ -4009,12 +4479,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td8",
+                  "_key": "td183",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s9",
+                      "_key": "s184",
                       "text": "23 ft",
                       "marks": []
                     }
@@ -4024,16 +4494,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr15",
+              "_key": "tr190",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td11",
+                  "_key": "td186",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s12",
+                      "_key": "s187",
                       "text": "Oven width x height",
                       "marks": []
                     }
@@ -4041,12 +4511,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td13",
+                  "_key": "td188",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s14",
+                      "_key": "s189",
                       "text": "9 ft x 9 ft",
                       "marks": []
                     }
@@ -4056,16 +4526,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr20",
+              "_key": "tr195",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td16",
+                  "_key": "td191",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s17",
+                      "_key": "s192",
                       "text": "Maximum part weight",
                       "marks": []
                     }
@@ -4073,12 +4543,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td18",
+                  "_key": "td193",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s19",
+                      "_key": "s194",
                       "text": "6,000 lb",
                       "marks": []
                     }
@@ -4088,16 +4558,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr25",
+              "_key": "tr200",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td21",
+                  "_key": "td196",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s22",
+                      "_key": "s197",
                       "text": "Cure temperature",
                       "marks": []
                     }
@@ -4105,12 +4575,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td23",
+                  "_key": "td198",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s24",
+                      "_key": "s199",
                       "text": "180–200 °C, per powder data sheet",
                       "marks": []
                     }
@@ -4120,16 +4590,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr30",
+              "_key": "tr205",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td26",
+                  "_key": "td201",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s27",
+                      "_key": "s202",
                       "text": "Blasting",
                       "marks": []
                     }
@@ -4137,12 +4607,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td28",
+                  "_key": "td203",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s29",
+                      "_key": "s204",
                       "text": "In-house, plus mobile sandblasting for parts too big to move",
                       "marks": []
                     }
@@ -4152,16 +4622,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr35",
+              "_key": "tr210",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td31",
+                  "_key": "td206",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s32",
+                      "_key": "s207",
                       "text": "Order size",
                       "marks": []
                     }
@@ -4169,12 +4639,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td33",
+                  "_key": "td208",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s34",
+                      "_key": "s209",
                       "text": "One-off parts through recurring bulk work",
                       "marks": []
                     }
@@ -4186,36 +4656,44 @@
         },
         "Few shops in the region publish a weight limit, so it helps to know ours before planning large-part powder coating. Size and weight both matter: a long, light frame may fit easily, while a compact but very heavy casting may need a closer look at loading and racking. Knowing both numbers early saves a wasted trip with large parts.",
         "## Will My Part Fit?",
-        "If you are checking fit, three rules give a quick answer. First, length: our 23 ft oven takes single pieces or long fabrications up to that figure. Second, cross-section: parts up to 9 ft wide by 9 ft high clear the doors and hangers. Third, weight: our rigging and trolleys carry up to 6,000 lb safely.",
-        "Substrates we coat regularly include mild steel, structural steel, sheet metal, cast iron, aluminum extrusions and castings, plus stainless steel. If a part has plastic, rubber or low-melting-point solder, those pieces must be removed before curing at 180 to 200 °C. Threaded holes, machined faces and ground surfaces are masked to your drawing.",
-        "For oversized parts that cannot be transported, our mobile sandblasting service can prep metal on your site, leaving only the coatable sections for our shop.",
-        "## How Big Work Moves Through the Shop",
-        "Large fabrications follow four clear stages through our shop floor:",
-        [
-          "Receiving and inspection: we check each part against your drawing, verify critical dimensions and note any existing rust, mill scale or weld spatter.",
-          "Surface preparation: steel is abrasive-blasted in our walk-in blast room to remove scale and rust, creating an anchor profile (SSPC-SP 6 or SP 10) for maximum powder adhesion. Aluminum receives degreasing and chemical pretreatment.",
-          "Masking: high-temperature silicone plugs, caps and fiberglass tape protect threads, shafts and bearing journals from powder build.",
-          "Electrostatic spray and cure: parts are hung on heavy-duty load bars, grounded and coated with electrostatic spray guns. They enter the 23 ft oven where powder crosslinks at 180–200 °C substrate temperature."
-        ],
-        "## Turnaround & Timing",
-        "Lead times depend on part size, preparation needs and order volume. The table below outlines our standard production stages:",
+        "Your part will usually fit if it is shorter than 23 ft, inside the oven's width and height, under 6,000 lb, and has somewhere solid to hang or support it. Check those four points first, then send us the part dimensions for a final yes.",
+        "Measure the longest length, the widest point and the tallest point, including anything that sticks out. Add the weight if you know it, or the steel size and length so we can estimate it. Long parts such as beams, rails and structural steel members fit lengthwise, so length is rarely the issue for large parts; width, height and hanging points usually decide. If a part is close to a limit, photos of the welds and lifting points help us plan large part powder coating without surprises on delivery day.",
+        "## Equipment and Process for Big Work",
+        "Big parts follow the same steps as small ones, but each step is planned around size and mass: blasting, pretreatment and masking, then electrostatic coating and a full cure in our large curing oven. Planning comes first, because large parts cannot be reworked cheaply.",
+        "### Blasting",
+        "In-house blasting removes mill scale, rust and old coatings so the powder bonds to clean metal, and mobile sandblasting covers items that are too awkward to move. That step matters most in large part powder coating, where a missed patch is hard to fix later. Learn more about our sandblasting services.",
+        "### Pretreatment and Masking",
+        "Chemical pretreatment improves adhesion and corrosion resistance, and masking protects threads, mounting faces and contact points. Our powder coating surface preparation page explains each step.",
+        "### Coating and Curing",
+        "Electrostatic spraying wraps powder around big frames and into corners. The 23 ft oven then cures each piece at 180–200 °C, and heavy sections stay in until the metal itself reaches temperature, which is what keeps a consistent finish on powder coating for large parts.",
+        "## What We Coat at This Size",
+        "Typical large parts include equipment frames, conveyor and automation structures, machine bases, structural steel, railings and gates, trailer and vehicle frames, and heavy machinery coating for plant upgrades. Small parts can ride along in the same order.",
+        "Our industrial powder coating page covers the full service for heavy frames and machinery, and our powder coating projects page shows finished examples with specs and photos. Both are good places to see how parts of this size come out, and how the same quality carries from a single beam to a full skid of large parts bound for a new production line.",
+        "## From One-Off Jobs to Recurring Volume",
+        "We handle one-off and repeat orders with the same care. A single oversized frame gets its own planned cycle, while batch coating suits repeat runs of matching parts, and recurring bulk work can be scheduled to suit your production calendar.",
+        "Customers with steady volume often book oven time ahead, which keeps large part powder coating on a predictable rhythm. For pricing and account options on volume work, see commercial powder coating, which covers recurring orders in detail. Batch work also makes it easier to keep colour matched across large parts made months apart, and recorded colour codes make later reorders simple.",
+        "## Quality on Every Big Part",
+        "Large parts get the same checks as small ones. We measure film thickness to ASTM D7091 across faces, edges and welds, test adhesion to ASTM D3359, and record the results, so a 20 ft frame meets the same standard as a bracket.",
+        "Readings are taken where big parts fail first: long welds, outside corners and the lowest edge of the hang. Our quality system is certified by the Absolute Bureau of Certification, and test reports are available on request. The steps are set out on our powder coating quality assurance page, which applies to powder coating large parts as well as everyday work.",
+        "## Timing and Lead Times",
+        "Standard orders are turned around in 48 hours from drop-off. Very large, heavy or complex items may need more time for blasting, masking and cure, so we confirm the timeline in writing when you request a quote.",
         {
           "_type": "table",
-          "_key": "tbl79",
+          "_key": "tbl254",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr43",
+              "_key": "tr218",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th37",
+                  "_key": "th212",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s38",
+                      "_key": "s213",
                       "text": "Stage",
                       "marks": []
                     }
@@ -4223,12 +4701,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th39",
+                  "_key": "th214",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s40",
+                      "_key": "s215",
                       "text": "Typical timing",
                       "marks": []
                     }
@@ -4236,12 +4714,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th41",
+                  "_key": "th216",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s42",
+                      "_key": "s217",
                       "text": "Notes",
                       "marks": []
                     }
@@ -4251,16 +4729,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr50",
+              "_key": "tr225",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td44",
+                  "_key": "td219",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s45",
+                      "_key": "s220",
                       "text": "Quote reply",
                       "marks": []
                     }
@@ -4268,12 +4746,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td46",
+                  "_key": "td221",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s47",
+                      "_key": "s222",
                       "text": "1 business day",
                       "marks": []
                     }
@@ -4281,12 +4759,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td48",
+                  "_key": "td223",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s49",
+                      "_key": "s224",
                       "text": "Faster with drawings and photos",
                       "marks": []
                     }
@@ -4296,16 +4774,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr57",
+              "_key": "tr232",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td51",
+                  "_key": "td226",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s52",
+                      "_key": "s227",
                       "text": "Drop-off",
                       "marks": []
                     }
@@ -4313,12 +4791,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td53",
+                  "_key": "td228",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s54",
+                      "_key": "s229",
                       "text": "Mon–Fri, 7 AM–5 PM",
                       "marks": []
                     }
@@ -4326,12 +4804,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td55",
+                  "_key": "td230",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s56",
+                      "_key": "s231",
                       "text": "Book ahead for oversized items",
                       "marks": []
                     }
@@ -4341,16 +4819,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr64",
+              "_key": "tr239",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td58",
+                  "_key": "td233",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s59",
+                      "_key": "s234",
                       "text": "Standard turnaround",
                       "marks": []
                     }
@@ -4358,12 +4836,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td60",
+                  "_key": "td235",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s61",
+                      "_key": "s236",
                       "text": "48 hours",
                       "marks": []
                     }
@@ -4371,12 +4849,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td62",
+                  "_key": "td237",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s63",
+                      "_key": "s238",
                       "text": "Standard sizes and colours",
                       "marks": []
                     }
@@ -4386,16 +4864,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr71",
+              "_key": "tr246",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td65",
+                  "_key": "td240",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s66",
+                      "_key": "s241",
                       "text": "Large or heavy items",
                       "marks": []
                     }
@@ -4403,12 +4881,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td67",
+                  "_key": "td242",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s68",
+                      "_key": "s243",
                       "text": "Confirmed at quote",
                       "marks": []
                     }
@@ -4416,12 +4894,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td69",
+                  "_key": "td244",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s70",
+                      "_key": "s245",
                       "text": "Depends on prep and cure time",
                       "marks": []
                     }
@@ -4431,16 +4909,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr78",
+              "_key": "tr253",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td72",
+                  "_key": "td247",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s73",
+                      "_key": "s248",
                       "text": "Cure",
                       "marks": []
                     }
@@ -4448,12 +4926,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td74",
+                  "_key": "td249",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s75",
+                      "_key": "s250",
                       "text": "180–200 °C metal temperature",
                       "marks": []
                     }
@@ -4461,12 +4939,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td76",
+                  "_key": "td251",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s77",
+                      "_key": "s252",
                       "text": "Heavy sections take longer to heat",
                       "marks": []
                     }
@@ -4476,9 +4954,11 @@
             }
           ]
         },
-        "Standard production jobs ship in 48 hours. When you request a quote, we confirm oven scheduling in writing so your installation or assembly crews can plan accurately.",
-        "## Ready to Check Your Part?",
-        "Send your drawings or part photos to sales@koojopowdercoating.com or call (905) 876-7060. We will confirm oven fit, masking requirements and return a firm quote within 1 business day."
+        "Good lead time planning starts with sizes, quantities and your install date. Tell us all three and we will plan large part powder coating around your deadline.",
+        "## Large Part Powder Coating FAQs",
+        "Short answer: if a part is within 23 ft and 6,000 lb, we can almost always coat it. These answers cover limits, measuring and mixed orders, and they are written for this page only, not copied from other pages.",
+        "## Check Your Part Today",
+        "Send the part dimensions, weight, quantity and a few photos, and we will confirm fit, finish and timing for your large part powder coating job. Phone (905) 876-7060, or use the online powder coating quote form. We are open Monday to Friday, 7 AM to 5 PM, and reply with clear next steps."
       ],
       "faqs": [
         [
