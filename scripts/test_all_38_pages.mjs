@@ -15,6 +15,7 @@ const urls = [
   '/services/wheel-rim-powder-coating',
   '/services/specialty-custom-projects',
   // Industries
+  '/industries',
   '/industries/food-processing-equipment',
   '/industries/agricultural-heavy-equipment',
   '/industries/contractors-construction',

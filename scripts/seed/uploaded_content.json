@@ -4353,46 +4353,72 @@
     },
     "industries": {
       "meta_title": "Powder Coating by Industry | Koojo Custom Powder Coating",
-      "meta_desc": "Powder coating by industry for fabricators, manufacturers, machine shops and food plants. Durable finishes, 48-hour turnaround , Mon–Fri. Get a quote.",
+      "meta_desc": "Powder coating by industry for fabricators, manufacturers, machine shops and food plants. Durable finishes, 48-hour turnaround, Mon–Fri. Get a quote.",
       "primary_kw": "powder coating by industry",
-      "h1": "Powder Coating by Industry : Durable Finishes for Ontario Businesses",
-      "summary": "Powder Coating by Industry : Durable Finishes for Ontario Businesses",
+      "h1": "Powder Coating by Industry: Durable Finishes for Ontario Businesses",
+      "summary": "Powder Coating by Industry: Durable Finishes for Ontario Businesses",
       "body": [
-        "Different industries place unique demands on coated metal: food plants require washdown chemical resistance, outdoor construction needs ten-year UV stability, and automated machine builders require micro-tolerance masking on precision surfaces. Koojo Custom Powder Coating formulates the blast profile, primer system and powder chemistry to match your industry's exact operational environment.",
-        "## SPEC STRIP",
-        "Serving 7 Core Industrial Sectors | Custom Masking | ASTM Testing | 48 Hr Turnaround | 5.0 ★ Google Rating",
-        "## Finishing Requirements by Industry Sector",
-        "The table below outlines how our surface preparation, masking standards and powder formulations adapt to different operating environments:",
+        "Powder coating by industry means choosing the coating, preparation and checks that suit the sector using the part, not just the metal underneath. Koojo Custom Powder Coating, based in Ontario, applies this approach for seven sectors as a trusted industrial coating partner and B2B powder coating shop. Pick your sector below, or send photos and drawings through the [quote form](/get-a-quote) for a clear plan. Each sector page explains typical parts, finishes and checks.",
+        "## Quick facts",
+        [
+          "Serving businesses since 2012",
+          "More than 10,000 items coated",
+          "Shop hours: Monday to Friday, 7 AM to 5 PM",
+          "Typical turnaround: 48 hours on many jobs",
+          "Base: 10874 Steeles Ave E, Milton, ON",
+          "Sectors covered: seven",
+          "Large parts: load capacity up to 6,000 lb",
+          "Quality: certified through the Absolute Bureau of Certification",
+          "Quote replies: during shop hours"
+        ],
+        "## Industries We Serve",
+        "We serve seven sectors: fabrication, manufacturing, machine shops, construction, food processing, agriculture and public institutions. Powder coating by industry gives each one preparation and a finish suited to its parts, so a bracket for a plant floor and a gate for a church are treated differently. Select a sector to see typical parts and recommended finishes.",
+        "### [Metal Fabricators and Welding Shops](/industries/metal-fabricators-welding-shops)",
+        "Brackets, frames, tanks and structural assemblies need welded assembly finishing that covers seams evenly. We handle weld spatter removal before pretreatment, so Ontario metal fabricators receive fabricated steel parts ready to install. Send drawings and part counts for a quick plan. Related project: [Automation Line Frame](/projects/automation-line-frame).",
+        "### [Manufacturing and Automation](/industries/manufacturing-automation)",
+        "Conveyor frames, machine guards and enclosures must match in colour and still fit after coating. Our OEM finishing programs cover equipment frame finishing in controlled batches, with colour and powder traceability records for reorders. Parts are checked for fit after coating so assembly goes smoothly. Related projects: [Conveyor Frame for an Automotive Plant](/projects/conveyor-frame-automotive-plant) and [Robotic Base](/projects/robotic-base).",
+        "### [Machine Shops](/industries/machine-shops)",
+        "Machined components need protection without changing tolerances. We use masking for tight-tolerance parts, and masking and plugging for threads and bores, in small batches or single prototypes. Threaded features stay clean, and one-off parts are welcome. See more finished work in our [portfolio](/projects).",
+        "### [Contractors and Construction](/industries/contractors-construction)",
+        "Handrails, stair components and structural steel must arrive on schedule and survive the weather. We offer jobsite delivery coordination and outdoor metalwork finishes cured for UV, rain and road salt, and delivery can be timed to your site schedule. Related project: [Safety Bollards](/projects/safety-bollards).",
+        "### [Food Processing Equipment](/industries/food-processing-equipment)",
+        "Line frames, supports and guards face constant washing. Cleaning-tolerant coatings resist flaking where moisture is steady, and we discuss food-contact powder options for surfaces near product. We record the powder used so your quality team has documentation. Related project: [Food Processing Line Frame](/projects/food-processing-line-frame).",
+        "### [Agricultural and Heavy Equipment](/industries/agricultural-heavy-equipment)",
+        "Implements, trailers and attachments face mud, fertilizer and sun. We clean older equipment to bare metal and apply a tough finish for rust prevention for equipment, including heavy steel fabrications. Parts return ready to work, and heavy items are discussed at quoting. Browse related work in our [portfolio](/projects).",
+        "### [Municipal and Institutional](/industries/municipal-institutional)",
+        "Bollards, gates and railings must stay safe and presentable for years. Our institutional metalwork finishing covers public space metalwork, with scratch-hiding textures that suit busy sites. Documented checks are available with your quote. Related project: [Church Gates](/projects/church-gates).",
+        "## Powder Coating by Industry at a Glance",
+        "This table summarizes how finish needs change from one sector to the next.",
         {
           "_type": "table",
-          "_key": "tbl602",
+          "_key": "tbl_894",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr552",
+              "_key": "tr_h_894",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th546",
+                  "_key": "th_894_0",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s547",
-                      "text": "Industry / Sector",
+                      "_key": "sh_894_0",
+                      "text": "Sector",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th548",
+                  "_key": "th_894_1",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s549",
+                      "_key": "sh_894_1",
                       "text": "Typical parts",
                       "marks": []
                     }
@@ -4400,13 +4426,26 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th550",
+                  "_key": "th_894_2",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s551",
-                      "text": "Key finishing requirements",
+                      "_key": "sh_894_2",
+                      "text": "Main concern",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_894_3",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_894_3",
+                      "text": "Preparation and finish focus",
                       "marks": []
                     }
                   ]
@@ -4415,43 +4454,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr559",
+              "_key": "tr_894_0",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td553",
+                  "_key": "td_894_0_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s554",
-                      "text": "Metal Fabricators & Welding",
+                      "_key": "sd_894_0_0",
+                      "text": "Fabricators and welders",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td555",
+                  "_key": "td_894_0_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s556",
-                      "text": "Frames, assemblies, architectural brackets, railings",
+                      "_key": "sd_894_0_1",
+                      "text": "Brackets, frames, tanks, structural assemblies",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td557",
+                  "_key": "td_894_0_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s558",
-                      "text": "Weld spatter removal, corner coverage, 48 hr turnaround",
+                      "_key": "sd_894_0_2",
+                      "text": "Weld seams and sharp edges",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_0_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_0_3",
+                      "text": "Spatter removal and even coverage",
                       "marks": []
                     }
                   ]
@@ -4460,43 +4512,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr566",
+              "_key": "tr_894_1",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td560",
+                  "_key": "td_894_1_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s561",
-                      "text": "Manufacturing & Automation",
+                      "_key": "sd_894_1_0",
+                      "text": "Manufacturing",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td562",
+                  "_key": "td_894_1_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s563",
-                      "text": "Conveyor frames, robotics bases, safety guarding, enclosures",
+                      "_key": "sd_894_1_1",
+                      "text": "Conveyor frames, guards, enclosures",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td564",
+                  "_key": "td_894_1_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s565",
-                      "text": "Tight masking of machined faces, RAL color matching, 6,000 lb capacity",
+                      "_key": "sd_894_1_2",
+                      "text": "Matching colour across parts",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_1_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_1_3",
+                      "text": "Controlled batches and records",
                       "marks": []
                     }
                   ]
@@ -4505,43 +4570,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr573",
+              "_key": "tr_894_2",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td567",
+                  "_key": "td_894_2_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s568",
-                      "text": "Machine Shops",
+                      "_key": "sd_894_2_0",
+                      "text": "Machine shops",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td569",
+                  "_key": "td_894_2_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s570",
-                      "text": "Precision CNC components, manifolds, tooling, mounting brackets",
+                      "_key": "sd_894_2_1",
+                      "text": "Machined components",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td571",
+                  "_key": "td_894_2_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s572",
-                      "text": "Tolerance control, thread and tapped hole masking, scratch resistance",
+                      "_key": "sd_894_2_2",
+                      "text": "Tolerances",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_2_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_2_3",
+                      "text": "Careful masking",
                       "marks": []
                     }
                   ]
@@ -4550,43 +4628,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr580",
+              "_key": "tr_894_3",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td574",
+                  "_key": "td_894_3_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s575",
-                      "text": "Contractors & Construction",
+                      "_key": "sd_894_3_0",
+                      "text": "Construction",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td576",
+                  "_key": "td_894_3_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s577",
-                      "text": "Structural lintels, exterior gates, fences, stairs, canopies",
+                      "_key": "sd_894_3_1",
+                      "text": "Rails, stairs, structural steel",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td578",
+                  "_key": "td_894_3_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s579",
-                      "text": "High-durability architectural polyester, UV resistance, rust protection",
+                      "_key": "sd_894_3_2",
+                      "text": "UV, rain and road salt",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_3_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_3_3",
+                      "text": "Outdoor-rated finishes",
                       "marks": []
                     }
                   ]
@@ -4595,43 +4686,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr587",
+              "_key": "tr_894_4",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td581",
+                  "_key": "td_894_4_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s582",
-                      "text": "Food Processing Equipment",
+                      "_key": "sd_894_4_0",
+                      "text": "Food processing",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td583",
+                  "_key": "td_894_4_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s584",
-                      "text": "Sanitary frame assemblies, washdown covers, processing stands",
+                      "_key": "sd_894_4_1",
+                      "text": "Line frames, supports",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td585",
+                  "_key": "td_894_4_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s586",
-                      "text": "Chemical washdown resistance, smooth hygienic non-porous finish",
+                      "_key": "sd_894_4_2",
+                      "text": "Washdown",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_4_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_4_3",
+                      "text": "Smooth, cleanable surface",
                       "marks": []
                     }
                   ]
@@ -4640,43 +4744,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr594",
+              "_key": "tr_894_5",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td588",
+                  "_key": "td_894_5_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s589",
-                      "text": "Agricultural & Heavy Equipment",
+                      "_key": "sd_894_5_0",
+                      "text": "Agriculture",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td590",
+                  "_key": "td_894_5_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s591",
-                      "text": "Tractor implements, chassis parts, booms, trailers, hitches",
+                      "_key": "sd_894_5_1",
+                      "text": "Implements, trailers, attachments",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td592",
+                  "_key": "td_894_5_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s593",
-                      "text": "Zinc primer base, heavy impact resistance, SSPC-SP 6 grit blast",
+                      "_key": "sd_894_5_2",
+                      "text": "Rust and chipping",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_5_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_5_3",
+                      "text": "Bare-metal cleaning, tough film",
                       "marks": []
                     }
                   ]
@@ -4685,43 +4802,56 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr601",
+              "_key": "tr_894_6",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td595",
+                  "_key": "td_894_6_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s596",
-                      "text": "Municipal & Institutional",
+                      "_key": "sd_894_6_0",
+                      "text": "Municipal",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td597",
+                  "_key": "td_894_6_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s598",
-                      "text": "Safety bollards, park benches, transit railings, street light poles",
+                      "_key": "sd_894_6_1",
+                      "text": "Bollards, gates",
                       "marks": []
                     }
                   ]
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td599",
+                  "_key": "td_894_6_2",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s600",
-                      "text": "Anti-graffiti finish, OSHA safety yellow, high weatherability",
+                      "_key": "sd_894_6_2",
+                      "text": "Long service life",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_894_6_3",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_894_6_3",
+                      "text": "Textured, durable finishes",
                       "marks": []
                     }
                   ]
@@ -4730,18 +4860,232 @@
             }
           ]
         },
-        "## Dedicated Sector Capabilities",
+        "## How We Match a Finish to Your Sector",
+        "We match a finish to your sector in four steps: review, prepare, apply and cure, then inspect. Because powder coating by industry depends on how each part is used, every step is adjusted to the sector instead of following one fixed recipe.",
         [
-          "Metal Fabricators & Welders: fast turnarounds that keep your shop floor moving and meet your customer delivery deadlines.",
-          "Automation Builders: expert masking of linear rail mounts, bearing pockets, sensor brackets and dowel holes.",
-          "Machine Shops: thin-film precision application that respects mechanical clearances and eliminates post-coat machining.",
-          "Construction Contractors: AAMA 2604/2605 compliant architectural powders backed by manufacturer weather warranties.",
-          "Food Equipment Makers: washdown-tolerant hybrids that withstand high-pressure hot water and sanitizing chemicals.",
-          "Heavy Equipment OEMs: zinc-rich epoxy primers beneath super-durable topcoats for harsh aggregate and chemical exposure.",
-          "Municipal Authorities: standardized transit, park and highway finishes adhering to provincial and municipal specifications."
+          "1. Review: We ask where the part will be used, how it is cleaned and which surfaces must stay bare. Photos, drawings and part counts help us give an accurate plan. Early review prevents rework and surprise costs.",
+          "2. Prepare: Pretreatment before coating drives adhesion and corrosion protection for steel. Depending on the metal, we degrease, treat, remove rust, then finish with careful masking. Skipping this stage is the most common reason coatings fail early.",
+          "3. Apply and cure: Electrostatic powder application wraps thermoset powder evenly around the part, which then enters the curing oven at roughly 180–200 °C. Our load capacity is up to 6,000 lb; see [capabilities](/capabilities). Heavy parts need longer oven time to reach temperature all the way through.",
+          "4. Inspect: We check coverage, appearance and film thickness before release, then pack parts to protect the finish. Any part that misses the standard is corrected before release."
         ],
-        "## Partner with Koojo",
-        "To review your project's technical specifications or set up a commercial account, call our team at (905) 876-7060 or submit a quote request."
+        "## Projects by Industry",
+        "Each project below shows finished work for a sector we serve. Reading a case study is the quickest way to judge whether our work fits your needs, and you can browse them all on our [projects page](/projects).",
+        [
+          "[Conveyor Frame for an Automotive Plant](/projects/conveyor-frame-automotive-plant): manufacturing and automation.",
+          "[Automation Line Frame](/projects/automation-line-frame): manufacturing and fabrication.",
+          "[Food Processing Line Frame](/projects/food-processing-line-frame): food processing.",
+          "[Robotic Base](/projects/robotic-base): manufacturing and automation.",
+          "[Safety Bollards](/projects/safety-bollards): construction and municipal work.",
+          "[Church Gates](/projects/church-gates): institutional metalwork."
+        ],
+        "## Quality and Certification",
+        "Our quality process is certified through the Absolute Bureau of Certification. We check adhesion against ASTM D3359 adhesion methods, measure dry film thickness following ASTM D7091, and treat ASTM B117 results as a reference for salt spray resistance. Test reports on request and quality assurance documentation are available for audited customers. These checks apply to every sector, and the depth of documentation depends on what your buyer or auditor requires. Ask for the reports you need when you request a quote, so they are prepared with the job instead of after it. Details are on our [certification page](/certification).",
+        "## Don't See Your Industry?",
+        "Other sectors are welcome. We often coat HVAC and ductwork, playground and park equipment and church gates and religious metalwork. For one-off pieces, prototypes and art, see [specialty and custom projects](/services/specialty-custom-projects), or send photos and we will say honestly whether powder coating is the right fit. We also review parts that arrive with old paint or rust and explain what preparation is realistic. Tell us the metal, size and use, and we will reply with a straight answer.",
+        "## Turnaround, Hours and Delivery Times",
+        "Planning around times keeps production moving. Times depend on part size, preparation and shop load, so we confirm a date when we quote rather than promise one in advance.",
+        {
+          "_type": "table",
+          "_key": "tbl_241",
+          "hasHeaderRow": true,
+          "rows": [
+            {
+              "_type": "tableRow",
+              "_key": "tr_h_241",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "th_241_0",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_241_0",
+                      "text": "Item",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_241_1",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_241_1",
+                      "text": "Detail",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_241_0",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_0_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_0_0",
+                      "text": "Shop hours",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_0_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_0_1",
+                      "text": "Monday to Friday, 7 AM to 5 PM",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_241_1",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_1_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_1_0",
+                      "text": "Typical turnaround",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_1_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_1_1",
+                      "text": "48-hour turnaround on many jobs",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_241_2",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_2_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_2_0",
+                      "text": "Large or heavy parts",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_2_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_2_1",
+                      "text": "Schedule confirmed at quoting",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_241_3",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_3_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_3_0",
+                      "text": "Pickup and delivery",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_3_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_3_1",
+                      "text": "Arranged when we quote",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_241_4",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_4_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_4_0",
+                      "text": "Quote replies",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_241_4_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_241_4_1",
+                      "text": "During shop hours",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "## Why Ontario Businesses Choose Koojo",
+        "Experience supports every recommendation we make. Since 2012 we have coated more than 10,000 items, so we know how powder coating by industry plays out on real parts. Our shop has access to Highways 401 and 407, which supports delivery across Halton and Peel Region, and customers can read feedback on our Google Business Profile. We explain the options, document the work and give a date at quoting. We would rather give you a clear plan than a vague promise. Buyers return because the plan, the schedule and the finish match what we said at quoting. That record of real parts is why buyers return with new work. Browse our [powder coating services](/services).",
+        "Ready to plan powder coating by industry for your parts? Request a quote today. Call (905) 876-7060 or email us, and we will reply during shop hours, Monday to Friday, 7 AM to 5 PM."
       ],
       "faqs": [
         [
@@ -4753,7 +5097,7 @@
           "Yes. Each part is prepared and coated to its own requirement, and we note the specification on the job so records stay clear. This keeps mixed orders organized and prevents a finish meant for one use from being applied to another."
         ],
         [
-          "Do you handle repeat production runs ?",
+          "Do you handle repeat production runs?",
           "Yes. We keep powder and colour details on file, so later runs match earlier ones and keep batch consistency across orders. Standing schedules can be arranged with your planner. Tell us your usual volumes and delivery dates so we can plan oven time ahead."
         ],
         [
@@ -9446,303 +9790,310 @@
     "agricultural-heavy-equipment": {
       "meta_title": "Agricultural Equipment Powder Coating | Koojo",
       "meta_desc": "Agricultural equipment powder coating for implements, trailers and attachments. Rust-resistant finishes, 48-hour turnaround on standard orders. Get a quote.",
-      "primary_kw": ".",
-      "h1": "",
-      "summary": "Agricultural Equipment Powder Coating",
+      "primary_kw": "agricultural equipment powder coating",
+      "h1": "Agricultural Equipment Powder Coating",
+      "summary": "Rust protection for implements, trailers and attachments that live outdoors and work in dirt.",
       "body": [
-        "Agricultural equipment powder coating is a factory-grade finishing process that bonds a cured, protective layer to fabricated steel, so implements, trailers and attachments resist rust, abrasion and chipping through every season. Koojo Custom Powder Coating works from 10874 Steeles Ave E in Milton, Ontario, and has finished more than 10,000 items since 2012. Our farm equipment powder coating service is built for equipment dealers , builders and Ontario agricultural suppliers who need dependable finishes, predictable scheduling and parts that return ready to bolt on.",
-        "Standard orders carry a 48-hour turnaround, and our team is available Monday to Friday, 7 AM to 5 PM. Send photos, drawings or a sample part, and we will confirm the prep method, powder and timing before any work begins. If you already know which hitch, frame or attachment needs finishing, request a quote and we will reply with a clear plan and a seasonal turnaround you can schedule around. That is what a good finish should deliver: protection that holds up in the field and a supplier that keeps your machines working.",
+        "Agricultural equipment powder coating is a factory-grade finishing process that bonds a cured, protective layer to fabricated steel, so implements, trailers and attachments resist rust, abrasion and chipping through every season. Koojo Custom Powder Coating works from 10874 Steeles Ave E in Milton, Ontario, and has finished more than 10,000 items since 2012. Our farm equipment powder coating service is built for equipment dealers, builders and Ontario agricultural suppliers who need dependable finishes, predictable scheduling and parts that return ready to bolt on.",
+        "Standard orders carry a 48-hour turnaround, and our team is available Monday to Friday, 7 AM to 5 PM. Send photos, drawings or a sample part, and we will confirm the prep method, powder and timing before any work begins. If you already know which hitch, frame or attachment needs finishing, [request a quote](/get-a-quote) and we will reply with a clear plan and a seasonal turnaround you can schedule around. That is what a good finish should deliver: protection that holds up in the field and a supplier that keeps your machines working.",
         "Since 2012 | 10,000+ Items | 48 Hr Turnaround | 5.0 ★ Google Rating",
         "## Coating Challenges in Agricultural & Heavy Equipment",
-        "Agricultural machinery powder coating must survive mud and moisture , chemicals and constant impact without flaking or fading. The main challenges are fertilizer corrosion , stone and soil abrasion , chipping at hitch points, and short seasonal windows that leave little room for rework or equipment downtime .",
-        "Heavy equipment powder coating is demanding because welded steel frames , booms and buckets combine thick plate with thinner brackets, and those areas heat at different rates in the oven. Grease, mill scale, old paint and field rust block adhesion unless they are removed first. Hitch points and buckets need an abrasion-resistant finish , while hollow tubing can trap moisture and pins, bushings and hydraulic fittings need precise masking. Good agricultural equipment powder coating starts when preparation, powder choice and oven loading are planned together rather than treated as separate steps.",
-        "Weld seams, edges and hitch points are the first places where coatings fail, so they get the most attention. Timing is the other pressure. Planting and harvest do not wait, so a finisher has to hold a dependable lead time and speak up early when a part needs extra work. Machines parked outdoors also face sun, mud and winter roads, so powder coating for agricultural equipment depends on a powder that gives road salt protection and long-lasting protection .",
+        "Agricultural machinery powder coating must survive mud and moisture, chemicals and constant impact without flaking or fading. The main challenges are fertilizer corrosion, stone and soil abrasion, chipping at hitch points, and short seasonal windows that leave little room for rework or equipment downtime.",
+        "Heavy equipment powder coating is demanding because welded steel frames, booms and buckets combine thick plate with thinner brackets, and those areas heat at different rates in the oven. Grease, mill scale, old paint and field rust block adhesion unless they are removed first. Hitch points and buckets need an abrasion-resistant finish, while hollow tubing can trap moisture and pins, bushings and hydraulic fittings need precise masking. Good agricultural equipment powder coating starts when preparation, powder choice and oven loading are planned together rather than treated as separate steps.",
+        "Weld seams, edges and hitch points are the first places where coatings fail, so they get the most attention. Timing is the other pressure. Planting and harvest do not wait, so a finisher has to hold a dependable lead time and speak up early when a part needs extra work. Machines parked outdoors also face sun, mud and winter roads, so powder coating for agricultural equipment depends on a powder that gives road salt protection and long-lasting protection.",
         "## Parts and Metals We Coat for Farm and Heavy Machinery",
         "We coat mild steel, aluminum and welded assemblies used in agricultural and heavy equipment, including implement frames, trailers, hitches, loader buckets and attachments. Parts range from small batches of brackets up to large structures within our 6,000 lb capacity.",
-        "Mild steel is the most common metal in agricultural machinery powder coating , and it responds well to blasting and phosphate pre-treatment before coating. Aluminum covers and panels are cleaned and prepared differently so the powder bonds without trapping gases. Our agricultural equipment powder coating program covers the following parts:",
-        "Implement powder coating for field tools, cultivator frames and sprayer boom coating",
-        "Trailer powder coating and hitch and drawbar coating for flatbeds, wagons and towed units",
-        "Tractor attachment powder coating for brackets, mounts and bolt-on attachments",
-        "Buckets and quick-attach tools, including loader bucket powder coating , skid steer attachments and excavator attachments",
-        "Grain handling equipment and livestock handling equipment such as augers, feeders and handling frames",
+        "Mild steel is the most common metal in agricultural machinery powder coating, and it responds well to blasting and phosphate pre-treatment before coating. Aluminum covers and panels are cleaned and prepared differently so the powder bonds without trapping gases. Our agricultural equipment powder coating program covers the following parts:",
+        [
+          "Implement powder coating for field tools, cultivator frames and sprayer boom coating",
+          "Trailer powder coating and hitch and drawbar coating for flatbeds, wagons and towed units",
+          "Tractor attachment powder coating for brackets, mounts and bolt-on attachments",
+          "Buckets and quick-attach tools, including loader bucket powder coating, skid steer attachments and excavator attachments",
+          "Grain handling equipment and livestock handling equipment such as augers, feeders and handling frames"
+        ],
         "Long booms, wide implements and heavy trailers are racked so powder reaches every weld and corner, and parts are supported during curing to prevent distortion. Heavy equipment powder coating on thin sheet covers gets extra care to avoid warping.",
-        "Oversized parts are handled in our large oven, and the capabilities page lists current size and weight limits so you can check a part before sending it. For farm equipment powder coating , we can finish small brackets and larger frames in the same order, which keeps an assembly's colour consistent across every piece.",
+        "Oversized parts are handled in our large oven, and the [capabilities page](/capabilities) lists current size and weight limits so you can check a part before sending it. For farm equipment powder coating, we can finish small brackets and larger frames in the same order, which keeps an assembly's colour consistent across every piece.",
         "## Finishes and Specifications for Field-Ready Equipment",
         "Most agricultural machinery powder coating uses a thermoset polyester, epoxy or hybrid powder, applied by electrostatic spray and cured in the oven at roughly 180–200 °C. We match customer colour samples and offer matte, gloss, textured and metallic finishes.",
         "Choosing the right finish is part of agricultural equipment powder coating done well. Texture is a practical choice because it hides weld marks and minor scratches, while gloss wipes clean more easily after fertilizer or field work. Dealer and brand colours can be matched and recorded, so colour-matched replacement parts arrive looking like the original.",
-        "A UV-resistant powder coating keeps colour from fading in strong sun, epoxy suits sheltered parts that need hardness, and hybrids balance the two. An outdoor-grade powder suits exposed frames, and the goal is a chemical-resistant finish with real harsh weather durability , so powder coating for agricultural equipment rests on how the part will be used.",
-        "We check quality rather than assume it in heavy equipment powder coating , where a thin edge is the first place rust shows. Thickness is measured with a calibrated gauge to ASTM D7091, adhesion can be tested to ASTM D3359, and ASTM B117 corrosion testing is available when a project calls for it. Test reports are provided on request, and our quality steps are documented with the Absolute Bureau of Certification.",
-        "In farm equipment powder coating , threaded holes and sliding surfaces are masked with plugs and tape so the finish never interferes with assembly. We plan pin and bushing masking and hydraulic fitting masking on the work order before coating starts, so tell us which surfaces must stay bare.",
+        "A UV-resistant powder coating keeps colour from fading in strong sun, epoxy suits sheltered parts that need hardness, and hybrids balance the two. An outdoor-grade powder suits exposed frames, and the goal is a chemical-resistant finish with real harsh weather durability, so powder coating for agricultural equipment rests on how the part will be used.",
+        "We check quality rather than assume it in heavy equipment powder coating, where a thin edge is the first place rust shows. Thickness is measured with a calibrated gauge to ASTM D7091, adhesion can be tested to ASTM D3359, and ASTM B117 corrosion testing is available when a project calls for it. Test reports are provided on request, and our quality steps are documented with the Absolute Bureau of Certification.",
+        "In farm equipment powder coating, threaded holes and sliding surfaces are masked with plugs and tape so the finish never interferes with assembly. We plan pin and bushing masking and hydraulic fitting masking on the work order before coating starts, so tell us which surfaces must stay bare.",
         "## How We Work With Equipment Owners and Dealers",
         "Our powder coating for agricultural equipment process runs from quote to delivery in a fixed sequence: inspection, preparation, masking, coating, curing, quality check and packaging. Standard orders leave in 48 hours, and our shop is open Monday to Friday, 7 AM to 5 PM.",
-        "Send photos or drawings with the quantity, metal and colour you want.",
-        "We inspect the parts and confirm the prep method, powder and delivery timing in writing.",
-        "Parts are degreased, blasted if needed, pre-treated and masked.",
-        "Powder is applied by electrostatic spray and cured at roughly 180–200 °C.",
-        "Each batch is inspected, then packed to prevent scratches in transit.",
-        "You pick up at our Milton shop, or we arrange delivery.",
-        "For repeat farm equipment powder coating , we keep colour codes and prep notes on file, so later jobs move faster and look the same. Many owners book off-season refurbishment in winter, and equipment dealers can send OEM replacement parts in batches that we log by colour code. Agricultural equipment powder coating is planned around your calendar, and we update you if timing changes. If a part arrives with heavy grease, rust or old coating, we tell you before coating, not after.",
+        [
+          "1. Send photos or drawings with the quantity, metal and colour you want.",
+          "2. We inspect the parts and confirm the prep method, powder and delivery timing in writing.",
+          "3. Parts are degreased, blasted if needed, pre-treated and masked.",
+          "4. Powder is applied by electrostatic spray and cured at roughly 180–200 °C.",
+          "5. Each batch is inspected, then packed to prevent scratches in transit.",
+          "6. You pick up at our Milton shop, or we arrange delivery."
+        ],
+        "For repeat farm equipment powder coating, we keep colour codes and prep notes on file, so later jobs move faster and look the same. Many owners book off-season refurbishment in winter, and equipment dealers can send OEM replacement parts in batches that we log by colour code. Agricultural equipment powder coating is planned around your calendar, and we update you if timing changes. If a part arrives with heavy grease, rust or old coating, we tell you before coating, not after.",
         "## Services Owners Combine With Coating",
         "Farm equipment powder coating is usually paired with preparation and, for older machines, with stripping and refinishing. These are the services most often combined on one work order, so each job stays simple.",
-        "Our industrial powder coating service covers heavy structures and attachments. Surface preparation and pretreatment handles degreasing, phosphate treatment and masking, which determines how well the powder bonds. Sandblasting removes rust, mill scale and old paint so a rust-resistant powder coating bonds to clean steel, and mobile blasting is available for machines that cannot be moved easily. For worn machines, stripping and recoating brings a tired frame back to a clean, protected finish. Together these services make agricultural equipment powder coating a one-supplier job, from bare steel to bolt-on ready parts. Teams that finish trailers and attachments in volume often start with blasting, then move to a repeating schedule once the first batch is approved, which makes heavy equipment powder coating predictable from one order to the next.",
+        "Our [industrial powder coating](/services/industrial-powder-coating) service covers heavy structures and attachments. [Surface preparation and pretreatment](/services/surface-preparation) handles degreasing, phosphate treatment and masking, which determines how well the powder bonds. [Sandblasting](/services/sandblasting) removes rust, mill scale and old paint so a rust-resistant powder coating bonds to clean steel, and mobile blasting is available for machines that cannot be moved easily. For worn machines, [stripping and recoating](/services/restoration-recoating) brings a tired frame back to a clean, protected finish. Together these services make agricultural equipment powder coating a one-supplier job, from bare steel to bolt-on ready parts. Teams that finish trailers and attachments in volume often start with blasting, then move to a repeating schedule once the first batch is approved, which makes heavy equipment powder coating predictable from one order to the next.",
         "## Proof From Our Project Work",
-        "Our project work shows how we document, prepare and finish large welded steel frames . Each case study lists the client industry, part, metal, size, powder, colour code and turnaround, so you can compare it with your own requirements.",
-        "Our conveyor frame case study for an automotive plant shows how we prepare, rack and finish a large welded frame, the same discipline we apply to implement frames and trailers. You can also browse the project gallery for other fabricated steel parts. Each job reflects how we approach agricultural equipment powder coating : document the part, agree the preparation, record the colour code and deliver on the date we promised. Reviewing these examples helps owners judge whether our heavy equipment powder coating suits their needs before they send parts."
+        "Our project work shows how we document, prepare and finish large welded steel frames. Each case study lists the client industry, part, metal, size, powder, colour code and turnaround, so you can compare it with your own requirements.",
+        "Our [conveyor frame case study for an automotive plant](/projects/conveyor-frame-automotive-plant) shows how we prepare, rack and finish a large welded frame, the same discipline we apply to implement frames and trailers. You can also browse the [project gallery](/projects) for other fabricated steel parts. Each job reflects how we approach agricultural equipment powder coating: document the part, agree the preparation, record the colour code and deliver on the date we promised. Reviewing these examples helps owners judge whether our heavy equipment powder coating suits their needs before they send parts.",
+        "Ready to protect your implements, trailers or attachments with a tough, field-ready finish? Request a quote today. Call (905) 876-7060 or email us, and our team will reply during shop hours, Monday to Friday, 7 AM to 5 PM."
       ],
       "faqs": [
         [
           "Is powder coating suitable for tractor attachments and implements?",
-          "Yes. Agricultural machinery powder coating gives attachments and implements a hard, uniform finish that resists soil, chemicals and cleaning. It forms a chip-resistant finish and a scratch-resistant finish where parts rub and flex. Proper preparation and masking keep pins and fittings clean, so parts assemble without rework."
+          "Yes. Agricultural machinery powder coating gives attachments and implements a hard, uniform finish that resists soil, chemicals and cleaning. It forms a continuous barrier that resists moisture better than conventional wet paint, and our pretreatment promotes good adhesion to welded steel. Tell us about the working conditions when you request a quote so we can recommend the right powder."
         ],
         [
-          "How fast can owners and dealers get equipment back?",
-          "Standard orders are returned in 48 hours. Large or complex frames, heavy blasting and special colours can take longer, and we confirm the timing in writing before work starts. Tell us the date you need machines in the field and we will plan backward from it."
+          "What is your turnaround time on farm equipment?",
+          "Standard orders take 48 hours once parts are received and the specification is approved. Large implements or orders requiring heavy sandblasting can take longer, and we confirm the schedule before work starts. If you have a planting or harvest deadline, tell us early so we can reserve oven time."
         ],
         [
-          "What should I send to get a quote for agricultural equipment powder coating?",
-          "Send photos or drawings, the metal type, approximate size and weight, quantity, colour code and any surfaces that must stay bare. A sample part helps with complex jobs, and our quote form accepts photo uploads."
+          "How do I get a quote for powder coating equipment?",
+          "Use our quote form or call (905) 876-7060 with part dimensions, metal type, quantity and current condition. Photos help us identify weld seams, old paint or heavy rust that may need extra preparation. We will reply with a detailed price and lead time during shop hours, Monday to Friday, 7 AM to 5 PM."
         ],
         [
-          "Can you refinish worn equipment before the season starts?",
-          "Yes. We strip old coating, blast away rust and recoat the part, so tired frames and attachments are ready for spring or harvest. Book early, because large jobs take longer than 48 hours. This suits owners who want heavy equipment powder coating on machines they already run."
+          "Can you coat used or rusted equipment?",
+          "Yes. We regularly refinish used implements, trailers and attachments. Old paint, grease and rust are removed through degreasing and sandblasting to achieve clean bare steel before pretreatment and powder application. We inspect every used part and will notify you if repairs or welding are needed before coating."
         ],
         [
-          "How do I get heavy parts to your shop and back?",
-          "Pickup and delivery details are agreed when we confirm your order. Customers using our farm equipment powder coating service can also drop parts at our Milton shop between 7 AM and 5 PM, Monday to Friday."
+          "Do you offer pickup and delivery for heavy parts?",
+          "Yes. We can coordinate pickup and delivery across Milton, Halton, Peel, Hamilton and the Waterloo Region for large or heavy equipment. Our shop has forklift capacity up to 6,000 lb for safe offloading. Mention delivery requirements when you submit your quote request."
         ]
       ]
     },
     "food-processing-equipment": {
       "meta_title": "Powder Coating for Food Processing Equipment | Koojo",
-      "meta_desc": "Powder coating for food processing equipment : washdown-ready finishes for frames, stands and skids, 48-hour turnaround, since 2012. Get a quote today.",
+      "meta_desc": "Powder coating for food processing equipment: washdown-resistant finishes for conveyor frames, guards and line equipment. 48-hour turnaround. Get a quote.",
       "primary_kw": "powder coating for food processing equipment",
-      "h1": "",
-      "summary": "Powder Coating for Food Processing Equipment",
+      "h1": "Powder Coating for Food Processing Equipment",
+      "summary": "Washdown-resistant coatings for frames, conveyors and guards in food plants, with compliance documentation.",
       "body": [
-        "Powder coating for food processing equipment gives steel frames, stands and supports a tough, easy-to-clean finish that stands up to daily washdowns. Our Milton team at Koojo Custom Powder Coating coats equipment for plants and for equipment builders . We have finished more than 10,000 items since 2012, with a 48-hour turnaround on typical orders. Our powder coating for food processing equipment covers single replacement parts through to recurring batches. For a finishing partner that understands washdown conditions, call (905) 876-7060, Monday to Friday, 7 AM to 5 PM, or request a quote for food equipment powder coating .",
+        "Powder coating for food processing equipment gives conveyor frames, supports and machine guards a smooth, chemical-resistant finish that withstands daily high-pressure washdowns and sanitizing chemicals. Koojo Custom Powder Coating operates from 10874 Steeles Ave E in Milton, Ontario, and has coated more than 10,000 items since 2012. Our food equipment powder coating service is tailored for food plant fabricators, equipment OEMs and facility maintenance managers who need dependable lead times and hygienic, durable finishes.",
+        "Standard orders carry a 48-hour turnaround, and our facility operates Monday to Friday, 7 AM to 5 PM. Provide part drawings, photos or equipment specifications, and we will confirm surface preparation, powder selection and turnaround before coating. If you have line frames, brackets or guards scheduled for finishing, [request a quote](/get-a-quote) and our technical team will respond with a clear schedule. That is what sanitary equipment finishing should provide: dependable corrosion defense and a partner who respects plant hygiene standards.",
         "Since 2012 | 10,000+ Items | 48 Hr Turnaround | 5.0 ★ Google Rating",
         "## Coating Challenges in Food Processing Equipment",
-        "The main coating challenges in food plants are daily washdowns, harsh cleaning chemicals, trapped moisture, tight seams and strict cleanliness expectations. Each can cause peeling, rust or hard-to-clean surfaces when the finish is not planned. Powder coating for food processing equipment works best when cleaning is designed into the finish.",
-        "Washdown often means hot water, pressure and sanitizer, sometimes every shift. High-pressure washdown and strong cleaners are why caustic cleaner resistance and a sanitizer-resistant finish matter, because weak coatings soften, blister or lift at the edges. Moisture finds any gap, so seam and crevice coverage matters on tube ends, brackets and corners. Rough or chipped surfaces also hold residue, which makes hygienic equipment coating a quality issue rather than a cosmetic one.",
-        "Add the time pressure of plant maintenance shutdowns , and food processing powder coating can hold up the restart. Done well, powder coating for food plants removes these risks before equipment returns to the line, and it supports food plant corrosion protection where steel meets constant moisture.",
-        "Choosing powder coating for food processing equipment with a documented preparation routine protects your hygiene record as well as the part, since a failed finish turns into a cleaning and audit problem on the plant floor.",
+        "Food processing powder coating must endure demanding operating conditions: daily hot water washdowns, aggressive cleaning detergents, caustic sanitizers and constant moisture. The core challenges include preventing under-film corrosion, eliminating crevices that harbour bacteria, resisting chemical attack and meeting regulatory hygiene expectations.",
+        "Equipment frames and enclosures combine hollow tubing with welded brackets, and trapped moisture or chemical residues inside seams can lead to premature failure if not properly pretreated. Caustic cleaners and acid sanitizers degrade conventional coatings quickly, causing flaking or chipping that risks contaminating food processing lines. Washdown-tolerant powder coating requires thorough degreasing, conversion coating and a continuous, defect-free cured film that seals edges and corners completely.",
+        "Tolerance control is equally critical. Conveyor frames, bearing mounts and drive housings require clean bare metal on mating surfaces, shaft journals and threaded adjustment points. Food manufacturing powder coating demands precision masking so that sanitation crews can clean equipment easily while mechanical assemblies fit together without post-coating modification.",
+        "Maintenance windows in operating food plants are extremely tight. Facility managers cannot tolerate extended downtime for recoating or delivery delays. A coating supplier must deliver on the promised date so sanitation and maintenance teams can reassemble lines before the next production shift begins.",
         "## Parts and Metals We Coat for Food Plants",
-        "We apply powder coating for food processing equipment to mild steel and aluminum parts, including line frames, stands, skids and mixer frames . Large, heavy assemblies deserve a quote first, since our capabilities page shows a 6,000 lb capacity.",
-        " Food processing line frames: base frames and supports that carry your processing lines.",
-        " Stands and carts: fixed and mobile stands that see constant washdown.",
-        " Equipment skids: skid frames that carry pumps, tanks and drives.",
-        " Mixer frames: supports and bases for mixers and similar machines.",
-        " Packaging line frames: frames for filling, sealing and packing stations.",
-        "With powder coating for food processing equipment , mild steel equipment frames benefit most, because the coating seals bare steel against moisture and helps with rust prevention . Aluminum parts get a prep and cure plan suited to the alloy. Bakery equipment coating , meat processing equipment finishing , dairy plant equipment coating and beverage line equipment finishing all follow the same prep-first routine, and our food and beverage equipment coating is planned around how each plant cleans.",
-        "Most coated parts are frames and supports rather than surfaces that touch product, so tell us how each part is used. Attach drawings or photos to your request, and we will review the prep plan for your food processing equipment powder coating . Hanging points are chosen to avoid marks on visible faces, which keeps food equipment powder coating consistent. Tell us whether parts are washed in place or removed for cleaning, since that affects how we protect threads and joints.",
+        "We coat carbon steel frames, aluminum guards and stainless brackets used throughout food packaging, sorting and processing environments. Typical components include conveyor frames, sanitary washdown line frames, motor mounts, safety guarding and structural supports up to our 6,000 lb capacity.",
+        "Carbon steel is widely coated for non-food-contact frames and structural supports, benefiting from iron phosphate pretreatment and chemical-resistant topcoats. Aluminum covers and guards are prepared to ensure strong adhesion without outgassing. Our powder coating for food processing equipment covers the following components:",
+        [
+          "Food conveyor powder coating: conveyor frames, roller brackets, guide rails and bed sections",
+          "Sanitary frame powder coating: line support frames, work tables, stands and platform structures",
+          "Equipment guard powder coating: mesh guards, safety enclosures, drive covers and access panels",
+          "Machinery mounts, motor bases, bracketry and electrical enclosure housings",
+          "Packaging line frames, sorting chutes, palletizing supports and material handling structures"
+        ],
+        "Long conveyor beds, bulky frames and heavy support structures are racked to ensure complete powder penetration across all welds and underside surfaces. Food industry metal finishing requires even heat distribution so heavy tubular members reach proper cure temperature throughout.",
+        "Oversized frames are processed in our 23 ft curing oven, and the [capabilities page](/capabilities) provides comprehensive dimensions and weight limits. For food equipment manufacturers, we can coat mounting brackets, guards and main line frames in matching batches, ensuring uniform appearance across the complete machine line.",
         "## Finishes and Specs for Washdown Equipment",
-        "Powder coating for food processing equipment comes in gloss, satin and matte finishes, and light colours are popular because they show dirt. At quote, we agree the powder, colour and film thickness, so a washdown-resistant coating suits the part and your cleaning routine.",
-        " Finish choice: gloss and satin give a smooth cleanable finish , while matte cuts glare under bright plant lighting.",
-        " Film thickness: we set a target thickness at quote, since extra film can interfere with threads and fits.",
-        " Light colours: a light-coloured finish makes residue easy to spot during inspection.",
-        " Colour coding: colour-coded equipment helps separate zones and lines. Supply a colour code or sample for custom equipment colours , and we will recommend the closest powder.",
-        " Powder type: we choose between epoxy, polyester and hybrid chemistries to match your washdown exposure, so name your cleaners for a chemical-resistant powder coating .",
-        " Durability: heat-cured thermoset powder forms a continuous coating film , so powder coating for food processing equipment gives a durable equipment finish with an abrasion-resistant finish and scratch-resistant finish for parts",
-        "that meet carts and tools, plus a moisture-resistant coating at edges.",
-        " Standards: we reference ASTM D3359 (adhesion), ASTM D7091 (thickness) and ASTM B117 (salt spray).",
-        " Food-contact questions: if your plant specifies an FDA-compliant powder , tell us at quote and we will confirm which powder suits the part. Compliance depends on the powder and on how the part is used, so we never assume it in powder coating for food equipment . Our guide to food-safe powder coating standards explains the rules in more detail.",
-        "Certification is held through the Absolute Bureau of Certification, and your auditors can request test reports. Thin spots tend to appear at cut edges and tube ends, so those areas are inspected first in powder coating for food processing . Our certification page explains how checks are documented.",
+        "Most food manufacturing powder coating utilizes thermoset epoxy, hybrid or polyester powders formulated for superior chemical resistance and high-pressure washdown tolerance. We offer smooth high-gloss and semi-gloss finishes that promote easy cleaning and prevent debris retention.",
+        "Selecting the proper powder formulation is central to powder coating for food processing equipment. Smooth, non-porous finishes are strongly preferred because they eliminate microscopic surface voids where bacteria or food residue could collect. White and light grey finishes are standard in processing environments because they highlight cleanliness and make residue easily visible during inspections.",
+        "Epoxy powder coatings offer unmatched chemical and detergent resistance, making them ideal for splash-zone frames and supports that encounter regular chemical washdowns. Polyester hybrids balance washdown resilience with impact resistance, while exterior-grade topcoats protect components exposed to sunlight in receiving or loading dock areas.",
+        "Quality verification is rigorous. Coating thickness is verified with a calibrated electromagnetic gauge per ASTM D7091, cross-hatch adhesion can be tested to ASTM D3359, and salt spray resistance references ASTM B117 standards. Quality documentation and powder manufacturer technical data sheets (TDS) are available on request, and our operations are certified through the Absolute Bureau of Certification.",
+        "In hygienic equipment powder coating, precision masking protects sanitary clamp flanges, bearing bores, sensor mounts and threaded leveling feet with high-temperature silicone plugs and tape. We review masking callouts before coating to ensure no powder enters mechanical or electrical interfaces.",
         "## How We Work With Food Equipment Makers and Plants",
-        "Our process for powder coating for food processing equipment has five stages: intake, cleaning and pretreatment, masking and spraying, oven curing and final inspection. Each stage is recorded so repeat runs match, and typical orders return in 48 hours.",
-        "Step 1 – Intake and Inspection",
-        "On arrival, we check every part for grease, rust, old coatings and damage, then confirm the finish and the timing with you. We also plan the hanging position early, so every surface stays reachable.",
-        "Step 2 – Cleaning and Pretreatment",
-        "Washing and chemical pretreatment remove grease and residue so the powder bonds to bare metal. Weak cleaning is behind many early coating failures, so powder coating for food plants is never a spray-only job, and sanitary equipment finishing depends on it. Our powder coating surface preparation work gives seams and tube ends extra attention.",
-        "Step 3 – Masking and Powder Application",
-        "Threaded holes are plugged and mounting faces covered, then an electrostatic charge draws the powder onto the grounded part. Tube walls, corners and brackets are reached evenly, and racking is planned so deep recesses are not missed.",
-        "Step 4 – Oven Curing",
-        "In powder coating for food processing equipment , parts cure at 180 to 200 °C. Cure time depends on the powder and the mass of the part, so thick base frames are scheduled differently from light sheet.",
-        "Step 5 – Final Inspection and Handoff",
-        "We check coverage, adhesion and appearance. The colour code and powder are logged, so a later order can match, and we receive parts Monday to Friday, 7 AM to 5 PM.",
-        "Plants with regular orders get the same routine every time, which supports consistent batch results . Mention recurring equipment orders when you ask for a quote, and we will plan for them. Pickup and delivery are arranged at quote. The goal is simple: powder coating for food processing equipment that makes your schedule easier, not harder.",
+        "Our process for food processing powder coating follows a systematic, documented sequence designed to deliver consistent, sanitary finishes on schedule:",
+        [
+          "Step 1 – Intake and Inspection: Review engineering drawings, verify metal substrate, check for weld spatter or sharp burrs, and confirm sanitary requirements.",
+          "Step 2 – Cleaning and Pretreatment: Degrease to remove machining oils, apply phosphate conversion coating for corrosion resistance, and dry thoroughly.",
+          "Step 3 – Masking and Powder Application: Apply precision plugs and high-temp tape to mounting pads, bores and threads. Electrostatic application ensures uniform wrap around complex tubing.",
+          "Step 4 – Oven Curing: Cure in our 23 ft oven at 180–200 °C metal temperature, ensuring heavy structural sections achieve complete polymerization.",
+          "Step 5 – Final Inspection and Handoff: Verify film thickness, inspect for pinholes or voids, wrap in protective materials, and stage for pickup or jobsite delivery."
+        ],
+        "For equipment OEMs with ongoing production programs, we maintain detailed powder codes, racking configurations and masking templates on file. When plant maintenance schedules demand emergency weekend or turnaround support, we work with facility coordinators to minimize operational downtime.",
         "## Services Food Plants Use Most",
-        "Powder coating for food processing equipment typically draws on four services: industrial powder coating as the foundation, pretreatment, colour selection and recurring commercial orders. You pay only for the steps your parts need.",
-        "Cleaning and pretreatment come first when grease or residue is present, which is where powder coating surface preparation fits. Light shades and colour-coded zones fall under custom powder coating colours , and commercial powder coating suits regular orders. Combined, these steps give food processing powder coating a clean start.",
-        "Share the metal, part size, quantity and your cleaning routine, and we will outline the steps for your food equipment powder coating , from a monthly batch to one urgent replacement. Equipment builders can send repeat frames in batches, while plants usually send replacement or upgrade parts.",
+        "Food processing powder coating is frequently paired with specialized surface prep and refurbishing services under one roof:",
+        "Our [industrial powder coating](/services/industrial-powder-coating) handles large structural conveyor sections and washdown line assemblies. [Surface preparation and pretreatment](/services/surface-preparation) ensures total removal of oils and residues for maximum coating adhesion. [Sandblasting](/services/sandblasting) strips rust, scale and degraded coatings from older equipment frames prior to recoating. For refurbished lines, our [restoration and recoating](/services/restoration-recoating) service strips existing paint and applies fresh sanitary-grade powder, extending the service life of capital equipment.",
         "## Recent Project: Food Processing Line Frame",
-        "Our food processing line frame case study documents a real job, listing the part, metal, dimensions, powder, colour code and turnaround, plus before and after photos. It shows how we handle powder coating for food processing equipment that must fit and survive washdowns.",
-        "See the food processing line frame case study to judge the finish yourself. It lists the coated parts, the preparation and the outcome, which is the evidence a plant or equipment builder should expect from any finisher. Your food equipment powder coating order follows the same documented routine."
+        "Our [food processing line frame case study](/projects/food-processing-line-frame) showcases how we clean, prep, mask and coat large structural frames for food plant service. The project details the steel substrate, chemical washdown requirements, powder specification, precision masking of datum pads and 48-hour delivery timeline.",
+        "Reviewing our case study illustrates our rigorous approach to powder coating for food processing equipment: strict adherence to hygiene standards, documented quality control and dependable turnaround. Browse our complete [project gallery](/projects) for additional equipment examples.",
+        "Ready to protect your food processing conveyors, frames and line guards? Request a quote today. Call (905) 876-7060 or email us, and our team will respond during shop hours, Monday to Friday, 7 AM to 5 PM."
       ],
       "faqs": [
         [
-          "Can powder coating for food processing equipment handle daily washdowns?",
-          "A fully cured, well-prepared coating handles regular washdowns, but resistance depends on the powder and your cleaners. Tell us the chemicals, water temperature and wash frequency at quote, and we will recommend a powder for the job."
-        ],
-        [
           "Is powder coating suitable for food-contact surfaces?",
-          "Most coated parts are frames, stands and supports rather than surfaces that touch product. If a part is a contact surface, tell us at quote and we will confirm whether an FDA-compliant powder suits it. Your own food safety team makes the final decision."
+          "Direct food-contact surfaces are typically fabricated from 304 or 316 stainless steel. Powder coating is primarily applied to non-food-contact frames, structural supports, safety guarding, conveyor beds and motor mounts located in splash and non-splash zones. Where specific food-grade or FDA-compliant powder formulations are required near product streams, we review specifications and provide manufacturer compliance documentation."
         ],
         [
-          "How should we prepare equipment before sending it?",
-          "Remove gaskets, seals, plastic parts, bearings and electrical items, because heat would damage them. Label each section so we can return parts in the order you need."
+          "How does powder coating withstand daily chemical washdowns?",
+          "Cured epoxy and hybrid powder coatings form a dense, cross-linked polymer barrier that resists hot water, high-pressure spray, alkaline cleaners and sanitizing chemicals far better than traditional liquid paint. Proper conversion coating underneath prevents under-film moisture migration and corrosion creeping."
         ],
         [
-          "Which colour should we choose?",
-          "Light colours help show residue, and colour coding separates zones. Send a colour code or sample, and we will recommend the closest powder for powder coating for food equipment ."
+          "What turnaround times do you offer for plant maintenance shutdowns?",
+          "Standard production orders are completed in 48 hours. For planned plant maintenance shutdowns or emergency repairs, we can coordinate dedicated oven scheduling to return coated frames and guards within your maintenance window. Contact us ahead of your shutdown to reserve capacity."
         ],
         [
-          "How long does powder coating for food equipment take?",
-          "Typical orders follow our 48-hour turnaround. Large frames or recurring batches are scheduled when we quote, so share your shutdown dates early."
+          "Do you provide documentation for plant sanitation audits?",
+          "Yes. We can provide powder manufacturer technical data sheets (TDS), safety data sheets (SDS) and coating inspection reports detailing dry film thickness and adhesion test records to support your quality and sanitation audit records."
         ],
         [
-          "What details speed up a quote?",
-          "Include photos, dimensions, quantities, the metal, your cleaning chemicals and your preferred finish. Drawings help us plan racking and speed up the quote."
+          "How do you prevent powder from entering bearing bores and tapped holes?",
+          "We utilize high-temperature silicone plugs, tapered caps and specialist masking tapes rated to oven cure temperatures. Mating surfaces, shaft passages, ground points and tapped holes are masked per your engineering drawings and inspected prior to packing."
+        ],
+        [
+          "Can you coat large conveyor frames and bulky washdown assemblies?",
+          "Yes. Our 23 ft long oven and 6,000 lb handling capacity easily accommodate long modular conveyor sections, multi-bay equipment stands, overhead hanger rails and heavy drive frames. Consult our capabilities page for details."
         ]
       ]
     },
     "contractors-construction": {
       "meta_title": "Powder Coating for Contractors | Koojo Powder Coating",
-      "meta_desc": "Powder coating for contractors : durable finishes on structural steel , stair stringers and site metalwork. 48-hour turnaround on standard orders. Get a quote.",
-      "primary_kw": ".",
-      "h1": "",
-      "summary": "Powder Coating for Contractors",
+      "meta_desc": "Powder coating for contractors: durable finishes on structural steel, stair stringers and site metalwork. 48-hour turnaround on standard orders. Get a quote.",
+      "primary_kw": "powder coating for contractors",
+      "h1": "Powder Coating for Contractors",
+      "summary": "Coated railings, structural pieces and site metalwork for steel erectors and railing installers, packaged for site delivery.",
       "body": [
-        "Powder coating for contractors gives structural steel and site-built metalwork a tough, even finish that survives handling, weather and long project schedule s. Koojo Custom Powder Coating works from 10874 Steeles Ave E in Milton, Ontario, and has finished more than 10,000 items since 2012. Our contractor powder coating service is built for general contractors, steel installers and railing installers who need dependable lead times and parts that arrive ready to install.",
-        "Standard orders carry a 48-hour turnaround , and our team is available Monday to Friday, 7 AM to 5 PM. Send drawings , photos or a sample part, and we will confirm the prep method, powder and delivery date before work begins. If your steel is fabricated and waiting for a finish, request a quote and we will reply with a clear plan. That is what powder coating for contractors should deliver: a finish that lasts and steel that arrives on time.",
+        "Powder coating for contractors gives structural steel and site-built metalwork a tough, even finish that survives handling, weather and long project schedules. Koojo Custom Powder Coating works from 10874 Steeles Ave E in Milton, Ontario, and has finished more than 10,000 items since 2012. Our contractor powder coating service is built for general contractors, steel installers and railing installers who need dependable lead times and parts that arrive ready to install.",
+        "Standard orders carry a 48-hour turnaround, and our team is available Monday to Friday, 7 AM to 5 PM. Send drawings, photos or a sample part, and we will confirm the prep method, powder and delivery date before work begins. If your steel is fabricated and waiting for a finish, [request a quote](/get-a-quote) and we will reply with a clear plan. That is what powder coating for contractors should deliver: a finish that lasts and steel that arrives on time.",
         "Since 2012 | 10,000+ Items | 48 Hr Turnaround | 5.0 ★ Google Rating",
         "## Coating Challenges in Contractors & Construction",
-        "Construction powder coating is hard to get right because the steel is large, handled roughly and installed on someone else's schedule. The main challenges are weather exposure , mill scale and rust on raw steel, damage in transport and site delivery windows that leave little room for rework.",
+        "Construction powder coating is hard to get right because the steel is large, handled roughly and installed on someone else's schedule. The main challenges are weather exposure, mill scale and rust on raw steel, damage in transport and site delivery windows that leave little room for rework.",
         "Raw steel sections and angles often carry mill scale or surface rust, and both stop powder from bonding unless they are removed first. Large fabrications are heavy, so racking, oven loading and handling need planning to avoid marks. Once installed, a finish faces rain, sun and winter conditions for years, which makes preparation more important than colour. Powder coating for construction succeeds when cleaning, curing and protective packaging are treated as one job.",
         "Schedule is the other pressure. A crew waiting on steel cannot start the next phase, so a finisher has to hold a promised date and speak up early if something changes. Contractor powder coating also has to match across a project: parts coated in different weeks should still look like one set.",
         "Several trades often share one structure, so steel from different suppliers has to look consistent. A contractor who sends parts to more than one shop risks colour drift, which is why many teams keep construction powder coating with one finisher for a whole project.",
         "## Parts and Metals We Coat for Contractors",
-        "We coat structural steel and site-built metalwork, including steel beams , lintels , stair stringers , platforms and ladders , canopy frames , brackets and embeds . Parts range from small hardware to large fabrications within our 6,000 lb capacity .",
-        "Mild steel is the most common metal on construction projects, and it responds well to blasting and a prepared surface before coating. Aluminum trim and framing are cleaned and prepared differently so the powder bonds properly. Our powder coating for contractors program covers the following work:",
-        "Steel beams , columns and lintels for building frames",
-        "Stair stringers , platforms and ladders",
-        "Canopy frames , brackets and embeds",
-        "Handrail and guard components supplied for installation",
-        "Site hardware, supports and custom metalwork",
-        "Powder coating for steel erectors starts with a drawing review, so we know how each piece is installed and which areas stay uncoated for welding or bolting. Hanging marks are placed on hidden faces where possible. Our capabilities page lists current size and weight limits, and our oversized oven handles long sections.",
-        "Length and weight set the plan. Long beams and stringers are racked so powder reaches every face, and heavy members are supported during curing to prevent distortion. Powder coating for steel erectors also covers connection plates and brackets that must arrive tagged and ready to bolt. Powder coating for railing installers includes post bases and brackets in the same order as the rails. For general contractors who handle several trades, we can coat steel for different packages in one run when the powder and colour match .",
+        "We coat structural steel and site-built metalwork, including steel beams, lintels, stair stringers, platforms and ladders, canopy frames, brackets and embeds, site hardware, supports and custom metalwork. Parts range from small hardware runs to oversized assemblies within our 6,000 lb capacity.",
+        "Mild steel is the most common metal in construction powder coating, and it responds well to blasting and phosphate pre-treatment before coating. Aluminum extrusions and architectural panels are cleaned and pre-treated differently so the powder bonds without blistering. Our powder coating for contractors covers the following components:",
+        [
+          "Structural steel powder coating: beams, columns, lintels, baseplates and embeds",
+          "Architectural metalwork powder coating: railings, guards, handrails and decorative screens",
+          "Stair stringers, platforms, catwalks, ladders and safety cages",
+          "Canopy frames, shade structures, brackets and facade supports",
+          "Site hardware, bollards, sign posts, fence posts and custom construction metalwork"
+        ],
+        "Long railings, wide frames and heavy beams are racked so powder reaches every surface, and parts are supported during curing to prevent bowing. Powder coating for construction on thin decorative panels gets extra care to prevent heat distortion.",
+        "Oversized parts are handled in our large oven, and the [capabilities page](/capabilities) lists current size and weight limits so you can check a part before sending it. For contractor powder coating, we can coat brackets and structural members in the same order, which keeps colour and gloss identical across the entire build.",
         "## Finishes and Specs for Construction Steel",
-        "Most construction steel uses a thermoset powder in polyester, epoxy or hybrid, applied by electrostatic spray and cured in the oven at roughly 180–200 °C. We match RAL colour code s and offer gloss, satin, matte and textured finishes.",
-        "Outdoor construction powder coating needs a colour that holds up in sun and weather, so we confirm the powder type with you before coating. Choosing the right finish is part of powder coating for contractors done well. Black, grey and bronze tones are common for building steel, and a colour match to an architect's sample or a supplied RAL reference can be arranged. We record the colour code and powder, so later parts match the first.",
-        "Texture is a practical choice for steel that will be handled on site, because it hides small scratches and weld marks. Gloss shows more wear but cleans easily. Contractor powder coating for exposed steel often uses a satin or textured finish for that reason, and we advise on the choice before quoting.",
-        "Quality is checked, not assumed. Film thickness is measured with a calibrated gauge, adhesion can be tested to ASTM D3359 , and salt spray results to ASTM B117 are available when a specification asks for them. Test reports are available on request, and our quality steps are documented with the Absolute Bureau of Certification .",
-        "Specifications often come from architects or engineers. Send the finish requirement with your plans, and we will confirm the powder, thickness and any testing before work starts, so nothing is a surprise at inspection.",
+        "Most construction powder coating uses a thermoset polyester, super-durable polyester or hybrid powder, applied by electrostatic spray and cured in the oven at roughly 180–200 °C. We match project specifications and RAL colour codes, and offer matte, gloss, satin and textured finishes.",
+        "Choosing the right finish is part of powder coating for contractors done well. Texture is popular for railings and stairs because it hides weld marks and light site scuffs, while smooth gloss sheds dirt and wipes clean easily. Brand and architect colours can be matched and recorded on the work order, so replacement parts match the original build.",
+        "A weather-resistant powder coating protects steel from UV fading and chalking, epoxy primer adds corrosion defense under coastal or de-icing salt exposure, and super-durable polyesters provide ten-year gloss retention. An exterior-rated powder suits exposed canopies and railings, and the goal is an exterior metalwork finish with proven durability.",
+        "We verify quality rather than assume it in commercial powder coating, where an exposed weld seam is the first place corrosion begins. Thickness is measured with a calibrated gauge to ASTM D7091, adhesion can be tested to ASTM D3359, and ASTM B117 salt spray testing results can be provided on request. Test reports are available on request, and our quality processes are documented with the Absolute Bureau of Certification.",
+        "In powder coating for building contractors, bolt holes, threaded inserts and field-weld margins are masked with plugs and tape so the finish does not interfere with erection. We confirm masking requirements on the work order before coating begins, so let us know which surfaces must stay bare.",
         "## How We Work With Contractors",
-        "Our contractor powder coating process runs from quote to delivery in a fixed sequence: inspection, cleaning, masking, coating, curing, quality check and packaging. Standard orders leave in 48 hours, and our shop is open Monday to Friday, 7 AM to 5 PM.",
-        "Send drawings , photos or a sample part with the metal, quantity, colour code and deadline.",
-        "We inspect the steel and confirm the prep method, powder and timing in writing.",
-        "Scale, rust and oil are removed, and parts are pre-treated.",
-        "Areas that must stay bare, such as weld zones and bolt faces, are masked.",
-        "Powder is applied by electrostatic spray and cured in the oven.",
-        "Each part is inspected, labelled and packed for pickup and delivery .",
-        "For multi-phase projects we keep colour codes and prep notes on file, so later deliveries match earlier ones. Part labels tie each piece to your job, which helps crews unload and install in order. Our approach to powder coating for contractors is built around your project schedule , and we update you if timing changes. If steel arrives with heavy rust or old coating, we tell you before coating, not after.",
-        "Drop-off is simple. Bring steel to our Milton shop between 7 AM and 5 PM, Monday to Friday, or ask us to arrange site delivery . Large or long orders are best booked ahead, so we can plan oven time and racking.",
-        "Planning ahead helps. Tell us your install date and we will work backward to confirm when steel should arrive at our shop. Powder coating for construction projects moves best when the timing is agreed at the start, not after the steel is already on a truck.",
+        "Our powder coating for contractors process runs from quote to site delivery in a clear, documented sequence: review, cleaning, masking, coating, curing, inspection and protective packaging. Standard orders leave in 48 hours, and our shop is open Monday to Friday, 7 AM to 5 PM.",
+        [
+          "1. Send drawings or cut lists with quantities, steel sizes and the required finish spec.",
+          "2. We review the drawings, confirm prep, powder and schedule in writing.",
+          "3. Steel is degreased, blasted to remove mill scale/rust, pretreated and masked.",
+          "4. Powder is applied electrostatically and cured at 180–200 °C.",
+          "5. Parts are inspected for thickness and coverage, then wrapped for site protection.",
+          "6. You pick up in Milton, or we coordinate timed delivery directly to your job site."
+        ],
+        "For multi-phase construction powder coating, we record colour batch numbers and prep notes on file so steel finished in later phases matches earlier deliveries. Project managers can send phased deliveries that align with crane and erection dates, and we update you promptly on schedule. If steel arrives with heavy mill scale, oil or transport rust, we notify you before work starts.",
         "## Services Contractors Combine",
-        "Powder coating for contractors usually combines coating with surface preparation and, for large steel, blasting. The services below are the ones most often combined on a single work order , so each project stays simple.",
-        "Our industrial powder coating service covers heavy steel sections and large assemblies. Surface preparation and pretreatment handles cleaning, phosphate treatment and masking, which decides how well the finish bonds and lasts. Sandblasting provides rust removal and takes scale off raw steel before coating, and mobile blasting is available for work that cannot be moved. For larger programs, our bulk and commercial orders service sets up repeat batches with consistent preparation and colour. Together these services make construction powder coating a one-supplier job, from raw steel to install-ready parts. Teams that finish steel in phases often start with cleaning and blasting, then move to a repeating schedule once the first delivery is approved, which keeps contractor powder coating predictable from one phase to the next.",
+        "Contractor powder coating is often paired with surface preparation, blasting and specialty finishing. These services are handled under one roof, keeping project management simple.",
+        "Our [industrial powder coating](/services/industrial-powder-coating) service handles heavy beams, columns and framing. [Surface preparation and pretreatment](/services/surface-preparation) degreases, cleans and applies conversion coatings for reliable bonding. [Sandblasting](/services/sandblasting) strips mill scale, weld slag and surface rust back to clean metal so powder adheres securely. For architectural elements, [custom colours and finishes](/services/custom-colors-finishes) provides exact RAL colour matching and architectural textures. Together, these services make powder coating for contractors an efficient one-stop process from raw fabrication to site-ready steel.",
         "## Proof From Real Projects",
-        "Our project work shows how coatings perform on real parts. Each case study lists the client industry, part, metal, size, powder, colour code and turnaround, so a contractor can compare it with their own requirements.",
-        "Our safety bollards case study records what was coated, how it was prepared and how it came out. Reading it first helps a contractor judge whether our powder coating for general contractors routine suits their own site work. Each project reflects how we approach powder coating for contractors : document the part, agree the preparation, record the colour code and deliver on the date we promised. Browse more work in our project gallery ."
+        "Our project portfolio demonstrates how we manage, prep and finish heavy construction steel and architectural metalwork. Each case study documents the metal, dimensions, finish specification and turnaround.",
+        "Our [safety bollards case study](/projects/safety-bollards) illustrates our approach to high-durability exterior finishes for construction and municipal applications. You can also view our [project gallery](/projects) for additional examples of architectural railings and heavy assemblies. Each job demonstrates our commitment to contractor powder coating: understand the project schedule, prep the steel thoroughly, apply an even coat and deliver on the promised date.",
+        "Ready to protect your construction steel and architectural metalwork? Request a quote today. Call (905) 876-7060 or email us, and our team will reply during shop hours, Monday to Friday, 7 AM to 5 PM."
       ],
       "faqs": [
         [
           "Is powder coating suitable for outdoor construction steel?",
-          "Yes, when the steel is cleaned properly and the right powder is chosen. Contractor powder coating for outdoor work depends on weather exposure , so we confirm the powder type for outdoor use at quote."
+          "Yes. Powder coating for contractors provides superior protection against UV exposure, rain, snow and road salt when paired with proper blast cleaning and an exterior-grade polyester or super-durable topcoat. It creates a tough, flexible film that resists impact during transit and installation, making it ideal for railings, stairs, canopy framing and site steel."
         ],
         [
-          "How fast can contractors get steel back?",
-          "Standard contractor powder coating orders are returned in 48 hours. Large sections, heavy rust removal and special colours can take longer, and we confirm the delivery date in writing before work starts."
+          "What is your turnaround time for contractor orders?",
+          "Standard orders are completed in 48 hours once steel is received and the finish specification is confirmed. Large structural assemblies or high-volume multi-piece packages may require additional scheduling, which we confirm upfront in writing. We can also coordinate phased deliveries to match your site erection milestones."
         ],
         [
-          "Can you match the colour across a multi-phase project?",
-          "Yes. For powder coating for construction projects with several phases, we record the powder and colour code for every order, so later phases match earlier ones. Send a RAL colour code or a sample part, and we will confirm the match at quote."
+          "How do I submit structural steel drawings for quoting?",
+          "Submit your PDF fabrication drawings, cut lists or photos through our online quote form or email them to sales@koojopowdercoating.com. Include part counts, steel grades, required powder or RAL colour codes, and target site delivery dates. We will provide a formal quotation during shop hours."
         ],
         [
-          "What should I send for a quote?",
-          "Send a plan or photos, the metal, quantities, colour and deadline, plus any areas that must stay uncoated. Our quote form accepts photo uploads."
+          "Can you match architectural colour specifications?",
+          "Yes. We stock a broad range of standard RAL colours and can match specific architect codes, brand standards or sample chips. We offer matte, satin, gloss and textured finishes, and we log powder codes on file so replacement parts or later building phases match seamlessly."
         ],
         [
-          "Do you coat aluminum trim and framing?",
-          "Yes. Aluminum trim and framing are routine, and each metal gets its own cleaning and cure plan. List the metal for every part, so powder coating for contractors can be scheduled without guesswork."
+          "How is coated steel protected during transport to the job site?",
+          "Every piece is inspected, wrapped in protective foam or plastic sheeting, and packed to prevent metal-to-metal contact during shipping. We load carefully to accommodate forklift or crane offloading at your facility or site."
         ],
         [
-          "Do you deliver to the job site ?",
-          "For contractor powder coating , we can arrange pickup and delivery when we confirm your order. You can also drop steel at our Milton shop between 7 AM and 5 PM, Monday to Friday. Parts are labelled and packed to protect the finish."
+          "Do you handle oversized structural sections?",
+          "Yes. Our facility features a 23 ft curing oven and crane equipment rated up to 6,000 lb, accommodating long stair stringers, beams, canopy frames and wide gates. Check our capabilities page or call us with part dimensions to confirm rack layout."
         ]
       ]
     },
     "machine-shops": {
       "meta_title": "Powder Coating for Machine Shops | Koojo Powder Coating",
-      "meta_desc": "URL: /industries/machine-shops | Word count: 1,765 | Density: 1.70%",
-      "primary_kw": ".",
-      "h1": "",
-      "summary": "Powder Coating for Machine Shops",
+      "meta_desc": "Powder coating for machine shops: precision masking of threads and bores, fast turnaround on CNC parts, brackets and housings. Get a quote.",
+      "primary_kw": "powder coating for machine shops",
+      "h1": "Powder Coating for Machine Shops",
+      "summary": "Precision masking of threads, bores and machined faces, and careful handling of small-part batches.",
       "body": [
-        "Powder coating for machine shops gives machined steel, aluminum and stainless parts a durable, even finish while protecting the threads, bores and faces that must stay bare. Koojo Custom Powder Coating works from 10874 Steeles Ave E in Milton, Ontario, and has finished more than 10,000 items since 2012. Our machine shop powder coating service is built for CNC shops, job shops and toolrooms that need tight control over masking, colour and delivery dates.",
-        "Standard orders carry a 48-hour turnaround , and our team is available Monday to Friday, 7 AM to 5 PM. Send drawings , photos or a sample part , and we will confirm which surfaces stay bare, the powder and the timing before work begins. If your parts are machined and ready to finish, request a quote and we will reply with a clear plan. That is what powder coating for machine shops should deliver: a clean finish and parts that still fit.",
+        "Powder coating for machine shops is defined by what remains uncoated. Precision threads, reamed bores, ground datum faces and sliding interfaces must stay strictly bare and within tolerance, while exposed surfaces receive a durable, uniform protective finish. Koojo Custom Powder Coating operates from 10874 Steeles Ave E in Milton, Ontario, and has coated over 10,000 components since 2012. Our machine shop powder coating service is specifically designed for CNC machinists, tool-and-die shops and precision fabricators who require meticulous masking, dependable 48-hour turnarounds and zero compromise on mechanical fit.",
+        "Standard orders carry a 48-hour turnaround, and our shop is open Monday to Friday, 7 AM to 5 PM. Provide drawings with marked masking callouts or sample parts, and we will confirm preparation, masking strategy and turnaround before work starts. If your machined components are deburred and ready for finishing, [request a quote](/get-a-quote) and our technical team will respond promptly. That is what precision coating should provide: exact tolerance protection and finishes that enhance your machined products.",
         "Since 2012 | 10,000+ Items | 48 Hr Turnaround | 5.0 ★ Google Rating",
         "## Coating Challenges in Machine Shops",
-        "Machined parts are hard to coat well because the finish must cover outer surfaces without entering threads, bores or sealing faces. The main challenges are cutting oil residue, tight tolerances , sharp edges and small batches that still need a fast, repeatable turnaround.",
-        "Cutting oil and coolant soak into machined surfaces and show up later as craters or poor adhesion, so degreasing has to be thorough. Sharp edges pull powder thin, and film that lands inside threads or bearing bores can stop a fit. Powder coating for machine shop parts works when masking, cleaning and film control are planned before the first part goes into the oven.",
-        "Batch size adds pressure. A shop may send twenty brackets today and fifty housings next week, each with different masking needs. Machine shop powder coating therefore depends on written masking notes and a colour code on file, so batch consistency holds from one run to the next. Powder coating for machine shops has to solve all of this at once.",
-        "Mixed metals complicate the schedule further. Aluminum, steel and stainless parts need different cleaning, and small precision pieces cure faster than heavy bases. A finisher offering real powder coating for machine shop parts plans each metal and each size separately, so one oven load never compromises another.",
+        "Powder coating for machined parts is demanding because the finish must protect exterior surfaces without encroaching onto precision dimensions, tapped threads, bearing pockets or sealing faces. The primary challenges include cutting fluid residue, strict tolerance limits, sharp edge coverage, and small batches that still require fast, repeatable turnarounds.",
+        "Coolant and cutting oils soak into machined surfaces and microscopic tool marks, causing outgassing, craters or adhesion failure if not completely eliminated during degreasing. Sharp machined corners cause electrostatic Faraday cage effects and can pull powder thin, while powder overspray inside a reamed hole or ground bore will ruin a press fit. Successful powder coating for CNC parts requires thorough chemical cleaning, precise plugging and controlled film thickness.",
+        "Batch variability is another continuous factor. A precision shop might send twenty milled brackets today, five large machine bases next week, and a single prototype fixture the following day. Machine shop powder coating relies on recorded masking instructions and archived RAL colour codes so that batch-to-batch consistency remains flawless across recurring production runs.",
+        "Handling mixed metals also requires discipline. Aluminum, steel, cast iron and stainless parts require tailored cleaning routines and differing cure profiles. Precision thin-wall components heat faster than heavy machine platens, so a professional coater must plan oven loads carefully so no part is under-cured or overheated.",
         "## Parts and Metals We Coat for Machine Shops",
-        "We coat CNC machined parts in steel, aluminum and stainless steel, including housings, brackets, fixtures and jigs , shafts, plates and covers. Parts range from small-part batches to larger machined bases within our 6,000 lb capacity.",
-        "Aluminum housings and covers are cleaned for good adhesion and are often finished in matte black or a custom RAL colour. Steel brackets and plates take well to blasting and phosphate pre-treatment when they carry rust or heat scale. Our powder coating for machined parts covers the following work:",
-        "CNC machined parts : housings, covers, plates and spacers",
-        "Steel brackets , mounts and machine bases",
-        "Fixtures and jigs used on your own shop floor",
-        "Shafts, rollers and rods with journals and wear surfaces masked",
-        "Pump, valve and gearbox components that need clean sealing faces",
-        "Powder coating for CNC parts follows a written plan for every part: which surfaces are coated, which stay bare and how each piece hangs in the oven. Hanging points are chosen on non-critical areas, so racks never mark a finished face. Our capabilities page lists current size and weight limits, so you can check a part before sending it.",
-        "Geometry shapes the plan too. Blind holes, deep pockets and tight internal corners are hard for powder to reach, so we review them before racking. Stainless parts get a different cleaning routine from carbon steel. Machine shop powder coating also considers weight: small components can share a rack, while heavy plates hang alone, which keeps cure even across the load.",
+        "We coat CNC machined components in aluminum, carbon steel, alloy steel and stainless steel, including precision housings, brackets, machine bases, tooling fixtures and protective enclosures up to our 6,000 lb capacity.",
+        "Milled aluminum housings and electronic covers are chemically cleaned for optimal adhesion and commonly finished in fine-texture black or custom RAL colours. Steel weldments, plates and machine bases receive degreasing and phosphate conversion coating to resist corrosion. Our powder coating for machine shop parts covers:",
+        [
+          "CNC machined parts: housings, enclosures, valve bodies, manifolds and sensor brackets",
+          "Steel brackets, mounts, motor adaptors, platens and fabricated machine bases",
+          "Tooling fixtures, inspection jigs and assembly aids used on your shop floor",
+          "Shafts, rollers and spindles with bearing journals and precision diameters masked",
+          "Pneumatic, hydraulic and pump components requiring clean sealing faces and ports"
+        ],
+        "Racking points are planned carefully on non-critical, non-cosmetic areas so hanger marks never appear on functional surfaces. Our [capabilities page](/capabilities) provides complete size and weight parameters so you can verify oversized components before shipping.",
+        "Complex geometry is evaluated prior to coating. Blind tapped holes, deep internal cavities and keyways are protected with custom silicone plugs, caps and high-temperature tape. For machine shops producing branded machinery, we can coat precision parts alongside structural frames, ensuring uniform finish across the entire machine.",
         "## Finishes and Specs for Machined Parts",
-        "Most machine shop powder coating uses a thermoset powder in polyester, epoxy or hybrid, applied by electrostatic spray and cured in the oven at roughly 180–200 °C. We match RAL colour codes and offer matte, gloss, satin and textured finishes.",
-        "Choosing the right finish is part of powder coating for machine shops done well, and film thickness matters more on machined work than on most fabrications. Even a thin coating can affect a fit, so we agree a target at quote and flag any feature that cannot take a coating. Matte black is a popular choice for housings and covers because it hides tool marks and light handling wear.",
-        "Colour is usually simple on machine shop work. Black, grey and safety colours suit guards and fixtures, while customer-branded equipment calls for an exact RAL match. We record the colour code and powder on every order, so later jobs match. Powder coating for machinists who supply branded equipment benefits most from that record.",
-        "Quality is checked, not assumed. Coating thickness is measured with a calibrated gauge following ASTM D7091 , adhesion can be tested to ASTM D3359 , and test reports are available on request. Our quality steps for powder coating for machine shop parts are documented with the Absolute Bureau of Certification , so your own customer can ask for proof.",
-        "Tight tolerances get a documented plan. Tell us which fits, threads and mating surfaces are critical, and we will mark them on the work order before coating starts. Precision masking is part of every quote, not an extra.",
+        "Most machine shop powder coating utilizes thermoset polyester, epoxy or hybrid powders applied electrostatically and cured at 180–200 °C. We match exact RAL colour numbers and provide matte, satin, gloss and fine-texture options.",
+        "Film thickness control is vital on machined components. Standard powder coating deposits 2.5 to 4.5 mils (60–115 µm), which significantly impacts sliding fits or tight clearances. We review drawings at the quote stage to confirm whether critical surfaces should be masked or if tolerances allow for coating thickness. Fine-texture matte finishes are especially popular for housings and covers because they mask light tool marks, surface variations and handling marks.",
+        "Colour consistency is maintained across reorders. We archive the exact powder manufacturer, product code and application parameters for every customer part number, ensuring repeat runs match earlier shipments perfectly.",
+        "Quality control is verified through calibrated instruments. Coating thickness is measured per ASTM D7091, cross-hatch adhesion can be tested per ASTM D3359, and salt spray testing references ASTM B117. Inspection documentation is available on request, and our quality processes are certified through the Absolute Bureau of Certification.",
+        "Precision masking is executed with high-grade silicone tapered plugs, threaded caps and polyimide tape rated to withstand 200 °C cure cycles. Every plug and tape application is inspected prior to powder spraying and verified after cure.",
         "## How We Work With Machine Shops",
-        "Our machine shop powder coating process runs from quote to delivery in a fixed sequence: inspection, degreasing , masking, coating, curing, quality check and packaging. Standard orders leave in 48 hours, and our shop is open Monday to Friday, 7 AM to 5 PM.",
-        "Send drawings with part counts , metal, finish and the surfaces that must stay bare.",
-        "We inspect the parts and confirm masking, powder and delivery timing in writing.",
-        "Parts are degreased, cleaned and, where needed, pre-treated.",
-        "Threads, bores and faces are masked with silicone plugs and masking tape .",
-        "Powder is applied by electrostatic spray and cured in the oven.",
-        "Each batch is inspected and packed to protect the finish, then released for pickup and delivery .",
-        "For recurring work we keep colour codes and masking notes on file, so repeat orders move faster and match earlier batches. Our approach to powder coating for machine shops is built around your schedule, and we update you if timing changes. Powder coating for machine shop parts also depends on clean arrivals: if a part arrives with leftover oil or loose burrs, we tell you before coating, not after.",
-        "Drop-off is simple. Bring parts to our Milton shop between 7 AM and 5 PM, Monday to Friday, or ask us to arrange delivery. Large or heavy orders are best booked ahead, so we can plan oven time and racking. CNC powder coating for urgent jobs is possible when the masking plan is clear, and we say so at quote.",
+        "Our process for machine shop powder coating is structured to deliver exact masking compliance and rapid turnarounds:",
+        [
+          "1. Review drawings or marked-up photos identifying bare faces, tapped holes and critical datum features.",
+          "2. Confirm masking requirements, powder chemistry, colour code and schedule in writing.",
+          "3. Degrease parts thoroughly to remove all coolant and oil residues, followed by conversion coating.",
+          "4. Install silicone plugs, caps and high-temp masking tape according to drawing callouts.",
+          "5. Apply powder electrostatically and cure at 180–200 °C with controlled ramp rates.",
+          "6. Remove all masking, inspect threads and bores, verify coating thickness, and package parts with protective interleaving."
+        ],
+        "For recurring CNC production runs, we create dedicated part-masking templates so subsequent orders move through receiving and prep without delay. If a part arrives with burrs, thread damage or heavy oxidation, we contact your production manager before proceeding.",
         "## Services Machine Shops Combine",
-        "Powder coating for machine shops usually combines coating with cleaning and, for rusty or scaled stock, blasting. The services below are the ones most often combined on a single work order , so each job stays simple.",
-        "Our industrial powder coating service covers heavy machine bases and structures. Surface preparation and pretreatment handles cleaning, phosphate treatment and masking, which decides how well the powder bonds and how clean the threads stay. Sandblasting removes rust and heat scale from steel stock before coating. For recurring programs, our bulk and commercial orders service sets up repeat batches with consistent preparation and colour. Together these services make powder coating for machined parts a one-supplier job, from raw stock to finished, assembly-ready components. Teams that finish parts in volume often start with cleaning and masking, then move to a repeating schedule once the first batch is approved, which makes machine shop powder coating predictable from one order to the next.",
+        "Machine shops often combine powder coating with specialized preparation and finishing services:",
+        "Our [surface preparation and pretreatment](/services/surface-preparation) ensures thorough removal of cutting fluids, machine oils and residues. For heavy weldments or parts with heat treat scale, [sandblasting](/services/sandblasting) delivers a clean, uniform profile for powder adhesion. [Industrial powder coating](/services/industrial-powder-coating) handles large fabricated machine bases and structural frames. For parts requiring exact brand identity, [custom colours and finishes](/services/custom-colors-finishes) provides precise colour matching. Together, these services provide machine shops with an integrated finishing partner for components and assemblies.",
         "## Proof From the Shop Floor",
-        "Our project work shows how coatings perform on real parts. Each case study lists the client industry, part, metal, size, powder, colour code and turnaround, so a machine shop can compare it with its own requirements.",
-        "Our robotic base case study records what was coated, how it was prepared and how it came out. Reading it first helps a shop judge whether our powder coating for CNC parts routine suits its own machined work. Each project reflects how we approach powder coating for machine shops : document the part, agree the masking, record the colour code and deliver on the date we promised. Browse more work in our project gallery ."
+        "Our [robotic base case study](/projects/robotic-base) illustrates our approach to finishing heavy machined fabrications with precision datum pads and tight tolerance requirements. The study details the structural steel substrate, powder formulation, masking execution and 48-hour delivery timeline.",
+        "Reviewing our case studies provides CNC shop managers with concrete evidence of our quality standards, masking accuracy and schedule dependability. Browse our [project gallery](/projects) for additional examples of coated precision equipment.",
+        "Ready to protect your CNC machined parts, brackets or machine bases with precision masking? Request a quote today. Call (905) 876-7060 or email us, and our team will respond during shop hours, Monday to Friday, 7 AM to 5 PM."
       ],
       "faqs": [
         [
-          "Can you keep threaded holes and bores free of powder?",
-          "Yes. Good powder coating for machinists plugs threaded holes and masks bores, journals and sealing faces before coating. Mark the critical features on your drawing, and we record them with your order. Very fine threads are best discussed at quote."
+          "Can you keep powder coating completely out of tapped holes and bores?",
+          "Yes. We stock high-temperature silicone tapered plugs, threaded masking plugs and caps in standard metric and imperial sizes. Threads, reamed dowel holes and bearing bores are plugged prior to coating and remain completely free of powder and paint residue."
         ],
         [
-          "Will powder coating affect my tolerances?",
-          "In CNC powder coating , the powder adds film, so fit-critical surfaces should be masked or left bare. For features that can take a coating, we agree a target thickness at quote and measure it after curing."
+          "How much thickness does powder coating add to machined surfaces?",
+          "A standard single-coat powder application adds approximately 2.5 to 4.5 mils (60 to 115 microns) of dry film thickness per surface. If a dimension is critical to an assembly fit, flag it on your drawing so we can mask the surface or recommend an appropriate tolerance allowance."
         ],
         [
-          "Do you coat small-part batches ?",
-          "Yes. For powder coating for machined parts , we coat small batches as well as larger runs, and we can combine different parts in one order when the powder and colour match. Tell us the quantities and finish at quote."
+          "Do you take small batches and prototype quantities from machine shops?",
+          "Yes. We routinely handle single prototypes, first-article samples and small production batches of five to fifty pieces. Every job receives the same careful masking and inspection."
         ],
         [
-          "How fast can machine shops get parts back?",
-          "Standard orders are returned in 48 hours. Heavy sandblasting, special colours and large parts can take longer, and we confirm the timing in writing before work starts."
+          "How do you remove cutting oils and coolants before coating?",
+          "Parts undergo thorough solvent and alkaline degreasing followed by hot water rinsing and forced-air drying to ensure all coolant residues and tramp oils are completely removed from blind holes, slots and surface pores."
         ],
         [
-          "What should I send for a quote?",
-          "Send a drawing or photos, the metal, quantities, finish and any surfaces that must stay bare. A sample part helps with complex masking, and our quote form accepts photo uploads."
+          "What is your standard turnaround time for machined parts?",
+          "Standard orders are completed within 48 hours from receiving parts and approved masking instructions. For urgent production runs or assembly deadlines, let us know when booking and we will accommodate your timeline."
         ],
         [
-          "Do you coat stainless steel and aluminum parts?",
-          "Yes. Both are routine for machine shops, and each metal gets its own cleaning and cure plan. List the metal for every part when you request a quote, so powder coating for machine shops can be scheduled without guesswork."
+          "Can you match custom RAL colour codes for equipment OEM builds?",
+          "Yes. We stock and source thousands of RAL colour codes in matte, satin, gloss and textured finishes. We record the powder formula and cure parameters on file so repeat orders match previous runs exactly."
         ]
       ]
     },
