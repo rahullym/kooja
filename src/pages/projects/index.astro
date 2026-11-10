@@ -2,9 +2,11 @@
 import { getEmDashEntry, getTaxonomyTermsWithCacheHint } from "emdash";
 import CardGrid, { type Card } from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
+import FaqSection from "../../components/FaqSection.astro";
 import PageHero from "../../components/PageHero.astro";
+import Prose from "../../components/Prose.astro";
 import Base from "../../layouts/Base.astro";
-import { breadcrumbLd, collectionLd, entrySeo, getSorted } from "../../lib/site";
+import { breadcrumbLd, collectionLd, entrySeo, faqLd, getSorted, type Faq } from "../../lib/site";
 
 const [{ entry: page, cacheHint: pageHint }, { entries, cacheHint }, termsResult] = await Promise.all([
 	getEmDashEntry("pages", "projects"),
@@ -34,6 +36,7 @@ const used = new Set(cards.flatMap((card) => card.tags ?? []));
 const filters = termsResult.data.filter((term) => used.has(term.slug));
 
 const title = page?.data.title ?? "Powder Coating Projects";
+const faqs = (page?.data.faqs ?? []) as Faq[];
 const seo = page ? entrySeo(Astro, page, "/projects", page.data.intro) : null;
 const crumbs = [{ label: "Our Work", url: "/projects" }];
 const jsonLd = [
@@ -43,6 +46,7 @@ const jsonLd = [
 		url: `${Astro.url.origin}/projects`,
 		items: cards.map((card) => ({ name: card.title, url: `${Astro.url.origin}${card.url}` })),
 	}),
+	faqLd(faqs),
 	breadcrumbLd(Astro.url.origin, crumbs),
 ];
 ---
@@ -69,6 +73,14 @@ const jsonLd = [
 			</div>
 		)}
 		<CardGrid cards={cards} level={2} />
+
+		{page?.data.body && (
+			<div class="hub-body" {...page.edit.body}>
+				<Prose value={page.data.body} />
+			</div>
+		)}
+
+		<FaqSection faqs={faqs} />
 	</div>
 
 	<CtaBand headline="Inspired by what you see?" text="Let us help bring your project to life." />
@@ -119,5 +131,9 @@ const jsonLd = [
 		background: var(--color-brand);
 		border-color: var(--color-brand);
 		color: var(--color-on-brand);
+	}
+
+	.hub-body {
+		margin-top: var(--spacing-3xl);
 	}
 </style>

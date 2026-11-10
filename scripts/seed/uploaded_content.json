@@ -3799,81 +3799,638 @@
     "projects": {
       "meta_title": "Powder Coating Projects & Portfolio | Koojo Powder Coating",
       "meta_desc": "Browse powder coating projects from Koojo: conveyor frames, robotic bases, bollards and church gates, with case studies, specs and before-and-after photos.",
-      "primary_kw": "",
-      "h1": "",
+      "primary_kw": "powder coating projects",
+      "h1": "Powder Coating Projects From Our Shop Floor",
       "summary": "Powder Coating Projects From Our Shop Floor",
+      "intro": "Powder coating projects from Koojo Custom Powder Coating show what our team does every day: blasting, pretreating and coating real metal parts for manufacturers, fabricators and institutions. Since 2012 we have coated more than 10,000 items at our shop in Milton. This page is our powder coating portfolio, built so you can judge finished work before you send a part.",
       "body": [
-        "Powder coating projects from Koojo Custom Powder Coating show what our team does every day: blasting, pretreating and coating real metal parts for manufacturers, fabricators and institutions. Since 2012 we have coated more than 10,000 items at our shop in Milton. This page is our powder coating portfolio , built so you can judge finished work before you send a part.",
         "Every photo comes from a real job. Filter the powder coating projects below by category or open a case study for full specs.",
+        "Since 2012 · 10,000+ Items Coated · 48 Hr Turnaround · Oven 23' x 9' x 9' · 5.0 ★ Google Rating",
         "## What Do Our Powder Coating Projects Show?",
         "Our powder coating projects show finished parts, the metal they started as and the process used. Each example points to the prep method, powder type and finish, so you can judge quality on evidence, not claims.",
         "The work ranges from powder coated conveyor frames for automation lines to bollards and gates for public spaces. Most jobs combine blasting or chemical pretreatment, electrostatic application and oven curing. Comparing powder coating examples with your own part is the quickest way to judge fit.",
         "## Browse Projects by Category",
         "Four filters narrow the gallery: Industrial, Automotive, Architectural and Specialty. Each filter groups powder coating projects by part type and links to the service page that explains that process in full.",
-        "Industrial: frames, guards, chutes and machine bases, covered by our industrial powder coating service.",
-        "Automotive: plant equipment and vehicle parts, explained on the automotive powder coating page.",
-        "Architectural: bollards, gates, fence posts and railings, detailed under architectural powder coating .",
-        "Specialty: one-off parts and prototypes, handled through our specialty powder coating service.",
+        [
+          "Industrial: frames, guards, chutes and machine bases, covered by our [industrial powder coating service](/services/industrial-powder-coating).",
+          "Automotive: plant equipment and vehicle parts, explained on the [automotive powder coating page](/services/automotive-powder-coating).",
+          "Architectural: bollards, gates, fence posts and railings, detailed under [architectural powder coating](/services/architectural-coatings).",
+          "Specialty: one-off parts and prototypes, handled through our [specialty powder coating service](/services/specialty-custom-projects)."
+        ],
         "## Featured Case Studies",
-        "Six powder coating case studies document our most detailed powder coating projects . Each records the client industry, part, metal, preparation, powder, colour code and turnaround, so you can compare a past job directly with your own.",
-        "Project",
-        "Category",
-        "Coated work",
-        "Conveyor Frame for an Automotive Plant",
-        "Industrial",
-        "Steel frame powder coating for a plant conveyor",
-        "Automation Line Frame",
-        "Industrial",
-        "Powder coated automation frames",
-        "Food Processing Line Frame",
-        "Industrial",
-        "Line frame for a washdown area",
-        "Robotic Base",
-        "Industrial",
-        "Powder coated robotic bases",
-        "Safety Bollards",
-        "Architectural",
-        "Powder coated safety bollards",
-        "Church Gates",
-        "Architectural",
-        "Ornamental gates with fine detail",
-        "More Parts From Our Shop Floor",
+        "Six powder coating case studies document our most detailed powder coating projects. Each records the client industry, part, metal, preparation, powder, colour code and turnaround, so you can compare a past job directly with your own.",
+        {
+          "_type": "table",
+          "_key": "tbl_3175",
+          "hasHeaderRow": true,
+          "rows": [
+            {
+              "_type": "tableRow",
+              "_key": "tr_h_3175",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "th_3175_0",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_3175_0",
+                      "text": "Project",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_3175_1",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_3175_1",
+                      "text": "Category",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_3175_2",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_3175_2",
+                      "text": "Coated work",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_0",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_0_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_0_0",
+                      "text": "Conveyor Frame for an Automotive Plant",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_0_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_0_1",
+                      "text": "Industrial",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_0_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_0_2",
+                      "text": "Steel frame powder coating for a plant conveyor",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_1",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_1_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_1_0",
+                      "text": "Automation Line Frame",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_1_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_1_1",
+                      "text": "Industrial",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_1_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_1_2",
+                      "text": "Powder coated automation frames",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_2",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_2_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_2_0",
+                      "text": "Food Processing Line Frame",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_2_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_2_1",
+                      "text": "Industrial",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_2_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_2_2",
+                      "text": "Line frame for a washdown area",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_3",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_3_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_3_0",
+                      "text": "Robotic Base",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_3_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_3_1",
+                      "text": "Industrial",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_3_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_3_2",
+                      "text": "Powder coated robotic bases",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_4",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_4_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_4_0",
+                      "text": "Safety Bollards",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_4_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_4_1",
+                      "text": "Architectural",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_4_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_4_2",
+                      "text": "Powder coated safety bollards",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_3175_5",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_5_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_5_0",
+                      "text": "Church Gates",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_5_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_5_1",
+                      "text": "Architectural",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_3175_5_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_3175_5_2",
+                      "text": "Ornamental gates with fine detail",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "## More Parts From Our Shop Floor",
         "Beyond the case studies, the gallery shows everyday production work: metal guards, fence posts, chutes, frame bases and general fabrications. These powder coating projects appear as captioned photos rather than full write-ups.",
-        "Powder coated machine guards , powder coated fence posts and powder coated chutes are typical repeat powder coating projects for fabricators and maintenance teams. Spot a part like yours? Mention the photo when you request a quote.",
-        "How Long Does a Project Take?",
+        "Powder coated machine guards, powder coated fence posts and powder coated chutes are typical repeat powder coating projects for fabricators and maintenance teams. Spot a part like yours? Mention the photo when you request a quote.",
+        "## How Long Does a Project Take?",
         "Standard jobs are turned around in about 48 hours once parts reach our shop. Larger fabrications, custom colours and complex masking take longer, so timelines vary across powder coating projects and we confirm yours when we quote.",
-        "What happens",
-        [
-          "Quote request"
-        ],
-        "You send photos, sizes, quantity and finish",
-        "Reply within 1 business day",
-        [
-          "Drop-off or pickup"
-        ],
-        "Parts arrive at our Milton shop",
-        "Mon–Fri, 7 AM–5 PM",
-        [
-          "Preparation"
-        ],
-        "Blasting or cleaning, pretreatment, masking",
-        "Included in turnaround",
-        [
-          "Coating and curing"
-        ],
-        "Electrostatic application, oven cure",
-        "Cured at 180–200 °C",
-        [
-          "Inspection and release"
-        ],
-        "Thickness and adhesion checks, packing",
-        "48 hr standard turnaround",
-        "Industries Behind the Work",
+        {
+          "_type": "table",
+          "_key": "tbl_4005",
+          "hasHeaderRow": true,
+          "rows": [
+            {
+              "_type": "tableRow",
+              "_key": "tr_h_4005",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "th_4005_0",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_4005_0",
+                      "text": "Stage",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_4005_1",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_4005_1",
+                      "text": "What happens",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "th_4005_2",
+                  "isHeader": true,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sh_4005_2",
+                      "text": "Time",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_4005_0",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_0_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_0_0",
+                      "text": "1. Quote request",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_0_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_0_1",
+                      "text": "You send photos, sizes, quantity and finish",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_0_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_0_2",
+                      "text": "Reply within 1 business day",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_4005_1",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_1_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_1_0",
+                      "text": "2. Drop-off or pickup",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_1_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_1_1",
+                      "text": "Parts arrive at our Milton shop",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_1_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_1_2",
+                      "text": "Mon–Fri, 7 AM–5 PM",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_4005_2",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_2_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_2_0",
+                      "text": "3. Preparation",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_2_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_2_1",
+                      "text": "Blasting or cleaning, pretreatment, masking",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_2_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_2_2",
+                      "text": "Included in turnaround",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_4005_3",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_3_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_3_0",
+                      "text": "4. Coating and curing",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_3_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_3_1",
+                      "text": "Electrostatic application, oven cure",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_3_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_3_2",
+                      "text": "Cured at 180–200 °C",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "_type": "tableRow",
+              "_key": "tr_4005_4",
+              "cells": [
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_4_0",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_4_0",
+                      "text": "5. Inspection and release",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_4_1",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_4_1",
+                      "text": "Thickness and adhesion checks, packing",
+                      "marks": []
+                    }
+                  ]
+                },
+                {
+                  "_type": "tableCell",
+                  "_key": "td_4005_4_2",
+                  "isHeader": false,
+                  "content": [
+                    {
+                      "_type": "span",
+                      "_key": "sd_4005_4_2",
+                      "text": "48 hr standard",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "## Industries Behind the Work",
         "Most of our powder coating projects come from five buyer groups: metal fabricators, manufacturers, food processors, contractors and municipal or institutional clients. Each group has its own industry page covering the finishes and lead times that matter to it.",
-        "For OEM equipment finishing , see powder coating for manufacturers ; for weldments, see powder coating for metal fabricators . Food plants can read powder coating for food processing equipment ; site teams, powder coating for contractors or powder coating for municipalities .",
-        "What Each Project Record Includes",
+        "For OEM equipment finishing, see [powder coating for manufacturers](/industries/manufacturing-automation); for weldments, see [powder coating for metal fabricators](/industries/metal-fabricators-welding-shops). Food plants can read [powder coating for food processing equipment](/industries/food-processing-equipment); site teams, [powder coating for contractors](/industries/contractors-construction) or [powder coating for municipalities](/industries/municipal-institutional).",
+        "## What Each Project Record Includes",
         "Every case study is written from shop records, not marketing copy. It lists the part, metal, size or weight, preparation, powder type, colour code and turnaround, plus powder coating before and after photos, so our powder coating projects are judged on facts.",
-        "Checks include film thickness to ASTM D7091 and adhesion to ASTM D3359 run on every production batch. Our quality system is certified by the Absolute Bureau of Certification; see powder coating quality assurance . For parts up to 6,000 lb, see large part powder coating ."
+        "Checks include film thickness to ASTM D7091 and adhesion to ASTM D3359. Our quality system is certified by the Absolute Bureau of Certification; see [powder coating quality assurance](/certification). For parts up to 6,000 lb, see [large part powder coating](/capabilities).",
+        "## Have a Part Like These?",
+        "Send photos, sizes and quantity through our [quote form](/get-a-quote) for durable metal finishes. Call (905) 876-7060 or visit 10874 Steeles Ave E, Milton, Monday to Friday, 7 AM to 5 PM, and add your part to our powder coating projects."
       ],
       "faqs": [
         [
@@ -3890,11 +4447,7 @@
         ],
         [
           "What if my part is not shown in the portfolio?",
-          "Send it anyway. Many jobs are one-offs that never reach the gallery, and our custom powder coating work covers prototypes, art pieces and unusual parts that need custom metal finishing ."
-        ],
-        [
-          "Have a Part Like These?",
-          "Send photos, sizes and quantity through our quote form for durable metal finishes . Call (905) 876-7060 or visit 10874 Steeles Ave E, Milton, Monday to Friday, 7 AM to 5 PM, and add your part to our powder coating projects . Get a Quote · Call (905) 876-7060 · Contact Us"
+          "Send it anyway. Many jobs are one-offs that never reach the gallery, and our custom powder coating work covers prototypes, art pieces and unusual parts that need custom metal finishing."
         ]
       ]
     },
@@ -14169,30 +14722,31 @@
     },
     "robotic-base": {
       "meta_title": "Robotic Base Case Study | Koojo Custom Powder Coating",
-      "meta_desc": "Robotic base case study : how Koojo blasted, masked and powder coated a welded robot pedestal with clean mounting faces. 48 hr turnaround. Get a quote.",
-      "primary_kw": ".",
-      "h1": "",
-      "summary": "Robotic base case study : the following account covers how our team finished a heavy welded pedestal that lifts and anchors an industrial robot inside a manufacturing cell. Our team at 10874 Steeles Ave E in Milton has coated over 10,000 items since 2012, with manufacturers, machine builders and integrators making up a large share of that work.",
+      "meta_desc": "Robotic base case study: how Koojo blasted, masked and powder coated a welded robot pedestal with clean mounting faces. 48 hr turnaround. Get a quote.",
+      "primary_kw": "robotic base case study",
+      "h1": "Robotic Base Case Study",
+      "summary": "A heavy fabricated robot base coated for a manufacturing cell.",
       "body": [
-        "A robot pedestal carries the full weight and motion of the arm, so its coating has to take knocks and vibration while leaving every mounting face clean. From here, the page moves through the brief, the method, the finished part, the data and the services behind this base for an industrial robot . Regular orders leave within 48 hours, and parts can be dropped off any weekday from 7 AM until 5 PM. All data here is drawn from our records and pictures of the actual part, giving engineers and buyers something concrete to check before a drawing changes hands. An integrator can use it to judge whether our process suits their own cells.",
+        "Robotic base case study: the following account covers how our team finished a heavy welded pedestal that lifts and anchors an industrial robot inside a manufacturing cell. Our team at 10874 Steeles Ave E in Milton has coated over 10,000 items since 2012, with manufacturers, machine builders and integrators making up a large share of that work.",
+        "A robot pedestal carries the full weight and motion of the arm, so its coating has to take knocks and vibration while leaving every mounting face clean. From here, the page moves through the brief, the method, the finished part, the data and the services behind this base for an industrial robot. Regular orders leave within 48 hours, and parts can be dropped off any weekday from 7 AM until 5 PM. All data here is drawn from our records and pictures of the actual part, giving engineers and buyers something concrete to check before a drawing changes hands. An integrator can use it to judge whether our process suits their own cells.",
         "## Project Snapshot",
         {
           "_type": "table",
-          "_key": "tbl1025",
+          "_key": "tbl_4446",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr989",
+              "_key": "tr_h_4446",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th985",
+                  "_key": "th_4446_0",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s986",
+                      "_key": "sh_4446_0",
                       "text": "Item",
                       "marks": []
                     }
@@ -14200,12 +14754,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th987",
+                  "_key": "th_4446_1",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s988",
+                      "_key": "sh_4446_1",
                       "text": "This job",
                       "marks": []
                     }
@@ -14215,16 +14769,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr994",
+              "_key": "tr_4446_0",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td990",
+                  "_key": "td_4446_0_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s991",
+                      "_key": "sd_4446_0_0",
                       "text": "Client industry",
                       "marks": []
                     }
@@ -14232,13 +14786,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td992",
+                  "_key": "td_4446_0_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s993",
-                      "text": "Manufacturing Automation & Robotics",
+                      "_key": "sd_4446_0_1",
+                      "text": "Manufacturing and automation",
                       "marks": []
                     }
                   ]
@@ -14247,16 +14801,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr999",
+              "_key": "tr_4446_1",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td995",
+                  "_key": "td_4446_1_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s996",
+                      "_key": "sd_4446_1_0",
                       "text": "Part",
                       "marks": []
                     }
@@ -14264,13 +14818,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td997",
+                  "_key": "td_4446_1_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s998",
-                      "text": "Heavy robotic arm mounting pedestal & base weldment",
+                      "_key": "sd_4446_1_1",
+                      "text": "Welded robot pedestal / riser for a robotic cell",
                       "marks": []
                     }
                   ]
@@ -14279,16 +14833,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1004",
+              "_key": "tr_4446_2",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1000",
+                  "_key": "td_4446_2_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1001",
+                      "_key": "sd_4446_2_0",
                       "text": "Metal",
                       "marks": []
                     }
@@ -14296,13 +14850,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1002",
+                  "_key": "td_4446_2_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1003",
-                      "text": "Heavy plate steel (1.5 in base plate) & structural weldment",
+                      "_key": "sd_4446_2_1",
+                      "text": "Heavy structural steel plate and heavy tube weldment",
                       "marks": []
                     }
                   ]
@@ -14311,16 +14865,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1009",
+              "_key": "tr_4446_3",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1005",
+                  "_key": "td_4446_3_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1006",
+                      "_key": "sd_4446_3_0",
                       "text": "Size / Weight",
                       "marks": []
                     }
@@ -14328,13 +14882,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1007",
+                  "_key": "td_4446_3_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1008",
-                      "text": "6 ft x 6 ft x 3 ft, approx. 2,200 lb",
+                      "_key": "sd_4446_3_1",
+                      "text": "5 ft H x 3 ft W x 3 ft D / Approx. 1,800 lb",
                       "marks": []
                     }
                   ]
@@ -14343,16 +14897,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1014",
+              "_key": "tr_4446_4",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1010",
+                  "_key": "td_4446_4_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1011",
+                      "_key": "sd_4446_4_0",
                       "text": "Powder",
                       "marks": []
                     }
@@ -14360,13 +14914,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1012",
+                  "_key": "td_4446_4_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1013",
-                      "text": "High-impact industrial polyester powder",
+                      "_key": "sd_4446_4_1",
+                      "text": "High-durability thermoset polyester / epoxy hybrid",
                       "marks": []
                     }
                   ]
@@ -14375,16 +14929,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1019",
+              "_key": "tr_4446_5",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1015",
+                  "_key": "td_4446_5_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1016",
+                      "_key": "sd_4446_5_0",
                       "text": "Colour Code",
                       "marks": []
                     }
@@ -14392,13 +14946,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1017",
+                  "_key": "td_4446_5_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1018",
-                      "text": "Machine Grey (RAL 7035)",
+                      "_key": "sd_4446_5_1",
+                      "text": "Industrial Machine Grey (RAL 7035 / Cell Spec)",
                       "marks": []
                     }
                   ]
@@ -14407,16 +14961,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1024",
+              "_key": "tr_4446_6",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1020",
+                  "_key": "td_4446_6_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1021",
+                      "_key": "sd_4446_6_0",
                       "text": "Turnaround",
                       "marks": []
                     }
@@ -14424,13 +14978,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1022",
+                  "_key": "td_4446_6_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1023",
-                      "text": "48 hours",
+                      "_key": "sd_4446_6_1",
+                      "text": "48 hours (standard orders: 48 hr)",
                       "marks": []
                     }
                   ]
@@ -14440,29 +14994,42 @@
           ]
         },
         "## The Challenge",
-        "## Manufacturing and automation",
-        "Welded robot pedestal / riser for a robotic cell",
+        "The challenge was to put a durable industrial coating on a heavy robotic base while keeping the machined top plate, the bolt pattern and the anchor bolt holes completely bare, so the robot and the floor fixings would seat exactly as designed.",
+        "A floor-mounted robot transfers its dynamic loads straight into the pedestal below it. Every fast move of the arm flexes and shakes the steel, and any coating trapped under the robot flange can creep or crack over time. That is why the top mounting plate needs true metal-to-metal contact, with no powder between the robot and the steel. Every one of those features on the robotic base had a job to do once the cell was running.",
+        "The underside brought the same issue. Levelling pads and anchor bolts set the base square to the floor, and powder in those holes would mean drilling or grinding on site during robot installation. Cable pass-through openings also had to stay clean so grommets would fit. Planning those details first is why this robotic base case study opens with what had to stay uncoated.",
+        "Then there was the mass. Thick steel sections heat slowly in an oven, so a base like this cannot simply share a cycle with thin sheet parts. It also had to survive forklift handling in the plant and arrive for the integrator's delivery date, which left little room for error on this robotic base project.",
         "## Our Approach",
-        "Heavy plate steel (1.5 in base plate) & structural weldment",
-        "6 ft x 6 ft x 3 ft, approx. 2,200 lb",
+        "Our approach in this robotic base case study followed three steps: blast and mask the heavy steel, spray a uniform coat, then bring the whole mass up to its true part temperature and test the result. The masking plan and the cure plan were fixed before any blasting started.",
+        "### Preparation",
+        "We marked the machined top plate, the bolt pattern, the anchor holes on the robotic base and the cable openings on the drawing with the client. Abrasive blasting took mill scale and weld spatter off the heavy plate steel, giving the powder a rough, clean profile to key into. After a chemical pretreatment, the base was rinsed and left to dry completely. Thread protection came next: heat-resistant plugs went into every tapped hole and high-temperature tape covered the mounting faces. Welds on thick plate can hold air, so preheating was used, where needed, to drive off any outgassing before powder went on.",
+        "### Application",
+        "Electrostatic spraying carried the powder over gussets, welds and edges, the areas most exposed to bumps around a robotic cell. We hung the welded steel pedestal from points that would sit out of sight once installed, and turned it during spraying so every face of the robotic base received the same film. Hanging points were also checked so the pedestal could not swing into other parts while it was sprayed. Even coverage on the column and feet protects the base where carts and forklifts are most likely to strike it, and keeps the colour consistent with the cell colour scheme.",
+        "### Curing & Inspection",
+        "Heavy parts are cured by part temperature, not just oven time. The robotic base stayed in our oven until the steel itself reached the 180–200 °C cure range set by the powder maker, which matters on thick sections that lag behind the air. Pieces weighing up to 6,000 lb fit in that oven. Once it had cooled, the tape and plugs came out and each mounting face was inspected. Cure verification included readings with a film thickness gauge to ASTM D7091 and a cross-cut adhesion test to ASTM D3359, all recorded against the job number. Those records keep this robotic base case study traceable. Typical orders are done in 48 hours, and the snapshot records the exact duration of this robotic base project.",
+        "## The Result",
+        "The client got back a robot riser with strong impact resistance on the column and feet, a bare top plate ready for the robot flange, open anchor and tapped holes, and recorded test readings for the integrator's file.",
+        "Because the mounting faces on the robotic base stayed clean, the robot could be bolted down and torqued without scraping or re-tapping, and the base sat level on its pads. Full cure through the thick sections means the coating will not soften or mark under load, which protects the finish where the arm's movement is felt most. Clean seating also shortens commissioning, usually the tightest part of a robot project.",
+        "The finish also guards against corrosion from coolant, cleaning and the humidity of a working plant. This robotic base case study reflects the standard we bring to every heavy machine base, whether the order is a single pedestal or a run of matching pedestals for a new line. Careful packaging for transport protected the finished faces of the robotic base project on the way out.",
+        "If you are comparing coaters for your next base for an industrial robot, use this page as a checklist. Ask how they mask flange faces, how they cure thick steel and how they record readings. Those answers decide whether a pedestal arrives ready to install or ready for rework.",
         "## Specs at a Glance",
+        "Four numbers define this robotic base project, namely film thickness, prep grade, powder and cure. Compare them with your own pedestal drawings and load requirements before you ask us for a quote on similar equipment.",
         {
           "_type": "table",
-          "_key": "tbl1051",
+          "_key": "tbl_3635",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr1030",
+              "_key": "tr_h_3635",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th1026",
+                  "_key": "th_3635_0",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1027",
+                      "_key": "sh_3635_0",
                       "text": "Spec",
                       "marks": []
                     }
@@ -14470,12 +15037,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th1028",
+                  "_key": "th_3635_1",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1029",
+                      "_key": "sh_3635_1",
                       "text": "Value",
                       "marks": []
                     }
@@ -14485,16 +15052,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1035",
+              "_key": "tr_3635_0",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1031",
+                  "_key": "td_3635_0_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1032",
+                      "_key": "sd_3635_0_0",
                       "text": "DFT (dry film thickness)",
                       "marks": []
                     }
@@ -14502,12 +15069,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1033",
+                  "_key": "td_3635_0_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1034",
+                      "_key": "sd_3635_0_1",
                       "text": "3.5–5.0 mils, measured to ASTM D7091",
                       "marks": []
                     }
@@ -14517,16 +15084,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1040",
+              "_key": "tr_3635_1",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1036",
+                  "_key": "td_3635_1_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1037",
+                      "_key": "sd_3635_1_0",
                       "text": "Prep grade",
                       "marks": []
                     }
@@ -14534,13 +15101,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1038",
+                  "_key": "td_3635_1_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1039",
-                      "text": "Abrasive blast (SSPC-SP 6) + iron phosphate rinse",
+                      "_key": "sd_3635_1_1",
+                      "text": "SSPC-SP 10 Near-White Blast & Degreasing Pretreatment",
                       "marks": []
                     }
                   ]
@@ -14549,16 +15116,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1045",
+              "_key": "tr_3635_2",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1041",
+                  "_key": "td_3635_2_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1042",
+                      "_key": "sd_3635_2_0",
                       "text": "Powder",
                       "marks": []
                     }
@@ -14566,13 +15133,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1043",
+                  "_key": "td_3635_2_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1044",
-                      "text": "Industrial grade TGIC polyester, textured finish",
+                      "_key": "sd_3635_2_1",
+                      "text": "Thermoset Polyester/Epoxy Hybrid, RAL 7035",
                       "marks": []
                     }
                   ]
@@ -14581,16 +15148,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1050",
+              "_key": "tr_3635_3",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1046",
+                  "_key": "td_3635_3_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1047",
+                      "_key": "sd_3635_3_0",
                       "text": "Cure",
                       "marks": []
                     }
@@ -14598,13 +15165,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1048",
+                  "_key": "td_3635_3_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1049",
-                      "text": "180–200 °C part temperature per powder data sheet, 20 minutes",
+                      "_key": "sd_3635_3_1",
+                      "text": "180–200 °C part temperature per powder data sheet (20 min)",
                       "marks": []
                     }
                   ]
@@ -14613,39 +15180,45 @@
             }
           ]
         },
-        "## The Result",
-        "The completed assembly achieved a uniform, pinhole-free finish that fully met the client's engineering specifications. Quality control logs verified mil thickness and cross-hatch adhesion, and parts were packaged for scratch-free transport within our 48-hour turnaround commitment.",
+        "We run a quality system certified by the Absolute Bureau of Certification, described on the [powder coating quality assurance page](/certification), and copies of test reports are available to integrators who ask. Even heavier pedestals are possible, since [large part powder coating](/capabilities) at Koojo goes up to 6,000 lb. The job card is the only source for the robotic base values, so unverified entries remain marked for now. Gauge points included gussets and fillet welds, where thin film is most likely.",
+        "## Services Used",
+        "Abrasive blasting, surface preparation and industrial coating were the three Koojo services joined into one process for this robotic base project. Manufacturers and integrators planning comparable equipment will find each service explained on the linked pages.",
+        "Industrial powder coating handles pedestals, frames and other heavy machinery. [Sandblasting services](/services/sandblasting) remove scale and spatter from thick plate, and [powder coating surface preparation](/services/surface-preparation) covers pretreatment, plugging and masking. For plant owners, the project illustrates [powder coating for manufacturers](/industries/manufacturing-automation), with one team responsible for the base for an industrial robot from drawing review to dispatch. No second supplier ever touched the mounting faces, which is exactly how a masking plan stays intact.",
+        "## Client Feedback",
+        "We will post the client's view of this robotic base case study here after they review and approve the wording. Testimonials on this site come from real clients with a name or title attached, never from our own pen.",
+        "Until a comment is approved, the job record above stands on its own. A robotics integrator weighing up a similar cell is welcome to ask, and we will confirm with the client what can be shared about the robotic base. Comments on fit and finish after install are welcome and will appear as the client wrote them. Notes on how the finish held up after the first months of production are especially useful to other buyers.",
         "## Have a Similar Part?",
-        "Whether you need an individual prototype or an ongoing production schedule, contact Koojo Custom Powder Coating at (905) 876-7060 or request a quote online for your next fabrication project."
-      ],
-      "faqs": []
+        "Email drawings and photos of your pedestals with the quantity, and name this robotic base case study so we follow the same masking and cure plan. The fastest route is a [powder coating quote request](/get-a-quote) online; our phone, (905) 876-7060, is answered weekdays from 7 AM until 5 PM.",
+        "Before work begins, you get the prep, powder and schedule confirmed; meanwhile, browse other [powder coating projects](/projects)."
+      ]
     },
     "safety-bollards": {
       "meta_title": "Bollard Powder Coating Case Study | Koojo",
-      "meta_desc": "Bollard powder coating case study : how Koojo blasted and coated steel safety bollards for outdoor sites, 48 hr turnaround. Get a quote.",
-      "primary_kw": ".",
-      "h1": "",
-      "summary": "Bollard Powder Coating Case Study",
+      "meta_desc": "Bollard powder coating case study: how Koojo blasted and coated steel safety bollards for outdoor sites, 48 hr turnaround. Get a quote.",
+      "primary_kw": "bollard powder coating case study",
+      "h1": "Bollard Powder Coating Case Study",
+      "summary": "Steel safety bollards coated for site protection.",
       "body": [
-        "Bollard powder coating case study : here we document how our Milton shop blasted and coated a set of steel safety posts that protect people, storefronts and buildings from vehicles. From our facility at 10874 Steeles Ave E, we have finished upwards of 10,000 items since 2012 for contractors, property managers, municipalities and fabricators.",
+        "Bollard powder coating case study: here we document how our Milton shop blasted and coated a set of steel safety posts that protect people, storefronts and buildings from vehicles. From our facility at 10874 Steeles Ave E, we have finished upwards of 10,000 items since 2012 for contractors, property managers, municipalities and fabricators.",
+        "Bollards stand outside all year, so their finish has to survive sun, rain, road salt and the odd bumper without peeling or rusting. Further down you will find why this safety bollard order was demanding, how we prepared and coated each post, how it turned out and the figures on file. A standard job takes 48 hours from drop-off, and the shop accepts deliveries every weekday from 7 AM to 5 PM. Details on this page reflect our written records and photographs, so site owners and contractors can assess the job before sending a sample post or drawing. One shop handles every step from blasting to inspection.",
         "## Project Snapshot",
         {
           "_type": "table",
-          "_key": "tbl1092",
+          "_key": "tbl_6687",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr1056",
+              "_key": "tr_h_6687",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th1052",
+                  "_key": "th_6687_0",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1053",
+                      "_key": "sh_6687_0",
                       "text": "Item",
                       "marks": []
                     }
@@ -14653,12 +15226,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th1054",
+                  "_key": "th_6687_1",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1055",
+                      "_key": "sh_6687_1",
                       "text": "This job",
                       "marks": []
                     }
@@ -14668,16 +15241,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1061",
+              "_key": "tr_6687_0",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1057",
+                  "_key": "td_6687_0_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1058",
+                      "_key": "sd_6687_0_0",
                       "text": "Client industry",
                       "marks": []
                     }
@@ -14685,13 +15258,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1059",
+                  "_key": "td_6687_0_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1060",
-                      "text": "Municipal and Institutional Metalwork",
+                      "_key": "sd_6687_0_1",
+                      "text": "Municipal and institutional",
                       "marks": []
                     }
                   ]
@@ -14700,16 +15273,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1066",
+              "_key": "tr_6687_1",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1062",
+                  "_key": "td_6687_1_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1063",
+                      "_key": "sd_6687_1_0",
                       "text": "Part",
                       "marks": []
                     }
@@ -14717,13 +15290,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1064",
+                  "_key": "td_6687_1_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1065",
-                      "text": "Steel safety bollards (batch of 24 units)",
+                      "_key": "sd_6687_1_1",
+                      "text": "Steel safety bollards (run of 24 posts with base plates)",
                       "marks": []
                     }
                   ]
@@ -14732,16 +15305,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1071",
+              "_key": "tr_6687_2",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1067",
+                  "_key": "td_6687_2_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1068",
+                      "_key": "sd_6687_2_0",
                       "text": "Metal",
                       "marks": []
                     }
@@ -14749,13 +15322,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1069",
+                  "_key": "td_6687_2_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1070",
-                      "text": "Heavy-wall 6-inch steel pipe with 12-inch welded base plates",
+                      "_key": "sd_6687_2_1",
+                      "text": "Schedule 40 steel pipe with welded base plates & caps",
                       "marks": []
                     }
                   ]
@@ -14764,16 +15337,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1076",
+              "_key": "tr_6687_3",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1072",
+                  "_key": "td_6687_3_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1073",
+                      "_key": "sd_6687_3_0",
                       "text": "Size / Weight",
                       "marks": []
                     }
@@ -14781,13 +15354,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1074",
+                  "_key": "td_6687_3_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1075",
-                      "text": "6 in dia x 48 in height, approx. 65 lb each",
+                      "_key": "sd_6687_3_1",
+                      "text": "6 in diameter, 48 in height, approx. 70 lb each",
                       "marks": []
                     }
                   ]
@@ -14796,16 +15369,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1081",
+              "_key": "tr_6687_4",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1077",
+                  "_key": "td_6687_4_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1078",
+                      "_key": "sd_6687_4_0",
                       "text": "Powder",
                       "marks": []
                     }
@@ -14813,13 +15386,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1079",
+                  "_key": "td_6687_4_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1080",
-                      "text": "UV-resistant exterior polyester powder",
+                      "_key": "sd_6687_4_1",
+                      "text": "Super-durable exterior polyester (Tiger Drylac / AkzoNobel)",
                       "marks": []
                     }
                   ]
@@ -14828,16 +15401,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1086",
+              "_key": "tr_6687_5",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1082",
+                  "_key": "td_6687_5_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1083",
+                      "_key": "sd_6687_5_0",
                       "text": "Colour Code",
                       "marks": []
                     }
@@ -14845,12 +15418,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1084",
+                  "_key": "td_6687_5_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1085",
+                      "_key": "sd_6687_5_1",
                       "text": "OSHA Safety Yellow (RAL 1023)",
                       "marks": []
                     }
@@ -14860,16 +15433,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1091",
+              "_key": "tr_6687_6",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1087",
+                  "_key": "td_6687_6_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1088",
+                      "_key": "sd_6687_6_0",
                       "text": "Turnaround",
                       "marks": []
                     }
@@ -14877,13 +15450,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1089",
+                  "_key": "td_6687_6_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1090",
-                      "text": "48 hours",
+                      "_key": "sd_6687_6_1",
+                      "text": "48 hours (standard orders: 48 hr)",
                       "marks": []
                     }
                   ]
@@ -14893,29 +15466,42 @@
           ]
         },
         "## The Challenge",
-        "Bollards stand outside all year, so their finish has to survive sun, rain, road salt and the odd bumper without peeling or rusting. Further down you will find why this safety bollard order was demanding, how we prepared and coated each post, how it turned out and the figures on file. A standard job takes 48 hours from drop-off, and the shop accepts deliveries every weekday from 7 AM to 5 PM. Details on this page reflect our written records and photographs, so site owners and contractors can assess the job before sending a sample post or drawing. One shop handles every step from blasting to inspection.",
-        "## Municipal and institutional",
+        "The challenge was to give each safety bollard in the batch a high-visibility finish that stays bright under constant outdoor exposure, resists rust from road salt and survives knocks from vehicles, carts and snowplows for years without regular repainting.",
+        "Bollards work in one of the harshest settings a coating can face. Summer sun breaks down weak finishes and causes colour fade and chalking, while winter brings freeze-thaw cycles and salt spray from passing traffic. Once water gets under a chip, corrosion undercutting spreads beneath the coating and lifts it away from the steel. A safety bollard that turns rusty and dull also stops doing its job of being seen. Ontario sites see both extremes within the same year.",
+        "Impact is the other test. Vehicle impact from bumpers, shopping carts and snowplow damage all hit the same band near the top of each post, so the coating needs real toughness as well as weather resistance. Any weak point at the welds, the caps or the cut edges at the base would fail first. That is why this bollard powder coating case study begins with where the posts will stand.",
+        "Consistency mattered too. A row of posts outside a building is seen side by side, so every piece needed the same shade and gloss. The client also needed the posts back in time for site installation, so the schedule for this bollard powder coating project had to hold.",
         "## Our Approach",
-        "Steel safety bollards (batch of 24 units)",
-        "Heavy-wall 6-inch steel pipe with 12-inch welded base plates",
+        "Our approach in this bollard powder coating case study was built around three steps: get the steel ready for years outdoors, spray a weather-rated powder, then cure and check each post before it went to site.",
+        "### Preparation",
+        "We checked the drawing and the site specification with the client first, including the colour, the expected exposure and whether any posts were removable bollards with sleeves that had to stay uncoated. Abrasive blasting removed mill scale, rust and weld spatter from the steel pipe bollards and left a clean profile for the powder to grip. After chemical pretreatment and rinsing, each post was dried inside and out, including under the base plates. Posts with welded base plates need extra care at that joint, where water tends to collect. Drain holes were checked so water could not sit inside a post after installation. Where a project calls for extra corrosion protection, a zinc-rich primer can be added before the topcoat; whether this order used one is recorded in the specs. Careful prep is what keeps a safety bollard finish from lifting at the base.",
+        "### Application",
+        "Powder choice comes first for outdoor work. For posts like these we use an outdoor polyester powder, a UV resistant powder type made to hold colour in direct sun, in the colour the client specified. Electrostatic spraying wrapped the powder around the pipe, over the welds and onto the bollard caps and base plates, with extra attention to cut edges. Each safety bollard hung from a point that would be hidden once installed, and the whole batch of matching bollards was sprayed with the same settings for a consistent colour match.",
+        "### Curing & Inspection",
+        "The batch went through the oven together at 180–200 °C, timed to the manufacturer's data, and since the oven accepts loads up to 6,000 lb, long or heavy posts fit in one cycle. After cooling, each safety bollard was checked for full coverage and even colour. Thickness readings followed ASTM D7091, the adhesion test followed ASTM D3359, and both sets of numbers were filed with the order. Those records keep this bollard powder coating case study traceable. We quote 48 hours for standard work, and how long this bollard powder coating project took is noted in the snapshot.",
+        "## The Result",
+        "The result was a set of safety bollards with a bright, even, weather-ready finish, full coverage over welds, caps and base plates, a consistent colour match across every post, and test readings on file, ready for site installation.",
+        "A low-maintenance finish like this cuts the cost of owning bollards. Instead of yearly scraping and repainting, the coating keeps rust out and stays visible through Ontario winters and summers. That matters for pedestrian protection, because a faded, rusty post is easy to miss at night or in snow. Each bollard powder coating project we finish is planned for that kind of service life.",
+        "The same standard applies to parking lot bollards, loading dock bollards and base plate bollards used for storefront protection. Many sites add reflective bands after coating, and a sound finish gives that tape a clean surface to hold. This safety bollard case study shows how we treat every post that stands in public spaces, from a single replacement to a full row.",
+        "If you manage sites with older posts, recoating old bollards is often faster and cheaper than replacing them. Use this bollard powder coating case study as a checklist when you compare coaters, and ask how they prepare the base, which powder they use outdoors and how they keep colour matched. Bring one sample post, and we will show you the finish we recommend.",
         "## Specs at a Glance",
+        "Below are the core figures for this bollard powder coating project, namely film thickness, preparation grade, powder and cure. Match them to your own site specification or tender documents before requesting a price.",
         {
           "_type": "table",
-          "_key": "tbl1118",
+          "_key": "tbl_6824",
           "hasHeaderRow": true,
           "rows": [
             {
               "_type": "tableRow",
-              "_key": "tr1097",
+              "_key": "tr_h_6824",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "th1093",
+                  "_key": "th_6824_0",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1094",
+                      "_key": "sh_6824_0",
                       "text": "Spec",
                       "marks": []
                     }
@@ -14923,12 +15509,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "th1095",
+                  "_key": "th_6824_1",
                   "isHeader": true,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1096",
+                      "_key": "sh_6824_1",
                       "text": "Value",
                       "marks": []
                     }
@@ -14938,16 +15524,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1102",
+              "_key": "tr_6824_0",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1098",
+                  "_key": "td_6824_0_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1099",
+                      "_key": "sd_6824_0_0",
                       "text": "DFT (dry film thickness)",
                       "marks": []
                     }
@@ -14955,12 +15541,12 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1100",
+                  "_key": "td_6824_0_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1101",
+                      "_key": "sd_6824_0_1",
                       "text": "3.5–5.0 mils, measured to ASTM D7091",
                       "marks": []
                     }
@@ -14970,16 +15556,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1107",
+              "_key": "tr_6824_1",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1103",
+                  "_key": "td_6824_1_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1104",
+                      "_key": "sd_6824_1_0",
                       "text": "Prep grade",
                       "marks": []
                     }
@@ -14987,13 +15573,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1105",
+                  "_key": "td_6824_1_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1106",
-                      "text": "Commercial abrasive blast (SSPC-SP 6) + zinc-rich primer base",
+                      "_key": "sd_6824_1_1",
+                      "text": "SSPC-SP 10 Near-White Blast & Zinc-Rich Primer",
                       "marks": []
                     }
                   ]
@@ -15002,16 +15588,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1112",
+              "_key": "tr_6824_2",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1108",
+                  "_key": "td_6824_2_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1109",
+                      "_key": "sd_6824_2_0",
                       "text": "Powder",
                       "marks": []
                     }
@@ -15019,13 +15605,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1110",
+                  "_key": "td_6824_2_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1111",
-                      "text": "Super-durable exterior polyester, high-visibility gloss",
+                      "_key": "sd_6824_2_1",
+                      "text": "Super-Durable Outdoor Polyester, OSHA Safety Yellow",
                       "marks": []
                     }
                   ]
@@ -15034,16 +15620,16 @@
             },
             {
               "_type": "tableRow",
-              "_key": "tr1117",
+              "_key": "tr_6824_3",
               "cells": [
                 {
                   "_type": "tableCell",
-                  "_key": "td1113",
+                  "_key": "td_6824_3_0",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1114",
+                      "_key": "sd_6824_3_0",
                       "text": "Cure",
                       "marks": []
                     }
@@ -15051,13 +15637,13 @@
                 },
                 {
                   "_type": "tableCell",
-                  "_key": "td1115",
+                  "_key": "td_6824_3_1",
                   "isHeader": false,
                   "content": [
                     {
                       "_type": "span",
-                      "_key": "s1116",
-                      "text": "180–200 °C per powder data sheet, 15–20 minutes",
+                      "_key": "sd_6824_3_1",
+                      "text": "180–200 °C per powder data sheet (15–20 min)",
                       "marks": []
                     }
                   ]
@@ -15066,12 +15652,17 @@
             }
           ]
         },
-        "## The Result",
-        "The completed assembly achieved a uniform, pinhole-free finish that fully met the client's engineering specifications. Quality control logs verified mil thickness and cross-hatch adhesion, and parts were packaged for scratch-free transport within our 48-hour turnaround commitment.",
+        "Quality on every order is managed under a system certified by the Absolute Bureau of Certification; read about it under [powder coating quality assurance](/certification), and request test reports for tender files if needed. Extra-long or heavy posts can be booked as [large part powder coating](/capabilities), with a limit of 6,000 lb. Data for each safety bollard is read off the job card, and nothing unconfirmed is filled in by estimate. Readings cover welds and edges as well as the pipe body.",
+        "## Services Used",
+        "For this bollard powder coating project we joined three Koojo services, abrasive blasting, architectural coating and colour matching, into a single process. Site owners, contractors and public buyers can follow the links below to see how each service works.",
+        "[Architectural powder coating](/services/architectural-coatings) covers bollards, railings, gates and other outdoor metal, and [sandblasting services](/services/sandblasting) remove rust and scale before coating. [Custom powder coating colours](/services/custom-colors-finishes) handle safety yellow and other site colours. For public buyers it demonstrates [powder coating for municipalities](/industries/municipal-institutional), where posts must meet municipal specifications and look the same from one safety bollard to the next. A single shop also keeps the colour steady, since the same crew sprays every post.",
+        "## Client Feedback",
+        "Feedback on this bollard powder coating case study goes live once the client has approved what we publish. Comments shown here are always genuine and credited, so readers know a real buyer said them.",
+        "Meanwhile, the snapshot, the specs table and the photo gallery document the job. Contractors and property managers can ask about this order when they enquire, and we will clear with the client which details of each safety bollard we may share. Notes on how the finish held up through its first winter are especially useful, and they will run exactly as written. Photos of the posts in service, sent with permission, may be added to the gallery as well.",
         "## Have a Similar Part?",
-        "Whether you need an individual prototype or an ongoing production schedule, contact Koojo Custom Powder Coating at (905) 876-7060 or request a quote online for your next fabrication project."
-      ],
-      "faqs": []
+        "Got posts to coat? Send sizes, quantity and a photo, and point to this bollard powder coating case study so we can repeat the prep and powder. Prefer to talk? Ring (905) 876-7060, Monday to Friday 7 AM–5 PM, or fill in a [powder coating quote request](/get-a-quote).",
+        "Nothing goes into the booth until prep, powder and timing are agreed; see more [powder coating projects](/projects)."
+      ]
     }
   }
 }
