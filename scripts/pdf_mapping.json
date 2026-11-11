@@ -1,0 +1,222 @@
+{
+  "home": {
+    "pdf": "media_1794287801721_d6bc21c3.pdf",
+    "keyword": "Koojo Homepage Content",
+    "url": "/"
+  },
+  "about-us": {
+    "pdf": "media_1794287883416_391b2bc6.pdf",
+    "keyword": "About Us",
+    "url": "/about-us"
+  },
+  "contact-us": {
+    "pdf": "media_1794287801867_e3605571.pdf",
+    "keyword": "Contact Us",
+    "url": "/contact-us"
+  },
+  "get-a-quote": {
+    "pdf": "media_1794287801794_ffcbe228.pdf",
+    "keyword": "Get a Quote",
+    "url": "/get-a-quote"
+  },
+  "capabilities": {
+    "pdf": "media_1794287883545_d9061586.pdf",
+    "keyword": "Capabilities",
+    "url": "/capabilities"
+  },
+  "certification": {
+    "pdf": "media_1794287801652_936718c3.pdf",
+    "keyword": "Certification",
+    "url": "/certification"
+  },
+  "privacy-policy": {
+    "pdf": "media_1794287801754_b2e4790a.pdf",
+    "keyword": "Privacy Policy",
+    "url": "/privacy-policy"
+  },
+  "services": {
+    "pdf": "media_1794290770286_3dac14ed.pdf",
+    "keyword": "Services Hub",
+    "url": "/services"
+  },
+  "industries": {
+    "pdf": "media_1794291057560_4e3fbfaa.pdf",
+    "keyword": "Koojo Industries Hub Page",
+    "url": "/industries"
+  },
+  "locations": {
+    "pdf": "media_1794290946468_afd69ff5.pdf",
+    "keyword": "Service Areas",
+    "url": "/locations"
+  },
+  "projects": {
+    "pdf": "media_1794291224532_3fe561be.pdf",
+    "keyword": "Powder Coating Projects",
+    "url": "/projects"
+  },
+  "blog": {
+    "pdf": "media_1794291106762_a001b4a8.pdf",
+    "keyword": "Blog Hub",
+    "url": "/blog"
+  },
+  "industrial-powder-coating": {
+    "pdf": "media_1794288089191_00f3c48a.pdf",
+    "keyword": "Koojo Industrial Powder Coating",
+    "url": "/services/industrial-powder-coating"
+  },
+  "surface-preparation": {
+    "pdf": "media_1794290770223_0c72d321.pdf",
+    "keyword": "Powder Coating Surface Preparation",
+    "url": "/services/surface-preparation"
+  },
+  "sandblasting": {
+    "pdf": "media_1794290770169_2e353d80.pdf",
+    "keyword": "Sandblasting Services & Mobile Sandblasting",
+    "url": "/services/sandblasting"
+  },
+  "custom-colors-finishes": {
+    "pdf": "media_1794288089425_ce0f687a.pdf",
+    "keyword": "Koojo Custom Colours & Finishes",
+    "url": "/services/custom-colors-finishes"
+  },
+  "restoration-recoating": {
+    "pdf": "media_1794290769906_9e97c08f.pdf",
+    "keyword": "Koojo Restoration, Stripping & Recoating",
+    "url": "/services/restoration-recoating"
+  },
+  "automotive-powder-coating": {
+    "pdf": "media_1794288089205_f94cd2d4.pdf",
+    "keyword": "Automotive Powder Coating",
+    "url": "/services/automotive-powder-coating"
+  },
+  "wheel-rim-powder-coating": {
+    "pdf": "media_1794290793798_3c07605d.pdf",
+    "keyword": "Rim Powder Coating & Wheel Refinishing",
+    "url": "/services/wheel-rim-powder-coating"
+  },
+  "architectural-coatings": {
+    "pdf": "media_1794288089153_cb38153b.pdf",
+    "keyword": "Architectural Powder Coating",
+    "url": "/services/architectural-coatings"
+  },
+  "bulk-commercial-orders": {
+    "pdf": "media_1794288089197_ca86966c.pdf",
+    "keyword": "Commercial & Bulk Orders",
+    "url": "/services/bulk-commercial-orders"
+  },
+  "specialty-custom-projects": {
+    "pdf": "media_1794290769979_dbd59110.pdf",
+    "keyword": "Specialty & Custom Projects",
+    "url": "/services/specialty-custom-projects"
+  },
+  "metal-fabricators-welding-shops": {
+    "pdf": "media_1794291069993_9b787130.pdf",
+    "keyword": "Metal Fabricators & Welding Shops",
+    "url": "/industries/metal-fabricators-welding-shops"
+  },
+  "manufacturing-automation": {
+    "pdf": "media_1794291069965_3e0f04f8.pdf",
+    "keyword": "Koojo - Powder Coating for Manufacturers",
+    "url": "/industries/manufacturing-automation"
+  },
+  "machine-shops": {
+    "pdf": "media_1794291057490_fb928818.pdf",
+    "keyword": "Koojo - Powder Coating for Machine Shops",
+    "url": "/industries/machine-shops"
+  },
+  "contractors-construction": {
+    "pdf": "media_1794291057527_576b8177.pdf",
+    "keyword": "Koojo - Powder Coating for Contractors",
+    "url": "/industries/contractors-construction"
+  },
+  "food-processing-equipment": {
+    "pdf": "media_1794291057357_0d5f0392.pdf",
+    "keyword": "Powder Coating for Food Processing Equipment",
+    "url": "/industries/food-processing-equipment"
+  },
+  "agricultural-heavy-equipment": {
+    "pdf": "media_1794291057322_39084ebb.pdf",
+    "keyword": "Agricultural & Heavy Equipment",
+    "url": "/industries/agricultural-heavy-equipment"
+  },
+  "municipal-institutional": {
+    "pdf": "media_1794291069993_fbda39c8.pdf",
+    "keyword": "Municipal & Institutional",
+    "url": "/industries/municipal-institutional"
+  },
+  "powder-coating-milton": {
+    "pdf": "media_1794290930334_7263d246.pdf",
+    "keyword": "Powder Coating Milton",
+    "url": "/locations/powder-coating-milton"
+  },
+  "powder-coating-oakville": {
+    "pdf": "media_1794290946151_1028cf0c.pdf",
+    "keyword": "Koojo - Powder Coating Oakville",
+    "url": "/locations/powder-coating-oakville"
+  },
+  "powder-coating-burlington": {
+    "pdf": "media_1794290930246_ab103220.pdf",
+    "keyword": "Koojo - Powder Coating Burlington",
+    "url": "/locations/powder-coating-burlington"
+  },
+  "powder-coating-mississauga": {
+    "pdf": "media_1794290946185_0928e912.pdf",
+    "keyword": "Powder Coating Mississauga",
+    "url": "/locations/powder-coating-mississauga"
+  },
+  "powder-coating-halton-hills": {
+    "pdf": "media_1794290930064_bd82ffde.pdf",
+    "keyword": "Powder Coating Halton Hills",
+    "url": "/locations/powder-coating-halton-hills"
+  },
+  "powder-coating-brampton": {
+    "pdf": "media_1794290930015_599bd254.pdf",
+    "keyword": "Powder Coating Brampton",
+    "url": "/locations/powder-coating-brampton"
+  },
+  "powder-coating-guelph": {
+    "pdf": "media_1794290946186_de331615.pdf",
+    "keyword": "Powder Coating Guelph",
+    "url": "/locations/powder-coating-guelph"
+  },
+  "powder-coating-cambridge": {
+    "pdf": "media_1794290930267_c2e91ab0.pdf",
+    "keyword": "Powder Coating Cambridge",
+    "url": "/locations/powder-coating-cambridge"
+  },
+  "powder-coating-hamilton": {
+    "pdf": "media_1794290946186_5559c0b0.pdf",
+    "keyword": "Powder Coating Hamilton",
+    "url": "/locations/powder-coating-hamilton"
+  },
+  "conveyor-frame-automotive-plant": {
+    "pdf": "media_1794291213290_39149343.pdf",
+    "keyword": "Conveyor Frame for an Automotive Plant",
+    "url": "/projects/conveyor-frame-automotive-plant"
+  },
+  "automation-line-frame": {
+    "pdf": "media_1794291213081_1b37a78d.pdf",
+    "keyword": "Automation Line Frame",
+    "url": "/projects/automation-line-frame"
+  },
+  "food-processing-line-frame": {
+    "pdf": "media_1794291213315_f7e934a0.pdf",
+    "keyword": "Food Processing Line Frame",
+    "url": "/projects/food-processing-line-frame"
+  },
+  "robotic-base": {
+    "pdf": "media_1794291224684_cb7ba5c3.pdf",
+    "keyword": "Robotic Base",
+    "url": "/projects/robotic-base"
+  },
+  "safety-bollards": {
+    "pdf": "media_1794291224683_caf7c921.pdf",
+    "keyword": "Safety Bollards",
+    "url": "/projects/safety-bollards"
+  },
+  "church-gates": {
+    "pdf": "media_1794291213276_22e899a6.pdf",
+    "keyword": "Church Gates",
+    "url": "/projects/church-gates"
+  }
+}

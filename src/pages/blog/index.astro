@@ -2,10 +2,12 @@
 import { getEmDashEntry, getTaxonomyTermsWithCacheHint } from "emdash";
 import CardGrid from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
+import FaqSection from "../../components/FaqSection.astro";
 import PageHero from "../../components/PageHero.astro";
+import Prose from "../../components/Prose.astro";
 import Base from "../../layouts/Base.astro";
 import { getPosts, postCard, postCategory } from "../../lib/posts";
-import { breadcrumbLd, collectionLd, entrySeo } from "../../lib/site";
+import { breadcrumbLd, collectionLd, entrySeo, faqLd, type Faq } from "../../lib/site";
 
 const FEATURED_PER_CATEGORY = 3;
 
@@ -28,6 +30,7 @@ const clusters = termsResult.data
 	.filter((cluster) => cluster.total > 0);
 
 const title = page?.data.title ?? "Powder Coating Guides";
+const faqs = (page?.data.faqs ?? []) as Faq[];
 const seo = page ? entrySeo(Astro, page, "/blog", page.data.intro) : null;
 const crumbs = [{ label: "Blog", url: "/blog" }];
 const jsonLd = [
@@ -37,6 +40,7 @@ const jsonLd = [
 		url: `${Astro.url.origin}/blog`,
 		items: clusters.map(({ term }) => ({ name: term.label, url: `${Astro.url.origin}/blog/categories/${term.slug}` })),
 	}),
+	faqLd(faqs),
 	breadcrumbLd(Astro.url.origin, crumbs),
 ];
 ---
@@ -75,6 +79,13 @@ const jsonLd = [
 				<CardGrid cards={featured.map(postCard)} />
 			</section>
 		))}
+		{page?.data.body && (
+			<div class="hub-body container" {...page.edit.body}>
+				<Prose value={page.data.body} />
+			</div>
+		)}
+
+		<FaqSection faqs={faqs} />
 	</div>
 
 	<CtaBand />
