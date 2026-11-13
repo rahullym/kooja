@@ -42,7 +42,14 @@ const brandRest = siteTitle.slice(brand.length).trim();
 const fullTitle = title ? (title.includes(brand) ? title : `${title} | ${siteTitle}`) : siteTitle;
 const siteDescription = settings?.tagline || "";
 const siteLogo = settings.logo?.url ? settings.logo : null;
-const menu = menuResult.data;
+const BLOG_LINK = { label: "Blog", url: "/blog" };
+// The blog link is guaranteed here so it survives edits to the CMS menus.
+const hasUrl = (items: { url: string }[], url: string) => items.some((item) => item.url.replace(/\/$/, "") === url);
+const menuItems = menuResult.data?.items ?? [];
+const navItems: { label: string; url: string; target?: string }[] = hasUrl(menuItems, "/blog")
+	? menuItems
+	: [...menuItems, BLOG_LINK];
+const footerCompanyItems = footerCompanyResult.data?.items ?? [];
 
 type FooterLink = { label: string; url: string; target?: string };
 const collectionLinks = (base: string, entries: { id: string; data: { title: string; nav_label?: string | null } }[]) =>
@@ -53,7 +60,10 @@ const collectionLinks = (base: string, entries: { id: string; data: { title: str
 const footerColumns: { heading: string; links: FooterLink[] }[] = [
 	{ heading: "Services", links: collectionLinks("/services", servicesResult.entries) },
 	{ heading: "Service Areas", links: collectionLinks("/locations", locationsResult.entries) },
-	{ heading: "Company", links: footerCompanyResult.data?.items ?? [] },
+	{
+		heading: "Company",
+		links: hasUrl(footerCompanyItems, "/blog") ? footerCompanyItems : [...footerCompanyItems, BLOG_LINK],
+	},
 ].filter((col) => col.links.length > 0);
 
 const structuredData = (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).filter(Boolean);
@@ -133,7 +143,7 @@ const isLoggedIn = !!Astro.locals.user;
 				</a>
 				<div class="nav-links">
 					{
-						menu?.items
+						navItems
 							.filter((item) => item.url !== "/")
 							.map((item) => (
 								<a

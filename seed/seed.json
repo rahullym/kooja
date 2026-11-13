@@ -1382,6 +1382,11 @@
 				},
 				{
 					"type": "custom",
+					"label": "Blog",
+					"url": "/blog"
+				},
+				{
+					"type": "custom",
 					"label": "Get a Quote",
 					"url": "/get-a-quote"
 				},
