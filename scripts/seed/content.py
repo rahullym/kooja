@@ -1099,6 +1099,7 @@ MENUS = [
 			("About Us", "/about-us"),
 			("Contact Us", "/contact-us"),
 			("Certification", "/certification"),
+			("Blog", "/blog"),
 			("Get a Quote", "/get-a-quote"),
 			("Privacy Policy", "/privacy-policy"),
 		],

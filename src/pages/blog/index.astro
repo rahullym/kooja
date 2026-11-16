@@ -4,9 +4,10 @@ import CardGrid from "../../components/CardGrid.astro";
 import CtaBand from "../../components/CtaBand.astro";
 import FaqSection from "../../components/FaqSection.astro";
 import PageHero from "../../components/PageHero.astro";
+import Pagination from "../../components/Pagination.astro";
 import Prose from "../../components/Prose.astro";
 import Base from "../../layouts/Base.astro";
-import { getPosts, postCard, postCategory } from "../../lib/posts";
+import { getPosts, imageUrl, pageUrl, paginate, postCard, postCategory } from "../../lib/posts";
 import { breadcrumbLd, collectionLd, entrySeo, faqLd, type Faq } from "../../lib/site";
 
 const FEATURED_PER_CATEGORY = 3;
@@ -29,9 +30,18 @@ const clusters = termsResult.data
 	})
 	.filter((cluster) => cluster.total > 0);
 
+// Every published guide, newest first, nine per page (?page=N).
+const paged = paginate(posts, Astro.url.searchParams.get("page"));
+if (!paged) return Astro.rewrite("/404");
+const firstPage = paged.page === 1;
+
 const title = page?.data.title ?? "Powder Coating Guides";
-const faqs = (page?.data.faqs ?? []) as Faq[];
+const faqs = (firstPage ? page?.data.faqs ?? [] : []) as Faq[];
 const seo = page ? entrySeo(Astro, page, "/blog", page.data.intro) : null;
+const pageSuffix = firstPage ? "" : ` (Page ${paged.page})`;
+const description = seo?.description ?? "Powder coating guides from Koojo Custom Powder Coating in Milton, Ontario.";
+const canonical = firstPage ? (seo?.canonical ?? `${Astro.url.origin}/blog`) : `${Astro.url.origin}${pageUrl("/blog", paged.page)}`;
+const ogImage = seo?.image ?? imageUrl(Astro.url.origin, posts.find((post) => post.data.featured_image)?.data.featured_image, Astro.locals.emdash?.getPublicMediaUrl);
 const crumbs = [{ label: "Blog", url: "/blog" }];
 const jsonLd = [
 	collectionLd({
@@ -46,11 +56,11 @@ const jsonLd = [
 ---
 
 <Base
-	title={seo?.title ?? title}
+	title={`${seo?.title ?? title}${pageSuffix}`}
 	pageTitle={title}
-	description={seo?.description}
-	image={seo?.image}
-	canonical={seo?.canonical}
+	description={description}
+	image={ogImage}
+	canonical={canonical}
 	robots={seo?.robots}
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={jsonLd}
@@ -64,7 +74,7 @@ const jsonLd = [
 	</PageHero>
 
 	<div class="container blog">
-		{clusters.map(({ term, total, posts: featured }) => (
+		{firstPage && clusters.map(({ term, total, posts: featured }) => (
 			<section class="cluster">
 				<header>
 					<h2>
@@ -79,7 +89,16 @@ const jsonLd = [
 				<CardGrid cards={featured.map(postCard)} />
 			</section>
 		))}
-		{page?.data.body && (
+		<section class="all-guides" id="all-guides" aria-labelledby="all-guides-title">
+			<header>
+				<h2 id="all-guides-title">All guides{pageSuffix}</h2>
+				<p class="label">{posts.length} articles</p>
+			</header>
+			<CardGrid cards={paged.items.map(postCard)} />
+			<Pagination path="/blog" page={paged.page} totalPages={paged.totalPages} label="Blog pages" />
+		</section>
+
+		{firstPage && page?.data.body && (
 			<div class="hub-body container" {...page.edit.body}>
 				<Prose value={page.data.body} />
 			</div>
@@ -121,7 +140,15 @@ const jsonLd = [
 		gap: var(--spacing-3xl);
 	}
 
-	.cluster header {
+	/* Flex items default to their content width; keep wide tables in the
+	   authored body inside the column on small screens. */
+	.blog > * {
+		min-width: 0;
+		max-width: 100%;
+	}
+
+	.cluster header,
+	.all-guides header {
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
@@ -129,7 +156,8 @@ const jsonLd = [
 		margin-bottom: var(--spacing-lg);
 	}
 
-	.cluster h2 {
+	.cluster h2,
+	.all-guides h2 {
 		font-size: var(--font-size-2xl);
 	}
 

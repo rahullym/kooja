@@ -43,3 +43,8 @@ __pycache__/
 .vercel
 .env*
 *.bak
+
+# Playwright e2e (scripts/e2e-server.mjs)
+.e2e/
+test-results/
+playwright-report/

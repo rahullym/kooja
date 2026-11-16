@@ -8,6 +8,12 @@ export interface Card {
 	image?: { id: string; src?: string; alt?: string } | null;
 	meta?: string | null;
 	tags?: string[];
+	/** Category or topic shown above the title. */
+	category?: string | null;
+	/** Visible link text under the excerpt, e.g. "Read more". */
+	cta?: string | null;
+	/** Show a neutral placeholder when the card has no image. */
+	placeholder?: boolean;
 }
 
 interface Props {
@@ -24,17 +30,31 @@ const Heading = `h${level}` as "h2" | "h3";
 <ul class={`card-grid cols-${columns}`}>
 	{cards.map((card) => (
 		<li class="card" data-tags={card.tags?.join(" ")}>
-			{card.image && (
+			{card.image ? (
 				<div class="card-media">
-					<Image image={card.image} />
+					<Image image={card.image} width={640} height={427} />
+				</div>
+			) : card.placeholder && (
+				<div class="card-media card-placeholder" aria-hidden="true">
+					<span class="label">Koojo</span>
 				</div>
 			)}
 			<div class="card-body">
-				{card.meta && <p class="card-meta">{card.meta}</p>}
+				{(card.category || card.meta) && (
+					<p class="card-meta">
+						{card.category && <span class="card-category">{card.category}</span>}
+						{card.meta && <span>{card.meta}</span>}
+					</p>
+				)}
 				<Heading class="card-title">
 					<a class="card-link" href={card.url}>{card.title}</a>
 				</Heading>
 				{card.text && <p class="card-text">{card.text}</p>}
+				{card.cta && (
+					<a class="card-cta" href={card.url} tabindex="-1" aria-hidden="true">
+						{card.cta} <span>&rarr;</span>
+					</a>
+				)}
 			</div>
 		</li>
 	))}
@@ -96,12 +116,37 @@ const Heading = `h${level}` as "h2" | "h3";
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--color-muted);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem var(--spacing-md);
+	}
+
+	.card-category {
+		color: var(--color-brand);
+	}
+
+	.card-placeholder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--color-rule);
+		color: var(--color-muted);
+	}
+
+	.card-cta {
+		position: relative;
+		z-index: 1;
+		margin-top: var(--spacing-xs);
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		color: var(--color-brand);
 	}
 
 	.card-title {
 		font-size: var(--font-size-xl);
 		line-height: 1.15;
 		text-wrap: balance;
+		overflow-wrap: anywhere;
 	}
 
 	.card:hover .card-link {

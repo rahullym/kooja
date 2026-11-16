@@ -17,9 +17,12 @@ interface Props {
 	content?: { collection: string; id: string; slug?: string | null };
 	/** Structured data for this page; null entries are skipped. */
 	jsonLd?: object | (object | null)[] | null;
+	/** "article" emits og:type article, article:* tags and BlogPosting JSON-LD. */
+	pageType?: "website" | "article";
+	articleMeta?: { publishedTime?: string | null; modifiedTime?: string | null; author?: string | null };
 }
 
-const { title, pageTitle, description, image, canonical, robots, content, jsonLd } = Astro.props;
+const { title, pageTitle, description, image, canonical, robots, content, jsonLd, pageType = "website", articleMeta } = Astro.props;
 const [settingsResult, menuResult, footerCompanyResult, servicesResult, locationsResult] = await Promise.all([
 	getSiteSettingsWithCacheHint(),
 	getMenuWithCacheHint("primary"),
@@ -73,7 +76,8 @@ const isCurrent = (url: string) => (url === "/" ? currentPath === "/" : currentP
 const pageCtx = createPublicPageContext({
 	Astro,
 	kind: content ? "content" : "custom",
-	pageType: "website",
+	pageType,
+	articleMeta,
 	title: fullTitle,
 	pageTitle: pageTitle ?? title ?? siteTitle,
 	description: description || siteDescription,
