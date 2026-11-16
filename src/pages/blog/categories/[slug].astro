@@ -3,8 +3,9 @@ import { getTaxonomyTermsWithCacheHint } from "emdash";
 import CardGrid from "../../../components/CardGrid.astro";
 import CtaBand from "../../../components/CtaBand.astro";
 import PageHero from "../../../components/PageHero.astro";
+import Pagination from "../../../components/Pagination.astro";
 import Base from "../../../layouts/Base.astro";
-import { getPosts, postCard } from "../../../lib/posts";
+import { getPosts, imageUrl, pageUrl, paginate, postCard } from "../../../lib/posts";
 import { breadcrumbLd, collectionLd } from "../../../lib/site";
 
 const { slug } = Astro.params;
@@ -18,9 +19,15 @@ if (Astro.cache?.enabled) {
 	Astro.cache.set(cacheHint);
 }
 
+const paged = paginate(posts, Astro.url.searchParams.get("page"));
+if (!paged) return Astro.rewrite("/404");
+
 const path = `/blog/categories/${term.slug}`;
+const pageSuffix = paged.page > 1 ? ` (Page ${paged.page})` : "";
 const title = `${term.label}: Powder Coating Guides`;
-const description = term.description ?? undefined;
+const description = term.description ?? `${term.label} guides from Koojo Custom Powder Coating.`;
+const canonical = `${Astro.url.origin}${pageUrl(path, paged.page)}`;
+const ogImage = imageUrl(Astro.url.origin, posts.find((post) => post.data.featured_image)?.data.featured_image, Astro.locals.emdash?.getPublicMediaUrl);
 const crumbs = [
 	{ label: "Blog", url: "/blog" },
 	{ label: term.label, url: path },
@@ -36,13 +43,23 @@ const jsonLd = [
 ];
 ---
 
-<Base title={`${title} | Koojo`} pageTitle={title} description={description?.slice(0, 160)} jsonLd={jsonLd}>
+<Base
+	title={`${title}${pageSuffix} | Koojo`}
+	pageTitle={title}
+	description={description.slice(0, 160)}
+	image={ogImage}
+	canonical={canonical}
+	jsonLd={jsonLd}
+>
 	<PageHero title={term.label} crumbs={crumbs} eyebrow="Powder coating guides" />
 
 	<div class="container category">
 		{term.description && <p class="category-description">{term.description}</p>}
 		{posts.length > 0 ? (
-			<CardGrid cards={posts.map(postCard)} level={2} />
+			<>
+				<CardGrid cards={paged.items.map(postCard)} level={2} />
+				<Pagination path={path} page={paged.page} totalPages={paged.totalPages} label={`${term.label} pages`} />
+			</>
 		) : (
 			<p class="empty">Guides in this topic are on the way.</p>
 		)}

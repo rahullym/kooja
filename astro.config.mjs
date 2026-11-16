@@ -17,6 +17,12 @@ const hasS3Storage = !!(e.S3_BUCKET || e.TIGRIS_BUCKET_NAME || e.TIGRIS_STORAGE_
 
 export default defineConfig({
 	output: "server",
+	// The blog lives at /blog and posts keep their Wix /post/ URLs; send the
+	// common /blogs spellings there instead of a 404.
+	redirects: {
+		"/blogs": { status: 301, destination: "/blog" },
+		"/blogs/[slug]": { status: 301, destination: "/post/[slug]" },
+	},
 	adapter: onVercel ? vercel() : node({ mode: "standalone" }),
 	// The Vercel adapter has no session store; keep admin sessions in Postgres.
 	...(databaseUrl && {

@@ -1,0 +1,79 @@
+---
+import { pageUrl } from "../lib/posts";
+
+interface Props {
+	path: string;
+	page: number;
+	totalPages: number;
+	label?: string;
+}
+
+const { path, page, totalPages, label = "Pagination" } = Astro.props;
+const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+---
+
+{totalPages > 1 && (
+	<nav class="pagination" aria-label={label}>
+		{page > 1 ? <a class="pager" rel="prev" href={pageUrl(path, page - 1)}>&larr; Newer</a> : <span class="pager" aria-hidden="true" />}
+		<ol>
+			{pages.map((n) => (
+				<li>
+					<a href={pageUrl(path, n)} aria-current={n === page ? "page" : undefined} aria-label={`Page ${n}`}>{n}</a>
+				</li>
+			))}
+		</ol>
+		{page < totalPages ? <a class="pager" rel="next" href={pageUrl(path, page + 1)}>Older &rarr;</a> : <span class="pager" aria-hidden="true" />}
+	</nav>
+)}
+
+<style>
+	.pagination {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--spacing-md);
+		margin-top: var(--spacing-2xl);
+		padding-top: var(--spacing-lg);
+		border-top: 1px solid var(--color-rule);
+		font-family: var(--font-mono);
+		font-size: var(--font-size-sm);
+	}
+
+	.pagination ol {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-xs);
+	}
+
+	.pagination ol a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.25rem;
+		min-height: 2.25rem;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+	}
+
+	.pagination ol a[aria-current="page"] {
+		background: var(--color-ink);
+		border-color: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.pagination a:hover {
+		color: var(--color-brand);
+		border-color: var(--color-brand);
+	}
+
+	.pager {
+		min-width: 6rem;
+		font-weight: 600;
+	}
+
+	.pager[rel="next"] {
+		text-align: right;
+	}
+</style>

@@ -6,9 +6,10 @@ import CtaBand from "../../components/CtaBand.astro";
 import FaqSection from "../../components/FaqSection.astro";
 import PageHero from "../../components/PageHero.astro";
 import Prose from "../../components/Prose.astro";
+import ShareLinks from "../../components/ShareLinks.astro";
 import Base from "../../layouts/Base.astro";
-import { getPosts, postCard, postCategory } from "../../lib/posts";
-import { articleLd, breadcrumbLd, entrySeo, faqLd, formatDate, postDate, type Faq } from "../../lib/site";
+import { getPosts, imageUrl, postCard, postCategory } from "../../lib/posts";
+import { breadcrumbLd, entrySeo, faqLd, formatDate, postDate, type Faq } from "../../lib/site";
 
 const { slug } = Astro.params;
 const { entry: post, cacheHint } = slug ? await getEmDashEntry("posts", slug) : { entry: null, cacheHint: null };
@@ -34,16 +35,11 @@ const crumbs = [
 	{ label: "Blog", url: "/blog" },
 	...(category ? [{ label: category.label, url: `/blog/categories/${category.slug}` }] : []),
 ];
+const canonical = seo.canonical ?? `${Astro.url.origin}${path}`;
+// Social cards use the SEO panel image, else the post's featured image.
+const ogImage = seo.image ?? imageUrl(Astro.url.origin, data.featured_image, Astro.locals.emdash?.getPublicMediaUrl);
+// The BlogPosting JSON-LD comes from EmDash's page context (pageType "article").
 const jsonLd = [
-	articleLd(Astro.url.origin, {
-		headline: data.title,
-		description: seo.description,
-		url: `${Astro.url.origin}${path}`,
-		image: data.featured_image?.src ? new URL(data.featured_image.src, Astro.url.origin).href : seo.image,
-		published,
-		modified: data.updatedAt,
-		author,
-	}),
 	faqLd(faqs),
 	breadcrumbLd(Astro.url.origin, [...crumbs, { label: data.title, url: path }]),
 ];
@@ -53,16 +49,23 @@ const jsonLd = [
 	title={seo.title}
 	pageTitle={data.title}
 	description={seo.description}
-	image={seo.image}
-	canonical={seo.canonical}
+	image={ogImage}
+	canonical={canonical}
 	robots={seo.robots}
 	content={{ collection: "posts", id: data.id, slug: post.id }}
+	pageType="article"
+	articleMeta={{
+		publishedTime: published?.toISOString(),
+		modifiedTime: data.updatedAt ? new Date(data.updatedAt).toISOString() : null,
+		author,
+	}}
 	jsonLd={jsonLd}
 >
 	<article>
 		<PageHero title={data.title} crumbs={crumbs} titleAttrs={post.edit.title}>
 			<p class="byline">
-				{author && <span>By {author}</span>}
+				{category && <a class="byline-category" href={`/blog/categories/${category.slug}`}>{category.label}</a>}
+				{author && <span class="byline-author">By {author}</span>}
 				{published && <time datetime={published.toISOString()}>{formatDate(published)}</time>}
 			</p>
 		</PageHero>
@@ -70,12 +73,13 @@ const jsonLd = [
 		<div class="post">
 			{data.featured_image && (
 				<figure class="post-image" {...post.edit.featured_image}>
-					<Image image={data.featured_image} priority />
+					<Image image={data.featured_image} width={1200} priority />
 				</figure>
 			)}
-			<div {...post.edit.content}>
+			<div class="post-body" {...post.edit.content}>
 				<Prose value={data.content} />
 			</div>
+			<ShareLinks url={canonical} title={data.title} />
 			<FaqSection faqs={faqs} />
 		</div>
 	</article>
@@ -106,6 +110,33 @@ const jsonLd = [
 		max-width: calc(var(--max-width) + 2 * var(--spacing-lg));
 		margin: 0 auto;
 		padding: var(--spacing-3xl) var(--spacing-lg);
+	}
+
+	.byline-category {
+		color: var(--color-brand);
+		font-weight: 600;
+	}
+
+	.post-body {
+		overflow-wrap: break-word;
+	}
+
+	.post-body :global(img),
+	.post-body :global(video),
+	.post-body :global(iframe) {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.post-body :global(table) {
+		display: block;
+		max-width: 100%;
+		overflow-x: auto;
+	}
+
+	.post-body :global(pre) {
+		max-width: 100%;
+		overflow-x: auto;
 	}
 
 	.post-image {

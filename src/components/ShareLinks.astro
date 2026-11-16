@@ -1,0 +1,77 @@
+---
+interface Props {
+	url: string;
+	title: string;
+}
+
+const { url, title } = Astro.props;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(title);
+const links = [
+	{ label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${u}` },
+	{ label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${u}` },
+	{ label: "X", href: `https://twitter.com/intent/tweet?url=${u}&text=${t}` },
+	{ label: "Email", href: `mailto:?subject=${t}&body=${u}` },
+];
+---
+
+<nav class="share" aria-label="Share this article">
+	<p class="label">Share this guide</p>
+	<ul>
+		{links.map((link) => (
+			<li>
+				<a
+					href={link.href}
+					target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+					rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+					data-share={link.label.toLowerCase()}
+				>
+					{link.label}<span class="sr-only"> (share this guide)</span>
+				</a>
+			</li>
+		))}
+	</ul>
+</nav>
+
+<style>
+	.share {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--spacing-md);
+		max-width: var(--max-width);
+		margin-top: var(--spacing-2xl);
+		padding-top: var(--spacing-lg);
+		border-top: 1px solid var(--color-rule);
+	}
+
+	.share ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-sm);
+	}
+
+	.share a {
+		display: inline-block;
+		padding: var(--spacing-xs) var(--spacing-md);
+		font-size: var(--font-size-sm);
+		font-weight: 600;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-full);
+	}
+
+	.share a:hover {
+		border-color: var(--color-brand);
+		color: var(--color-brand);
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+</style>
