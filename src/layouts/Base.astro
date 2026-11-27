@@ -44,7 +44,7 @@ const brand = siteTitle.split(" ")[0];
 const brandRest = siteTitle.slice(brand.length).trim();
 const fullTitle = title ? (title.includes(brand) ? title : `${title} | ${siteTitle}`) : siteTitle;
 const siteDescription = settings?.tagline || "";
-const siteLogo = settings.logo?.url ? settings.logo : null;
+const siteLogo = settings?.logo?.url ? settings.logo : null;
 const BLOG_LINK = { label: "Blog", url: "/blog" };
 // The blog link is guaranteed here so it survives edits to the CMS menus.
 const hasUrl = (items: { url: string }[], url: string) => items.some((item) => item.url.replace(/\/$/, "") === url);
