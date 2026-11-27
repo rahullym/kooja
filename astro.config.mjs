@@ -2,6 +2,7 @@ import { fileURLToPath } from "node:url";
 import node from "@astrojs/node";
 import react from "@astrojs/react";
 import vercel from "@astrojs/vercel";
+import { cacheVercel } from "@astrojs/vercel/cache";
 import icon from "astro-iconset";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash, { local } from "emdash/astro";
@@ -24,6 +25,37 @@ export default defineConfig({
 		"/blogs/[slug]": { status: 301, destination: "/post/[slug]" },
 	},
 	adapter: onVercel ? vercel() : node({ mode: "standalone" }),
+	// Cache public pages on Vercel's CDN so most visits never touch the database.
+	// Pages pass EmDash cache hints, so a publish purges the pages it affects.
+	...(onVercel && {
+		cache: { provider: cacheVercel() },
+		routeRules: Object.fromEntries(
+			[
+				"/",
+				"/[slug]",
+				"/contact-us",
+				"/get-a-quote",
+				"/services",
+				"/services/[slug]",
+				"/industries",
+				"/industries/[slug]",
+				"/locations",
+				"/locations/[slug]",
+				"/projects",
+				"/projects/[slug]",
+				"/blog",
+				"/blog/categories/[slug]",
+				"/post/[slug]",
+			].map((route) => [
+				route,
+				{
+					maxAge: 86_400,
+					swr: 604_800,
+					tags: ["pages", "services", "industries", "locations", "projects", "posts", "all"],
+				},
+			]),
+		),
+	}),
 	// The Vercel adapter has no session store; keep admin sessions in Postgres.
 	...(databaseUrl && {
 		session: {
@@ -62,6 +94,8 @@ export default defineConfig({
 			},
 		}),
 		emdash({
+			// The CDN serves cached pages to signed-in editors too; a client toolbar still appears on them.
+			toolbar: "client",
 			database: databaseUrl
 				? postgres({
 						connectionString: databaseUrl,

@@ -20,6 +20,7 @@ const seo = page ? entrySeo(Astro, page, "/") : null;
 	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
 	jsonLd={localBusinessLd(Astro.url.origin)}
 >
+	<meta slot="head" name="google-site-verification" content="EUWhP5Xsf-oQGS3W4PocfurcRvgcSYlPjNjiRhFdSDo" />
 	{
 		page?.data.content ? (
 			<div {...page.edit.content}>
